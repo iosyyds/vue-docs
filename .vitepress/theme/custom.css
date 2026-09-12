@@ -78,3 +78,10 @@
 .VPSidebarItem .text {
   font-size: 14px;
 }
+
+/* ========== 移动端抽屉侧边栏收窄 ========== */
+@media (max-width: 960px) {
+  .VPSidebar {
+    width: 200px !important;
+  }
+}
