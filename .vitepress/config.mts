@@ -9,7 +9,8 @@ export default defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/what-is-vue' }
+      { text: '指南', link: '/guide/what-is-vue' },
+      { text: '网址导航', link: '/nav' }
     ],
     sidebar: {
       '/guide/': [
