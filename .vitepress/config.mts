@@ -32,6 +32,13 @@ export default defineConfig({
     },
     search: {
       provider: 'local'
+    },
+    editLink: {
+      pattern: 'https://github.com/iosyyds/vue-docs/edit/main/:path',
+      text: '在 GitHub 上编辑此页'
+    },
+    lastUpdated: {
+      text: '最后更新'
     }
   }
 })
