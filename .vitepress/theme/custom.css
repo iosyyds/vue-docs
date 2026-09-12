@@ -4,6 +4,7 @@
   --vp-c-brand-2: #ec4899;
   --vp-c-brand-3: #f9a8d4;
   --vp-c-brand-soft: rgba(236, 72, 153, 0.14);
+  --vp-sidebar-width: 160px;
 }
 
 .dark {
@@ -71,4 +72,9 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== 侧边栏字体紧凑 ========== */
+.VPSidebarItem .text {
+  font-size: 14px;
 }
