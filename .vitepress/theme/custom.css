@@ -1,21 +1,21 @@
-/* ========== 品牌主色：翠绿 → 青 渐变系 ========== */
+/* ========== 品牌主色：粉 → 紫 渐变系 ========== */
 :root {
-  --vp-c-brand-1: #059669;
-  --vp-c-brand-2: #10b981;
-  --vp-c-brand-3: #6ee7b7;
-  --vp-c-brand-soft: rgba(16, 185, 129, 0.14);
+  --vp-c-brand-1: #db2777;
+  --vp-c-brand-2: #ec4899;
+  --vp-c-brand-3: #f9a8d4;
+  --vp-c-brand-soft: rgba(236, 72, 153, 0.14);
 }
 
 .dark {
-  --vp-c-brand-1: #34d399;
-  --vp-c-brand-2: #10b981;
-  --vp-c-brand-3: #059669;
-  --vp-c-brand-soft: rgba(16, 185, 129, 0.18);
+  --vp-c-brand-1: #f472b6;
+  --vp-c-brand-2: #ec4899;
+  --vp-c-brand-3: #db2777;
+  --vp-c-brand-soft: rgba(236, 72, 153, 0.18);
 }
 
 /* ========== 首页 Hero 标题渐变 ========== */
 .VPHero .name {
-  background: linear-gradient(120deg, #059669 0%, #06b6d4 55%, #6366f1 100%);
+  background: linear-gradient(120deg, #db2777 0%, #ec4899 50%, #a855f7 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -50,7 +50,7 @@
 }
 .VPFeature:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.12);
+  box-shadow: 0 12px 32px rgba(236, 72, 153, 0.15);
 }
 
 /* ========== 按钮圆润化 ========== */
