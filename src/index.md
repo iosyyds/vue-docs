@@ -3,7 +3,7 @@ layout: home
 
 hero:
   image:
-    src: /logo.svg
+    src: /hero.svg
     alt: XKgg Docs Logo
     width: 120
     height: 120
@@ -19,16 +19,16 @@ hero:
       link: https://github.com/iosyyds/vue-docs
 
 features:
-  - icon: 🚀
+  - icon: { src: /icons/fast.svg }
     title: 极速加载
     details: 基于 Vite 的即时冷启动与热更新，毫秒级响应，写作体验丝滑流畅。
-  - icon: ✍️
+  - icon: { src: /icons/edit.svg }
     title: Markdown 驱动
     details: 用 Markdown 写文档，支持在文中直接嵌入 Vue 组件，创作灵活自由。
-  - icon: 🎨
+  - icon: { src: /icons/theme.svg }
     title: 内置主题
     details: 开箱即用的默认主题，支持高度自定义布局、导航与侧边栏。
-  - icon: 📦
+  - icon: { src: /icons/deploy.svg }
     title: 自动部署
     details: 通过 GitHub Actions 推送到 main 分支即自动构建并发布到 GitHub Pages。
 ---
