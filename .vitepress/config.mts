@@ -10,7 +10,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '指南', link: '/guide/what-is-vue' },
-      { text: '网址导航', link: '/nav' }
+      { text: '网址导航', link: '/pages/nav' }
     ],
     sidebar: {
       '/guide/': [
