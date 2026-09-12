@@ -9,32 +9,32 @@ title: 甜甜导航
 
 <div class="link-grid">
   <a href="https://iosdh.cn" target="_blank" rel="noopener" class="link-card">
-    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=iosdh.cn&sz=64" alt="甜甜导航">
+    <img class="link-icon" src="https://iosdh.cn/favicon.ico" alt="甜甜导航" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐇</text></svg>'">
     <span class="link-name">甜甜导航</span>
     <span class="link-desc">个人常用网址导航聚合页</span>
   </a>
   <a href="https://pan.puaaa.cn" target="_blank" rel="noopener" class="link-card">
-    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=pan.puaaa.cn&sz=64" alt="甜甜网盘">
+    <img class="link-icon" src="https://pan.puaaa.cn/favicon.ico" alt="甜甜网盘" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁️</text></svg>'">
     <span class="link-name">甜甜网盘</span>
     <span class="link-desc">在线网盘存储与文件分享</span>
   </a>
   <a href="https://qqqi.top" target="_blank" rel="noopener" class="link-card">
-    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=qqqi.top&sz=64" alt="甜甜发卡">
+    <img class="link-icon" src="https://qqqi.top/favicon.ico" alt="甜甜发卡" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💳</text></svg>'">
     <span class="link-name">甜甜发卡</span>
     <span class="link-desc">自动发卡平台卡密便捷售卖</span>
   </a>
   <a href="https://love.ttla.top" target="_blank" rel="noopener" class="link-card">
-    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=love.ttla.top&sz=64" alt="甜甜游戏">
+    <img class="link-icon" src="https://love.ttla.top/favicon.ico" alt="甜甜游戏" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>'">
     <span class="link-name">甜甜游戏</span>
     <span class="link-desc">在线小游戏聚合娱乐平台</span>
   </a>
   <a href="https://puaaa.cn" target="_blank" rel="noopener" class="link-card">
-    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=puaaa.cn&sz=64" alt="网事集">
+    <img class="link-icon" src="https://puaaa.cn/favicon.ico" alt="网事集" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>'">
     <span class="link-name">网事集</span>
     <span class="link-desc">个人博客生活记录与分享</span>
   </a>
   <a href="https://yao.hugv.me" target="_blank" rel="noopener" class="link-card">
-    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=yao.hugv.me&sz=64" alt="我的药盒">
+    <img class="link-icon" src="https://yao.hugv.me/favicon.ico" alt="我的药盒" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💊</text></svg>'">
     <span class="link-name">我的药盒</span>
     <span class="link-desc">用药提醒健康管理小工具</span>
   </a>
@@ -68,6 +68,7 @@ title: 甜甜导航
   height: 36px;
   border-radius: 8px;
   margin-bottom: 12px;
+  background: #fff;
 }
 .link-name {
   font-weight: 600;
