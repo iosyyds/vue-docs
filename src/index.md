@@ -3,7 +3,7 @@ layout: home
 
 hero:
   image:
-    src: /hero.svg
+    src: /hero.png
     alt: XKgg Docs Logo
     width: 120
     height: 120
