@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Vue Docs',
-  description: '基于 VitePress 搭建的 Vue 技术文档',
+  title: 'XKgg Docs',
+  description: '基于 VitePress 搭建的技术文档',
   lang: 'zh-CN',
   base: '/vue-docs/',
   themeConfig: {

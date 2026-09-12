@@ -4,11 +4,11 @@ layout: home
 hero:
   image:
     src: /logo.svg
-    alt: Vue Docs Logo
+    alt: XKgg Docs Logo
     width: 120
     height: 120
-  name: Vue Docs
-  text: 我的 Vue 技术文档
+  name: XKgg Docs
+  text: 我的技术文档
   tagline: 基于 VitePress 构建，简洁高效的文档站点
   actions:
     - theme: brand
