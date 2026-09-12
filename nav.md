@@ -1,101 +1,49 @@
 ---
 layout: page
-title: 网址导航
+title: 甜甜导航
 ---
 
-# 🐰 我的网址导航
+# 🐰 甜甜导航
 
-> 常用网站一键直达，持续更新中。
-
-## 🔍 搜索
+> 我的个人网站集合，新窗口打开。
 
 <div class="link-grid">
-  <a href="https://www.google.com" target="_blank" class="link-card">
-    <span class="link-icon">🔍</span>
-    <span class="link-name">Google</span>
-    <span class="link-desc">全球搜索引擎</span>
+  <a href="https://iosdh.cn" target="_blank" rel="noopener" class="link-card">
+    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=iosdh.cn&sz=64" alt="甜甜导航">
+    <span class="link-name">甜甜导航</span>
+    <span class="link-desc">个人常用网址导航聚合页</span>
   </a>
-  <a href="https://www.baidu.com" target="_blank" class="link-card">
-    <span class="link-icon">🐾</span>
-    <span class="link-name">百度</span>
-    <span class="link-desc">中文搜索引擎</span>
+  <a href="https://pan.puaaa.cn" target="_blank" rel="noopener" class="link-card">
+    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=pan.puaaa.cn&sz=64" alt="甜甜网盘">
+    <span class="link-name">甜甜网盘</span>
+    <span class="link-desc">在线网盘存储与文件分享</span>
   </a>
-  <a href="https://www.bing.com" target="_blank" class="link-card">
-    <span class="link-icon">🅱️</span>
-    <span class="link-name">Bing</span>
-    <span class="link-desc">微软搜索引擎</span>
+  <a href="https://qqqi.top" target="_blank" rel="noopener" class="link-card">
+    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=qqqi.top&sz=64" alt="甜甜发卡">
+    <span class="link-name">甜甜发卡</span>
+    <span class="link-desc">自动发卡平台卡密便捷售卖</span>
   </a>
-</div>
-
-## 💻 开发
-
-<div class="link-grid">
-  <a href="https://github.com" target="_blank" class="link-card">
-    <span class="link-icon">🐙</span>
-    <span class="link-name">GitHub</span>
-    <span class="link-desc">代码托管平台</span>
+  <a href="https://love.ttla.top" target="_blank" rel="noopener" class="link-card">
+    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=love.ttla.top&sz=64" alt="甜甜游戏">
+    <span class="link-name">甜甜游戏</span>
+    <span class="link-desc">在线小游戏聚合娱乐平台</span>
   </a>
-  <a href="https://developer.mozilla.org" target="_blank" class="link-card">
-    <span class="link-icon">📖</span>
-    <span class="link-name">MDN</span>
-    <span class="link-desc">Web 开发文档</span>
+  <a href="https://puaaa.cn" target="_blank" rel="noopener" class="link-card">
+    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=puaaa.cn&sz=64" alt="网事集">
+    <span class="link-name">网事集</span>
+    <span class="link-desc">个人博客生活记录与分享</span>
   </a>
-  <a href="https://vuejs.org" target="_blank" class="link-card">
-    <span class="link-icon">💚</span>
-    <span class="link-name">Vue.js</span>
-    <span class="link-desc">渐进式 JavaScript 框架</span>
-  </a>
-  <a href="https://cn.vuejs.org" target="_blank" class="link-card">
-    <span class="link-icon">🇨🇳</span>
-    <span class="link-name">Vue 中文文档</span>
-    <span class="link-desc">Vue.js 中文官方文档</span>
-  </a>
-</div>
-
-## 🤖 AI 工具
-
-<div class="link-grid">
-  <a href="https://chat.openai.com" target="_blank" class="link-card">
-    <span class="link-icon">💬</span>
-    <span class="link-name">ChatGPT</span>
-    <span class="link-desc">OpenAI 对话助手</span>
-  </a>
-  <a href="https://claude.ai" target="_blank" class="link-card">
-    <span class="link-icon">🧠</span>
-    <span class="link-name">Claude</span>
-    <span class="link-desc">Anthropic AI 助手</span>
-  </a>
-  <a href="https://www.cursor.com" target="_blank" class="link-card">
-    <span class="link-icon">✨</span>
-    <span class="link-name">Cursor</span>
-    <span class="link-desc">AI 代码编辑器</span>
-  </a>
-</div>
-
-## 🌐 社区
-
-<div class="link-grid">
-  <a href="https://juejin.cn" target="_blank" class="link-card">
-    <span class="link-icon">💎</span>
-    <span class="link-name">掘金</span>
-    <span class="link-desc">开发者技术社区</span>
-  </a>
-  <a href="https://www.zhihu.com" target="_blank" class="link-card">
-    <span class="link-icon">💡</span>
-    <span class="link-name">知乎</span>
-    <span class="link-desc">问答社区</span>
-  </a>
-  <a href="https://stackoverflow.com" target="_blank" class="link-card">
-    <span class="link-icon">📚</span>
-    <span class="link-name">Stack Overflow</span>
-    <span class="link-desc">编程问答社区</span>
+  <a href="https://yao.hugv.me" target="_blank" rel="noopener" class="link-card">
+    <img class="link-icon" src="https://www.google.com/s2/favicons?domain=yao.hugv.me&sz=64" alt="我的药盒">
+    <span class="link-name">我的药盒</span>
+    <span class="link-desc">用药提醒健康管理小工具</span>
   </a>
 </div>
 
 <style scoped>
 .link-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 16px;
   margin: 24px 0 48px;
 }
@@ -116,8 +64,10 @@ title: 网址导航
   box-shadow: 0 8px 24px rgba(236, 72, 153, 0.15);
 }
 .link-icon {
-  font-size: 28px;
-  margin-bottom: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 .link-name {
   font-weight: 600;
