@@ -6,7 +6,7 @@ export default defineConfig({
   lang: 'zh-CN',
   base: '/vue-docs/',
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/logo.png',
     nav: [
       { text: '首页', link: '/' },
       { text: '指南', link: '/guide/what-is-vue' },
@@ -29,8 +29,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/iosyyds/vue-docs' }
     ],
     footer: {
-      message: '基于 VitePress 构建',
-      copyright: 'Copyright © 2026 iosyyds'
+      copyright: 'Copyright © 2026 XKGG'
     },
     search: {
       provider: 'local'
