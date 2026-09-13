@@ -1,4 +1,5 @@
 ---
+id: cloudflare-pages-deploy
 title: Cloudflare Pages 免费部署静态网站完整指南
 datetime: '2026-09-13 23:30:00'
 category: 技术教程
