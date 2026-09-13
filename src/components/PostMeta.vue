@@ -53,17 +53,17 @@ const formatDate = (d: string | number) => {
   &__row { display: flex; align-items: center; &--primary { justify-content: space-between; } &--secondary { gap: 20px; margin-top: 12px; flex-wrap: wrap; } }
   &__group { display: flex; align-items: center; &--left { gap: 20px; flex-wrap: wrap; } }
   &__item { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--vp-c-text-2); }
-  &__icon { width: 16px; height: 16px; color: var(--vp-c-text-3); flex-shrink: 0; }
-  &__label { color: var(--vp-c-text-3); font-weight: 400; font-size: 14px; flex-shrink: 0; }
+  &__icon { width: 16px; height: 16px; color: var(--vp-c-text-2); flex-shrink: 0; }
+  &__label { color: var(--vp-c-text-2); font-weight: 400; font-size: 14px; flex-shrink: 0; }
   &__value { color: var(--vp-c-text-1); font-weight: 500; }
   &__category { display: flex; align-items: center; gap: 8px; font-size: 14px; }
   &__tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   &__tags-list { display: flex; flex-wrap: wrap; gap: 8px; }
   &__badge {
     display: inline-block; padding: 0.075rem 0.625rem; border-radius: 0.5rem;
-    font-size: 0.8rem; color: var(--vp-c-text-2); text-decoration: none; font-weight: 500;
-    &--category { background-color: var(--vp-c-gray-2); &:hover { background-color: var(--vp-c-brand-soft); text-decoration: none; } }
-    &--tag { border-radius: 9999px; background-color: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); &:hover { background-color: var(--vp-c-brand-soft); border-color: var(--vp-c-brand); text-decoration: none; } }
+    font-size: 0.8rem; color: var(--vp-c-text-1); text-decoration: none; font-weight: 500;
+    &--category { background-color: var(--vp-c-brand-soft); color: var(--vp-c-brand-1); &:hover { background-color: var(--vp-c-brand-3); color: #fff; text-decoration: none; } }
+    &--tag { border-radius: 9999px; background-color: var(--vp-c-bg-elv); border: 1px solid var(--vp-c-divider); color: var(--vp-c-text-2); &:hover { background-color: var(--vp-c-brand-soft); border-color: var(--vp-c-brand-2); color: var(--vp-c-brand-1); text-decoration: none; } }
   }
 }
 @media (max-width: 768px) {
