@@ -276,3 +276,14 @@ button[title*="Back to top"] {
 
 
 
+
+
+/* 文章页顶部间距恢复 */
+.VPPage, .VPContent {
+  padding-top: var(--vp-nav-height, 64px) !important;
+}
+@media (max-width: 768px) {
+  .VPPage {
+    padding-top: 20px !important;
+  }
+}
