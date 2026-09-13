@@ -23,7 +23,7 @@ export default defineConfig<ThemeConfig>({
     ['script', { async: true, src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7156604582462189', crossorigin: 'anonymous' }]
   ],
   sitemap: {
-    hostname: 'https://eqkk.top',
+    hostname: 'https://xkbk.cn',
     transformItems: (items) => {
       return items.filter((item) => !hiddenPosts.has(item.url.replace(/\.html$/, '')));
     }
