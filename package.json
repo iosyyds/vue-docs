@@ -7,9 +7,13 @@
     "docs:build": "vitepress build src",
     "docs:preview": "vitepress preview src"
   },
+  "dependencies": {
+    "element-plus": "^2.7.0",
+    "@element-plus/icons-vue": "^2.3.1"
+  },
   "devDependencies": {
     "vitepress": "^1.0.0",
     "vue": "^3.3.0",
-    "@sugarat/theme": "^0.4.28"
+    "@sugarat/theme": "0.4.6"
   }
 }
