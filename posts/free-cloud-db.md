@@ -1,4 +1,5 @@
 ---
+id: free-cloud-db
 title: 免费云数据库服务推荐：不用自己搭MySQL
 datetime: '2026-09-14 09:30:00'
 category: 资源推荐
