@@ -5,11 +5,11 @@ title: 甜甜导航
 
 <div class="nav-page">
 
-# 🐰 甜甜导航
+# <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8.5V7a2 2 0 0 0-2-2h-1.5"/><path d="M4 8.5V7a2 2 0 0 1 2-2h1.5"/><path d="M4 8.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.5"/><circle cx="12" cy="14" r="3"/></svg> 甜甜导航
 
 > 我的个人网站集合，点击新窗口打开。
 
-## 🏠 个人门户
+## <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> 个人门户
 
 <div class="link-grid">
   <a href="https://iosdh.cn" target="_blank" rel="noopener" class="link-card">
@@ -32,7 +32,7 @@ title: 甜甜导航
   </a>
 </div>
 
-## 🛠️ 实用工具
+## <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> 实用工具
 
 <div class="link-grid">
   <a href="https://pan.puaaa.cn" target="_blank" rel="noopener" class="link-card">
@@ -64,7 +64,7 @@ title: 甜甜导航
   </a>
 </div>
 
-## 🎮 休闲娱乐
+## <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="2"/></svg> 休闲娱乐
 
 <div class="link-grid">
   <a href="https://love.ttla.top" target="_blank" rel="noopener" class="link-card">
@@ -89,6 +89,15 @@ title: 甜甜导航
 .nav-page h1 {
   text-align: center;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.title-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--vp-c-brand-1);
 }
 .nav-page > p {
   text-align: center;
@@ -103,6 +112,12 @@ title: 甜甜导航
   margin: 40px 0 16px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--vp-c-brand-soft);
+}
+.h2-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--vp-c-brand-1);
+  flex-shrink: 0;
 }
 .link-grid {
   display: grid;
@@ -162,6 +177,10 @@ title: 甜甜导航
   .nav-page h1 {
     font-size: 28px;
   }
+  .title-icon {
+    width: 26px;
+    height: 26px;
+  }
   .nav-page > p {
     margin-bottom: 32px;
     font-size: 14px;
@@ -169,6 +188,10 @@ title: 甜甜导航
   .nav-page h2 {
     font-size: 17px;
     margin: 28px 0 12px;
+  }
+  .h2-icon {
+    width: 18px;
+    height: 18px;
   }
   .link-grid {
     grid-template-columns: 1fr;
