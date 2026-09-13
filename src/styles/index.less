@@ -236,3 +236,12 @@ button[title*="Back to top"] {
 .dark .VPSidebar .dark-item::before, .dark .VPSidebar [class*="darkMode"]::before {
   content: "切换浅色模式" !important;
 }
+
+
+/* 手机端本页目录恢复 */
+@media (max-width: 768px) {
+  .VPLocalNav {
+    display: block !important;
+    top: var(--vp-nav-height, 64px) !important;
+  }
+}
