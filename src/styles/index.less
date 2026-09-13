@@ -238,10 +238,10 @@ button[title*="Back to top"] {
 }
 
 
-/* 手机端本页目录恢复 */
+/* 手机端本页目录彻底删除 */
 @media (max-width: 768px) {
-  .VPLocalNav {
-    display: block !important;
-    top: var(--vp-nav-height, 64px) !important;
+  .VPLocalNav, .VPLocalMenu {
+    display: none !important;
   }
 }
+
