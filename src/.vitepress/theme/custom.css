@@ -44,6 +44,15 @@
   z-index: 1;
 }
 
+/* ========== Hero 图标完整显示，无圆角无背景 ========== */
+.VPHero .main .image,
+.VPHero .main .image img {
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
 /* ========== 特性卡片悬浮 ========== */
 .VPFeature {
   border-radius: 14px;
