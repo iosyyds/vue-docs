@@ -1,5 +1,6 @@
 import BlogTheme from '@sugarat/theme'
-import { defineTheme } from '@sugarat/theme/node'
+import sugaratNode from '@sugarat/theme/node'
+const { defineTheme } = sugaratNode
 import './custom.css'
 
 export default defineTheme({
