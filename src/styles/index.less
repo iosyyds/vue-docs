@@ -196,3 +196,21 @@ button[aria-label*="回到顶部"] {
   display: none !important;
 }
 
+
+/* 深色/浅色模式按钮文字切换 */
+.VPNavBarAppearance .darkModeSwitchText,
+.VPNavBar .appearance-text,
+.VPNavBar button[aria-label*="切换"],
+.VPNavBar button[title*="切换"] {
+  &::after {
+    content: "切换深色模式";
+  }
+}
+.dark .VPNavBarAppearance .darkModeSwitchText,
+.dark .VPNavBar .appearance-text,
+.dark .VPNavBar button[aria-label*="切换"],
+.dark .VPNavBar button[title*="切换"] {
+  &::after {
+    content: "切换浅色模式";
+  }
+}
