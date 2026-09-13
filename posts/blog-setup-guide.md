@@ -1,4 +1,5 @@
 ---
+id: blog-setup-guide
 title: 个人博客搭建完整指南：从域名到上线
 datetime: '2026-09-14 00:00:00'
 category: 技术教程
