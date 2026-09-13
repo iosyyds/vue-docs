@@ -1,6 +1,7 @@
-import BlogTheme from '@sugarat/theme'
+import theme from '@duxweb/vitepress-theme'
+import '@duxweb/vitepress-theme/dist/index.css'
 import './custom.css'
 
 export default {
-  extends: BlogTheme,
+  extends: theme
 }
