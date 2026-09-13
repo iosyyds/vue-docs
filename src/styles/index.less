@@ -197,54 +197,6 @@ button[aria-label*="回到顶部"] {
 }
 
 
-/* 深色/浅色模式切换开关（太阳月亮SVG） */
-.VPNavBarAppearance button {
-  width: 40px !important;
-  height: 22px !important;
-  padding: 0 !important;
-  border-radius: 11px !important;
-  background: #e8e8e8 !important;
-  position: relative !important;
-  border: none !important;
-  overflow: hidden !important;
-}
-.VPNavBarAppearance button .darkModeSwitchText,
-.VPNavBarAppearance button .appearance-text,
-.VPNavBarAppearance button span {
-  display: none !important;
-}
-.VPNavBarAppearance button > svg {
-  display: none !important;
-}
-/* 太阳图标 - 用background */
-.VPNavBarAppearance button::after {
-  content: "" !important;
-  position: absolute !important;
-  width: 10px !important;
-  height: 10px !important;
-  top: 50% !important;
-  left: 5px !important;
-  transform: translateY(-50%) !important;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Cpath d='M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42'/%3E%3C/svg%3E") no-repeat center !important;
-  background-size: contain !important;
-  z-index: 0 !important;
-}
-/* 月亮图标 */
-.VPNavBarAppearance button::before {
-  content: "" !important;
-  position: absolute !important;
-  width: 10px !important;
-  height: 10px !important;
-  top: 50% !important;
-  right: 5px !important;
-  transform: translateY(-50%) !important;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a5f3fc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/%3E%3C/svg%3E") no-repeat center !important;
-  background-size: contain !important;
-  z-index: 0 !important;
-}
-.dark .VPNavBarAppearance button {
-  background: #2d2d3f !important;
-}
 
 /* 手机侧边栏 深色模式开关文字 */
 .VPSidebar .dark-item,
@@ -359,6 +311,7 @@ button[title*="Back to top"] {
   border-color: var(--vp-c-brand-1) !important;
   color: var(--vp-c-brand-1) !important;
 }
+
 
 
 
