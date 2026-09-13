@@ -21,7 +21,8 @@ export default defineConfig<ThemeConfig>({
   lastUpdated: true,
   base: '/',
   head: [
-    ['script', { async: true, src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7156604582462189', crossorigin: 'anonymous' }]
+    ['script', { async: true, src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7156604582462189', crossorigin: 'anonymous' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]
   ],
   sitemap: {
     hostname: 'https://xkbk.cn',
