@@ -229,3 +229,24 @@ button[aria-label*="回到顶部"] {
 
 
 
+
+
+/* 隐藏悬浮的"回到顶部"气泡 */
+.VPLocalMenu .VPLocalMenuItem:first-child,
+.VPLocalMenu > div:first-child,
+.VPLocalMenu > ul:first-child,
+.VPLocalMenu li:first-child,
+.VPLocalMenu [class*="top"],
+.VPLocalMenu [class*="back"],
+.VPLocalMenu a[href^="#"],
+.VPLocalMenu button[class*="back"],
+.VPLocalMenu [class*="Back"] {
+  display: none !important;
+}
+/* 隐藏本地导航里所有回到顶部 */
+.VPLocalNav [class*="back-to-top"],
+.VPLocalNav [class*="BackToTop"],
+.VPLocalNav button[aria-label*="top"],
+.VPLocalNav a[href="#top"] {
+  display: none !important;
+}
