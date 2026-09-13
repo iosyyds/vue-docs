@@ -197,11 +197,9 @@ button[aria-label*="回到顶部"] {
 }
 
 
-/* 深色/浅色模式按钮文字（电脑+手机） */
+/* 深色/浅色模式按钮（电脑导航栏） */
 .VPNavBarAppearance button,
-.VPNavBar .appearance,
-.VPNavBar button[aria-label*="Appearance"],
-.VPNavBar button[aria-label*="外观"] {
+.VPNavBar .appearance {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -209,12 +207,12 @@ button[aria-label*="回到顶部"] {
   height: 36px !important;
   padding: 0 14px !important;
   border-radius: 8px !important;
-  font-size: 14px !important;
 }
 .VPNavBarAppearance button span,
 .VPNavBarAppearance button .darkModeSwitchText,
 .VPNavBarAppearance button .appearance-text,
-.VPNavBar .appearance span {
+.VPNavBar .appearance span,
+.VPNavBar button span {
   display: none !important;
 }
 .VPNavBarAppearance button::after,
@@ -224,6 +222,27 @@ button[aria-label*="回到顶部"] {
 }
 .dark .VPNavBarAppearance button::after,
 .dark .VPNavBar .appearance::after {
+  content: "浅色" !important;
+}
+
+/* 手机侧边栏 深色模式开关文字 */
+.VPSidebar .dark-item,
+.VPSidebar .appearance,
+.VPSidebar [class*="darkMode"],
+.VPSidebar [class*="DarkMode"] {
+  font-size: 14px !important;
+}
+.VPSidebar .dark-item span,
+.VPSidebar [class*="darkMode"] span,
+.VPSidebar .appearance span {
+  display: none !important;
+}
+.VPSidebar .dark-item::before,
+.VPSidebar [class*="darkMode"]::before {
+  content: "深色" !important;
+}
+.dark .VPSidebar .dark-item::before,
+.dark .VPSidebar [class*="darkMode"]::before {
   content: "浅色" !important;
 }
 
@@ -250,3 +269,4 @@ button[aria-label*="回到顶部"] {
 .VPLocalNav a[href="#top"] {
   display: none !important;
 }
+
