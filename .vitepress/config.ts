@@ -73,7 +73,21 @@ export default defineConfig<ThemeConfig>({
     footer: {
       copyright: 'Copyright © 2026 小坤哥哥'
     },
-    search: { provider: 'local' }
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
+          modal: {
+            displayDetails: '显示详情',
+            resetButtonTitle: '清除查询条件',
+            backButtonTitle: '关闭搜索',
+            noResultsText: '没有找到结果',
+            footer: { selectText: '选择', navigateText: '切换' }
+          }
+        }
+      }
+    }
   },
   markdown: {
     lineNumbers: true,
@@ -89,5 +103,6 @@ export default defineConfig<ThemeConfig>({
   },
   srcExclude: [...excludePosts, 'README.md']
 });
+
 
 
