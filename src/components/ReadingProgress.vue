@@ -11,7 +11,12 @@
         <circle class="progress-bg" cx="25" cy="25" r="22" />
         <circle class="progress-bar" cx="25" cy="25" r="22" />
       </svg>
-      <span class="progress-text">{{ Math.round(progress * 100) }}</span>
+      <div class="progress-content">
+        <span v-if="!hovered" class="progress-text">{{ Math.round(progress * 100) }}</span>
+        <svg v-else class="progress-arrow" viewBox="0 0 24 24" width="18" height="18">
+          <path d="M12 19V5m0 0l-7 7m7-7l7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
     </div>
   </Transition>
 </template>
@@ -21,6 +26,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 const progress = ref(0);
 const visible = ref(false);
+const hovered = ref(false);
 
 function update() {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -75,20 +81,36 @@ onUnmounted(() => window.removeEventListener('scroll', update));
   stroke-linecap: round;
   stroke-dasharray: 138.2;
   stroke-dashoffset: calc(138.2 * (1 - var(--progress)));
-  transition: stroke-dashoffset 0.1s ease;
+  transition: stroke-dashoffset 0.15s ease;
 }
 
 .dark .progress-bar {
   stroke: #f472b6;
 }
 
-.progress-text {
+.progress-content {
   position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.progress-text {
   font-size: 13px;
   font-weight: 700;
   color: var(--vp-c-text-1);
   line-height: 1;
-  z-index: 1;
+}
+
+.progress-arrow {
+  color: #ec4899;
+}
+
+.reading-progress:hover .progress-ring {
+  opacity: 0.9;
 }
 
 .progress-fade-enter-active,
