@@ -6,7 +6,7 @@ export default defineConfig({
   lang: 'zh-CN',
   base: '/vue-docs/',
   themeConfig: {
-    logo: '/logo.png',
+    logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
       { text: '指南', link: '/guide/what-is-vue' },
