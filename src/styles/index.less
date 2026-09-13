@@ -221,3 +221,18 @@ button[title*="Back to top"] {
 }
 
 
+
+
+/* 手机侧边栏深色模式文字 */
+.VPSidebar .dark-item, .VPSidebar [class*="darkMode"], .VPSidebar [class*="DarkMode"] {
+  font-size: 14px !important;
+}
+.VPSidebar .dark-item span, .VPSidebar [class*="darkMode"] span {
+  display: none !important;
+}
+.VPSidebar .dark-item::before, .VPSidebar [class*="darkMode"]::before {
+  content: "切换深色模式" !important;
+}
+.dark .VPSidebar .dark-item::before, .dark .VPSidebar [class*="darkMode"]::before {
+  content: "切换浅色模式" !important;
+}
