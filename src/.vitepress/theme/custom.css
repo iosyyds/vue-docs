@@ -14,12 +14,14 @@
   --vp-c-brand-soft: rgba(236, 72, 153, 0.18);
 }
 
-/* ========== 导航栏 Logo ========== */
-.VPNavBar .logo img,
-.VPNavBar .logo {
-  height: 30px !important;
-  width: 30px !important;
-  border-radius: 8px;
+/* ========== 导航栏 Logo：粉色圆形底 ========== */
+.VPNavBar .logo img {
+  height: 32px !important;
+  width: 32px !important;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbcfe8, #f9a8d4);
+  padding: 3px;
+  box-sizing: border-box;
 }
 
 /* ========== 首页 Hero 标题渐变 ========== */
@@ -52,7 +54,7 @@
   z-index: 1;
 }
 
-/* ========== Hero 图标完整显示 + 浮动动画 + 光晕 ========== */
+/* ========== Hero 图标：浮动 + 圆形光环 ========== */
 .VPHero .main .image,
 .VPHero .main .image img {
   border-radius: 0 !important;
@@ -64,22 +66,38 @@
   position: relative;
   animation: heroFloat 3s ease-in-out infinite;
 }
+.VPHero .main .image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236,72,153,0.18) 0%, rgba(236,72,153,0.06) 50%, transparent 70%);
+  z-index: -1;
+}
 .VPHero .main .image::after {
   content: '';
   position: absolute;
-  inset: -30px;
-  background: radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%);
-  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  animation: heroGlow 3s ease-in-out infinite;
+  border: 2px dashed rgba(236,72,153,0.25);
+  z-index: -1;
+  animation: ringSpin 20s linear infinite;
 }
 @keyframes heroFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
-@keyframes heroGlow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.08); }
+@keyframes ringSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* ========== 导航栏菜单项 hover 美化 ========== */
@@ -95,40 +113,41 @@
 
 /* ========== 特性卡片悬浮 ========== */
 .VPFeature {
-  border-radius: 16px;
+  border-radius: 14px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .VPFeature:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(236, 72, 153, 0.15);
+  box-shadow: 0 10px 28px rgba(236, 72, 153, 0.12);
 }
 .VPFeature .icon {
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
-/* ========== 按钮圆润化 + 渐变 ========== */
+/* ========== 按钮：简洁风格 ========== */
 .VPButton.brand {
-  border-radius: 999px;
-  background: linear-gradient(135deg, #db2777, #ec4899);
+  border-radius: 8px;
+  background: var(--vp-c-brand-1);
   border: none;
-  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 .VPButton.brand:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+  background: var(--vp-c-brand-2);
+  transform: translateY(-1px);
 }
 .VPButton.alt {
-  border-radius: 999px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  border-radius: 8px;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 .VPButton.alt:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
 }
 
 /* ========== 代码块 ========== */
 .vp-doc div[class*='language-'] {
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 /* ========== 页面淡入 ========== */
@@ -152,5 +171,13 @@
   }
   .VPHero .main .image {
     margin-bottom: 16px;
+  }
+  .VPHero .main .image::before {
+    width: 260px;
+    height: 260px;
+  }
+  .VPHero .main .image::after {
+    width: 220px;
+    height: 220px;
   }
 }
