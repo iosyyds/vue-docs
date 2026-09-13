@@ -112,36 +112,58 @@ button[aria-label*="回到顶部"] {
   display: none !important;
 }
 
-/* ===== 手机端本页目录美化 ===== */
-.VPLocalNav {
-  background: var(--vp-local-nav-bg-color) !important;
-  backdrop-filter: blur(12px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
-  border-bottom: 1px solid var(--vp-c-divider) !important;
-  padding: 0 16px !important;
-  height: 48px !important;
-}
-.VPLocalNav .content-body {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-}
-.VPLocalNav .outline-title,
-.VPLocalNav .cur {
-  color: var(--vp-c-brand-1) !important;
-  font-weight: 600 !important;
-  font-size: 14px !important;
-}
-.VPLocalNav .next-prev {
-  a {
-    border-radius: 8px !important;
-    padding: 4px 10px !important;
+/* ===== 手机端本页目录：悬浮药丸样式 ===== */
+@media (max-width: 768px) {
+  .VPLocalNav {
+    background: var(--vp-c-bg-elv, rgba(255,255,255,0.8)) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid var(--vp-c-divider) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04) !important;
+    top: calc(var(--vp-nav-height, 64px) + 10px) !important;
+    right: 12px !important;
+    left: auto !important;
+    width: auto !important;
+    max-width: calc(100vw - 24px) !important;
+    height: auto !important;
+    padding: 6px 16px !important;
+    z-index: 99 !important;
+  }
+  /* 隐藏返回按钮 */
+  .VPLocalNav .back,
+  .VPLocalNav .VPLocalNavBack,
+  .VPLocalNav button[aria-label*="返回"],
+  .VPLocalNav .button {
+    display: none !important;
+  }
+  .VPLocalNav .content-body {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 0 !important;
+  }
+  .VPLocalNav .outline-title,
+  .VPLocalNav .cur {
+    color: var(--vp-c-brand-1) !important;
+    font-weight: 600 !important;
     font-size: 13px !important;
-    transition: all 0.2s ease !important;
-    &:hover {
-      background: var(--vp-c-brand-soft) !important;
-      color: var(--vp-c-brand-1) !important;
+  }
+  .VPLocalNav .next-prev {
+    a {
+      border-radius: 6px !important;
+      padding: 2px 8px !important;
+      font-size: 12px !important;
+      transition: all 0.2s ease !important;
+      &:hover {
+        background: var(--vp-c-brand-soft) !important;
+        color: var(--vp-c-brand-1) !important;
+      }
     }
+  }
+  /* 内容不需要给本地导航留空间了，因为是悬浮的 */
+  .VPContent {
+    padding-top: var(--vp-nav-height, 64px) !important;
   }
 }
 
@@ -161,3 +183,4 @@ button[aria-label*="回到顶部"] {
 .VPNavBar .menu {
   border-radius: 8px !important;
 }
+
