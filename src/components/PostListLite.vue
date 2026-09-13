@@ -25,6 +25,8 @@ li { list-style: none; }
   &__date { flex-shrink: 0; font-family: var(--font-family-number); font-weight: 600; font-variant-numeric: tabular-nums; }
 }
 @media screen and (max-width: 768px) {
-  .post { padding: 4px 0; flex-direction: row-reverse; align-items: flex-start; justify-content: flex-end; &__title { margin-left: 0.75rem; &::before { display: none; } } }
+  .post { padding: 4px 0; flex-direction: row-reverse; align-items: flex-start; justify-content: flex-end; }
+  .post__title { margin-left: 0.75rem; }
+  .post__title::before { display: none; }
 }
 </style>

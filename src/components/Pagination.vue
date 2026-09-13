@@ -52,6 +52,7 @@ function findNeighbors(target: number, total: number, max: number) {
   }
 }
 @media screen and (max-width: 768px) {
-  .pagination { gap: 0.25rem; &__item { min-width: 2rem; height: 2rem; font-size: 0.8125rem; } }
+  .pagination { gap: 0.25rem; }
+  .pagination__item { min-width: 2rem; height: 2rem; font-size: 0.8125rem; }
 }
 </style>
