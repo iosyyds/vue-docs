@@ -1,12 +1,11 @@
-import { defineConfig } from 'vitepress'
+import { withDuxTheme } from '@duxweb/vitepress-theme/config'
 
-export default defineConfig({
+export default withDuxTheme({
   title: 'XKgg Docs',
   description: '基于 VitePress 搭建的技术文档',
   lang: 'zh-CN',
   base: '/vue-docs/',
   themeConfig: {
-    author: 'XKGG',
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
@@ -34,13 +33,6 @@ export default defineConfig({
     },
     search: {
       provider: 'local'
-    },
-    comment: {
-      provider: 'Giscus',
-      repo: 'iosyyds/vue-docs',
-      repoId: 'R_kgDOJ9jLrQ',
-      category: 'Announcements',
-      categoryId: 'DIC_kwDOL9jLrc4CcyBs'
     }
   }
 })
