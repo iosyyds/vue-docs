@@ -197,7 +197,7 @@ button[aria-label*="回到顶部"] {
 }
 
 
-/* 深色/浅色模式切换开关（太阳月亮） */
+/* 深色/浅色模式切换开关（太阳月亮SVG） */
 .VPNavBarAppearance button {
   width: 40px !important;
   height: 22px !important;
@@ -213,31 +213,34 @@ button[aria-label*="回到顶部"] {
 .VPNavBarAppearance button span {
   display: none !important;
 }
-/* 太阳图标（左侧） */
+.VPNavBarAppearance button > svg {
+  display: none !important;
+}
+/* 太阳图标 - 用background */
 .VPNavBarAppearance button::after {
-  content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%225%22/%3E%3Cpath%20d%3D%22M12%201v2m0%2018v2M4.22%204.22l1.42%201.42m12.72%2012.72l1.42%201.42M1%2012h2m18%200h2M4.22%2019.78l1.42-1.42M18.36%205.64l1.42-1.42%22/%3E%3C/svg%3E") !important;
+  content: "" !important;
   position: absolute !important;
-  font-size: 10px !important;
+  width: 10px !important;
+  height: 10px !important;
   top: 50% !important;
   left: 5px !important;
   transform: translateY(-50%) !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Cpath d='M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42'/%3E%3C/svg%3E") no-repeat center !important;
+  background-size: contain !important;
   z-index: 0 !important;
 }
-/* 月亮图标（右侧） */
+/* 月亮图标 */
 .VPNavBarAppearance button::before {
-  content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23a5f3fc%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M21%2012.79A9%209%200%201%201%2011.21%203%207%207%200%200%200%2021%2012.79z%22/%3E%3C/svg%3E") !important;
+  content: "" !important;
   position: absolute !important;
-  font-size: 9px !important;
+  width: 10px !important;
+  height: 10px !important;
   top: 50% !important;
   right: 5px !important;
   transform: translateY(-50%) !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a5f3fc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/%3E%3C/svg%3E") no-repeat center !important;
+  background-size: contain !important;
   z-index: 0 !important;
-}
-/* 滑块 */
-.VPNavBarAppearance button {
-  & > * {
-    z-index: 1 !important;
-  }
 }
 .dark .VPNavBarAppearance button {
   background: #2d2d3f !important;
@@ -356,6 +359,7 @@ button[title*="Back to top"] {
   border-color: var(--vp-c-brand-1) !important;
   color: var(--vp-c-brand-1) !important;
 }
+
 
 
 
