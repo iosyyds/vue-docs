@@ -12,8 +12,8 @@
         <circle class="progress-bar" cx="25" cy="25" r="22" />
       </svg>
       <div class="progress-content">
-        <span v-if="!hovered" class="progress-text">{{ Math.round(progress * 100) }}</span>
-        <svg v-else class="progress-arrow" viewBox="0 0 24 24" width="18" height="18">
+        <span class="progress-text">{{ Math.round(progress * 100) }}</span>
+        <svg class="progress-arrow" viewBox="0 0 24 24" width="18" height="18">
           <path d="M12 19V5m0 0l-7 7m7-7l7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
@@ -26,7 +26,6 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 const progress = ref(0);
 const visible = ref(false);
-const hovered = ref(false);
 
 function update() {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -103,14 +102,23 @@ onUnmounted(() => window.removeEventListener('scroll', update));
   font-weight: 700;
   color: var(--vp-c-text-1);
   line-height: 1;
+  transition: opacity 0.2s;
 }
 
 .progress-arrow {
+  position: absolute;
   color: #ec4899;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.2s;
 }
 
-.reading-progress:hover .progress-ring {
-  opacity: 0.9;
+.reading-progress:hover .progress-text {
+  opacity: 0;
+}
+.reading-progress:hover .progress-arrow {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .progress-fade-enter-active,
