@@ -197,20 +197,26 @@ button[aria-label*="回到顶部"] {
 }
 
 
-/* 深色/浅色模式按钮文字切换 */
-.VPNavBarAppearance .darkModeSwitchText,
-.VPNavBar .appearance-text,
-.VPNavBar button[aria-label*="切换"],
-.VPNavBar button[title*="切换"] {
-  &::after {
-    content: "切换深色模式";
-  }
+/* 深色/浅色模式按钮文字切换（电脑+手机） */
+.VPNavBarAppearance button,
+.VPNavBar .appearance {
+  font-size: 13px !important;
 }
-.dark .VPNavBarAppearance .darkModeSwitchText,
-.dark .VPNavBar .appearance-text,
-.dark .VPNavBar button[aria-label*="切换"],
-.dark .VPNavBar button[title*="切换"] {
-  &::after {
-    content: "切换浅色模式";
-  }
+.VPNavBarAppearance button::after {
+  content: "切换深色模式" !important;
 }
+.dark .VPNavBarAppearance button::after {
+  content: "切换浅色模式" !important;
+}
+/* 隐藏原始文字 */
+.VPNavBarAppearance button span,
+.VPNavBarAppearance button .darkModeSwitchText,
+.VPNavBarAppearance button .appearance-text {
+  display: none !important;
+}
+.VPNavBarAppearance button {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
