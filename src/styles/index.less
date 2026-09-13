@@ -112,22 +112,22 @@ button[aria-label*="回到顶部"] {
   display: none !important;
 }
 
-/* ===== 手机端本页目录：悬浮药丸样式 ===== */
+/* ===== 手机端本页目录：右侧悬浮按钮 ===== */
 @media (max-width: 768px) {
   .VPLocalNav {
-    background: var(--vp-c-bg-elv, rgba(255,255,255,0.8)) !important;
+    background: var(--vp-c-bg-elv, rgba(255,255,255,0.85)) !important;
     backdrop-filter: blur(16px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
     border: 1px solid var(--vp-c-divider) !important;
     border-radius: 24px !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04) !important;
-    top: calc(var(--vp-nav-height, 64px) + 10px) !important;
-    right: 12px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+    top: 50% !important;
+    right: 8px !important;
     left: auto !important;
+    transform: translateY(-50%) !important;
     width: auto !important;
-    max-width: calc(100vw - 24px) !important;
     height: auto !important;
-    padding: 6px 16px !important;
+    padding: 10px 8px !important;
     z-index: 99 !important;
   }
   /* 隐藏返回按钮 */
@@ -139,29 +139,22 @@ button[aria-label*="回到顶部"] {
   }
   .VPLocalNav .content-body {
     display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
-    gap: 10px !important;
+    gap: 8px !important;
     padding: 0 !important;
   }
   .VPLocalNav .outline-title,
   .VPLocalNav .cur {
     color: var(--vp-c-brand-1) !important;
     font-weight: 600 !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
+    writing-mode: vertical-rl !important;
+    letter-spacing: 2px !important;
   }
   .VPLocalNav .next-prev {
-    a {
-      border-radius: 6px !important;
-      padding: 2px 8px !important;
-      font-size: 12px !important;
-      transition: all 0.2s ease !important;
-      &:hover {
-        background: var(--vp-c-brand-soft) !important;
-        color: var(--vp-c-brand-1) !important;
-      }
-    }
+    display: none !important;
   }
-  /* 内容不需要给本地导航留空间了，因为是悬浮的 */
   .VPContent {
     padding-top: var(--vp-nav-height, 64px) !important;
   }
@@ -202,3 +195,4 @@ button[aria-label*="回到顶部"] {
 .VPLocalMenu > div > div:first-child {
   display: none !important;
 }
+
