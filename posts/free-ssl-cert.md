@@ -1,4 +1,5 @@
 ---
+id: free-ssl-cert
 title: 免费SSL证书申请完整指南：Let's Encrypt
 datetime: '2026-09-14 09:00:00'
 category: 技术教程
