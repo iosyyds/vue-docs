@@ -5,15 +5,15 @@ import type { ThemeConfig } from '../src/types.ts';
 
 const { posts, hiddenPosts, excludePosts, descriptionMap, rewrites } = await usePosts({
   pageSize: 6,
-  homepage: false,
+  homepage: true,
   srcDir: 'posts',
   excerpt: 150
 });
 
 export default defineConfig<ThemeConfig>({
-  title: 'XKgg Docs',
-  titleTemplate: 'XKgg Docs',
-  description: 'XKgg Docs',
+  title: '小坤博客',
+  titleTemplate: '小坤博客',
+  description: '小坤的个人博客，记录技术分享、生活点滴和日常折腾。',
   rewrites,
   cleanUrls: true,
   ignoreDeadLinks: true,
@@ -47,7 +47,6 @@ export default defineConfig<ThemeConfig>({
     outline: { level: 2 },
     nav: [
       { text: '首页', link: '/' },
-      { text: '文章', link: '/page-1' },
       { text: '分类', link: '/category/' },
       { text: '标签', link: '/tags/' },
       { text: '归档', link: '/archives' },
