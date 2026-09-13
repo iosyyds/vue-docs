@@ -48,6 +48,15 @@ export default {
     if (inBrowser) {
       onMounted(() => {
         bindFancybox();
+        const fixTooltip = () => {
+          const btn = document.querySelector('.VPNavBarAppearance button');
+          if (btn) {
+            const isDark = document.documentElement.classList.contains('dark');
+            btn.setAttribute('title', isDark ? '切换浅色模式' : '切换深色模式');
+          }
+        };
+        fixTooltip();
+        new MutationObserver(fixTooltip).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
         const el = document.createElement('div');
         el.id = 'reading-progress-app';
         document.body.appendChild(el);
@@ -64,3 +73,4 @@ export default {
     }
   }
 };
+
