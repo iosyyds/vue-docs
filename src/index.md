@@ -5,8 +5,8 @@ hero:
   image:
     src: /hero.svg
     alt: XKgg Docs Logo
-    width: 200
-    height: 200
+    width: 260
+    height: 260
   name: XKgg Docs
   text: 我的技术文档
   tagline: 基于 VitePress 构建，简洁高效的文档站点
