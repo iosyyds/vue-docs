@@ -62,13 +62,18 @@ export default {
         // Fix mobile dark mode toggle text
         const fixDarkText = () => {
           const isDark = document.documentElement.classList.contains('dark');
-          document.querySelectorAll('.VPSidebar .dark-item, .VPSidebar [class*="darkMode"], .VPSidebar [class*="DarkMode"]').forEach(el => {
-            const span = el.querySelector('span');
-            if (span) span.textContent = isDark ? '切换浅色模式' : '切换深色模式';
-          });
+          const target = isDark ? '切换浅色模式' : '切换深色模式';
+          // Find all text nodes containing the old label
+          const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+          while (walker.nextNode()) {
+            const node = walker.currentNode;
+            if (node.textContent.includes('切换深色模式') || node.textContent.includes('切换浅色模式')) {
+              node.textContent = target;
+            }
+          }
         };
-        setTimeout(fixDarkText, 500);
-        new MutationObserver(fixDarkText).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        [300, 800, 1500].forEach(t => setTimeout(fixDarkText, t));
+        new MutationObserver(fixDarkText).observe(document.body, { childList: true, subtree: true, characterData: true });
 
         // Fix dark mode toggle tooltip
         const fixTooltip = () => {
@@ -97,6 +102,7 @@ export default {
     }
   }
 };
+
 
 
 
