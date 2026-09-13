@@ -59,6 +59,17 @@ export default {
         [500, 1000, 2000, 5000].forEach(t => setTimeout(removeBackToTop, t));
         new MutationObserver(removeBackToTop).observe(document.body, { childList: true, subtree: true, characterData: true });
 
+        // Fix mobile dark mode toggle text
+        const fixDarkText = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          document.querySelectorAll('.VPSidebar .dark-item, .VPSidebar [class*="darkMode"], .VPSidebar [class*="DarkMode"]').forEach(el => {
+            const span = el.querySelector('span');
+            if (span) span.textContent = isDark ? '切换浅色模式' : '切换深色模式';
+          });
+        };
+        setTimeout(fixDarkText, 500);
+        new MutationObserver(fixDarkText).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
         // Fix dark mode toggle tooltip
         const fixTooltip = () => {
           const btn = document.querySelector('.VPNavBarAppearance button');
@@ -86,6 +97,7 @@ export default {
     }
   }
 };
+
 
 
 
