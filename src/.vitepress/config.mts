@@ -1,11 +1,13 @@
 import { defineConfig } from 'vitepress'
+import { defineThemeConfig } from '@sugarat/theme/node'
 
 export default defineConfig({
   title: 'XKgg Docs',
   description: '基于 VitePress 搭建的技术文档',
   lang: 'zh-CN',
   base: '/vue-docs/',
-  themeConfig: {
+  themeConfig: defineThemeConfig({
+    author: 'XKGG',
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
@@ -34,12 +36,12 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
-    editLink: {
-      pattern: 'https://github.com/iosyyds/vue-docs/edit/main/src/:path',
-      text: '在 GitHub 上编辑此页'
-    },
-    lastUpdated: {
-      text: '最后更新'
+    comment: {
+      provider: 'Giscus',
+      repo: 'iosyyds/vue-docs',
+      repoId: 'R_kgDOJ9jLrQ',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOL9jLrc4CcyBs'
     }
-  }
+  })
 })
