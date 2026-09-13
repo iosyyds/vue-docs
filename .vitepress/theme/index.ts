@@ -1,4 +1,4 @@
-import MinimalismTheme from '../src';
+import MinimalismTheme from '../../src';
 import ThemeLayout from './ThemeLayout.vue';
 
 export default {
