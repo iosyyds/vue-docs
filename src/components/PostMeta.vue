@@ -67,6 +67,10 @@ const formatDate = (d: string | number) => {
   }
 }
 @media (max-width: 768px) {
-  .post-info { &__row { &--primary { flex-direction: column; align-items: flex-start; gap: 12px; } &--secondary { flex-direction: column; align-items: flex-start; gap: 12px; } } &__group { &--left { gap: 12px; } } &__item { font-size: 13px; } &__badge { font-size: 0.75rem; } }
+  .post-info__row--primary { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .post-info__row--secondary { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .post-info__group--left { gap: 12px; }
+  .post-info__item { font-size: 13px; }
+  .post-info__badge { font-size: 0.75rem; }
 }
 </style>

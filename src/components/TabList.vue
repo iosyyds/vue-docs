@@ -32,6 +32,7 @@ defineProps({
   }
 }
 @media screen and (max-width: 768px) {
-  .tab { gap: 0.375rem; &__item { padding: 0.375rem 0.75rem; font-size: 0.8125rem; } }
+  .tab { gap: 0.375rem; }
+  .tab__item { padding: 0.375rem 0.75rem; font-size: 0.8125rem; }
 }
 </style>
