@@ -325,3 +325,25 @@ button[title*="Back to top"] {
 }
 
 
+
+
+/* 电脑端恢复默认本页目录 */
+@media (min-width: 769px) {
+  .VPLocalNav {
+    position: static !important;
+    float: right !important;
+    width: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    right: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    z-index: auto !important;
+  }
+  .VPContent {
+    padding-top: 0 !important;
+  }
+}
