@@ -4,7 +4,7 @@ export default withDuxTheme({
   title: 'XKgg Docs',
   description: '基于 VitePress 搭建的技术文档',
   lang: 'zh-CN',
-  base: '/vue-docs/',
+  base: '/',
   themeConfig: {
     logo: '/logo.svg',
     nav: [
