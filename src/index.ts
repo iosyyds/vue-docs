@@ -50,12 +50,14 @@ export default {
         bindFancybox();
         // Remove back-to-top button completely
         const removeBackToTop = () => {
-          const els = document.querySelectorAll('.VPBackToTop, .back-to-top, button[class*="back-to-top"], button[aria-label*="top"], button[title*="回到顶部"]');
-          els.forEach(el => el.remove());
+          document.querySelectorAll('*').forEach(el => {
+            if (el.textContent === '回到顶部' || el.getAttribute('aria-label') === '回到顶部' || el.getAttribute('title') === '回到顶部') {
+              el.remove();
+            }
+          });
         };
-        setTimeout(removeBackToTop, 500);
-        setTimeout(removeBackToTop, 2000);
-        new MutationObserver(removeBackToTop).observe(document.body, { childList: true, subtree: true });
+        [500, 1000, 2000, 5000].forEach(t => setTimeout(removeBackToTop, t));
+        new MutationObserver(removeBackToTop).observe(document.body, { childList: true, subtree: true, characterData: true });
 
         // Fix dark mode toggle tooltip
         const fixTooltip = () => {
@@ -84,5 +86,6 @@ export default {
     }
   }
 };
+
 
 
