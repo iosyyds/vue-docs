@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
-import sugaratNode from '@sugarat/theme/node'
-const { defineThemeConfig } = sugaratNode
+import defineThemeConfig from '@sugarat/theme/node'
 
 export default defineConfig({
   title: 'XKgg Docs',
