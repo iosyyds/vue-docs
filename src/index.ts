@@ -1,4 +1,5 @@
-import { h } from 'vue';
+import { h, onMounted, onUnmounted } from 'vue';
+import { inBrowser } from 'vitepress';
 import Theme from 'vitepress/theme';
 import HomeView from './views/HomeView.vue';
 import PageView from './views/PageView.vue';
@@ -27,7 +28,7 @@ export default {
     app.component('PageView', PageView);
     app.component('PostMeta', PostMeta);
     app.component('ReadingProgress', ReadingProgress);
-    if (typeof window !== 'undefined') {
+    if (inBrowser) {
       BProgress.configure({ showSpinner: false });
       let lastPath = '';
       router.onBeforeRouteChange = (to: string) => {
@@ -47,7 +48,7 @@ export default {
     }
   },
   setup() {
-    if (typeof window !== 'undefined') {
+    if (inBrowser) {
       onMounted(() => bindFancybox());
       onUnmounted(() => destroyFancybox());
     }
