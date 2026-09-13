@@ -1,0 +1,56 @@
+import { onMounted, onUnmounted } from 'vue';
+import { EnhanceAppContext, inBrowser } from 'vitepress';
+import type { ThemeConfig } from './types';
+import DefaultTheme from 'vitepress/theme';
+import HomeView from './views/HomeView.vue';
+import PageView from './views/PageView.vue';
+import Archives from './views/ArchivesView.vue';
+import CategoryClassic from './views/CategoryClassicView.vue';
+import Category from './views/CategoryView.vue';
+import PostMeta from './components/PostMeta.vue';
+import { bindFancybox, destroyFancybox } from './utils/fancybox';
+import { BProgress } from '@bprogress/core';
+import '@bprogress/core/css';
+import './styles/index.less';
+
+export default {
+  extends: DefaultTheme,
+  enhanceApp({ app, router, siteData }: EnhanceAppContext) {
+    app.component('HomeView', HomeView);
+    app.component('Archives', Archives);
+    app.component('CategoryClassic', CategoryClassic);
+    app.component('Category', Category);
+    app.component('PageView', PageView);
+    app.component('PostMeta', PostMeta);
+    if (inBrowser) {
+      BProgress.configure({ showSpinner: false });
+      let lastPath = '';
+      router.onBeforeRouteChange = (to) => {
+        if (to && to.split(/[\?#]/)[0] !== lastPath) {
+          BProgress.start();
+          destroyFancybox();
+          if ((siteData.value.themeConfig as ThemeConfig).transition) {
+            const VPContent = document.querySelector('#VPContent');
+            VPContent?.classList.remove('fade-in');
+          }
+        }
+      };
+      router.onAfterRouteChange = (to) => {
+        const toPath = to ? to.split(/[\?#]/)[0] : '';
+        if (toPath !== lastPath) {
+          lastPath = toPath;
+          BProgress.done();
+          bindFancybox();
+          if ((siteData.value.themeConfig as ThemeConfig).transition) {
+            const VPContent = document.querySelector('#VPContent');
+            VPContent?.classList.add('fade-in');
+          }
+        }
+      };
+    }
+  },
+  setup() {
+    onMounted(() => { bindFancybox(); });
+    onUnmounted(() => { destroyFancybox(); });
+  }
+};
