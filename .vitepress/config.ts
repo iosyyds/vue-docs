@@ -64,7 +64,8 @@ export default defineConfig<ThemeConfig>({
       { text: '分类', link: '/category/' },
       { text: '标签', link: '/tags/' },
       { text: '归档', link: '/archives' },
-      { text: '网址导航', link: '/nav' }
+      { text: '网址导航', link: '/nav' },
+      { text: '甜甜发卡', link: 'https://qqqi.top/', target: '_blank', rel: 'noopener' }
     ],
     sidebar: {},
     socialLinks: [{ icon: 'github', link: 'https://github.com/iosyyds/vue-docs' }],
