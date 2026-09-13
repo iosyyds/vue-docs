@@ -51,7 +51,7 @@ export default defineConfig<ThemeConfig>({
     logo: '/logo.svg',
     outline: { level: 2, label: '本页目录' },
     docFooter: { prev: '上一篇', next: '下一篇' },
-    darkModeSwitchLabel: '主题',
+    darkModeSwitchLabel: '切换深色模式',
     sidebarMenuLabel: '菜单',
     returnToTopLabel: '回到顶部',
     outlineTitle: '本页目录',
@@ -88,3 +88,4 @@ export default defineConfig<ThemeConfig>({
   },
   srcExclude: [...excludePosts, 'README.md']
 });
+
