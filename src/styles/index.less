@@ -318,3 +318,22 @@ a, .VPNavBarMenuLink, button {
     font-size: 14px !important;
   }
 }
+
+@media (max-width: 768px) {
+  .VPSidebar [class*="dark"] {
+    color: inherit;
+  }
+  .VPSidebar [class*="dark"] span,
+  .VPSidebar [class*="dark"] a,
+  .VPSidebar [class*="dark"] p,
+  .VPSidebar [class*="dark"] div {
+    font-size: 0 !important;
+  }
+  .VPSidebar [class*="dark"]::after {
+    content: "切换深色模式" !important;
+    font-size: 14px !important;
+  }
+  .dark .VPSidebar [class*="dark"]::after {
+    content: "切换浅色模式" !important;
+  }
+}
