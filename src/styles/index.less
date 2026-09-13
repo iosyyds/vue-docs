@@ -197,17 +197,11 @@ button[aria-label*="回到顶部"] {
 }
 
 
-/* 深色/浅色模式按钮（只改文字不改样式） */
-.VPNavBarAppearance button span,
+/* 深色/浅色模式按钮隐藏文字，保留图标 */
 .VPNavBarAppearance button .darkModeSwitchText,
 .VPNavBarAppearance button .appearance-text,
-.VPNavBar .appearance span,
-.VPNavBar button span {
+.VPNavBarAppearance button span {
   display: none !important;
-}
-.VPNavBarAppearance button::after,
-.VPNavBar .appearance::after {
-  content: "" !important;
 }
 
 /* 手机侧边栏 深色模式开关文字 */
@@ -323,4 +317,5 @@ button[title*="Back to top"] {
   border-color: var(--vp-c-brand-1) !important;
   color: var(--vp-c-brand-1) !important;
 }
+
 
