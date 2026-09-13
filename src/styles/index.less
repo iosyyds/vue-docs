@@ -102,3 +102,81 @@ svg { display: inline-block; }
   --vp-c-bg-elv: rgba(255, 255, 255, 0.06);
   --vp-c-gray-2: rgba(255, 255, 255, 0.08);
 }
+
+/* ===== 返回顶部按钮美化 ===== */
+button[class*="back-to-top"],
+.vp-back-to-top,
+.VPBackToTop,
+button[title*="回到顶部"],
+button[aria-label*="回到顶部"] {
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2)) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.35), 0 2px 4px rgba(0,0,0,0.1) !important;
+  width: 44px !important;
+  height: 44px !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+}
+button[class*="back-to-top"]:hover,
+.vp-back-to-top:hover,
+.VPBackToTop:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.45), 0 3px 6px rgba(0,0,0,0.12) !important;
+}
+button[class*="back-to-top"] svg,
+.vp-back-to-top svg,
+.VPBackToTop svg {
+  color: #fff !important;
+  stroke: #fff !important;
+}
+
+/* ===== 手机端本页目录美化 ===== */
+.VPLocalNav {
+  background: var(--vp-local-nav-bg-color) !important;
+  backdrop-filter: blur(12px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+  padding: 0 16px !important;
+  height: 48px !important;
+}
+.VPLocalNav .content-body {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+.VPLocalNav .outline-title,
+.VPLocalNav .cur {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+}
+.VPLocalNav .next-prev {
+  a {
+    border-radius: 8px !important;
+    padding: 4px 10px !important;
+    font-size: 13px !important;
+    transition: all 0.2s ease !important;
+    &:hover {
+      background: var(--vp-c-brand-soft) !important;
+      color: var(--vp-c-brand-1) !important;
+    }
+  }
+}
+
+/* 手机端本页目录下拉面板 */
+.VPLocalMenu {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+  overflow: hidden !important;
+}
+.VPLocalMenu .cur {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600 !important;
+}
+
+/* 手机端侧栏菜单按钮 */
+.VPNavBar .VPNavBarHamburger button,
+.VPNavBar .menu {
+  border-radius: 8px !important;
+}
