@@ -11,14 +11,17 @@ const { posts, hiddenPosts, excludePosts, descriptionMap, rewrites } = await use
 });
 
 export default defineConfig<ThemeConfig>({
-  title: '小坤博客',
-  titleTemplate: '小坤博客',
-  description: '小坤的个人博客，记录技术分享、生活点滴和日常折腾。',
+  title: '小坤哥哥博客',
+  titleTemplate: '小坤哥哥博客',
+  description: '小坤哥哥的个人博客，记录技术分享、生活点滴和日常折腾。',
   rewrites,
   cleanUrls: true,
   ignoreDeadLinks: true,
   lastUpdated: true,
   base: '/',
+  head: [
+    ['script', { async: true, src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7156604582462189', crossorigin: 'anonymous' }]
+  ],
   sitemap: {
     hostname: 'https://eqkk.top',
     transformItems: (items) => {
@@ -45,6 +48,10 @@ export default defineConfig<ThemeConfig>({
     transition: true,
     logo: '/logo.svg',
     outline: { level: 2 },
+    editLink: {
+      pattern: 'https://github.com/iosyyds/vue-docs/edit/main/:path',
+      text: '在 GitHub 上编辑此页'
+    },
     nav: [
       { text: '首页', link: '/' },
       { text: '分类', link: '/category/' },
@@ -55,7 +62,7 @@ export default defineConfig<ThemeConfig>({
     sidebar: {},
     socialLinks: [{ icon: 'github', link: 'https://github.com/iosyyds/vue-docs' }],
     footer: {
-      copyright: 'Copyright © 2026 XKGG'
+      copyright: 'Copyright © 2026 小坤哥哥'
     },
     search: { provider: 'local' }
   },
