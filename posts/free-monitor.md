@@ -1,4 +1,5 @@
 ---
+id: free-monitor
 title: 免费网站监控服务推荐：宕了立刻通知你
 datetime: '2026-09-14 09:40:00'
 category: 工具推荐
