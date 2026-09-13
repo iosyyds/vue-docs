@@ -12,7 +12,7 @@ tags:
 
 说起 DigitalPlat 你可能不太熟悉，它其实就是之前的 us.kg 免费域名，在加上 dpdns.org 域名后更名而来。除了平台名称的调整以外，相关的注册、续费规则也在一直变动，主打一个「随心所欲」。
 
-![DigitalPlat](https://p11-doubao-search-sign.byteimg.com/labis/image/1d2e692d3a8552d80b072526b2741e96~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863501&x-signature=ESVqC65xycdwzk0%2B0Vq%2B3L6Rz9w%3D)
+![DigitalPlat](/images/digitalplat/digitalplat.jpg)
 
 DigitalPlat
 
@@ -48,13 +48,13 @@ DigitalPlat
 
 目前就是 **$3** 一个插槽，可以用来注册 `us.kg` 和 `xx.kg`，如果你实在有喜欢的域名可以买个支持一下平台，毕竟是一次性付费，后面**续费** 是和其他域名一样**免费** 的。
 
-![插槽价格](https://p3-doubao-search-sign.byteimg.com/labis/image/e1b8fbd2a355a8f180121ed895fa9585~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863501&x-signature=2goXGDLdNABnQX8PCzns06eKd6U%3D)
+![插槽价格](/images/digitalplat/slots.jpg)
 
 插槽
 
 至于订阅就没必要了，甚至还是按月付费，这价格完全可以去买好几个正常的域名了，谁会去花钱买随时可能停止解析的免费域名呢？
 
-![订阅价格](https://p26-doubao-search-sign.byteimg.com/labis/image/f69b7f248ead3d7ee960945c3790669c~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863501&x-signature=RyCfoKVk6yxQSgcpKGi2UekJzS0%3D)
+![订阅价格](/images/digitalplat/subscriptions.jpg)
 
 订阅
 
@@ -72,7 +72,7 @@ DigitalPlat
 
 目前 `qd.je` 提交 PSL 的 PR 看起来是受阻了，主要是两个问题，一方面是 `qd.je` 目前用户量还不够，但这并不是关键，更重要的是 `qd.je` 被发现提交 PSL 就是为了绕过 Cloudflare 的子域名限制，违反了 PSL 的本意。
 
-![Add QD.JE](https://p26-doubao-search-sign.byteimg.com/labis/image/66edf59956b602f2e24d301bb22a2cde~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863504&x-signature=okwppkk00wL8Y7kCE%2F5uknmqtGs%3D)
+![Add QD.JE](/images/digitalplat/qdje_pr.jpg)
 
 Add QD.JE
 
@@ -88,13 +88,13 @@ Add QD.JE
 
 下面的**姓名**和**电话**以及**地址**等，直接用**地址生成器**生成即可，不需要填写真实信息。
 
-![注册](https://p11-doubao-search-sign.byteimg.com/labis/image/7bd261ea6be6b93134c97baa88df27fc~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863504&x-signature=MXyyFGbGehSyg%2FWWPoQEH8zBAWQ%3D)
+![注册](/images/digitalplat/register.jpg)
 
 注册
 
 最后的账单地址勾选与 WHOIS 相同，省去重复填写。
 
-![WHOIS](https://p26-doubao-search-sign.byteimg.com/labis/image/e4b18c6c917e2a708e763856d51690f6~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863504&x-signature=JtDmNxFIxJJSX%2B%2FOLGeK8ZQwJKE%3D)
+![WHOIS](/images/digitalplat/whois.jpg)
 
 WHOIS
 
@@ -102,19 +102,19 @@ WHOIS
 
 注册完你会发现只有 2 个免费域名的插槽，还需要给 GitHub 仓库点个 Star。
 
-![Star](https://p3-doubao-search-sign.byteimg.com/labis/image/6ac901db034fc6d4575ff02251dc7859~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863504&x-signature=ayC4PtF%2Ft%2BcwsU2MOkjdsyhreeI%3D)
+![Star](/images/digitalplat/star.jpg)
 
 Star
 
 完成 Star 后，来到首页找到 **"verify your GitHub account"**。
 
-![绑定 GitHub](https://p11-doubao-search-sign.byteimg.com/labis/image/c20e0bcf1173768e0075475c087a0e7c~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863507&x-signature=X0PUJZuqi30qvE7Atup3fD84GkY%3D)
+![绑定 GitHub](/images/digitalplat/bind_github.jpg)
 
 绑定 GitHub 账号
 
 授权一下 GitHub 账号就能额外获得 1 个免费域名插槽了。
 
-![授权 GitHub](https://p11-doubao-search-sign.byteimg.com/labis/image/32acfe9b7f273e296862b9c555ab1916~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863507&x-signature=h6wToLCT7WhtDdM%2FwKapUEZfjZw%3D)
+![授权 GitHub](/images/digitalplat/auth_github.jpg)
 
 授权 GitHub 账号
 
@@ -122,13 +122,13 @@ Star
 
 侧边栏找到 **"注册"**，然后输入你想要的域名，后缀选择 `dpdns.org` `qzz.io` `qd.je` 其中一个，点击 **"检查可用性"**
 
-![搜索域名](https://p26-doubao-search-sign.byteimg.com/labis/image/105a0ffdcabf3a457dc2672ecf7bd6dc~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863507&x-signature=Rs4Pk1N%2FrdCXnr3yu788s8EAtj0%3D)
+![搜索域名](/images/digitalplat/search_domain.jpg)
 
 搜索域名
 
 如果你已经在 Cloudflare 中添加了这个域名，可以直接填写上 DNS，没有的话先留空，后面再添加。
 
-![注册域名](https://p11-doubao-search-sign.byteimg.com/labis/image/f4d636f4b8871bcc31c722b1e574bae7~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863507&x-signature=1hyutSSqCGQCqaTEfaxFvAPBJts%3D)
+![注册域名](/images/digitalplat/register_domain.jpg)
 
 注册域名
 
@@ -140,7 +140,7 @@ Star
 
 如果注册的时候没有填写 DNS，可以在域名的管理页中添加。
 
-![修改DNS](https://p26-doubao-search-sign.byteimg.com/labis/image/08c6ae9c7f16a685ea076f06ad959710~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863510&x-signature=78hcYLtpFug8ZBUYyt21xi%2BRZwA%3D)
+![修改DNS](/images/digitalplat/modify_dns.jpg)
 
 修改 DNS
 
@@ -148,7 +148,7 @@ Star
 
 域名续费是免费的，只需要在到期前 120 天内来到页面中，点击 **"申请免费续费"**，最好在日历里设置日程提醒一下自己，**完全没必要花钱续费**。
 
-![免费续费](https://p3-doubao-search-sign.byteimg.com/labis/image/1b578d5b15468d3550c2d97d9858dc64~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863510&x-signature=adORtjt8EyBFhBeEXX32NON0xlc%3D)
+![免费续费](/images/digitalplat/renew.jpg)
 
 免费续费
 
@@ -156,7 +156,7 @@ Star
 
 虽然 WHOIS 支持隐私保护，但是聊胜于无，因为**邮箱无法隐藏**，而其他信息又是地址生成器生成的，所以才建议注册账号时**邮箱**不要填 QQ 邮箱。
 
-![隐私保护](https://p11-doubao-search-sign.byteimg.com/labis/image/462abfcbc6c2030b2ae5636a67e4d016~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863510&x-signature=GmcDcKBqRt6Zv6SsqEpeG1M4SZI%3D)
+![隐私保护](/images/digitalplat/privacy.jpg)
 
 隐私保护
 
@@ -164,6 +164,6 @@ Star
 
 现在 DigitalPlat 终于返场**删除域名**功能了，如果你不喜欢这个域名了，可以点击删除，等待 7 天 pending 状态结束，域名释放后，就可以重新注册一个新域名了。
 
-![删除域名](https://p11-doubao-search-sign.byteimg.com/labis/image/c5723f14f5d9ccd97a7b61c0b65ef99d~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804863510&x-signature=wL6XnK9B6LoVo86xch1O1CJjNxI%3D)
+![删除域名](/images/digitalplat/delete.jpg)
 
 删除域名
