@@ -49,11 +49,16 @@ export default {
       onMounted(() => {
         bindFancybox();
         const fixTooltip = () => {
+          const isDark = document.documentElement.classList.contains('dark');
           const btn = document.querySelector('.VPNavBarAppearance button');
           if (btn) {
-            const isDark = document.documentElement.classList.contains('dark');
             btn.setAttribute('title', isDark ? '切换浅色模式' : '切换深色模式');
           }
+          document.querySelectorAll('.VPSidebar *').forEach(el => {
+            if (el.children.length === 0 && el.textContent.includes('深色模式')) {
+              el.textContent = isDark ? '切换浅色模式' : '切换深色模式';
+            }
+          });
         };
         fixTooltip();
         new MutationObserver(fixTooltip).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
@@ -73,4 +78,5 @@ export default {
     }
   }
 };
+
 
