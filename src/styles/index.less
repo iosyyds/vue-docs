@@ -222,16 +222,11 @@ button[title*="Back to top"] {
 }
 
 /* 导航栏不透明 */
-.VPNavBar {
-  background: var(--vp-nav-bg-color) !important;
-  background-color: var(--vp-c-bg, #fff) !important;
-}
 .dark .VPNavBar {
   background-color: var(--vp-c-bg, #1b1b1f) !important;
 }
 
 
-/* 手机端搜索和菜单按钮美化 */
 .VPNavBarActions button {
   color: var(--vp-c-brand-1) !important;
   &:hover {
@@ -283,7 +278,6 @@ button[title*="Back to top"] {
 }
 
 
-/* 手机端导航栏固定顶部 */
 @media (max-width: 768px) {
   .VPNavBar {
     position: fixed !important;
@@ -305,9 +299,6 @@ button[title*="Back to top"] {
 
 
 /* 导航栏横排对齐 */
-.VPNavBar .content-body {
-  align-items: center !important;
-}
 .VPNavBar .nav-bar, .VPNavBar .VPNavBarMenu, .VPNavBar .links {
   display: flex !important;
   flex-direction: row !important;
@@ -322,7 +313,6 @@ button[title*="Back to top"] {
 }
 
 
-/* 手机侧边栏菜单对齐 */
 .VPSidebar .item, .VPSidebar .link, .VPSidebarGroup .item {
   padding: 14px 24px !important;
   font-size: 15px !important;
@@ -332,13 +322,6 @@ button[title*="Back to top"] {
 
 
 /* 导航文字加粗 */
-.VPNavBar a, .VPNavBar .VPNavBarMenuLink {
-  font-weight: 600 !important;
-}
-
-
-
-/* 手机导航栏恢复默认 */
 @media (max-width: 768px) {
   .VPNavBar {
     height: 60px !important;
@@ -351,3 +334,4 @@ button[title*="Back to top"] {
     width: 100% !important;
   }
 }
+
