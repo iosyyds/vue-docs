@@ -304,18 +304,17 @@ a, .VPNavBarMenuLink, button {
 
 
 /* 手机侧边栏深浅模式文字 */
-.VPSidebar a, .VPSidebar button, .VPSidebar .item {
-  font-size: 14px !important;
+@media (max-width: 768px) {
+  .VPSidebar [class*="dark"] *, .VPSidebar [class*="Dark"] *, .VPSidebar [class*="theme"] *, .VPSidebar [class*="Theme"] * {
+    font-size: 0 !important;
+  }
+  .VPSidebar [class*="dark"]::after, .VPSidebar [class*="Dark"]::after, .VPSidebar [class*="theme"]::after, .VPSidebar [class*="Theme"]::after {
+    content: "切换深色模式" !important;
+    font-size: 14px !important;
+  }
+  .dark .VPSidebar [class*="dark"]::after, .dark .VPSidebar [class*="Dark"]::after, .dark .VPSidebar [class*="theme"]::after, .dark .VPSidebar [class*="Theme"]::after {
+    content: "切换浅色模式" !important;
+  }
 }
-/* 隐藏原始文字，用伪元素显示 */
-.VPSidebar [class*="dark"] *, .VPSidebar [class*="Dark"] *, .VPSidebar [class*="theme"] *, .VPSidebar [class*="Theme"] * {
-  font-size: 0 !important;
-}
-.VPSidebar [class*="dark"]::after, .VPSidebar [class*="Dark"]::after, .VPSidebar [class*="theme"]::after, .VPSidebar [class*="Theme"]::after {
-  content: "切换深色模式" !important;
-  font-size: 14px !important;
-}
-.dark .VPSidebar [class*="dark"]::after, .dark .VPSidebar [class*="Dark"]::after, .dark .VPSidebar [class*="theme"]::after, .dark .VPSidebar [class*="Theme"]::after {
-  content: "切换浅色模式" !important;
-}
+
 
