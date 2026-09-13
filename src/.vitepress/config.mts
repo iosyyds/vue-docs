@@ -1,12 +1,11 @@
 import { defineConfig } from 'vitepress'
-import defineThemeConfig from '@sugarat/theme/node'
 
 export default defineConfig({
   title: 'XKgg Docs',
   description: '基于 VitePress 搭建的技术文档',
   lang: 'zh-CN',
   base: '/vue-docs/',
-  themeConfig: defineThemeConfig({
+  themeConfig: {
     author: 'XKGG',
     logo: '/logo.svg',
     nav: [
@@ -43,5 +42,5 @@ export default defineConfig({
       category: 'Announcements',
       categoryId: 'DIC_kwDOL9jLrc4CcyBs'
     }
-  })
+  }
 })
