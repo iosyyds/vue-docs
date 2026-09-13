@@ -1,6 +1,6 @@
-import { h, onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, createApp, h } from 'vue';
 import { inBrowser } from 'vitepress';
-import Theme from 'vitepress/theme';
+import DefaultTheme from 'vitepress/theme';
 import HomeView from './views/HomeView.vue';
 import PageView from './views/PageView.vue';
 import Archives from './views/ArchivesView.vue';
@@ -13,13 +13,10 @@ import { BProgress } from '@bprogress/core';
 import '@bprogress/core/css';
 import './styles/index.less';
 
+let progressApp: any = null;
+
 export default {
-  extends: Theme,
-  Layout() {
-    return h(Theme.Layout, null, {
-      'nav-bar-content-after': () => h(ReadingProgress),
-    });
-  },
+  extends: DefaultTheme,
   enhanceApp({ app, router, siteData }: any) {
     app.component('HomeView', HomeView);
     app.component('Archives', Archives);
@@ -49,8 +46,22 @@ export default {
   },
   setup() {
     if (inBrowser) {
-      onMounted(() => bindFancybox());
-      onUnmounted(() => destroyFancybox());
+      onMounted(() => {
+        bindFancybox();
+        // Mount ReadingProgress to body
+        const el = document.createElement('div');
+        el.id = 'reading-progress-app';
+        document.body.appendChild(el);
+        progressApp = createApp({ render: () => h(ReadingProgress) });
+        progressApp.mount(el);
+      });
+      onUnmounted(() => {
+        destroyFancybox();
+        if (progressApp) {
+          progressApp.unmount();
+          progressApp = null;
+        }
+      });
     }
   }
 };
