@@ -48,6 +48,16 @@ export default {
     if (inBrowser) {
       onMounted(() => {
         bindFancybox();
+        // Fix dark mode toggle tooltip
+        const fixTooltip = () => {
+          const btn = document.querySelector('.VPNavBarAppearance button');
+          if (btn) {
+            const isDark = document.documentElement.classList.contains('dark');
+            btn.setAttribute('title', isDark ? '切换浅色模式' : '切换深色模式');
+          }
+        };
+        fixTooltip();
+        new MutationObserver(fixTooltip).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
         // Mount ReadingProgress to body
         const el = document.createElement('div');
         el.id = 'reading-progress-app';
@@ -65,3 +75,4 @@ export default {
     }
   }
 };
+
