@@ -14,6 +14,14 @@
   --vp-c-brand-soft: rgba(236, 72, 153, 0.18);
 }
 
+/* ========== 导航栏 Logo ========== */
+.VPNavBar .logo img,
+.VPNavBar .logo {
+  height: 30px !important;
+  width: 30px !important;
+  border-radius: 8px;
+}
+
 /* ========== 首页 Hero 标题渐变 ========== */
 .VPHero .name {
   background: linear-gradient(120deg, #db2777 0%, #ec4899 50%, #a855f7 100%);
@@ -24,7 +32,7 @@
   letter-spacing: -0.02em;
 }
 
-/* Hero 背景轻微光晕 */
+/* Hero 背景光晕 */
 .VPHero {
   position: relative;
 }
@@ -34,7 +42,7 @@
   left: 0;
   right: 0;
   top: -10%;
-  height: 480px;
+  height: 520px;
   background: radial-gradient(ellipse 60% 50% at 50% 0%, var(--vp-c-brand-soft), transparent 70%);
   pointer-events: none;
   z-index: 0;
@@ -44,7 +52,7 @@
   z-index: 1;
 }
 
-/* ========== Hero 图标完整显示，无圆角无背景 ========== */
+/* ========== Hero 图标完整显示 + 浮动动画 + 光晕 ========== */
 .VPHero .main .image,
 .VPHero .main .image img {
   border-radius: 0 !important;
@@ -52,21 +60,70 @@
   box-shadow: none !important;
   padding: 0 !important;
 }
+.VPHero .main .image {
+  position: relative;
+  animation: heroFloat 3s ease-in-out infinite;
+}
+.VPHero .main .image::after {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%);
+  z-index: -1;
+  border-radius: 50%;
+  animation: heroGlow 3s ease-in-out infinite;
+}
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes heroGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+/* ========== 导航栏菜单项 hover 美化 ========== */
+.VPNavBarMenuLink {
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.VPNavBarMenuLink:hover,
+.VPNavBar .VPNavBarMenuLink.active {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
 
 /* ========== 特性卡片悬浮 ========== */
 .VPFeature {
-  border-radius: 14px;
+  border-radius: 16px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .VPFeature:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(236, 72, 153, 0.15);
 }
+.VPFeature .icon {
+  border-radius: 14px;
+}
 
-/* ========== 按钮圆润化 ========== */
-.VPButton.brand,
+/* ========== 按钮圆润化 + 渐变 ========== */
+.VPButton.brand {
+  border-radius: 999px;
+  background: linear-gradient(135deg, #db2777, #ec4899);
+  border: none;
+  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+}
 .VPButton.alt {
   border-radius: 999px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.VPButton.alt:hover {
+  transform: translateY(-2px);
 }
 
 /* ========== 代码块 ========== */
@@ -92,5 +149,8 @@
 @media (max-width: 960px) {
   .VPSidebar {
     width: 200px !important;
+  }
+  .VPHero .main .image {
+    margin-bottom: 16px;
   }
 }
