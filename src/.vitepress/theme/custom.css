@@ -1,4 +1,4 @@
-/* ========== 品牌主色：粉 → 紫 渐变系 ========== */
+/* ========== 品牌主色：粉色系 ========== */
 :root {
   --vp-c-brand-1: #db2777;
   --vp-c-brand-2: #ec4899;
@@ -14,7 +14,7 @@
   --vp-c-brand-soft: rgba(236, 72, 153, 0.2);
 }
 
-/* ========== 导航栏 Logo：加粉色圆形背景让白色兔子可见 ========== */
+/* ========== 导航栏 Logo：粉色圆形背景 ========== */
 .VPNavBar .logo {
   display: flex !important;
   align-items: center;
@@ -43,7 +43,6 @@
   letter-spacing: -0.02em;
 }
 
-/* Hero 背景光晕 */
 .VPHero {
   position: relative;
 }
@@ -63,7 +62,7 @@
   z-index: 1;
 }
 
-/* ========== Hero 图标：浮动 + 圆形阴影背景 ========== */
+/* ========== Hero 图标：浮动 + 圆形光晕 ========== */
 .VPHero .main .image,
 .VPHero .main .image img {
   border-radius: 0 !important;
@@ -94,7 +93,7 @@
   50% { transform: translateY(-8px); }
 }
 
-/* ========== 导航栏菜单项 hover 美化 ========== */
+/* ========== 导航栏菜单 hover ========== */
 .VPNavBarMenuLink {
   border-radius: 8px;
   transition: background 0.2s ease, color 0.2s ease;
@@ -118,7 +117,7 @@
   border-radius: 12px;
 }
 
-/* ========== 按钮：精致风格 ========== */
+/* ========== 按钮精致化 ========== */
 .VPButton.brand {
   border-radius: 10px !important;
   background: var(--vp-c-brand-1) !important;
@@ -139,7 +138,6 @@
   border-radius: 10px !important;
   padding: 0 24px !important;
   font-weight: 500 !important;
-  letter-spacing: 0.02em;
   transition: all 0.2s ease;
 }
 .VPButton.alt:hover {
@@ -163,7 +161,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ========== 侧边栏字体紧凑 ========== */
+/* ========== 侧边栏 ========== */
 .VPSidebarItem .text {
   font-size: 14px;
 }
