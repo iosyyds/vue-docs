@@ -48,32 +48,18 @@ export default {
     if (inBrowser) {
       onMounted(() => {
         bindFancybox();
-        // Remove back-to-top button completely
-        const removeBackToTop = () => {
-          document.querySelectorAll('*').forEach(el => {
-            if (el.textContent === '回到顶部' || el.getAttribute('aria-label') === '回到顶部' || el.getAttribute('title') === '回到顶部') {
-              el.remove();
-            }
-          });
-        };
-        [500, 1000, 2000, 5000].forEach(t => setTimeout(removeBackToTop, t));
-        new MutationObserver(removeBackToTop).observe(document.body, { childList: true, subtree: true, characterData: true });
 
-        // Fix mobile dark mode toggle text
-        const fixDarkText = () => {
-          const isDark = document.documentElement.classList.contains('dark');
-          const target = isDark ? '切换浅色模式' : '切换深色模式';
-          // Find all text nodes containing the old label
-          const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-          while (walker.nextNode()) {
-            const node = walker.currentNode;
-            if (node.textContent.includes('切换深色模式') || node.textContent.includes('切换浅色模式')) {
-              node.textContent = target;
-            }
+
+        // Fix dark mode tooltip
+        const fixTooltip = () => {
+          const btn = document.querySelector('.VPNavBarAppearance button');
+          if (btn) {
+            const isDark = document.documentElement.classList.contains('dark');
+            btn.setAttribute('title', isDark ? '切换浅色模式' : '切换深色模式');
           }
         };
-        [300, 800, 1500].forEach(t => setTimeout(fixDarkText, t));
-        new MutationObserver(fixDarkText).observe(document.body, { childList: true, subtree: true, characterData: true });
+        fixTooltip();
+        new MutationObserver(fixTooltip).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
         // Fix dark mode toggle tooltip
         const fixTooltip = () => {
@@ -102,6 +88,7 @@ export default {
     }
   }
 };
+
 
 
 
