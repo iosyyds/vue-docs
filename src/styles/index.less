@@ -274,3 +274,11 @@ button[title*="Back to top"] {
 .dark .VPNavBar {
   background: rgba(27,27,31,0.7) !important;
 }
+
+
+/* 手机端内容避开固定导航栏 */
+@media (max-width: 768px) {
+  .VPContent {
+    padding-top: var(--vp-nav-height, 64px) !important;
+  }
+}
