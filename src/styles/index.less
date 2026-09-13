@@ -245,3 +245,21 @@ button[title*="Back to top"] {
   }
 }
 
+
+
+/* 手机导航栏固定+玻璃效果 */
+@media (max-width: 768px) {
+  .VPNavBar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100 !important;
+    background: rgba(255,255,255,0.7) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  }
+  .dark .VPNavBar {
+    background: rgba(27,27,31,0.7) !important;
+  }
+}
