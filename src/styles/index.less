@@ -197,13 +197,13 @@ button[aria-label*="回到顶部"] {
 }
 
 
-/* 深色/浅色模式切换开关样式 */
+/* 深色/浅色模式切换开关（太阳月亮） */
 .VPNavBarAppearance button {
   width: 52px !important;
   height: 28px !important;
   padding: 0 !important;
   border-radius: 14px !important;
-  background: #333 !important;
+  background: #e8e8e8 !important;
   position: relative !important;
   border: none !important;
   overflow: hidden !important;
@@ -213,23 +213,34 @@ button[aria-label*="回到顶部"] {
 .VPNavBarAppearance button span {
   display: none !important;
 }
-.VPNavBarAppearance button::before {
-  content: "" !important;
+/* 太阳图标（左侧） */
+.VPNavBarAppearance button::after {
+  content: "☀️" !important;
   position: absolute !important;
-  width: 22px !important;
-  height: 22px !important;
-  border-radius: 50% !important;
-  background: #666 !important;
-  top: 3px !important;
-  left: 3px !important;
-  transition: all 0.3s ease !important;
+  font-size: 12px !important;
+  top: 50% !important;
+  left: 7px !important;
+  transform: translateY(-50%) !important;
+  z-index: 0 !important;
+}
+/* 月亮图标（右侧） */
+.VPNavBarAppearance button::before {
+  content: "🌙" !important;
+  position: absolute !important;
+  font-size: 11px !important;
+  top: 50% !important;
+  right: 7px !important;
+  transform: translateY(-50%) !important;
+  z-index: 0 !important;
+}
+/* 滑块 */
+.VPNavBarAppearance button {
+  & > * {
+    z-index: 1 !important;
+  }
 }
 .dark .VPNavBarAppearance button {
-  background: #555 !important;
-}
-.dark .VPNavBarAppearance button::before {
-  left: 27px !important;
-  background: #aaa !important;
+  background: #2d2d3f !important;
 }
 
 /* 手机侧边栏 深色模式开关文字 */
@@ -345,6 +356,7 @@ button[title*="Back to top"] {
   border-color: var(--vp-c-brand-1) !important;
   color: var(--vp-c-brand-1) !important;
 }
+
 
 
 
