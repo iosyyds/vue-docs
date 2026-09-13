@@ -54,6 +54,7 @@ export default defineConfig<ThemeConfig>({
     darkModeSwitchLabel: '切换深色模式',
     sidebarMenuLabel: '菜单',
     returnToTopLabel: '回到顶部',
+    backToTop: false,
     outlineTitle: '本页目录',
     editLink: {
       pattern: 'https://github.com/iosyyds/vue-docs/edit/main/:path',
@@ -88,4 +89,5 @@ export default defineConfig<ThemeConfig>({
   },
   srcExclude: [...excludePosts, 'README.md']
 });
+
 
