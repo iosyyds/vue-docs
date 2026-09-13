@@ -112,63 +112,58 @@ button[aria-label*="回到顶部"] {
   display: none !important;
 }
 
-/* ===== 手机端本页目录：右侧悬浮按钮 ===== */
+/* ===== 手机端顶部间距缩小 ===== */
+@media (max-width: 768px) {
+  .VPContent {
+    padding-top: 0 !important;
+  }
+  .VPPage {
+    padding-top: 12px !important;
+  }
+}
+
+/* ===== 手机端本页目录：右侧悬浮玻璃 ===== */
 @media (max-width: 768px) {
   .VPLocalNav {
-    background: var(--vp-c-bg-elv, rgba(255,255,255,0.85)) !important;
-    backdrop-filter: blur(16px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-    border: 1px solid var(--vp-c-divider) !important;
-    border-radius: 24px !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
-    top: 50% !important;
-    right: 8px !important;
+    background: rgba(255,255,255,0.7) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
+    top: auto !important;
+    bottom: 100px !important;
+    right: 12px !important;
     left: auto !important;
-    transform: translateY(-50%) !important;
     width: auto !important;
-    height: auto !important;
-    padding: 10px 8px !important;
+    max-width: 140px !important;
+    padding: 6px 14px !important;
     z-index: 99 !important;
   }
-  /* 隐藏返回按钮 */
+  .dark .VPLocalNav {
+    background: rgba(40,40,50,0.7) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+  }
   .VPLocalNav .back,
   .VPLocalNav .VPLocalNavBack,
-  .VPLocalNav button[aria-label*="返回"],
   .VPLocalNav .button {
     display: none !important;
   }
   .VPLocalNav .content-body {
     display: flex !important;
-    flex-direction: column !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 6px !important;
     padding: 0 !important;
   }
   .VPLocalNav .outline-title,
   .VPLocalNav .cur {
     color: var(--vp-c-brand-1) !important;
     font-weight: 600 !important;
-    font-size: 10px !important;
-    writing-mode: vertical-rl !important;
-    letter-spacing: 2px !important;
+    font-size: 13px !important;
   }
   .VPLocalNav .next-prev {
     display: none !important;
   }
-  .VPContent {
-    padding-top: var(--vp-nav-height, 64px) !important;
-  }
-}
-
-/* 手机端本页目录下拉面板 */
-.VPLocalMenu {
-  border-radius: 12px !important;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
-  overflow: hidden !important;
-}
-.VPLocalMenu .cur {
-  color: var(--vp-c-brand-1) !important;
-  font-weight: 600 !important;
 }
 
 /* 手机端侧栏菜单按钮 */
@@ -328,4 +323,5 @@ button[title*="Back to top"] {
   line-height: 1.6 !important;
   font-size: 13px !important;
 }
+
 
