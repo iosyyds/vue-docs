@@ -1,4 +1,5 @@
 ---
+id: free-online-ide
 title: 免费在线编程环境推荐：不用装开发软件
 datetime: '2026-09-14 10:10:00'
 category: 工具推荐
