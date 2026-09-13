@@ -112,59 +112,7 @@ button[aria-label*="回到顶部"] {
   display: none !important;
 }
 
-/* ===== 手机端顶部间距缩小 ===== */
-@media (max-width: 768px) {
-  .VPContent {
-    padding-top: 0 !important;
-  }
-  .VPPage {
-    padding-top: 12px !important;
-  }
-}
 
-/* ===== 手机端本页目录：右侧悬浮玻璃 ===== */
-@media (max-width: 768px) {
-  .VPLocalNav {
-    background: rgba(255,255,255,0.7) !important;
-    backdrop-filter: blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    border: 1px solid rgba(255,255,255,0.3) !important;
-    border-radius: 16px !important;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
-    top: auto !important;
-    bottom: 100px !important;
-    right: 12px !important;
-    left: auto !important;
-    width: auto !important;
-    max-width: 140px !important;
-    padding: 6px 14px !important;
-    z-index: 99 !important;
-  }
-  .dark .VPLocalNav {
-    background: rgba(40,40,50,0.7) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
-  }
-  .VPLocalNav .back,
-  .VPLocalNav .VPLocalNavBack,
-  .VPLocalNav .button {
-    display: none !important;
-  }
-  .VPLocalNav .content-body {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    padding: 0 !important;
-  }
-  .VPLocalNav .outline-title,
-  .VPLocalNav .cur {
-    color: var(--vp-c-brand-1) !important;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-  }
-  .VPLocalNav .next-prev {
-    display: none !important;
-  }
-}
 
 /* 手机端侧栏菜单按钮 */
 .VPNavBar .VPNavBarHamburger button,
@@ -327,32 +275,4 @@ button[title*="Back to top"] {
 
 
 
-/* 电脑端恢复默认本页目录 */
-@media (min-width: 769px) {
-  .VPLocalNav {
-    position: static !important;
-    float: right !important;
-    width: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    right: auto !important;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    box-shadow: none !important;
-    border: none !important;
-    padding: 0 !important;
-    z-index: auto !important;
-  }
-  .VPContent {
-    padding-top: 0 !important;
-  }
-}
 
-
-/* 手机端彻底删除本页目录 */
-@media (max-width: 768px) {
-  .VPLocalNav,
-  .VPLocalMenu {
-    display: none !important;
-  }
-}
