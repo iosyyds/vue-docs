@@ -48,6 +48,10 @@ const prevNext = computed(() => {
   &__title { font-size: 0.9375rem; font-weight: 500; color: var(--vp-c-text-1); line-height: 1.5; }
 }
 @media (max-width: 640px) {
-  .prev-next { flex-direction: column; gap: 0.75rem; &__slot { flex: none; width: 100%; &:not(:has(> a)) { display: none; } } &__card { &--next { align-items: flex-start; } } &__title { .prev-next__card--next & { text-align: left; } }
+  .prev-next { flex-direction: column; gap: 0.75rem; }
+  .prev-next__slot { flex: none; width: 100%; }
+  .prev-next__slot:not(:has(> a)) { display: none; }
+  .prev-next__card--next { align-items: flex-start; }
+  .prev-next__card--next .prev-next__title { text-align: left; }
 }
 </style>

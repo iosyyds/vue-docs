@@ -64,6 +64,11 @@ const navigate = (url: string) => router.go(withBase(url));
 }
 @media screen and (max-width: 768px) {
   .post-list { gap: 0.75rem; }
-  .post-item { padding: 1rem; &__header { flex-direction: column; gap: 0.5rem; } &__title { font-size: 1rem; } &__excerpt { -webkit-line-clamp: 2; } &__footer { flex-direction: column; align-items: flex-start; } &__footer-left { gap: 0.75rem; }
+  .post-item { padding: 1rem; }
+  .post-item__header { flex-direction: column; gap: 0.5rem; }
+  .post-item__title { font-size: 1rem; }
+  .post-item__excerpt { -webkit-line-clamp: 2; }
+  .post-item__footer { flex-direction: column; align-items: flex-start; }
+  .post-item__footer-left { gap: 0.75rem; }
 }
 </style>
