@@ -1,4 +1,5 @@
 ---
+id: free-collab-tools
 title: 免费在线协作工具推荐：团队写文档/做设计
 datetime: '2026-09-14 10:20:00'
 category: 工具推荐
