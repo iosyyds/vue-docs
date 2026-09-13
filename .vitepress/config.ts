@@ -11,6 +11,7 @@ const { posts, hiddenPosts, excludePosts, descriptionMap, rewrites } = await use
 });
 
 export default defineConfig<ThemeConfig>({
+  lang: 'zh-CN',
   title: '小坤哥哥博客',
   titleTemplate: '小坤哥哥博客',
   description: '小坤哥哥的个人博客，记录技术分享、生活点滴和日常折腾。',
@@ -47,7 +48,12 @@ export default defineConfig<ThemeConfig>({
     classicCategory: false,
     transition: true,
     logo: '/logo.svg',
-    outline: { level: 2 },
+    outline: { level: 2, label: '本页目录' },
+    docFooter: { prev: '上一篇', next: '下一篇' },
+    darkModeSwitchLabel: '主题',
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '回到顶部',
+    outlineTitle: '本页目录',
     editLink: {
       pattern: 'https://github.com/iosyyds/vue-docs/edit/main/:path',
       text: '在 GitHub 上编辑此页'
@@ -64,7 +70,21 @@ export default defineConfig<ThemeConfig>({
     footer: {
       copyright: 'Copyright © 2026 小坤哥哥'
     },
-    search: { provider: 'local' }
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: { buttonText: '搜索', buttonAriaLabel: '搜索' },
+          modal: {
+            displayDetails: '显示详情',
+            resetButtonTitle: '清除查询条件',
+            backButtonTitle: '关闭搜索',
+            noResultsText: '无法找到相关结果',
+            footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' }
+          }
+        }
+      }
+    }
   },
   markdown: {
     lineNumbers: true,
