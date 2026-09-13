@@ -1,5 +1,5 @@
 node_modules
-.DS_Store
 .vitepress/dist
 .vitepress/cache
-*.log
+/index.md
+/page-*.md
