@@ -3,4 +3,4 @@ title: 分类
 layout: page
 ---
 
-<CategoryClassic>
+<CategoryClassic />
