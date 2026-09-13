@@ -310,19 +310,21 @@ button[title*="Back to top"] {
 }
 
 
-/* 导航栏对齐 */
+/* 导航栏横排对齐 */
 .VPNavBar .content-body {
   align-items: center !important;
 }
-.VPNavBar .nav-links, .VPNavBar .items {
+.VPNavBar .nav-bar, .VPNavBar .VPNavBarMenu, .VPNavBar .links {
   display: flex !important;
+  flex-direction: row !important;
   align-items: center !important;
   gap: 1.5rem !important;
 }
-.VPNavBar .nav-link {
+.VPNavBar .VPNavBarMenuLink, .VPNavBar .links a, .VPNavBar .nav-links a {
   display: inline-flex !important;
   align-items: center !important;
   line-height: 1 !important;
+  white-space: nowrap !important;
 }
 
 
@@ -332,3 +334,4 @@ button[title*="Back to top"] {
   font-size: 15px !important;
   border-bottom: 1px solid var(--vp-c-divider) !important;
 }
+
