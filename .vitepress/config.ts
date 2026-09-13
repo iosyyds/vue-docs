@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
-import { usePosts } from './src/composables/usePosts.ts';
-import { hashPassword } from './src/utils/hashPassword.ts';
-import type { ThemeConfig } from './src/types.ts';
+import { usePosts } from '../src/composables/usePosts.ts';
+import { hashPassword } from '../src/utils/hashPassword.ts';
+import type { ThemeConfig } from '../src/types.ts';
 
 const { posts, hiddenPosts, excludePosts, descriptionMap, rewrites } = await usePosts({
   pageSize: 6,
@@ -51,22 +51,9 @@ export default defineConfig<ThemeConfig>({
       { text: '分类', link: '/category/' },
       { text: '标签', link: '/tags/' },
       { text: '归档', link: '/archives' },
-      { text: '指南', link: '/guide/what-is-vue' },
       { text: '网址导航', link: '/nav' }
     ],
-    sidebar: {
-      '/guide/': [
-        {
-          text: '入门指南',
-          collapsed: false,
-          items: [
-            { text: '什么是 Vue', link: '/guide/what-is-vue' },
-            { text: '快速上手', link: '/guide/getting-started' },
-            { text: '模板语法', link: '/guide/template-syntax' }
-          ]
-        }
-      ]
-    },
+    sidebar: {},
     socialLinks: [{ icon: 'github', link: 'https://github.com/iosyyds/vue-docs' }],
     footer: {
       copyright: 'Copyright © 2026 XKGG'
