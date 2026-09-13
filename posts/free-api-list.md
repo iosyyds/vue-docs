@@ -1,4 +1,5 @@
 ---
+id: free-api-list
 title: 免费公共API接口推荐：做项目直接用
 datetime: '2026-09-14 10:00:00'
 category: 资源推荐
