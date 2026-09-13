@@ -3,3 +3,4 @@ node_modules
 .vitepress/cache
 /index.md
 /page-*.md
+.obsidian/
