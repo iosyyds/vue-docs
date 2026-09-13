@@ -45,6 +45,18 @@ svg { display: inline-block; }
   h1, h2, h3 { font-weight: 700; .header-anchor { top: auto; } a:not(.header-anchor) { font-weight: 700; color: var(--vp-c-text-1); &:hover { color: var(--vp-c-brand-2); } } }
 }
 
+/* 修复标题锚点#图标贴边问题 */
+@media (max-width: 768px) {
+  .vp-doc .header-anchor {
+    margin-left: -0.8em;
+    padding-left: 0.3em;
+  }
+  .vp-doc h1, .vp-doc h2, .vp-doc h3 {
+    padding-left: 0.8em;
+    margin-left: -0.8em;
+  }
+}
+
 .fade-in { animation: elegant-slide-up 0.8s cubic-bezier(0.25,0.1,0.25,1) forwards; }
 @keyframes elegant-slide-up { from { opacity: 0; } to { opacity: 1; } }
 
