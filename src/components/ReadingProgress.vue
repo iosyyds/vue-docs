@@ -11,10 +11,7 @@
         <circle class="progress-bg" cx="25" cy="25" r="22" />
         <circle class="progress-bar" cx="25" cy="25" r="22" />
       </svg>
-      <span class="progress-text">{{ Math.round(progress * 100) }}%</span>
-      <svg class="progress-arrow" viewBox="0 0 24 24" width="16" height="16">
-        <path d="M12 19V5m0 0l-7 7m7-7l7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <span class="progress-text">{{ Math.round(progress * 100) }}</span>
     </div>
   </Transition>
 </template>
@@ -86,27 +83,12 @@ onUnmounted(() => window.removeEventListener('scroll', update));
 }
 
 .progress-text {
-  position: absolute;
-  font-size: 11px;
+  position: relative;
+  font-size: 13px;
   font-weight: 700;
   color: var(--vp-c-text-1);
   line-height: 1;
-  transform: translateY(-2px);
-}
-
-.progress-arrow {
-  position: absolute;
-  bottom: 4px;
-  color: var(--vp-c-text-3);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.reading-progress:hover .progress-arrow {
-  opacity: 1;
-}
-.reading-progress:hover .progress-text {
-  opacity: 0;
+  z-index: 1;
 }
 
 .progress-fade-enter-active,
@@ -129,6 +111,9 @@ onUnmounted(() => window.removeEventListener('scroll', update));
   .progress-ring {
     width: 44px;
     height: 44px;
+  }
+  .progress-text {
+    font-size: 12px;
   }
 }
 </style>
