@@ -1,4 +1,5 @@
 ---
+id: free-image-hosting
 title: 免费图床推荐：2026 年还能用的图片托管服务
 datetime: '2026-09-13 23:40:00'
 category: 资源推荐
