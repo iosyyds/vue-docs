@@ -48,6 +48,15 @@ export default {
     if (inBrowser) {
       onMounted(() => {
         bindFancybox();
+        // Remove back-to-top button completely
+        const removeBackToTop = () => {
+          const els = document.querySelectorAll('.VPBackToTop, .back-to-top, button[class*="back-to-top"], button[aria-label*="top"], button[title*="回到顶部"]');
+          els.forEach(el => el.remove());
+        };
+        setTimeout(removeBackToTop, 500);
+        setTimeout(removeBackToTop, 2000);
+        new MutationObserver(removeBackToTop).observe(document.body, { childList: true, subtree: true });
+
         // Fix dark mode toggle tooltip
         const fixTooltip = () => {
           const btn = document.querySelector('.VPNavBarAppearance button');
@@ -75,4 +84,5 @@ export default {
     }
   }
 };
+
 
