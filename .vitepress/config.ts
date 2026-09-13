@@ -70,21 +70,7 @@ export default defineConfig<ThemeConfig>({
     footer: {
       copyright: 'Copyright © 2026 小坤哥哥'
     },
-    search: {
-      provider: 'local',
-      options: {
-        translations: {
-          button: { buttonText: '搜索', buttonAriaLabel: '搜索' },
-          modal: {
-            displayDetails: '显示详情',
-            resetButtonTitle: '清除查询条件',
-            backButtonTitle: '关闭搜索',
-            noResultsText: '无法找到相关结果',
-            footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' }
-          }
-        }
-      }
-    }
+    search: { provider: 'local' }
   },
   markdown: {
     lineNumbers: true,
