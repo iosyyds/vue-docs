@@ -16,12 +16,12 @@
 
 <script lang="ts" setup>
 import DefaultTheme from 'vitepress/theme';
-import PrevNext from '../src/components/PrevNext.vue';
-import Copyright from '../src/components/Copyright.vue';
-import Password from '../src/components/Password.vue';
-import ShareItem from '../src/components/ShareItem.vue';
+import PrevNext from '../../src/components/PrevNext.vue';
+import Copyright from '../../src/components/Copyright.vue';
+import Password from '../../src/components/Password.vue';
+import ShareItem from '../../src/components/ShareItem.vue';
 import CommentItem from './components/CommentItem.vue';
-import { usePassword } from '../src/composables/usePassword.ts';
+import { usePassword } from '../../src/composables/usePassword.ts';
 
 const { Layout } = DefaultTheme;
 const { verified } = usePassword();
