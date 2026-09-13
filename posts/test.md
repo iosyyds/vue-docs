@@ -1,6 +1,6 @@
 ---
 title: 这是第一篇文章
-date: 2026-09-13
+datetime: '2026-09-13 10:00:00'
 category: 随笔
 tags:
   - 测试
