@@ -1,0 +1,12 @@
+.ZCContent { max-width: 60rem; margin: 0 auto; }
+.ZCContainer { padding-top: 2rem; }
+.ZCLayout { position: relative; max-width: 60rem; margin: 0 auto; }
+.ZCAside {
+  position: absolute; top: 0; bottom: 0;
+  & > * { position: sticky; top: 6rem; }
+  &--left { right: 100%; margin-right: 2.5rem; }
+  &--right { left: 100%; margin-left: 2.5rem; }
+}
+@media (max-width: 1472px) { .ZCAside { display: none; } }
+@media (min-width: 768px) and (max-width: 1030px) { .ZCContainer { padding: 2rem 2rem 0; } }
+@media (max-width: 768px) { .ZCContainer { padding: 1.5rem 1.25rem 0; } }
