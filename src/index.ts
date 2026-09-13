@@ -50,15 +50,10 @@ export default {
         bindFancybox();
         const fixTooltip = () => {
           const isDark = document.documentElement.classList.contains('dark');
-          document.querySelectorAll('.VPNavBar button, .VPNavBar a, .VPNavBar [class*="appearance"], .VPNavBar [class*="theme"], .VPNavBar [class*="dark"]').forEach(btn => {
+          const btn = document.querySelector('.VPNavBarAppearance button');
+          if (btn) {
             btn.setAttribute('title', isDark ? '切换浅色模式' : '切换深色模式');
-            btn.setAttribute('aria-label', isDark ? '切换浅色模式' : '切换深色模式');
-          });
-          document.querySelectorAll('.VPSidebar *').forEach(el => {
-            if (el.children.length === 0 && (el.textContent.includes('深色模式') || el.textContent.includes('dark theme') || el.textContent.includes('Dark'))) {
-              el.textContent = isDark ? '切换浅色模式' : '切换深色模式';
-            }
-          });
+          }
         };
         fixTooltip();
         new MutationObserver(fixTooltip).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
@@ -78,6 +73,7 @@ export default {
     }
   }
 };
+
 
 
 
