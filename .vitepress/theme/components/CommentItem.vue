@@ -1,5 +1,5 @@
 <template>
-  <div id="giscus-container" class="giscus"></div>
+  <div id="waline-container" class="waline-wrapper"></div>
 </template>
 
 <script setup lang="ts">
@@ -8,54 +8,52 @@ import { useRoute } from 'vitepress';
 
 const route = useRoute();
 
-const getGiscusTheme = () => {
-  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-};
+const WALINE_SERVER = 'https://waline.liua.eu.org';
 
-const loadGiscus = () => {
-  const container = document.getElementById('giscus-container');
-  if (!container) return;
+const initWaline = () => {
+  const container = document.getElementById('waline-container');
+  if (!container || typeof (window as any).Waline === 'undefined') return;
   container.innerHTML = '';
-  const script = document.createElement('script');
-  script.src = 'https://giscus.app/client.js';
-  script.setAttribute('data-repo', 'iosyyds/vue-docs');
-  script.setAttribute('data-repo-id', 'R_kgDOJ9jLrQ');
-  script.setAttribute('data-category', 'Announcements');
-  script.setAttribute('data-category-id', 'DIC_kwDOL9jLrc4CcyBs');
-  script.setAttribute('data-mapping', 'pathname');
-  script.setAttribute('data-strict', '0');
-  script.setAttribute('data-reactions-enabled', '1');
-  script.setAttribute('data-emit-metadata', '0');
-  script.setAttribute('data-input-position', 'bottom');
-  script.setAttribute('data-theme', getGiscusTheme());
-  script.setAttribute('data-lang', 'zh-CN');
-  script.crossOrigin = 'anonymous';
-  script.async = true;
-  container.appendChild(script);
+  (window as any).Waline.init({
+    el: '#waline-container',
+    serverURL: WALINE_SERVER,
+    dark: 'html.dark',
+    pageSize: 10,
+    emoji: [
+      'https://unpkg.com/@waline/emojis@1.2.0/qq',
+      'https://unpkg.com/@waline/emojis@1.2.0/tieba'
+    ],
+    requiredMeta: ['nick'],
+    login: 'enable',
+    locale: {
+      nick: '昵称',
+      mail: '邮箱',
+      link: '网址',
+      admin: '博主',
+      placeholder: '欢迎评论~ 填写邮箱可收到回复通知',
+      sofa: '快来发表第一条评论吧！'
+    }
+  });
 };
-
-const observer = new MutationObserver(() => {
-  const iframe = document.querySelector('iframe.giscus-frame') as HTMLIFrameElement;
-  if (!iframe) return;
-  iframe.contentWindow?.postMessage(
-    { giscus: { setConfig: { theme: getGiscusTheme() } } },
-    'https://giscus.app'
-  );
-});
 
 onMounted(() => {
-  loadGiscus();
-  observer.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['class']
-  });
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://unpkg.com/@waline/client@v2/dist/waline.css';
+  document.head.appendChild(link);
+
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/@waline/client@v2/dist/waline.js';
+  script.defer = true;
+  script.onload = initWaline;
+  document.head.appendChild(script);
 });
 
-watch(() => route.path, () => setTimeout(loadGiscus, 300));
+watch(() => route.path, () => setTimeout(initWaline, 300));
 </script>
 
 <style scoped>
-.giscus {
+.waline-wrapper {
   margin-top: 2rem;
 }
 </style>
