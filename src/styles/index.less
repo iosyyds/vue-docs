@@ -184,3 +184,21 @@ button[aria-label*="回到顶部"] {
   border-radius: 8px !important;
 }
 
+
+
+/* 隐藏本页目录下拉中的"回到顶部" */
+.VPLocalMenu .VPLocalMenuItem[class*="top"],
+.VPLocalMenu li[class*="top"],
+.VPLocalMenu a[href="#top"],
+.VPLocalMenu a[href=""] {
+  display: none !important;
+}
+.VPLocalMenu .cur:has(+ *),
+.VPLocalMenu li:first-child:last-child {
+  display: none !important;
+}
+/* Hide back-to-top item in TOC dropdown */
+.VPLocalMenu > ul > li:first-child,
+.VPLocalMenu > div > div:first-child {
+  display: none !important;
+}
