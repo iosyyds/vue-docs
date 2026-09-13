@@ -55,7 +55,7 @@ export default {
             btn.setAttribute('aria-label', isDark ? '切换浅色模式' : '切换深色模式');
           });
           document.querySelectorAll('.VPSidebar *').forEach(el => {
-            if (el.children.length === 0 && el.textContent.includes('深色模式')) {
+            if (el.children.length === 0 && (el.textContent.includes('深色模式') || el.textContent.includes('dark theme') || el.textContent.includes('Dark'))) {
               el.textContent = isDark ? '切换浅色模式' : '切换深色模式';
             }
           });
@@ -78,6 +78,7 @@ export default {
     }
   }
 };
+
 
 
 
