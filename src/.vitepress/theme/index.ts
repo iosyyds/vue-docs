@@ -1,16 +1,7 @@
-import DefaultTheme from 'vitepress/theme'
-import { h } from 'vue'
-import Giscus from './Giscus.vue'
-import PostMeta from './PostMeta.vue'
+import BlogTheme from '@sugarat/theme'
+import { defineTheme } from '@sugarat/theme/node'
 import './custom.css'
 
-export default {
-  extends: DefaultTheme,
-  Layout() {
-    return h(DefaultTheme.Layout, null, {
-      'doc-before': () => h(PostMeta),
-      'doc-after': () => h(Giscus)
-    })
-  },
-  enhanceApp() {}
-}
+export default defineTheme({
+  extends: BlogTheme,
+})
