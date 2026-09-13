@@ -276,3 +276,29 @@ input, textarea, select, code, pre {
   user-select: text !important;
   -webkit-touch-callout: default;
 }
+
+
+/* 彻底隐藏所有回到顶部按钮 */
+button[class*="back-to-top"],
+button[class*="BackToTop"],
+.VPBackToTop,
+.vp-back-to-top,
+.VPLocalMenu [class*="top"],
+.VPLocalMenu [class*="Top"],
+.VPLocalMenu a[href="#top"],
+.VPLocalMenu li:first-child,
+.VPLocalMenu > *:first-child,
+button[aria-label*="top"],
+button[title*="回到顶部"],
+button[title*="Back to top"] {
+  display: none !important;
+}
+
+/* 导航栏不透明 */
+.VPNavBar {
+  background: var(--vp-nav-bg-color) !important;
+  background-color: var(--vp-c-bg, #fff) !important;
+}
+.dark .VPNavBar {
+  background-color: var(--vp-c-bg, #1b1b1f) !important;
+}
