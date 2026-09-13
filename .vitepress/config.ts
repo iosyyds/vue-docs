@@ -50,13 +50,18 @@ export default defineConfig<ThemeConfig>({
     transition: true,
     logo: '/logo.svg',
     outline: { level: 2, label: '本页目录' },
-    docFooter: { prev: '上一篇', next: '下一篇' },
     darkModeSwitchLabel: '切换深色模式',
     sidebarMenuLabel: '菜单',
     returnToTopLabel: '回到顶部',
-    sidebarMenuLabel: '菜单',
-    returnToTopLabel: '回到顶部',
     backToTop: false,
+    outlineTitle: '本页目录',
+    lastUpdatedText: '最后更新',
+    docFooter: { prev: '上一篇', next: '下一篇' },
+    darkModeSwitchTitle: '切换深色模式',
+    notFound: {
+      title: '页面不存在',
+      quote: '你要找的页面不存在或已被移动。'
+    },
     outlineTitle: '本页目录',
     editLink: {
       pattern: 'https://github.com/iosyyds/vue-docs/edit/main/:path',
@@ -105,6 +110,7 @@ export default defineConfig<ThemeConfig>({
   },
   srcExclude: [...excludePosts, 'README.md']
 });
+
 
 
 
