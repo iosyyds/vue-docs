@@ -14,11 +14,8 @@
         </div>
       </div>
     </section>
-
     <section class="section">
-      <div class="section-head">
-        <h2 class="section-title">最新文章</h2>
-      </div>
+      <div class="section-head"><h2 class="section-title">最新文章</h2></div>
       <div class="post-list">
         <a v-for="(post, i) in posts" :key="post.url" :href="post.url"
            class="post-card" :style="{ animationDelay: i * 0.06 + 's' }">
@@ -29,7 +26,6 @@
               <span class="post-date">{{ post.date }}</span>
             </div>
             <h3 class="post-title">{{ post.title }}</h3>
-            <p class="post-excerpt">{{ post.excerpt }}</p>
             <div class="post-tags">
               <span v-for="t in post.tags" :key="t" class="post-tag">{{ t }}</span>
             </div>
@@ -40,20 +36,18 @@
   </div>
 </template>
 <script setup>
-const posts = (() => {
-  const keys = import.meta.glob('/posts/*.md', { eager: true })
-  const list = []
-  for (const [path, mod] of Object.entries(keys)) {
-    const fm = mod.frontmatter || {}
-    list.push({
-      url: path.replace('/posts/', '/posts/').replace('.md', '.html'),
-      title: fm.title || path.split('/').pop()?.replace('.md','') || '未命名',
-      date: (fm.datetime || fm.date || '').slice(0, 10),
-      category: fm.category || '',
-      tags: fm.tags || [],
-      pinned: !!fm.pinned
-    })
+import { useData } from 'vitepress'
+const { site } = useData()
+const pages = site.value.pages || {}
+const posts = Object.entries(pages).map(([url, p]) => {
+  const fm = p.frontmatter || {}
+  return {
+    url,
+    title: fm.title || url,
+    date: (fm.datetime || '').slice(0, 10),
+    tags: fm.tags || [],
+    pinned: !!fm.pinned
   }
-  return list.sort((a, b) => b.date.localeCompare(a.date))
-})()
+}).filter(p => p.url.startsWith('/posts/'))
+  .sort((a, b) => b.date.localeCompare(a.date))
 </script>
