@@ -2,10 +2,10 @@
   <footer id="main-footer" class="main-footer">
     <div class="footer-content">
       <div class="copyright">
-<!--        <span class="time">@ 2025- {{ thisYear }} By </span>-->
-<!--        <a :href="theme.siteMeta.author.link" class="author link" target="_blank">-->
-<!--          {{ theme.siteMeta.author.name }}-->
-<!--        </a>-->
+        <span class="time">© {{ footerCopyright }} By </span>
+        <a :href="theme.siteMeta.author.link" class="author link" target="_blank">
+          {{ theme.siteMeta.author.name }}
+        </a>
         <a v-if="theme.icp" class="icp link" href="https://beian.miit.gov.cn/" target="_blank">
           <i class="iconfont icon-safe" />
           {{ theme.icp }}
@@ -22,6 +22,10 @@
 <!--        <a class="theme link" href="https://github.com/imsyy/vitepress-theme-curve" target="_blank">-->
 <!--          <span class="name">主题</span>-->
 <!--        </a>-->
+        <a class="rss link" href="/rss.xml" target="_blank" aria-label="订阅博客">
+          <i class="iconfont icon-rss" />
+          <span class="name">订阅</span>
+        </a>
         <a
           class="cc link"
           href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"
@@ -50,6 +54,15 @@ const observer = ref(null);
 
 // 实时年份
 const thisYear = computed(() => new Date().getFullYear());
+// 建站年份（来自 since 配置）
+const sinceYear = computed(() => {
+  const year = Number(String(theme.value?.siteMeta?.since || "").split("-")[0]);
+  return Number.isFinite(year) && year > 0 ? year : thisYear.value;
+});
+// 版权年份（跨年时显示区间，如 2026 - 2027）
+const footerCopyright = computed(() =>
+  thisYear.value > sinceYear.value ? `${sinceYear.value} - ${thisYear.value}` : String(sinceYear.value),
+);
 
 // 监听页脚视窗
 const isShowFooter = () => {

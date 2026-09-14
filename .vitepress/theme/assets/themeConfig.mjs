@@ -234,6 +234,7 @@ export const themeConfig = {
           { text: "甜甜导航", link: "/pages/nav" },
           { text: "友情链接", link: "/pages/link" },
           { text: "甜甜发卡", link: "https://qqqi.top", newTab: true },
+          { text: "站点订阅", link: "/rss.xml", newTab: true },
         ],
       },
       {

@@ -12,6 +12,8 @@ export const createRssFile = async (config, themeConfig) => {
   // 配置信息
   const siteMeta = themeConfig.siteMeta;
   const hostLink = siteMeta.site;
+  // 建站年份（用于版权）
+  const sinceYear = String(themeConfig.since || "").split("-")[0] || "2026";
   // Feed 实例
   const feed = new Feed({
     title: siteMeta.title,
@@ -20,8 +22,8 @@ export const createRssFile = async (config, themeConfig) => {
     link: hostLink,
     language: "zh",
     generator: siteMeta.author.name,
-    favicon: siteMeta.author.cover,
-    copyright: `Copyright © 2020-present ${siteMeta.author.name}`,
+    favicon: `${hostLink}/logo.svg`,
+    copyright: `Copyright © ${sinceYear}-present ${siteMeta.author.name}`,
     updated: new Date(),
   });
   // 加载文章
@@ -34,11 +36,23 @@ export const createRssFile = async (config, themeConfig) => {
     const dateB = new Date(b.frontmatter.date);
     return dateB - dateA;
   });
-  for (const { url, frontmatter } of posts) {
+  for (const { url, frontmatter, html } of posts) {
     // 仅保留最近 10 篇文章
     if (feed.items.length >= 10) break;
     // 文章信息
     let { title, description, date } = frontmatter;
+    // 描述缺失时从正文提取摘要
+    if (!description && html) {
+      description = html
+        .replace(/&ZeroWidthSpace;/g, "")
+        .replace(/&zwnj;/g, "")
+        .replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, 120);
+      if (description) description += "…";
+    }
     // 处理日期
     if (typeof date === "string") date = new Date(date);
     // 添加文章

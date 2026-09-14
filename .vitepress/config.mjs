@@ -13,6 +13,7 @@ import markdownConfig from "./theme/utils/markdownConfig.mjs";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import path from "path";
+import { readFileSync } from "fs";
 
 // 获取全局数据
 const postData = await getAllPosts();
@@ -62,13 +63,95 @@ export default withPwa(
     // 构建排除
     srcExclude: ["**/README.md", "**/TODO.md"],
     // transformHead
-    transformPageData: async (pageData) => {
-      // canonical URL
-      const canonicalUrl = `${themeConfig.siteMeta.site}/${pageData.relativePath}`
+    transformPageData: async (pageData, ctx) => {
+      const site = themeConfig.siteMeta.site;
+      const isPost = pageData.relativePath.startsWith("posts/");
+      const isHome = pageData.relativePath === "index.md";
+
+      // 1) 缺失 description 时从正文提取摘要（文章/页面独立描述，替代站点默认）
+      if (!pageData.frontmatter.description && pageData.filePath) {
+        try {
+          const file = path.resolve(ctx.siteConfig.srcDir, pageData.filePath);
+          const raw = readFileSync(file, "utf-8")
+            .replace(/^---[\s\S]*?---/, "")
+            .replace(/^\s*#\s+[^\n]+\n?/, "");
+          const excerpt = raw
+            .replace(/```[\s\S]*?```/g, " ")
+            .replace(/<script[\s\S]*?<\/script>/g, " ")
+            .replace(/<[^>]+>/g, " ")
+            .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+            .replace(/[#>*|`~\-\[\]()]/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+          if (excerpt) {
+            const desc = excerpt.length > 110 ? excerpt.slice(0, 110) + "…" : excerpt;
+            // pageData.description 直接决定 SSR 的 meta description
+            pageData.description = desc;
+            // 同步写回 frontmatter，供 RSS / 其他逻辑使用
+            pageData.frontmatter.description = desc;
+          }
+        } catch (error) {
+          // 读取失败时忽略，回退站点默认描述
+        }
+      }
+
+      // 2) canonical + Open Graph / Twitter / keywords / JSON-LD
+      const canonicalUrl = `${site}/${pageData.relativePath}`
         .replace(/index\.md$/, "")
         .replace(/\.md$/, "");
+      const desc = pageData.description || themeConfig.siteMeta.description;
+      const pageTitle = isHome ? themeConfig.siteMeta.title : pageData.title || themeConfig.siteMeta.title;
+      const cover = pageData.frontmatter.cover || "/images/logo/favicon-512x512.png";
+      const ogImage = cover.startsWith("http") ? cover : `${site}${cover}`;
+
       pageData.frontmatter.head ??= [];
-      pageData.frontmatter.head.push(["link", { rel: "canonical", href: canonicalUrl }]);
+      const head = pageData.frontmatter.head;
+      head.push(["link", { rel: "canonical", href: canonicalUrl }]);
+      head.push(["meta", { property: "og:site_name", content: themeConfig.siteMeta.title }]);
+      head.push(["meta", { property: "og:locale", content: "zh_CN" }]);
+      head.push(["meta", { property: "og:type", content: isPost ? "article" : "website" }]);
+      head.push(["meta", { property: "og:title", content: pageTitle }]);
+      head.push(["meta", { property: "og:description", content: desc }]);
+      head.push(["meta", { property: "og:url", content: canonicalUrl }]);
+      head.push(["meta", { property: "og:image", content: ogImage }]);
+      head.push(["meta", { name: "twitter:card", content: "summary" }]);
+      head.push(["meta", { name: "twitter:title", content: pageTitle }]);
+      head.push(["meta", { name: "twitter:description", content: desc }]);
+      head.push(["meta", { name: "twitter:image", content: ogImage }]);
+      // 文章标签作为 keywords
+      if (isPost && Array.isArray(pageData.frontmatter.tags) && pageData.frontmatter.tags.length) {
+        head.push(["meta", { name: "keywords", content: pageData.frontmatter.tags.join(", ") }]);
+      }
+      // JSON-LD 结构化数据
+      const jsonLd = isPost
+        ? {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: pageTitle,
+            description: desc,
+            image: ogImage,
+            datePublished: pageData.frontmatter.date || undefined,
+            dateModified: pageData.frontmatter.date || undefined,
+            author: {
+              "@type": "Person",
+              name: themeConfig.siteMeta.author.name,
+              url: themeConfig.siteMeta.author.link,
+            },
+            publisher: {
+              "@type": "Person",
+              name: themeConfig.siteMeta.author.name,
+            },
+            mainEntityOfPage: canonicalUrl,
+            url: canonicalUrl,
+          }
+        : {
+            "@context": "https://schema.org",
+            "@type": isHome ? "WebSite" : "WebPage",
+            name: pageTitle,
+            description: desc,
+            url: canonicalUrl,
+          };
+      head.push(["script", { type: "application/ld+json" }, JSON.stringify(jsonLd)]);
     },
     // transformHtml
     transformHtml: (html) => {
