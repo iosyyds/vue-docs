@@ -113,7 +113,7 @@ export const themeConfig = {
     {
       text: "导航",
       items: [
-        { text: "甜甜导航", link: "/pages/nav", icon: "link" },
+        { text: "个人导航", link: "/pages/nav", icon: "link" },
         { text: "友情链接", link: "/pages/link", icon: "account" },
         { text: "站点订阅", link: "/rss.xml", icon: "rss" },
       ],
@@ -137,7 +137,7 @@ export const themeConfig = {
           url: "/",
         },
         {
-          icon: "/logo.svg",
+          icon: "/images/icons/puaaa.png",
           name: "网事集",
           url: "https://puaaa.cn",
         },
@@ -147,12 +147,12 @@ export const themeConfig = {
       name: "服务",
       list: [
         {
-          icon: "/logo.svg",
+          icon: "/images/icons/iosdh.png",
           name: "导航站",
           url: "https://iosdh.cn",
         },
         {
-          icon: "/logo.svg",
+          icon: "/images/icons/qqqi.png",
           name: "甜甜发卡",
           url: "https://qqqi.top",
         },
@@ -162,7 +162,7 @@ export const themeConfig = {
           url: "https://yao.hugv.me",
         },
         {
-          icon: "/logo.svg",
+          icon: "/images/icons/love.png",
           name: "甜甜游戏",
           url: "https://love.ttla.top",
         },
@@ -172,7 +172,7 @@ export const themeConfig = {
       name: "项目",
       list: [
         {
-          icon: "/logo.svg",
+          icon: "/images/icons/github.svg",
           name: "GitHub",
           url: "https://github.com/iosyyds/vue-docs",
         },
@@ -231,7 +231,7 @@ export const themeConfig = {
       {
         text: "导航",
         items: [
-          { text: "甜甜导航", link: "/pages/nav" },
+          { text: "个人导航", link: "/pages/nav" },
           { text: "友情链接", link: "/pages/link" },
           { text: "甜甜发卡", link: "https://qqqi.top", newTab: true },
           { text: "站点订阅", link: "/rss.xml", newTab: true },
