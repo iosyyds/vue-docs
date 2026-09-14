@@ -36,15 +36,5 @@
   </div>
 </template>
 <script setup>
-const files = import.meta.glob('/posts/*.md', { eager: true })
-const posts = Object.entries(files).map(([path, mod]) => {
-  const fm = mod.frontmatter || mod.default?.frontmatter || {}
-  return {
-    url: path.replace('/posts/', '/posts/').replace('.md', '.html'),
-    title: fm.title || path.split('/').pop()?.replace('.md','') || '未命名',
-    date: (fm.datetime || fm.date || '').slice(0, 10),
-    tags: fm.tags || [],
-    pinned: !!fm.pinned
-  }
-}).sort((a, b) => b.date.localeCompare(a.date))
+import { data as posts } from '../../posts.data.mts'
 </script>
