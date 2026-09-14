@@ -16,7 +16,7 @@
   </div>
 </template>
 <script setup>
-import { data as posts } from '../../posts.data.mts'
+import { data as posts } from '../../../posts.data.mts'
 const groups = (() => {
   const m = {}
   posts.forEach(p => { const y = p.date.slice(0,4); (m[y]=m[y]||[]).push(p) })
