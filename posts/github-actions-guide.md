@@ -1,11 +1,12 @@
 ---
-id: github-actions-guide
 title: GitHub Actions 自动化部署实战入门
-datetime: '2026-09-14 09:10:00'
-category: 技术教程
+date: '2026-09-14'
+categories:
+  - 技术教程
 tags:
   - GitHub
   - CI/CD
+cover: /images/covers/cover_github-actions.jpg
 ---
 
 # GitHub Actions 自动化部署实战入门

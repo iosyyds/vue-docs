@@ -1,11 +1,12 @@
 ---
-id: free-short-url
 title: 免费短链接服务推荐：长链变短链
-datetime: '2026-09-14 10:30:00'
-category: 工具推荐
+date: '2026-09-14'
+categories:
+  - 工具推荐
 tags:
   - 短链接
   - 实用工具
+cover: /images/covers/cover_free-short-url.jpg
 ---
 
 # 免费短链接服务推荐

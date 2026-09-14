@@ -1,11 +1,12 @@
 ---
-id: free-custom-email
 title: 免费自定义邮箱推荐：不用@qq.com了
-datetime: '2026-09-14 09:50:00'
-category: 工具推荐
+date: '2026-09-14'
+categories:
+  - 工具推荐
 tags:
   - 邮箱
   - 域名
+cover: /images/covers/cover_free-email.jpg
 ---
 
 # 免费自定义邮箱推荐

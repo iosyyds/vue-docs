@@ -1,6 +1,7 @@
 ---
-layout: page
 title: 甜甜导航
+aside: false
+card: true
 ---
 
 <div class="nav-page">
@@ -84,7 +85,7 @@ title: 甜甜导航
 .nav-page {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 40px 24px 80px;
+  padding: 40px 24px 40px;
 }
 .nav-page h1 {
   text-align: center;
@@ -92,17 +93,17 @@ title: 甜甜导航
 }
 .nav-page > p {
   text-align: center;
-  color: var(--vp-c-text-2);
-  margin-bottom: 48px;
+  color: var(--main-font-second-color);
+  margin-bottom: 32px;
 }
 .nav-page h2 {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 20px;
-  margin: 40px 0 16px;
+  margin: 32px 0 16px;
   padding-bottom: 8px;
-  border-bottom: 2px solid var(--vp-c-brand-soft);
+  border-bottom: 2px solid var(--main-color-bg);
 }
 .link-grid {
   display: grid;
@@ -115,15 +116,15 @@ title: 甜甜导航
   gap: 16px;
   padding: 18px 20px;
   border-radius: 14px;
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-divider);
+  background: var(--main-card-second-background);
+  border: 1px solid var(--main-card-border);
   text-decoration: none;
   transition: all 0.25s ease;
 }
 .link-card:hover {
   transform: translateY(-3px);
-  border-color: var(--vp-c-brand-1);
-  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.15);
+  border-color: var(--main-color);
+  box-shadow: 0 8px 24px var(--main-border-shadow);
 }
 .link-icon {
   flex-shrink: 0;
@@ -132,9 +133,9 @@ title: 甜甜导航
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--vp-c-brand-soft);
+  background: var(--main-color-bg);
   border-radius: 12px;
-  color: var(--vp-c-brand-1);
+  color: var(--main-color);
 }
 .link-icon svg {
   width: 22px;
@@ -146,30 +147,30 @@ title: 甜甜导航
 }
 .link-name {
   font-weight: 600;
-  color: var(--vp-c-text-1);
+  color: var(--main-font-color);
   font-size: 15px;
 }
 .link-desc {
   font-size: 13px;
-  color: var(--vp-c-text-2);
+  color: var(--main-font-second-color);
   margin-top: 2px;
 }
 
 /* ========== 移动端适配 ========== */
 @media (max-width: 768px) {
   .nav-page {
-    padding: 24px 16px 60px;
+    padding: 24px 8px 32px;
   }
   .nav-page h1 {
     font-size: 28px;
   }
   .nav-page > p {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     font-size: 14px;
   }
   .nav-page h2 {
     font-size: 17px;
-    margin: 28px 0 12px;
+    margin: 24px 0 12px;
   }
   .link-grid {
     grid-template-columns: 1fr;

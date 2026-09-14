@@ -1,11 +1,12 @@
 ---
-id: free-cdn-cdn
 title: 免费CDN加速服务推荐：让你的网站快一倍
-datetime: '2026-09-14 09:20:00'
-category: 资源推荐
+date: '2026-09-14'
+categories:
+  - 资源推荐
 tags:
   - CDN
   - 加速
+cover: /images/covers/cover_free-cdn.jpg
 ---
 
 # 免费CDN加速服务推荐：让你的网站快一倍

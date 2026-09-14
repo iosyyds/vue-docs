@@ -1,10 +1,11 @@
 ---
-id: digitalplat-free-domain
 title: 白嫖 DigitalPlat 永久免费域名！支持托管到 Cloudflare
-datetime: '2026-09-13 22:00:00'
-category: 域名
+date: '2026-09-13'
+categories:
+  - 域名
 tags:
   - 免费域名
+cover: /images/digitalplat/digitalplat.jpg
 ---
 
 # 白嫖 DigitalPlat 永久免费域名！支持托管到 Cloudflare
