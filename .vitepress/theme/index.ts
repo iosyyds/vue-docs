@@ -1,6 +1,11 @@
+import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import './custom.css'
+import BlogHome from './BlogHome.vue'
+import './blog.css'
 
 export default {
-  extends: DefaultTheme
-}
+  extends: DefaultTheme,
+  enhanceApp({ app }) {
+    app.component('BlogHome', BlogHome)
+  }
+} satisfies Theme
