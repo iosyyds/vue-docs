@@ -1,7 +1,6 @@
-import MinimalismTheme from '../../src';
-import ThemeLayout from './ThemeLayout.vue';
+import DefaultTheme from 'vitepress/theme'
+import './custom.css'
 
 export default {
-  extends: MinimalismTheme,
-  Layout: ThemeLayout
-};
+  extends: DefaultTheme
+}
