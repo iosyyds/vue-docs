@@ -18,7 +18,7 @@ card: true
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
     </span>
     <span class="link-body">
-      <span class="link-name">导航站</span>
+      <span class="link-name">甜甜导航</span>
       <span class="link-desc">个人常用网址导航聚合页</span>
     </span>
   </a>
