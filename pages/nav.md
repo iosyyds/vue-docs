@@ -6,76 +6,82 @@ card: true
 
 <div class="nav-page">
 
-# 🐰 个人导航
+# 个人导航
 
 > 我的个人网站集合，点击新窗口打开。
 
-## 🏠 个人门户
+## <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sec-icon"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg> 个人门户
 
 <div class="link-grid">
   <a href="https://iosdh.cn" target="_blank" rel="noopener" class="link-card">
     <span class="link-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      <img src="/images/icons/iosdh.png" alt="甜甜导航" />
     </span>
     <span class="link-body">
       <span class="link-name">甜甜导航</span>
       <span class="link-desc">个人常用网址导航聚合页</span>
     </span>
+    <span class="link-arrow">↗</span>
   </a>
   <a href="https://puaaa.cn" target="_blank" rel="noopener" class="link-card">
     <span class="link-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      <img src="/images/icons/puaaa.png" alt="网事集" />
     </span>
     <span class="link-body">
       <span class="link-name">网事集</span>
       <span class="link-desc">个人博客生活记录与分享</span>
     </span>
+    <span class="link-arrow">↗</span>
   </a>
 </div>
 
-## 🛠️ 实用工具
+## <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sec-icon"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> 实用工具
 
 <div class="link-grid">
   <a href="https://pan.puaaa.cn" target="_blank" rel="noopener" class="link-card">
     <span class="link-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+      <img src="/images/icons/pan.png" alt="甜甜网盘" />
     </span>
     <span class="link-body">
       <span class="link-name">甜甜网盘</span>
       <span class="link-desc">在线网盘存储与文件分享</span>
     </span>
+    <span class="link-arrow">↗</span>
   </a>
   <a href="https://qqqi.top" target="_blank" rel="noopener" class="link-card">
     <span class="link-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      <img src="/images/icons/qqqi.png" alt="甜甜发卡" />
     </span>
     <span class="link-body">
       <span class="link-name">甜甜发卡</span>
       <span class="link-desc">自动发卡平台卡密便捷售卖</span>
     </span>
+    <span class="link-arrow">↗</span>
   </a>
   <a href="https://yao.hugv.me" target="_blank" rel="noopener" class="link-card">
     <span class="link-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M12 8v8M8 12h8"/></svg>
+      <img src="/logo.svg" alt="我的药盒" />
     </span>
     <span class="link-body">
       <span class="link-name">我的药盒</span>
       <span class="link-desc">用药提醒健康管理小工具</span>
     </span>
+    <span class="link-arrow">↗</span>
   </a>
 </div>
 
-## 🎮 休闲娱乐
+## <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sec-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 休闲娱乐
 
 <div class="link-grid">
   <a href="https://love.ttla.top" target="_blank" rel="noopener" class="link-card">
     <span class="link-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
+      <img src="/images/icons/love.png" alt="甜甜游戏" />
     </span>
     <span class="link-body">
       <span class="link-name">甜甜游戏</span>
       <span class="link-desc">在线小游戏聚合娱乐平台</span>
     </span>
+    <span class="link-arrow">↗</span>
   </a>
 </div>
 
@@ -90,20 +96,29 @@ card: true
 .nav-page h1 {
   text-align: center;
   margin-bottom: 8px;
+  font-size: 34px;
 }
 .nav-page > p {
   text-align: center;
   color: var(--main-font-second-color);
   margin-bottom: 32px;
+  font-size: 15px;
 }
 .nav-page h2 {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 20px;
-  margin: 32px 0 16px;
-  padding-bottom: 8px;
+  margin: 36px 0 16px;
+  padding-bottom: 10px;
   border-bottom: 2px solid var(--main-color-bg);
+  color: var(--main-font-color);
+}
+.nav-page h2 .sec-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--main-color);
+  flex-shrink: 0;
 }
 .link-grid {
   display: grid;
@@ -111,39 +126,57 @@ card: true
   gap: 16px;
 }
 .link-card {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
+  gap: 14px;
+  padding: 16px 18px;
   border-radius: 14px;
   background: var(--main-card-second-background);
   border: 1px solid var(--main-card-border);
   text-decoration: none;
   transition: all 0.25s ease;
+  overflow: hidden;
+}
+.link-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--main-color-bg), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 .link-card:hover {
   transform: translateY(-3px);
   border-color: var(--main-color);
   box-shadow: 0 8px 24px var(--main-border-shadow);
 }
+.link-card:hover::before {
+  opacity: 1;
+}
 .link-icon {
+  position: relative;
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--main-color-bg);
   border-radius: 12px;
-  color: var(--main-color);
+  padding: 6px;
 }
-.link-icon svg {
-  width: 22px;
-  height: 22px;
+.link-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
 }
 .link-body {
+  position: relative;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .link-name {
   font-weight: 600;
@@ -154,6 +187,23 @@ card: true
   font-size: 13px;
   color: var(--main-font-second-color);
   margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.link-arrow {
+  position: relative;
+  margin-left: auto;
+  color: var(--main-font-second-color);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.25s ease;
+}
+.link-card:hover .link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--main-color);
 }
 
 /* ========== 移动端适配 ========== */
@@ -170,30 +220,33 @@ card: true
   }
   .nav-page h2 {
     font-size: 17px;
-    margin: 24px 0 12px;
+    margin: 28px 0 12px;
+  }
+  .nav-page h2 .sec-icon {
+    width: 18px;
+    height: 18px;
   }
   .link-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
   .link-card {
-    padding: 14px 16px;
+    padding: 14px 14px;
     gap: 12px;
   }
   .link-icon {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border-radius: 10px;
-  }
-  .link-icon svg {
-    width: 20px;
-    height: 20px;
   }
   .link-name {
     font-size: 14px;
   }
   .link-desc {
     font-size: 12px;
+  }
+  .link-arrow {
+    display: none;
   }
 }
 </style>
