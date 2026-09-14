@@ -11,7 +11,7 @@
   </div>
 </template>
 <script setup>
-import { data as posts } from '../../posts.data.mts'
+import { data as posts } from '../../../posts.data.mts'
 const cats = (() => {
   const m = {}
   posts.forEach(p => { const c = p.category || '未分类'; m[c] = (m[c]||0) + 1 })
