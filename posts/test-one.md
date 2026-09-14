@@ -5,6 +5,7 @@ categories:
   - 随笔
 tags:
   - 测试
+articleGPT: "哈哈哈"
 ---
 
 # 测试一下

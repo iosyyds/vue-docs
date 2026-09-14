@@ -7,6 +7,7 @@ tags:
   - 数据库
   - 免费资源
 cover: /images/covers/cover_free-database.jpg
+articleGPT: "为什么用云数据库？ 自己搭数据库要管备份、扩容、安全升级，云数据库帮你搞定这些，免费额度够个人项目用。 推荐列表 1. Supabase 费用 ：免费版500MB数据库 + 500MB存储 类型 ：PostgreSQL 优势 ：自带实时订阅、Auth认证、REST API 适合 ：快速开发项目 2.……"
 ---
 
 # 免费云数据库服务推荐

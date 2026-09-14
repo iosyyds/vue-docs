@@ -7,6 +7,7 @@ tags:
   - API
   - 开发
 cover: /images/covers/cover_free-api.jpg
+articleGPT: "前言 做项目经常需要一些公开数据接口，天气、新闻、图片、诗词之类的。整理几个免费好用的。 推荐列表 1. 天气API OpenWeatherMap ：免费版每天1000次请求 和风天气 ：国内服务，免费版每天1000次 2. 随机图片API 3. 今日热榜 DailyHotApi ：开源项目，聚合知……"
 ---
 
 # 免费公共API接口推荐

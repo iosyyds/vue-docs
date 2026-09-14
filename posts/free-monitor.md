@@ -7,6 +7,7 @@ tags:
   - 监控
   - 运维
 cover: /images/covers/cover_free-monitor.jpg
+articleGPT: "为什么需要网站监控？ 你的网站挂了你可能不知道，用户访问的时候才发现已经挂了半天了。一个监控服务能在网站出问题时立刻发通知。 推荐列表 1. UptimeRobot 费用 ：免费50个监控 间隔 ：5分钟检查一次 通知 ：邮件、Telegram、Webhook 优势 ：最稳定，老牌服务 缺点 ：免费……"
 ---
 
 # 免费网站监控服务推荐

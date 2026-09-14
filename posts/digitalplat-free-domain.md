@@ -6,6 +6,7 @@ categories:
 tags:
   - 免费域名
 cover: /images/digitalplat/digitalplat.jpg
+articleGPT: "前言 说起 DigitalPlat 你可能不太熟悉，它其实就是之前的 us.kg 免费域名，在加上 dpdns.org 域名后更名而来。除了平台名称的调整以外，相关的注册、续费规则也在一直变动，主打一个「随心所欲」。 DigitalPlat 刚开始 DigitalPlat 的免费域名其实还挺灵的，u……"
 ---
 
 # 白嫖 DigitalPlat 永久免费域名！支持托管到 Cloudflare

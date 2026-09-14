@@ -6,6 +6,7 @@ categories:
 tags:
   - Cloudflare
   - 网站部署
+articleGPT: "前言 很多人做完个人博客或者静态网站后，苦于没有便宜好用的托管服务。Cloudflare Pages 就是一个绝佳选择—— 完全免费 、自带 CDN、全球加速、支持自定义域名，还能自动部署。 Cloudflare Pages 优势 完全免费 ：不限流量、不限构建次数 全球 CDN ：300+ 节点加……"
 ---
 
 # Cloudflare Pages 免费部署静态网站完整指南

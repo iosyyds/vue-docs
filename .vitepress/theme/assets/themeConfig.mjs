@@ -255,10 +255,10 @@ export const themeConfig = {
   },
   // 评论
   comment: {
-    enable: false,
+    enable: true,
     // 评论系统选择
-    // artalk / twikoo
-    type: "artalk",
+    // artalk / twikoo / giscus
+    type: "giscus",
     // artalk
     // https://artalk.js.org/
     artalk: {
@@ -273,6 +273,18 @@ export const themeConfig = {
       envId: "",
       // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
       region: "ap-shanghai",
+      lang: "zh-CN",
+    },
+    // giscus
+    // https://giscus.app/zh-CN
+    giscus: {
+      repo: "iosyyds/vue-docs",
+      repoId: "R_kgDOUYGXcA",
+      category: "General",
+      categoryId: "DIC_kwDOUYGXcM4DFdMe",
+      mapping: "pathname",
+      reactionsEnabled: true,
+      inputPosition: "top",
       lang: "zh-CN",
     },
   },

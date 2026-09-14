@@ -7,6 +7,7 @@ tags:
   - 短链接
   - 实用工具
 cover: /images/covers/cover_free-short-url.jpg
+articleGPT: "为什么需要短链接？ 分享链接的时候，一长串URL很难看，短链接既好看又方便记忆，还能统计点击量。 推荐列表 1. 自己搭（推荐） 用开源短链接程序自己搭，完全免费，数据自己掌控： Shlink ：PHP写的，功能完善 Polr ：经典的短链接程序 Yourls ：老牌轻量 2. 公共短链接服务 su……"
 ---
 
 # 免费短链接服务推荐
