@@ -1,18 +1,24 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import BlogLayout from './BlogLayout.vue'
+import BlogHome from './BlogHome.vue'
+import Archives from './Archives.vue'
+import Categories from './Categories.vue'
+import Tags from './Tags.vue'
 import './style.css'
 
 export default {
   extends: DefaultTheme,
-  Layout: BlogLayout,
+  enhanceApp({ app }) {
+    app.component('BlogHome', BlogHome)
+    app.component('Archives', Archives)
+    app.component('Categories', Categories)
+    app.component('Tags', Tags)
+  },
   setup() {
     if (typeof window !== 'undefined') {
-      // 阅读进度条
       const bar = document.createElement('div')
       bar.className = 'reading-progress'
       document.body.appendChild(bar)
-      // 回到顶部
       const btn = document.createElement('button')
       btn.className = 'back-top'
       btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>'
