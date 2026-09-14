@@ -33,5 +33,5 @@
   </div>
 </template>
 <script setup>
-import { data as posts } from '../../posts.data.mts'
+import { data as posts } from '../../../posts.data.mts'
 </script>
