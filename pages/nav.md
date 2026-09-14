@@ -15,7 +15,7 @@ card: true
 <div class="link-grid">
   <a href="https://iosdh.cn" target="_blank" rel="noopener" class="link-card">
     <span class="link-icon">
-      <img src="/images/icons/iosdh.png" alt="甜甜导航" />
+      <img src="/images/icons/iosdh.svg" alt="甜甜导航" />
     </span>
     <span class="link-body">
       <span class="link-name">甜甜导航</span>

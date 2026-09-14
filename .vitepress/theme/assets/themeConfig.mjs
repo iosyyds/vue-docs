@@ -147,7 +147,7 @@ export const themeConfig = {
       name: "服务",
       list: [
         {
-          icon: "/images/icons/iosdh.png",
+          icon: "/images/icons/iosdh.svg",
           name: "甜甜导航",
           url: "https://iosdh.cn",
         },
