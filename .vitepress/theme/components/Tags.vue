@@ -11,7 +11,7 @@
   </div>
 </template>
 <script setup>
-import { data as posts } from '../../posts.data.mts'
+import { data as posts } from '../../../posts.data.mts'
 const tags = (() => {
   const m = {}
   posts.forEach(p => { (p.tags || []).forEach(t => { m[t] = (m[t]||0) + 1 }) })
