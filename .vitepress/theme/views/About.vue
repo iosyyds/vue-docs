@@ -64,11 +64,6 @@
           相信分享与交流能带来
           <a href="https://github.com/iosyyds/vue-docs" target="_blank">更多的可能性</a>
         </span>
-        <img
-          src="/images/logo/main.png"
-          alt="male"
-          class="male"
-        />
       </div>
       <!-- 座右铭 -->
       <div class="about-item">
@@ -82,7 +77,7 @@
         class="about-item like image"
         style="
           --color: #0c0e20;
-          background-image: url(https://pic.efefee.cn/uploads/2024/02/27/65dd812567723.webp);
+          background-image: url(/images/covers/cover_free-monitor.jpg);
         "
       >
         <div class="image-content">
@@ -97,7 +92,7 @@
         class="about-item like image"
         style="
           --color: #7b3c25;
-          background-image: url(https://pic.efefee.cn/uploads/2024/02/27/65dd836099d16.webp);
+          background-image: url(/images/covers/cover_free-cdn.jpg);
         "
       >
         <div class="image-content">
@@ -115,7 +110,7 @@
         class="about-item static image"
         style="
           --color: #0f1114;
-          background-image: url(https://pic.efefee.cn/uploads/2024/04/15/661c8fbf226d3.webp);
+          background-image: url(/images/covers/cover_free-database.jpg);
         "
       >
         <div class="image-content">
@@ -138,7 +133,7 @@
       <div class="about-item child">
         <div
           class="about-item map image"
-          style="background-image:url('https://s2.loli.net/2025/01/05/sHkoUeF3PCEli1N.png')"
+          style="background-image:url('/images/covers/cover_free-online-ide.jpg')"
         >
           <span class="position">我现在住在 <strong>中国，河北省</strong></span>
         </div>

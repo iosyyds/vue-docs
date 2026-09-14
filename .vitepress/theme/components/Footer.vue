@@ -11,7 +11,6 @@
           {{ theme.icp }}
         </a>
         <a v-if="theme.ga" class="galink" href="https://beian.mps.gov.cn/#/query/webSearch?code=51070002110059" rel="noreferrer" target="_blank">
-          <img style="height: 14px" src="/images/logo/ga.png">
           {{ theme.ga }}
         </a> 
       </div>

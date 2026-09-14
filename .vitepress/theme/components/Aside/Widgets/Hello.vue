@@ -14,10 +14,10 @@
         <span class="desc">{{ theme.siteMeta.description }}</span>
       </div>
       <div class="link">
-        <a href="https://github.com/lrsm21427/" target="_blank" class="social-link">
+        <a href="https://github.com/iosyyds/vue-docs" target="_blank" class="social-link">
           <i class="iconfont icon-github"></i>
         </a>
-        <a href="lrsm@2wr47b.onmicrosoft.com" target="_blank" class="social-link">
+        <a href="mailto:admin@xkbk.cn" target="_blank" class="social-link">
           <i class="iconfont icon-email"></i>
         </a>
       </div>

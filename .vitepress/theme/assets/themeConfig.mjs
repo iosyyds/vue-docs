@@ -8,15 +8,15 @@ export const themeConfig = {
     description: "小坤哥哥的个人博客，记录技术分享与生活点滴",
     // 站点logo
     logo: "/logo.svg",
-    // 站点地址（请替换为你自己的域名）
-    site: "https://example.com",
+    // 站点地址
+    site: "https://xkbk.cn",
     // 语言
     lang: "zh-CN",
     // 作者
     author: {
       name: "小坤哥哥",
-      cover: "/images/logo/logo-1.png",
-      email: "",
+      cover: "/logo.svg",
+      email: "admin@xkbk.cn",
       link: "https://github.com/iosyyds/vue-docs",
     },
   },
@@ -24,7 +24,7 @@ export const themeConfig = {
   icp: "",
   ga: "",
   // 建站日期
-  since: "2026-1-1",
+  since: "2026-9-13",
   // 每页文章数据
   postSize: 8,
   // inject
@@ -214,7 +214,7 @@ export const themeConfig = {
       },
       {
         icon: "email",
-        link: "",
+        link: "mailto:admin@xkbk.cn",
       },
     ],
     // sitemap
@@ -351,10 +351,10 @@ export const themeConfig = {
   // 打赏
   rewardData: {
     enable: false,
-    // 微信二维码
-    wechat: "/images/logo/wechat.png",
-    // 支付宝二维码
-    alipay: "/images/logo/alipay.jpg",
+    // 微信二维码（未配置）
+    wechat: "",
+    // 支付宝二维码（未配置）
+    alipay: "",
   },
   // 图片灯箱
   fancybox: {
