@@ -36,18 +36,15 @@
   </div>
 </template>
 <script setup>
-import { useData } from 'vitepress'
-const { site } = useData()
-const pages = site.value.pages || {}
-const posts = Object.entries(pages).map(([url, p]) => {
-  const fm = p.frontmatter || {}
+const files = import.meta.glob('/posts/*.md', { eager: true })
+const posts = Object.entries(files).map(([path, mod]) => {
+  const fm = mod.frontmatter || mod.default?.frontmatter || {}
   return {
-    url,
-    title: fm.title || url,
-    date: (fm.datetime || '').slice(0, 10),
+    url: path.replace('/posts/', '/posts/').replace('.md', '.html'),
+    title: fm.title || path.split('/').pop()?.replace('.md','') || '未命名',
+    date: (fm.datetime || fm.date || '').slice(0, 10),
     tags: fm.tags || [],
     pinned: !!fm.pinned
   }
-}).filter(p => p.url.startsWith('/posts/'))
-  .sort((a, b) => b.date.localeCompare(a.date))
+}).sort((a, b) => b.date.localeCompare(a.date))
 </script>
