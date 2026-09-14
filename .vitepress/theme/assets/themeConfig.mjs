@@ -115,6 +115,7 @@ export const themeConfig = {
       items: [
         { text: "甜甜导航", link: "/pages/nav", icon: "link" },
         { text: "友情链接", link: "/pages/link", icon: "account" },
+        { text: "站点订阅", link: "/rss.xml", icon: "rss" },
       ],
     },
     {
@@ -122,7 +123,6 @@ export const themeConfig = {
       items: [
         { text: "关于本站", link: "/pages/about", icon: "account" },
         { text: "隐私政策", link: "/pages/privacy", icon: "privacy" },
-        { text: "甜甜发卡", link: "https://qqqi.top/", icon: "link" },
       ],
     },
   ],
@@ -148,7 +148,7 @@ export const themeConfig = {
       list: [
         {
           icon: "/logo.svg",
-          name: "甜甜导航",
+          name: "导航站",
           url: "https://iosdh.cn",
         },
         {
