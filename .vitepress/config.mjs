@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import { createRssFile } from "./theme/utils/generateRSS.mjs";
+import { createSearchIndex } from "./theme/utils/generateSearchIndex.mjs";
 import { withPwa } from "@vite-pwa/vitepress";
 import {
   getAllPosts,
@@ -160,6 +161,7 @@ export default withPwa(
     // buildEnd
     buildEnd: async (config) => {
       await createRssFile(config, themeConfig);
+      await createSearchIndex(config, themeConfig);
     },
     // vite
     vite: {

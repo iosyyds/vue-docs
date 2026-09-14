@@ -342,10 +342,9 @@ export const themeConfig = {
     // playlist / album / song
     type: "playlist",
   },
-  // 搜索
-  // https://www.algolia.com/
+  // 搜索（本地全文搜索，构建时自动生成索引 search-index.json）
   search: {
-    enable: false,
+    enable: true,
     appId: "",
     apiKey: "",
   },
