@@ -149,7 +149,7 @@ onBeforeUnmount(() => {
     }
   }
   .title {
-    font-family: "Site Title";
+    font-family: "Site Title", var(--main-font-family);
     font-weight: bold;
     font-size: 2.75rem;
   }
