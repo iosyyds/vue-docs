@@ -22,15 +22,15 @@ import Link from "@/views/Link.vue";
 ### 我的友链信息
 
 - 名称：`小坤哥哥`
-- 描述：`分享技术与生活`
-- 地址：`https://github.com/iosyyds/vue-docs`
-- 头像：`/logo.svg`
+- 描述：`记录技术分享、生活点滴和日常折腾。`
+- 地址：`https://xkbk.cn`
+- 图标：`/logo.svg`
 - 站点图片：
 
 ```yml
 name: 小坤哥哥博客
-desc: 分享技术与生活
-url: https://github.com/iosyyds/vue-docs
+desc: 记录技术分享、生活点滴和日常折腾。
+url: https://xkbk.cn
 avatar: /logo.svg
 screenshot:
 ```

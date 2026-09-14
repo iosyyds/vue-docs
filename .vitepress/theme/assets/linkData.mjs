@@ -9,8 +9,8 @@ const linkData = [
       {
         name: "小坤哥哥",
         avatar: "/logo.svg",
-        desc: "独立开发者",
-        url: "https://github.com/iosyyds/vue-docs",
+        desc: "记录技术分享、生活点滴和日常折腾。",
+        url: "https://xkbk.cn",
       },
     ],
   },
@@ -23,8 +23,8 @@ const linkData = [
       {
         name: "小坤哥哥",
         avatar: "/logo.svg",
-        desc: "分享技术与生活",
-        url: "https://github.com/iosyyds/vue-docs",
+        desc: "记录技术分享、生活点滴和日常折腾。",
+        url: "https://xkbk.cn",
       },
     ],
   },
