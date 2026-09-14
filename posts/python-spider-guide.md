@@ -76,6 +76,8 @@ for page in range(1, 6):
     time.sleep(1)  # 控制频率，做有礼貌的爬虫
 ```
 
+![Python 爬虫四步流程](/images/tutorial/python.svg)
+
 ## 第四步：保存数据
 
 ```python

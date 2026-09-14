@@ -112,6 +112,8 @@ function debounce(fn, delay = 300) {
 }
 ```
 
+![性能优化五步流程](/images/tutorial/perf.svg)
+
 ## 优化清单速查
 
 | 项目 | 手法 | 收益 |

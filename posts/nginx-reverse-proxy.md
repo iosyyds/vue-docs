@@ -24,6 +24,8 @@ Nginx 是现在最流行的 Web 服务器之一，以高性能、低资源占用
 
 Nginx 做反向代理时，你访问 `https://xkbk.cn`，Nginx 收到请求后转发给本机的 Node 服务（如 `localhost:3000`），用户只看到域名，不暴露真实端口。
 
+![Nginx 反向代理架构](/images/tutorial/nginx.svg)
+
 ## 安装与基本命令
 
 ```bash

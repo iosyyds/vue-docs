@@ -88,6 +88,8 @@ UPDATE posts SET status = 0 WHERE id = 1;
 DELETE FROM posts WHERE id = 1;
 ```
 
+![MySQL 查询执行流程](/images/tutorial/mysql.svg)
+
 ## 索引：快慢的分水岭
 
 没有索引时查询是**全表扫描**，百万行数据就会明显变慢。索引相当于书的目录。

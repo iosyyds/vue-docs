@@ -23,6 +23,8 @@ articleGPT: "这篇文章系统对比 CSS 两大布局方案 Flexbox 与 Grid：
 - **二维布局**（行列都有，如卡片墙、仪表盘）→ Grid
 - 两者可以嵌套：外层 Grid 切分区域，区域内 Flex 排内容
 
+![Flexbox 与 Grid 选择](/images/tutorial/css.svg)
+
 ## Flexbox 核心
 
 父容器设置 `display: flex` 后，主轴默认水平（`flex-direction: row`）。

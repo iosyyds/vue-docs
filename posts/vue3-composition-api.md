@@ -21,6 +21,8 @@ Vue 3 最核心的变化就是组合式 API（Composition API）。相比 Vue 2 
 
 Vue 2 时代，一个复杂组件里，同一个功能的 `data`、`methods`、`watch` 散落在不同选项里。功能一多，上下翻代码非常痛苦。组合式 API 的核心思想是：**按功能组织代码**，而不是按选项类型组织。
 
+![组合式 API 逻辑组织对比](/images/tutorial/vue3.svg)
+
 ## setup 语法糖
 
 Vue 3.2+ 推荐直接使用 `<script setup>`，省去 `setup()` 函数和 `return` 的样板代码：

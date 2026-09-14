@@ -59,6 +59,8 @@ git push origin feat/xxx
 
 PR（Pull Request）是团队协作的核心：代码在合并前经过**评审**，而不是直接推到主干。
 
+![Git 分支协作工作流](/images/tutorial/git.svg)
+
 ## merge 还是 rebase？
 
 - **merge**：保留完整历史，有合并节点，适合团队协作（安全）

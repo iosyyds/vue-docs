@@ -23,6 +23,8 @@ articleGPT: "这篇文章带零基础读者入门 Docker：镜像与容器的关
 - **容器（Container）**：镜像运行起来的实例，类似"安装好的程序"
 - **仓库（Registry）**：存放镜像的地方，默认 Docker Hub
 
+![Docker 构建部署流程](/images/tutorial/docker.svg)
+
 常用命令速查：
 
 ```bash
