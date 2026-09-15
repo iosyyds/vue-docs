@@ -109,6 +109,16 @@ const jumpSearch = (url) => {
 onBeforeUnmount(() => {
   hasSearchValue.value = false;
 });
+
+// 弹窗打开时聚焦搜索输入框（弹窗常驻渲染后 autofocus 不再自动触发）
+watch(
+  () => store.searchShow,
+  (val) => {
+    if (val) {
+      nextTick(() => document.querySelector(".ais-SearchBox-input")?.focus());
+    }
+  },
+);
 </script>
 
 <style lang="scss">
