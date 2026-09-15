@@ -36,7 +36,9 @@ const loadGiscus = () => {
   script.setAttribute("data-input-position", giscus.inputPosition || "top");
   script.setAttribute("data-theme", getTheme());
   script.setAttribute("data-lang", giscus.lang || "zh-CN");
-  script.setAttribute("data-loading", "lazy");
+  // 注意：不要使用 data-loading="lazy"。
+  // giscus 的 iframe 初始高度为 0，若开启懒加载，浏览器会认为它从未进入视口，
+  // 导致 widget 永不加载，评论区一直空白。
   giscusRef.value.appendChild(script);
 };
 
@@ -86,6 +88,7 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .comment-content {
   width: 100%;
+  min-height: 180px;
   margin-top: 1rem;
   :deep(.giscus) {
     width: 100%;
