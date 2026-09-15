@@ -4,6 +4,8 @@
     <Banner v-if="showHeader" :height="store.bannerType" />
     <div class="home-content">
       <div class="posts-content">
+        <!-- 即刻短文轮播 -->
+        <EssayCarousel />
         <!-- 分类总览 -->
         <TypeBar :type="showTags ? 'tags' : 'categories'" />
         <!-- 文章列表 -->
