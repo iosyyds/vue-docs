@@ -1,4 +1,4 @@
-name: Deploy VitePress site to Pages
+name: Deploy Hugo site to Pages
 
 on:
   push:
@@ -20,22 +20,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
         with:
-          node-version: 22
-      - name: Install dependencies
-        run: npm install
-      - name: Build with VitePress
-        run: npm run build
+          submodules: recursive
+          fetch-depth: 0
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Setup Hugo
+        uses: actions/setup-hugo@v5
         with:
-          enablement: true
+          hugo-version: '0.166.0'
+          extended: true
+      - name: Build with Hugo
+        run: hugo --gc --minify
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .vitepress/dist
+          path: ./public
 
   deploy:
     environment:
