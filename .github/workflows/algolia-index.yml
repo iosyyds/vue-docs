@@ -1,0 +1,29 @@
+name: Push Algolia Index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "posts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  push-index:
+    runs-on: ubuntu-latest
+    if: ${{ secrets.ALGOLIA_ADMIN_KEY != '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Push to Algolia
+        env:
+          ALGOLIA_APP_ID: "0NOSBY3UK7"
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+          ALGOLIA_INDEX: "xkbk"
+        run: node scripts/push-algolia.mjs
