@@ -37,6 +37,26 @@ const Theme = {
     router.onAfterRouteChanged = (to) => {
       routeChange("after", to);
     };
+    // 预热 Algolia 连接，消除首次打开搜索弹窗的卡顿
+    if (typeof window !== "undefined") {
+      window.addEventListener("load", () => {
+        const search = siteData.themeConfig?.search;
+        if (search?.appId && search?.apiKey && search?.indexName) {
+          fetch(
+            `https://${search.appId}-dsn.algolia.net/1/indexes/${search.indexName}/query`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-Algolia-Application-Id": search.appId,
+                "X-Algolia-API-Key": search.apiKey,
+              },
+              body: JSON.stringify({ query: "", hitsPerPage: 1 }),
+            }
+          ).catch(() => {});
+        }
+      });
+    }
   },
 };
 
