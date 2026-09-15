@@ -2,8 +2,9 @@
   <footer id="main-footer" class="main-footer">
     <div class="footer-content">
       <div class="copyright">
-        <span class="time">© {{ footerCopyright }} By </span>
+        <span class="time">© {{ footerCopyright }} </span>
         <a :href="theme.siteMeta.author.link" class="author link" target="_blank">
+          <img class="author-logo" :src="theme.siteMeta.logo" alt="logo" />
           {{ theme.siteMeta.author.name }}
         </a>
         <a v-if="theme.icp" class="icp link" href="https://beian.miit.gov.cn/" target="_blank">
@@ -113,6 +114,17 @@ onBeforeUnmount(() => {
     line-height: 1;
     min-height: 32px;
     .copyright {
+      .author {
+        display: inline-flex;
+        align-items: center;
+        .author-logo {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          margin-right: 4px;
+          vertical-align: middle;
+        }
+      }
       .icp {
         .iconfont {
           font-size: 20px;
