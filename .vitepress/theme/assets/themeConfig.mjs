@@ -372,8 +372,8 @@ export const themeConfig = {
   search: {
     enable: true,
     // Algolia 应用凭据（Search-Only Key，可公开）
-    appId: "",
-    apiKey: "",
+    appId: "0NOSBY3UK7",
+    apiKey: "aedc18a22fc6eaff146308bbfc164895",
     // 索引名（与推送脚本 ALGOLIA_INDEX 保持一致）
     indexName: "xkbk",
   },
