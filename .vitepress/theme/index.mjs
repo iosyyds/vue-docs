@@ -3,6 +3,8 @@ import { createPinia } from "pinia";
 import { routeChange } from "@/utils/initTools.mjs";
 import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
 import LazyLoader from "@/components/LazyLoader.vue";
+import EssayCarousel from "@/components/EssayCarousel.vue";
+import EssayList from "@/components/EssayList.vue";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 // 根组件
@@ -28,6 +30,8 @@ const Theme = {
     app.use(pinia);
     app.use(InstantSearch);
     app.component("LazyLoader", LazyLoader);
+    app.component("EssayCarousel", EssayCarousel);
+    app.component("EssayList", EssayList);
     // 插件
     enhanceAppWithTabs(app);
     // 路由守卫
