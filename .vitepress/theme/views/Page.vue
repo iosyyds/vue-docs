@@ -17,6 +17,7 @@ const { frontmatter } = useData();
 
 <style lang="scss" scoped>
 @use "../style/post.scss";
+
 .page {
   width: 100%;
   display: flex;

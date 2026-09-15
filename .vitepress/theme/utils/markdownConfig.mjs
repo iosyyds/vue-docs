@@ -80,7 +80,7 @@ const markdownConfig = (md, themeConfig) => {
                 <span class="post-img-tip">${alt}</span>
               </a>`;
   };
-
+  
   // obsidian admonition
   const fence = md.renderer.rules.fence;
   md.renderer.rules.fence = (...args) => {
@@ -117,7 +117,7 @@ const markdownConfig = (md, themeConfig) => {
     </div>`;
     }
     return fence(...args);
-  };
+  };  
 };
 
 export default markdownConfig;

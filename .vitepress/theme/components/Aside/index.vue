@@ -6,14 +6,11 @@
       <Countdown class="weidgets" />
       <Tags v-if="theme.aside.tags.enable" class="weidgets" />
       <SiteData v-if="theme.aside.siteData.enable" class="weidgets" />
-      <DinoGame class="weidgets" />
     </div>
   </aside>
 </template>
 
 <script setup>
-import DinoGame from "./Widgets/DinoGame.vue";
-
 const { theme } = useData();
 const props = defineProps({
   // 显示目录
