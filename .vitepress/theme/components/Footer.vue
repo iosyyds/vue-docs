@@ -116,15 +116,21 @@ onBeforeUnmount(() => {
     .copyright {
       display: flex;
       align-items: center;
+      line-height: 1;
+      .time,
       .author {
         display: inline-flex;
         align-items: center;
+        line-height: 1;
+      }
+      .author {
         .author-logo {
           width: 16px;
           height: 16px;
           border-radius: 50%;
           margin-right: 4px;
           vertical-align: middle;
+          flex-shrink: 0;
         }
       }
       .icp {
