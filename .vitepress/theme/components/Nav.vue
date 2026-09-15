@@ -25,6 +25,7 @@
             </div>
           </div>
           <div class="site-name" @click="router.go('/')">
+            <img class="site-logo" :src="theme.siteMeta.logo" alt="logo" />
             {{ site.title }}
           </div>
         </div>
@@ -47,7 +48,6 @@
             </div>
           </div>
           <span class="site-title" @click="smoothScrolling">
-            <img class="site-logo" :src="theme.siteMeta.logo" alt="logo" />
             <span class="site-name">
               {{ (frontmatter.home ? site.description : page.title) || site.description }}
             </span>
@@ -296,6 +296,7 @@ const { site, theme, frontmatter, page } = useData();
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 5px;
         font-size: 18px;
         font-weight: bold;
         height: 34px;
@@ -305,6 +306,12 @@ const { site, theme, frontmatter, page } = useData();
         text-overflow: ellipsis;
         transition: transform 0.3s;
         cursor: pointer;
+        .site-logo {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
         &::after {
           content: "\e032";
           font-family: "iconfont";
@@ -492,13 +499,6 @@ const { site, theme, frontmatter, page } = useData();
           transform 0.3s,
           opacity 0.3s;
         cursor: pointer;
-        .site-logo {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          vertical-align: middle;
-          flex-shrink: 0;
-        }
         .site-name {
           overflow: hidden;
           text-overflow: ellipsis;
