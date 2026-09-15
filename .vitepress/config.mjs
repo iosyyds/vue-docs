@@ -119,10 +119,14 @@ export default withPwa(
       head.push(["meta", { name: "twitter:title", content: pageTitle }]);
       head.push(["meta", { name: "twitter:description", content: desc }]);
       head.push(["meta", { name: "twitter:image", content: ogImage }]);
-      // 文章标签作为 keywords
-      if (isPost && Array.isArray(pageData.frontmatter.tags) && pageData.frontmatter.tags.length) {
-        head.push(["meta", { name: "keywords", content: pageData.frontmatter.tags.join(", ") }]);
-      }
+      // 关键词：站点级默认 + 文章标签叠加（全站所有页面都有 keywords）
+      const siteKeywords =
+        "小坤哥哥博客, 个人博客, 技术分享, 编程教程, 前端开发, 资源推荐, 生活点滴, xkbk.cn";
+      const pageTags = Array.isArray(pageData.frontmatter.tags) && pageData.frontmatter.tags.length
+        ? pageData.frontmatter.tags.join(", ")
+        : "";
+      const keywords = pageTags ? `${siteKeywords}, ${pageTags}` : siteKeywords;
+      head.push(["meta", { name: "keywords", content: keywords }]);
       // JSON-LD 结构化数据
       const jsonLd = isPost
         ? {
