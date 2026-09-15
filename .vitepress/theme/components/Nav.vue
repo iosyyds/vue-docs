@@ -301,6 +301,7 @@ const { site, theme, frontmatter, page } = useData();
         font-weight: bold;
         height: 34px;
         padding: 0 6px;
+        line-height: 1;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -311,6 +312,7 @@ const { site, theme, frontmatter, page } = useData();
           height: 20px;
           border-radius: 50%;
           flex-shrink: 0;
+          display: block;
         }
         &::after {
           content: "\e032";
@@ -633,6 +635,7 @@ const { site, theme, frontmatter, page } = useData();
     @media (max-width: 768px) {
       display: flex;
       flex-direction: row;
+      align-items: center;
       justify-content: space-between;
       padding: 1rem 1.5rem;
       .left-nav,
