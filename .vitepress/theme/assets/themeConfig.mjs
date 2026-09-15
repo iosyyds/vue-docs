@@ -147,6 +147,7 @@ export const themeConfig = {
       text: "我的",
       items: [
         { text: "即刻短文", link: "/pages/essay", icon: "article" },
+        { text: "常用软件", link: "/pages/software", icon: "window" },
         { text: "畅所欲言", link: "/pages/message", icon: "chat" },
         { text: "关于本站", link: "/pages/about", icon: "account" },
         { text: "隐私政策", link: "/pages/privacy", icon: "privacy" },
