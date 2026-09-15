@@ -72,6 +72,10 @@ export const createRssFile = async (config, themeConfig) => {
       ],
     });
   }
-  // 写入文件
-  writeFileSync(path.join(config.outDir, "rss.xml"), feed.rss2(), "utf-8");
+  // 写入文件（附带 XSL 样式表声明，浏览器直接打开 rss.xml 时排版展示）
+  const rss = feed.rss2().replace(
+    '<?xml version="1.0" encoding="utf-8"?>',
+    '<?xml version="1.0" encoding="utf-8"?>\n<?xml-stylesheet type="text/xsl" href="/rss.xsl"?>'
+  );
+  writeFileSync(path.join(config.outDir, "rss.xml"), rss, "utf-8");
 };
