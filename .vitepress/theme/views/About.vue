@@ -131,11 +131,52 @@
       </div>
       <!-- 信息 -->
       <div class="about-item child">
-        <div
-          class="about-item map image"
-          style="background-image:url('/images/covers/cover_free-online-ide.jpg')"
-        >
-          <span class="position">我现在住在 <strong>中国，河北省</strong></span>
+        <div class="about-item map">
+          <!-- 秦皇岛定位地图（SVG 自绘，无需第三方地图 key） -->
+          <svg class="map-svg" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="map-sea" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#bfdcf2" />
+                <stop offset="1" stop-color="#93c2e6" />
+              </linearGradient>
+            </defs>
+            <!-- 陆地 -->
+            <rect width="400" height="220" fill="#f2ecdf" />
+            <!-- 渤海 -->
+            <path
+              d="M400,0 L268,14 C294,58 298,100 272,138 C250,170 214,193 168,203 L400,220 Z"
+              fill="url(#map-sea)"
+            />
+            <!-- 海岸线 -->
+            <path
+              d="M268,14 C294,58 298,100 272,138 C250,170 214,193 168,203"
+              fill="none"
+              stroke="#7ba7c9"
+              stroke-width="2"
+            />
+            <!-- 经纬网格 -->
+            <g class="map-grid">
+              <line x1="100" y1="0" x2="100" y2="220" />
+              <line x1="200" y1="0" x2="200" y2="220" />
+              <line x1="300" y1="0" x2="300" y2="220" />
+              <line x1="0" y1="55" x2="400" y2="55" />
+              <line x1="0" y1="110" x2="400" y2="110" />
+              <line x1="0" y1="165" x2="400" y2="165" />
+            </g>
+            <!-- 省名 -->
+            <text class="map-province" x="52" y="72">河北省</text>
+            <!-- 定位点：秦皇岛 -->
+            <g>
+              <circle class="pin-pulse" cx="240" cy="112" r="7" />
+              <circle class="pin-dot" cx="240" cy="112" r="4" />
+              <text class="pin-label" x="254" y="107">秦皇岛</text>
+              <text class="pin-coord" x="254" y="122">39.93°N · 119.60°E</text>
+            </g>
+          </svg>
+          <div class="position">
+            <span class="position-city">河北省 · 秦皇岛市</span>
+            <span class="position-coord">📍 我在这里</span>
+          </div>
         </div>
         <div class="about-item info">
           <div class="info-item">
@@ -506,31 +547,70 @@ onMounted(() => {
       }
       &.map {
         min-height: 170px;
-        background-size: 100%;
-        transition: background 1.5s ease-in-out;
-        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: border-color 0.3s;
         @media (max-width: 768px) {
-          background-size: cover;
           pointer-events: none;
         }
-        .position {
+        .map-svg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
           display: block;
+        }
+        .map-grid {
+          stroke: rgba(255, 255, 255, 0.55);
+          stroke-width: 1;
+          stroke-dasharray: 3 5;
+        }
+        .map-province {
+          font-size: 17px;
+          font-weight: bold;
+          letter-spacing: 3px;
+          fill: rgba(74, 85, 104, 0.55);
+        }
+        .pin-pulse {
+          fill: #e5484d;
+          opacity: 0.5;
+          transform-origin: center;
+          transform-box: fill-box;
+          animation: pin-pulse 2s ease-out infinite;
+        }
+        .pin-dot {
+          fill: #e5484d;
+          stroke: #fff;
+          stroke-width: 1.5;
+        }
+        .pin-label {
+          font-size: 13px;
+          font-weight: bold;
+          fill: #2d3a4d;
+        }
+        .pin-coord {
+          font-size: 9px;
+          fill: #6b7a8a;
+        }
+        .position {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
           position: absolute;
           left: 0;
           bottom: 0;
           width: 100%;
-          padding: 20px 30px;
+          padding: 12px 20px;
           color: #fff;
-          background-color: #636352;
-          font-size: 20px;
-          transition: bottom 1s;
-        }
-        &:hover {
-          background-size: 120%;
-          background-position-x: 0;
-          background-position-y: 36%;
-          .position {
-            bottom: -80px;
+          background: linear-gradient(90deg, #1f2c40 0%, #16202f 100%);
+          font-size: 15px;
+          .position-city {
+            font-weight: bold;
+            letter-spacing: 1px;
+          }
+          .position-coord {
+            font-size: 12px;
+            opacity: 0.75;
           }
         }
       }
@@ -562,6 +642,17 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
     }
+  }
+}
+// 定位点脉冲动画
+@keyframes pin-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
   }
 }
 </style>
