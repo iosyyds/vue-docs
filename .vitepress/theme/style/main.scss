@@ -32,7 +32,7 @@
   --main-color-gray: #999;
   --main-color-red: #ff3842;
   --main-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
-  Cantarell, "Helvetica Neue", sans-serif;
+    Cantarell, "Helvetica Neue", sans-serif;
 }
 
 html.dark {
@@ -138,8 +138,8 @@ body {
   animation: show forwards 0.5s;
   overflow-x: hidden;
   transition:
-          color 0.3s,
-          background-color 0.3s;
+    color 0.3s,
+    background-color 0.3s;
 }
 
 a {
@@ -166,8 +166,8 @@ a {
       left: 4px;
       background: var(--main-scrolling-bar);
       transition:
-              background 0.3s,
-              left 0.3s;
+        background 0.3s,
+        left 0.3s;
       cursor: pointer;
     }
     &:hover {

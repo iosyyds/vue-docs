@@ -8,9 +8,9 @@
       :style="{ animationDelay: `${0.4 + index / 10}s` }"
       @click="toPost(item.regularPath)"
     >
-<!--      <div v-if="!simple && showCover(item)" class="post-cover">-->
-<!--        <img :src="getCover(item)" :alt="item.title">-->
-<!--      </div>-->
+      <div v-if="!simple && showCover(item)" class="post-cover">
+        <img :src="getCover(item)" :alt="item.title">
+      </div>
       
       <div class="post-content">
         <div v-if="!simple && item?.categories" class="post-category">
