@@ -84,6 +84,9 @@ const props = defineProps({
 const jumpInput = ref(null);
 const inputFocus = ref(false);
 
+// 是否手机端（移动端页码显示更紧凑）
+const isMobile = ref(false);
+
 // 页数数据
 const currentPage = ref(props.page);
 const totalPages = computed(() => Math.ceil(props.total / props.limit));
@@ -93,7 +96,7 @@ const pageNumber = computed(() => {
   let pages = [];
   const current = currentPage.value;
   const total = totalPages.value;
-  const wingSize = 2; // 当前页前后要显示的页码数
+  const wingSize = isMobile.value ? 1 : 2; // 当前页前后要显示的页码数（移动端显示更少，避免拥挤）
   let startPage = Math.max(current - wingSize, 2);
   let endPage = Math.min(current + wingSize, total - 1);
   // 总是显示第一页
@@ -170,6 +173,12 @@ const checkCurrentPage = () => {
 
 onMounted(() => {
   checkCurrentPage();
+  // 监听屏幕宽度，切换移动端紧凑模式
+  const mql = window.matchMedia("(max-width: 768px)");
+  isMobile.value = mql.matches;
+  mql.addEventListener("change", (e) => {
+    isMobile.value = e.matches;
+  });
 });
 </script>
 
@@ -331,15 +340,31 @@ onMounted(() => {
     }
   }
   @media (max-width: 768px) {
+    // 手机端显示页码，布局更紧凑
     .page-number {
-      display: none;
+      display: flex;
+      padding: 0 46px;
+      .fast-jump {
+        display: none;
+      }
+      .page-item {
+        width: 34px;
+        height: 34px;
+        margin: 0 4px;
+        font-size: 14px;
+      }
+      .point {
+        margin: 0 2px;
+        font-size: 18px;
+      }
     }
     .page-item {
-      &:first-child {
-        margin-right: 10px;
-      }
-      &:last-child {
-        margin-left: 10px;
+      &.prev,
+      &.next {
+        width: 42px;
+        .page-text {
+          display: none;
+        }
       }
     }
   }
