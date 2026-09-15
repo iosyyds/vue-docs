@@ -78,9 +78,8 @@
             </a>
           </div>
           <a
-            href="https://eqnxweimkr5.feishu.cn/share/base/form/shrcnCXCPmxCKKJYI3RKUfefJre"
+            href="javascript:void(0)"
             class="report"
-            target="_blank"
           >
             <i class="iconfont icon-report" />
             反馈与投诉
