@@ -18,6 +18,7 @@
     <Artalk v-if="theme.comment.type === 'artalk'" :fill="fill" />
     <Twikoo v-else-if="theme.comment.type === 'twikoo'" :fill="fill" />
     <Giscus v-else-if="theme.comment.type === 'giscus'" :fill="fill" />
+    <Valine v-else-if="theme.comment.type === 'valine'" :fill="fill" />
   </div>
 </template>
 

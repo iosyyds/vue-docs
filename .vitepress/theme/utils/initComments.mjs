@@ -36,6 +36,23 @@ const initComments = async (themeConfig) => {
             },
           });
         });
+      case "valine":
+        // 引入资源
+        return await new Promise((resolve, reject) => {
+          loadScript(
+            option[commentType].js ||
+              "https://cdn.staticfile.org/valine/1.5.1/Valine.min.js",
+            {
+              callback: () => {
+                if (typeof Valine === "object") {
+                  resolve(Valine);
+                } else {
+                  reject(new Error("Valine 初始化失败"));
+                }
+              },
+            },
+          );
+        });
       default:
         return false;
     }

@@ -257,8 +257,8 @@ export const themeConfig = {
   comment: {
     enable: true,
     // 评论系统选择
-    // artalk / twikoo / giscus
-    type: "giscus",
+    // artalk / twikoo / giscus / valine
+    type: "valine",
     // artalk
     // https://artalk.js.org/
     artalk: {
@@ -286,6 +286,20 @@ export const themeConfig = {
       reactionsEnabled: true,
       inputPosition: "top",
       lang: "zh-CN",
+    },
+    // valine
+    // https://valine.js.org/
+    valine: {
+      // 必填：LeanCloud 应用的密钥（在 LeanCloud 控制台创建应用后获取）
+      appId: "",
+      appKey: "",
+      // LeanCloud 国际版必填，国内版可留空
+      serverURLs: "",
+      // 自定义 JS（默认走国内 CDN）
+      js: "https://cdn.staticfile.org/valine/1.5.1/Valine.min.js",
+      placeholder: "说点什么吧~",
+      avatar: "retro",
+      requiredFields: ["nick"],
     },
   },
   // 侧边栏
