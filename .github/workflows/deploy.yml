@@ -1,4 +1,4 @@
-name: Deploy Hugo site to Pages
+name: Deploy VitePress site to Pages
 
 on:
   push:
@@ -20,22 +20,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          submodules: recursive
-          fetch-depth: 0
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build with VitePress
+        run: npm run build
+      - name: Push search index to Algolia
+        if: ${{ secrets.ALGOLIA_ADMIN_KEY != '' }}
+        env:
+          ALGOLIA_APP_ID: "0NOSBY3UK7"
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+          ALGOLIA_INDEX: "xkbk"
+        run: node scripts/push-algolia.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.166.0'
-          extended: true
-      - name: Build with Hugo
-        run: hugo --gc --minify
+          enablement: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: .vitepress/dist
 
   deploy:
     environment:
