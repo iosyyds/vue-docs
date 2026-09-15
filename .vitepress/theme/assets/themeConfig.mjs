@@ -107,6 +107,15 @@ export const themeConfig = {
           crossorigin: "",
         },
       ],
+      // Google AdSense
+      [
+        "script",
+        {
+          async: "",
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7156604582462189",
+          crossorigin: "anonymous",
+        },
+      ],
       // 51la 站点统计
       [
         "script",
