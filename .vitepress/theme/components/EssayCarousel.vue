@@ -70,7 +70,7 @@ const formatDate = (date) => {
 
 // 跳转短文页
 const goEssay = () => {
-  router.push("/pages/essay");
+  router.go("/pages/essay");
 };
 </script>
 
@@ -100,6 +100,14 @@ const goEssay = () => {
       font-size: 12px;
       color: var(--main-font-color);
       opacity: 0.55;
+      cursor: pointer;
+      transition:
+        color 0.3s,
+        opacity 0.3s;
+      &:hover {
+        color: var(--main-color);
+        opacity: 1;
+      }
     }
   }
   .essay-body {
@@ -120,11 +128,9 @@ const goEssay = () => {
         font-size: 14px;
         line-height: 1.7;
         color: var(--main-font-color);
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
       }
       .essay-foot {
         display: flex;
