@@ -2,7 +2,7 @@
 <template>
   <Teleport to="body">
     <Transition name="fade" mode="out-in">
-      <div v-if="show" class="modal">
+      <div v-show="show" class="modal">
         <div class="modal-mask" @click.stop="maskClick" />
         <div
           :style="{
