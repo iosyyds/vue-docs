@@ -1,0 +1,62 @@
+---
+title: 免费云数据库服务推荐：不用自己搭MySQL
+date: '2026-09-14'
+categories:
+  - 资源推荐
+tags:
+  - 数据库
+  - 免费资源
+cover: /images/covers/cover_free-database.jpg
+articleGPT: "为什么用云数据库？ 自己搭数据库要管备份、扩容、安全升级，云数据库帮你搞定这些，免费额度够个人项目用。 推荐列表 1. Supabase 费用 ：免费版500MB数据库 + 500MB存储 类型 ：PostgreSQL 优势 ：自带实时订阅、Auth认证、REST API 适合 ：快速开发项目 2.……"
+---
+
+# 免费云数据库服务推荐
+
+![封面](/images/covers/cover_free-database.jpg)
+
+## 为什么用云数据库？
+
+自己搭数据库要管备份、扩容、安全升级，云数据库帮你搞定这些，免费额度够个人项目用。
+
+## 推荐列表
+
+### 1. Supabase
+
+- **费用**：免费版500MB数据库 + 500MB存储
+- **类型**：PostgreSQL
+- **优势**：自带实时订阅、Auth认证、REST API
+- **适合**：快速开发项目
+
+### 2. PlanetScale
+
+- **费用**：免费版5GB存储
+- **类型**：MySQL
+- **优势**：分支查询、自动备份
+- **缺点**：免费版90天不活跃会删除
+
+### 3. MongoDB Atlas
+
+- **费用**：免费版512MB
+- **类型**：MongoDB
+- **优势**：全球集群、自带搜索
+- **适合**：文档型数据
+
+### 4. Turso
+
+- **费用**：免费9GB存储
+- **类型**：SQLite（边缘数据库）
+- **优势**：全球边缘节点，毫秒级响应
+- **适合**：边缘计算应用
+
+## 对比
+
+| 服务 | 类型 | 免费额度 | 推荐 |
+|------|------|----------|------|
+| Supabase | PostgreSQL | 500MB | 新手首选 |
+| PlanetScale | MySQL | 5GB | 项目开发 |
+| MongoDB Atlas | MongoDB | 512MB | 文档型 |
+| Turso | SQLite | 9GB | 边缘场景 |
+
+## 总结
+
+个人项目首选 Supabase，免费额度够用，功能最全面。
