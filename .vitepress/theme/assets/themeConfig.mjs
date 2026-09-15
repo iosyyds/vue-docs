@@ -107,6 +107,22 @@ export const themeConfig = {
           crossorigin: "",
         },
       ],
+      // 51la 站点统计
+      [
+        "script",
+        {
+          charset: "UTF-8",
+          id: "LA_COLLECT",
+          src: "https://sdk.51.la/js-sdk-pro.min.js",
+        },
+      ],
+      [
+        "script",
+        {
+          children:
+            'LA.init({id:"LJuM8F1h3kXFwnCW",ck:"LJuM8F1h3kXFwnCW"})',
+        },
+      ],
     ],
   },
   // 导航栏菜单
@@ -426,6 +442,6 @@ export const themeConfig = {
   },
   // 站点统计
   tongji: {
-    "51la": "",
+    "51la": "LJuM8F1h3kXFwnCW",
   },
 };
