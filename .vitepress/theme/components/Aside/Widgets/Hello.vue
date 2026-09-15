@@ -7,6 +7,11 @@
         <Clock />
       </div>
       <span class="site-desc" v-html="theme.aside.hello.text" />
+      <!-- 手机端欢迎文案 -->
+      <div class="mobile-hello">
+        <span class="hello-line">你好，欢迎来到</span>
+        <strong class="hello-name">{{ site.title }}</strong>
+      </div>
     </div>
     <div class="info">
       <div class="name">
@@ -140,6 +145,10 @@ onBeforeUnmount(() => {
       opacity: 0;
       transition: opacity 0.3s;
     }
+    // 手机端欢迎文案（默认隐藏）
+    .mobile-hello {
+      display: none;
+    }
   }
   .info {
     display: flex;
@@ -199,6 +208,32 @@ onBeforeUnmount(() => {
       }
       .site-desc {
         opacity: 1;
+      }
+    }
+  }
+  // 手机端：显示两行欢迎文案并居中
+  @media (max-width: 768px) {
+    .content {
+      .site-logo,
+      .site-desc {
+        display: none;
+      }
+      .mobile-hello {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 6px;
+        .hello-line {
+          font-size: 1.05rem;
+          opacity: 0.9;
+        }
+        .hello-name {
+          font-size: 1.35rem;
+          font-weight: bold;
+          letter-spacing: 1px;
+        }
       }
     }
   }
