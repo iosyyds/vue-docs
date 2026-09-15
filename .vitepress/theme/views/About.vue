@@ -3,13 +3,13 @@
     <h1 class="title">关于本站</h1>
     <div class="about-content" style="grid-template-columns: 3fr 2fr">
       <!-- 介绍 -->
-      <div class="about-item hello">
+      <div class="about-item hello about-anim" style="--anim-delay: 0s">
         <span class="text1">你好，很高兴认识你👋</span>
         <span class="text2 title2">我是小坤哥哥</span>
         <span class="text3">是一名热爱折腾的开发者，前端为主，渴望全栈</span>
       </div>
       <!-- 追求 -->
-      <div class="about-item pursuit">
+      <div class="about-item pursuit about-anim" style="--anim-delay: 0.15s">
         <span class="tip">追求</span>
         <span class="title2">源于</span>
         <span class="title2">热爱而去开发</span>
@@ -18,14 +18,14 @@
     </div>
     <div class="about-content" style="grid-template-columns: 2fr 3fr">
       <!-- 技能 -->
-      <div class="about-item skills">
+      <div class="about-item skills about-anim" style="--anim-delay: 0.1s">
         <span class="tip">技能</span>
         <span class="title2">提升创造力</span>
         <div class="skills-list">
           <a
             v-for="(item, index) in skillsData"
             :key="index"
-            :style="{ '--color': item.color }"
+            :style="{ '--color': item.color, '--i': index }"
             :href="item.link"
             class="skills-item"
             target="_blank"
@@ -38,7 +38,7 @@
         </div>
       </div>
       <!-- 生涯 -->
-      <div class="about-item career">
+      <div class="about-item career about-anim" style="--anim-delay: 0.25s">
         <span class="tip">生涯</span>
         <span class="title2">
           <i>無限進步</i> 
@@ -56,7 +56,7 @@
     </div>
     <div class="about-content" style="grid-template-columns: 3fr 2fr">
       <!-- 性格 -->
-      <div class="about-item character" style="--color: #4298b4">
+      <div class="about-item character about-anim" style="--color: #4298b4; --anim-delay: 0s">
         <span class="tip">性格</span>
         <span class="title2">乐观积极</span>
         <span class="title2" style="color: var(--color)">乐于分享</span>
@@ -66,7 +66,7 @@
         </span>
       </div>
       <!-- 座右铭 -->
-      <div class="about-item">
+      <div class="about-item motto about-anim" style="--anim-delay: 0.15s">
         <span class="tip">座右铭</span>
         <span class="title1" style="margin-top: 20px">热爱生活，</span>
         <span class="title2">保持好奇。</span>
@@ -74,9 +74,10 @@
     </div>
     <div class="about-content" style="grid-template-columns: 1fr 1fr">
       <div
-        class="about-item like image"
+        class="about-item like image about-anim"
         style="
           --color: #0c0e20;
+          --anim-delay: 0.05s;
           background-image: url(/images/covers/cover_free-monitor.jpg);
         "
       >
@@ -89,9 +90,10 @@
         </div>
       </div>
       <div
-        class="about-item like image"
+        class="about-item like image about-anim"
         style="
           --color: #7b3c25;
+          --anim-delay: 0.2s;
           background-image: url(/images/covers/cover_free-cdn.jpg);
         "
       >
@@ -111,9 +113,10 @@
     <div class="about-content" style="grid-template-columns: 2fr 3fr">
       <!-- 数据 -->
       <div
-        class="about-item static image"
+        class="about-item static image about-anim"
         style="
           --color: #0d1322;
+          --anim-delay: 0.05s;
           background: linear-gradient(135deg, #101a2e 0%, #1b2f4e 55%, #22395f 100%);
         "
       >
@@ -142,7 +145,7 @@
         </div>
       </div>
       <!-- 信息 -->
-      <div class="about-item child">
+      <div class="about-item child about-anim" style="--anim-delay: 0.2s">
         <div class="about-item map">
           <!-- 秦皇岛定位地图（SVG 自绘，无需第三方地图 key） -->
           <svg class="map-svg" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
@@ -204,7 +207,7 @@
     </div>
     <!-- 心路历程 -->
     <div class="about-content" style="display: flex">
-      <div class="about-item">
+      <div class="about-item story about-anim" style="--anim-delay: 0.05s">
         <span class="tip">心路历程</span>
         <span class="title2">为什么建站？</span>
         <p class="text">
@@ -301,6 +304,24 @@ const getStatisticsData = async () => {
 
 onMounted(() => {
   getStatisticsData();
+  // 滚动进入视口动画：卡片浮现
+  const items = document.querySelectorAll(".about-anim");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    items.forEach((el) => io.observe(el));
+  } else {
+    items.forEach((el) => el.classList.add("in-view"));
+  }
 });
 </script>
 
@@ -698,6 +719,251 @@ onMounted(() => {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+</style>
+
+<!-- 关于页动画（全局样式，避免 scoped 限制动态 class） -->
+<style lang="scss">
+.about {
+  // 卡片滚动浮现
+  .about-anim {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: var(--anim-delay, 0s);
+    will-change: opacity, transform;
+    &.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  // 卡片 hover 轻微上浮（仅已显示的卡片）
+  .about-item.in-view:hover {
+    transform: translateY(-4px);
+  }
+  // 首屏问候：打字机 + 逐行浮现
+  .hello {
+    .text1 {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      border-right: 2px solid var(--main-color);
+      animation: about-type 2.2s steps(12) forwards;
+      animation-delay: 0.4s;
+    }
+    &.in-view {
+      .text2,
+      .text3 {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .text2 {
+        transition-delay: 1s;
+      }
+      .text3 {
+        transition-delay: 1.25s;
+      }
+    }
+    &.in-view .text2,
+    &.in-view .text3 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  // 追求卡片文字逐行浮现
+  .pursuit.in-view {
+    .tip,
+    .title2 {
+      opacity: 0;
+      transform: translateX(18px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    }
+    .tip {
+      transition-delay: 0.1s;
+    }
+    .title2:nth-of-type(1) {
+      transition-delay: 0.25s;
+    }
+    .title2:nth-of-type(2) {
+      transition-delay: 0.4s;
+    }
+    .title2:nth-of-type(3) {
+      transition-delay: 0.55s;
+    }
+    .tip,
+    .title2 {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  // 技能项依次弹出
+  .skills.in-view .skills-item {
+    opacity: 0;
+    transform: scale(0.7) translateY(10px);
+    animation: about-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: calc(0.15s + var(--i) * 80ms);
+  }
+  // 生涯卡片
+  .career.in-view {
+    .tip,
+    .title2,
+    .list-item {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    }
+    .tip {
+      transition-delay: 0.1s;
+    }
+    .title2 {
+      transition-delay: 0.25s;
+    }
+    .list-item {
+      transition-delay: 0.4s;
+    }
+    .tip,
+    .title2,
+    .list-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  // 性格 / 座右铭 文字浮现
+  .character.in-view,
+  .motto.in-view {
+    .title2,
+    .title1,
+    .more {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    }
+    .tip {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+      transition-delay: 0.05s;
+    }
+  }
+  .character.in-view .title2:nth-of-type(1) {
+    transition-delay: 0.15s;
+  }
+  .character.in-view .title2:nth-of-type(2) {
+    transition-delay: 0.3s;
+  }
+  .character.in-view .more {
+    transition-delay: 0.45s;
+  }
+  .motto.in-view .title1 {
+    transition-delay: 0.15s;
+  }
+  .motto.in-view .title2 {
+    transition-delay: 0.3s;
+  }
+  .character.in-view .title2,
+  .character.in-view .more,
+  .character.in-view .tip,
+  .motto.in-view .title1,
+  .motto.in-view .title2,
+  .motto.in-view .tip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  // 心路历程段落逐行浮现
+  .story.in-view {
+    .tip,
+    p.text {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    }
+    .tip {
+      transition-delay: 0.05s;
+    }
+    p.text:nth-of-type(1) {
+      transition-delay: 0.15s;
+    }
+    p.text:nth-of-type(2) {
+      transition-delay: 0.3s;
+    }
+    p.text:nth-of-type(3) {
+      transition-delay: 0.45s;
+    }
+    .tip,
+    p.text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  // 图片卡片内文字上浮
+  .about-anim.in-view .image-content .tip,
+  .about-anim.in-view .image-content .title2,
+  .about-anim.in-view .image-content .image-desc {
+    animation: about-fade-up 0.6s ease both;
+  }
+  .about-anim.in-view .image-content .tip {
+    animation-delay: 0.1s;
+  }
+  .about-anim.in-view .image-content .title2 {
+    animation-delay: 0.25s;
+  }
+  .about-anim.in-view .image-content .image-desc {
+    animation-delay: 0.4s;
+  }
+}
+// 打字机
+@keyframes about-type {
+  to {
+    width: 12ch;
+  }
+}
+// 技能弹出
+@keyframes about-pop {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+// 文字上浮
+@keyframes about-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+// 减弱动画偏好：直接显示
+@media (prefers-reduced-motion: reduce) {
+  .about .about-anim {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .about .about-anim * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
   }
 }
 </style>
