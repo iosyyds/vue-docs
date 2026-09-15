@@ -251,3 +251,30 @@ params:
       local:
         preload: true
         CDN: /search.xml
+    extends:
+      head:
+        - |
+          <style>
+          /* 顶部导航栏显示背景 */
+          #page-header:not(.nav-fixed) #nav,
+          #page-header.nav-fixed #nav {
+            background: var(--efu-card-bg);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--efu-theme);
+            box-shadow: 0 4px 16px -4px rgba(0,0,0,0.08);
+          }
+          #page-header:not(.nav-fixed) #nav a,
+          #page-header:not(.nav-fixed) #nav #site-name i,
+          #page-header:not(.nav-fixed) #nav #site-name span.title {
+            color: var(--efu-fontcolor);
+          }
+          #page-header:not(.nav-fixed) #nav a:hover {
+            background: var(--efu-lighttext);
+            color: var(--efu-nav-hover-text);
+          }
+          #page-header:not(.nav-fixed) #nav #nav-right .nav-button a.console_switchbutton label i,
+          .post #page-header:not(.nav-fixed) #nav #nav-right .nav-button .console_switchbutton label i {
+            background: var(--efu-fontcolor);
+          }
+          </style>
