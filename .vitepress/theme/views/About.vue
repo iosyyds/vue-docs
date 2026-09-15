@@ -4,7 +4,7 @@
     <div class="about-content" style="grid-template-columns: 3fr 2fr">
       <!-- 介绍 -->
       <div class="about-item hello about-anim" style="--anim-delay: 0s">
-        <span class="text1">你好，很高兴认识你👋</span>
+        <span class="text1">{{ typedText }}</span>
         <span class="text2 title2">我是小坤哥哥</span>
         <span class="text3">是一名热爱折腾的开发者，前端为主，渴望全栈</span>
       </div>
@@ -291,6 +291,11 @@ const skillsData = [
 const statisticsData = ref(null);
 const statisticsError = ref(false);
 
+// 首屏问候：JS 打字机（逐字显示，保证最终完整展示）
+const typeTarget = "你好，很高兴认识你👋";
+const typedText = ref("");
+let typeTimer = null;
+
 // 获取站点统计数据
 const getStatisticsData = async () => {
   try {
@@ -304,6 +309,17 @@ const getStatisticsData = async () => {
 
 onMounted(() => {
   getStatisticsData();
+  // 打字机：逐字打出
+  if (typeTarget.length > 0) {
+    typeTimer = setInterval(() => {
+      if (typedText.value.length < typeTarget.length) {
+        typedText.value = typeTarget.slice(0, typedText.value.length + 1);
+      } else {
+        clearInterval(typeTimer);
+        typeTimer = null;
+      }
+    }, 130);
+  }
   // 滚动进入视口动画：卡片浮现
   const items = document.querySelectorAll(".about-anim");
   if ("IntersectionObserver" in window) {
@@ -322,6 +338,10 @@ onMounted(() => {
   } else {
     items.forEach((el) => el.classList.add("in-view"));
   }
+});
+
+onBeforeUnmount(() => {
+  if (typeTimer) clearInterval(typeTimer);
 });
 </script>
 
@@ -744,16 +764,13 @@ onMounted(() => {
   .about-item.in-view:hover {
     transform: translateY(-4px);
   }
-  // 首屏问候：打字机 + 逐行浮现
+  // 首屏问候：JS 打字机（文字由 JS 逐字打出，这里只负责光标）
   .hello {
     .text1 {
       display: inline-block;
-      overflow: hidden;
       white-space: nowrap;
-      width: 0;
       border-right: 2px solid var(--main-color);
-      animation: about-type 2.2s steps(12) forwards;
-      animation-delay: 0.4s;
+      animation: about-blink 0.9s steps(1) infinite;
     }
     &.in-view {
       .text2,
@@ -928,10 +945,10 @@ onMounted(() => {
     animation-delay: 0.4s;
   }
 }
-// 打字机
-@keyframes about-type {
-  to {
-    width: 12ch;
+// 打字机光标闪烁
+@keyframes about-blink {
+  50% {
+    border-color: transparent;
   }
 }
 // 技能弹出
@@ -964,6 +981,11 @@ onMounted(() => {
     transform: none !important;
     animation: none !important;
     transition: none !important;
+  }
+  // 打字机文字：减弱动态效果时停止光标闪烁，文字保持完整显示
+  .about .hello .text1 {
+    animation: none !important;
+    border-right: none;
   }
 }
 </style>
