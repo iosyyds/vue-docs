@@ -114,6 +114,8 @@ onBeforeUnmount(() => {
     line-height: 1;
     min-height: 32px;
     .copyright {
+      display: flex;
+      align-items: center;
       .author {
         display: inline-flex;
         align-items: center;
