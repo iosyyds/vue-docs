@@ -368,11 +368,14 @@ export const themeConfig = {
     // playlist / album / song
     type: "playlist",
   },
-  // 搜索（本地全文搜索，构建时自动生成索引 search-index.json）
+  // 搜索（Algolia 全文搜索）
   search: {
     enable: true,
+    // Algolia 应用凭据（Search-Only Key，可公开）
     appId: "",
     apiKey: "",
+    // 索引名（与推送脚本 ALGOLIA_INDEX 保持一致）
+    indexName: "xkbk",
   },
   // 打赏
   rewardData: {
