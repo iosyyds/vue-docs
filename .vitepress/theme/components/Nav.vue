@@ -122,6 +122,17 @@
     <ClientOnly>
       <Search v-if="theme.search.enable" />
     </ClientOnly>
+    <!-- 移动端悬浮返回顶部 -->
+    <Transition name="fade">
+      <div
+        v-show="scrollData.height > 0"
+        class="mobile-to-top"
+        title="返回顶部"
+        @click="smoothScrolling"
+      >
+        <i class="iconfont icon-up" />
+      </div>
+    </Transition>
   </header>
 </template>
 
@@ -647,6 +658,36 @@ const { site, theme, frontmatter, page } = useData();
       .iconfont {
         color: var(--main-card-background);
       }
+    }
+  }
+  // 移动端悬浮返回顶部（仅手机显示）
+  .mobile-to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 84px;
+    z-index: 1500;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: var(--main-card-background);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition:
+      transform 0.3s,
+      opacity 0.3s;
+    .iconfont {
+      font-size: 18px;
+      color: var(--main-card-background);
+    }
+    &:active {
+      transform: scale(0.92);
+    }
+    @media (max-width: 768px) {
+      display: flex;
     }
   }
 }
