@@ -99,7 +99,11 @@
           <span class="tip">音乐偏好</span>
           <span class="title2">欧美、华语流行、纯音乐、ACG</span>
           <div class="image-desc">
-            <span class="left">一起欣赏更多音乐</span>
+            <span class="left">
+              <a href="https://music.163.com/#/playlist?id=381756640" target="_blank">
+                一起欣赏更多音乐
+              </a>
+            </span>
           </div>
         </div>
       </div>
