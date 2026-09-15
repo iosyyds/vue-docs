@@ -29,8 +29,8 @@
         </a>
         <a
           class="cc link"
-          href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"
-          target="_blank"
+          href="javascript:void(0)"
+          aria-label="版权协议"
         >
           <i class="iconfont icon-line" />
           <i class="iconfont icon-by-line" />
