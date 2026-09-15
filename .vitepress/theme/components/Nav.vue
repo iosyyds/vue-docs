@@ -47,7 +47,10 @@
             </div>
           </div>
           <span class="site-title" @click="smoothScrolling">
-            {{ (frontmatter.home ? site.description : page.title) || site.description }}
+            <img class="site-logo" :src="theme.siteMeta.logo" alt="logo" />
+            <span class="site-name">
+              {{ (frontmatter.home ? site.description : page.title) || site.description }}
+            </span>
           </span>
         </div>
         <div class="right-nav">
@@ -471,7 +474,10 @@ const { site, theme, frontmatter, page } = useData();
       }
       .site-title {
         position: relative;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
         width: 100%;
         min-width: 280px;
         height: 35px;
@@ -486,6 +492,18 @@ const { site, theme, frontmatter, page } = useData();
           transform 0.3s,
           opacity 0.3s;
         cursor: pointer;
+        .site-logo {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          vertical-align: middle;
+          flex-shrink: 0;
+        }
+        .site-name {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
         &::after {
           content: "返回顶部";
           position: absolute;
