@@ -5,6 +5,7 @@ import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
 import LazyLoader from "@/components/LazyLoader.vue";
 import EssayCarousel from "@/components/EssayCarousel.vue";
 import EssayList from "@/components/EssayList.vue";
+import SoftwareList from "@/views/SoftwareList.vue";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 // 根组件
@@ -32,6 +33,7 @@ const Theme = {
     app.component("LazyLoader", LazyLoader);
     app.component("EssayCarousel", EssayCarousel);
     app.component("EssayList", EssayList);
+    app.component("SoftwareList", SoftwareList);
     // 插件
     enhanceAppWithTabs(app);
     // 路由守卫
