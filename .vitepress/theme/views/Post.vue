@@ -41,12 +41,12 @@
         <!-- 热度 -->
         <span class="hot meta">
           <i class="iconfont icon-fire" />
-          <span v-if="theme.comment.type !== 'giscus'" id="twikoo_visitors" class="artalk-pv-count">0</span>
+          <span id="twikoo_visitors" class="artalk-pv-count">{{ heatValue }}</span>
         </span>
         <!-- 评论数 -->
         <span class="chat meta hover" @click="commentRef?.scrollToComments">
           <i class="iconfont icon-chat" />
-          <span v-if="theme.comment.type !== 'giscus'" id="twikoo_comments" class="artalk-comment-count">0</span>
+          <span id="twikoo_comments" class="artalk-comment-count">{{ store.commentCount }}</span>
         </span>
       </div>
     </div>
@@ -103,8 +103,10 @@
 import { formatTimestamp } from "@/utils/helper";
 import { generateId } from "@/utils/commonTools";
 import initFancybox from "@/utils/initFancybox";
+import { mainStore } from "@/store";
 
 const { page, theme, frontmatter } = useData();
+const store = mainStore();
 
 // 评论元素
 const commentRef = ref(null);
@@ -113,6 +115,17 @@ const commentRef = ref(null);
 const postMetaData = computed(() => {
   const postId = generateId(page.value.relativePath);
   return theme.value.postData.find((item) => item.id === postId);
+});
+
+// 热度：按文章路径生成固定随机值（同篇刷新不变，不同篇不同）
+const hashCode = (str) => {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
+  return Math.abs(h);
+};
+const heatValue = computed(() => {
+  const seed = hashCode(page.value.relativePath || "home");
+  return (seed % 9200) + 800; // 800 ~ 9999
 });
 
 onMounted(() => {

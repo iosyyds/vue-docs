@@ -52,10 +52,16 @@ export const mainStore = defineStore("main", {
       // 站点背景
       backgroundType: "patterns",
       backgroundUrl: "https://tuapi.eees.cc/api.php?category={dongman,fengjing}&type=302",
+      // 当前文章真实评论数（Giscus 元数据）
+      commentCount: 0,
     };
   },
   getters: {},
   actions: {
+    // 更新真实评论数
+    setCommentCount(value) {
+      this.commentCount = value || 0;
+    },
     // 切换应用状态
     changeShowStatus(value, blur = true) {
       this[value] = !this[value];
