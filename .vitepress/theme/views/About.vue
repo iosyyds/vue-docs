@@ -109,18 +109,26 @@
       <div
         class="about-item static image"
         style="
-          --color: #0f1114;
-          background-image: url(/images/covers/cover_free-database.jpg);
+          --color: #0d1322;
+          background: linear-gradient(135deg, #101a2e 0%, #1b2f4e 55%, #22395f 100%);
         "
       >
         <div class="image-content">
           <span class="tip">数据</span>
           <span class="title2">访问统计</span>
-          <div class="static-data">
+          <div v-if="statisticsData" class="static-data">
             <div v-for="(item, key, index) in statisticsData" :key="index" class="static-item">
               <span class="static-name">{{ key }}</span>
               <span class="static-num">{{ item }}</span>
             </div>
+          </div>
+          <div v-else-if="statisticsError" class="static-empty">
+            <i class="iconfont icon-chart" />
+            <span>统计数据暂不可用</span>
+          </div>
+          <div v-else class="static-empty">
+            <i class="iconfont icon-chart" />
+            <span>数据加载中…</span>
           </div>
           <div class="image-desc opacity">
             <span class="left">
@@ -274,11 +282,17 @@ const skillsData = [
 
 // 站点统计数据
 const statisticsData = ref(null);
+const statisticsError = ref(false);
 
 // 获取站点统计数据
 const getStatisticsData = async () => {
-  const result = await getStatistics(theme.value.tongji["51la"]);
-  statisticsData.value = result;
+  try {
+    const result = await getStatistics(theme.value.tongji["51la"]);
+    statisticsData.value = result;
+    if (!result) statisticsError.value = true;
+  } catch (error) {
+    statisticsError.value = true;
+  }
 };
 
 onMounted(() => {
@@ -528,20 +542,38 @@ onMounted(() => {
       &.static {
         .static-data {
           display: grid;
-          gap: 12px;
+          gap: 10px 16px;
           grid-template-columns: 1fr 1fr;
-          margin: 20px 0;
+          margin: 18px 0;
           .static-item {
             display: flex;
             flex-direction: column;
             .static-name {
-              font-size: 15px;
-              opacity: 0.8;
+              font-size: 13px;
+              opacity: 0.65;
+              letter-spacing: 1px;
             }
             .static-num {
-              font-size: 34px;
+              font-size: 27px;
               font-weight: bold;
+              line-height: 1.5;
+              background: linear-gradient(90deg, #6fd3ff 0%, #9be89b 100%);
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent;
             }
+          }
+        }
+        .static-empty {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin: 26px 0;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.7);
+          .iconfont {
+            font-size: 20px;
+            animation: static-spin 1.6s linear infinite;
           }
         }
       }
@@ -653,6 +685,15 @@ onMounted(() => {
   100% {
     transform: scale(2.8);
     opacity: 0;
+  }
+}
+// 统计加载图标旋转
+@keyframes static-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>
