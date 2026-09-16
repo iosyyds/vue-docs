@@ -774,6 +774,7 @@ onBeforeUnmount(() => {
   .hello {
     .text1 {
       display: inline-block;
+      width: fit-content;
       white-space: nowrap;
       border-right: 2px solid var(--main-color);
       animation: about-blink 0.9s steps(1) infinite;
