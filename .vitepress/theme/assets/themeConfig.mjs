@@ -397,8 +397,8 @@ export const themeConfig = {
     enable: true,
     // url
     url: "https://api.injahow.cn/meting/",
-    // id（网易云歌单）
-    id: 381756640,
+    // id（网易云歌单；原 381756640 为隐私歌单无法获取，暂用公开热歌榜，用户设公开后可换回）
+    id: 3778678,
     // netease / tencent / kugou
     server: "netease",
     // playlist / album / song
