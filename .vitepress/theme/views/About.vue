@@ -774,7 +774,8 @@ onBeforeUnmount(() => {
   .hello {
     .text1 {
       display: inline-block;
-      width: fit-content;
+      // 不拉伸占满整行，让打字机光标紧贴文字末尾（避免 fit-content 在部分手机浏览器引发打字过程布局抖动）
+      align-self: flex-start;
       white-space: nowrap;
       border-right: 2px solid var(--main-color);
       animation: about-blink 0.9s steps(1) infinite;
