@@ -65,7 +65,7 @@ export const getMusicList = async (url, id, server = "netease", type = "playlist
 };
 
 /**
- * 站点统计数据
+ * 站点统计数据（51la 数据挂件，需后台开通数据展示）
  */
 export const getStatistics = async (key) => {
   // 未配置 51la 统计 ID 时直接返回空

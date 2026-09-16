@@ -122,7 +122,7 @@
       >
         <div class="image-content">
           <span class="tip">数据</span>
-          <span class="title2">访问统计</span>
+          <span class="title2">站点数据</span>
           <div v-if="statisticsData" class="static-data">
             <div v-for="(item, key, index) in statisticsData" :key="index" class="static-item">
               <span class="static-name">{{ key }}</span>
@@ -139,7 +139,7 @@
           </div>
           <div class="image-desc opacity">
             <span class="left">
-              统计信息来自 <a href="https://v6.51.la/" target="_blank">51la</a>
+              本站内容与建站数据实时统计
             </span>
           </div>
         </div>
@@ -225,7 +225,7 @@
 </template>
 
 <script setup>
-import { getStatistics } from "@/api";
+import { daysFromNow } from "@/utils/helper";
 
 const { theme } = useData();
 
@@ -296,15 +296,21 @@ const typeTarget = "你好，很高兴认识你👋";
 const typedText = ref("");
 let typeTimer = null;
 
-// 获取站点统计数据
-const getStatisticsData = async () => {
-  try {
-    const result = await getStatistics(theme.value.tongji["51la"]);
-    statisticsData.value = result;
-    if (!result) statisticsError.value = true;
-  } catch (error) {
-    statisticsError.value = true;
-  }
+// 获取站点统计数据（本地内容统计，稳定可靠）
+const getStatisticsData = () => {
+  // 站点内容统计
+  const cates = theme.value.categoriesData || {};
+  const tags = theme.value.tagsData || {};
+  const postCount = Object.values(cates).reduce(
+    (sum, c) => sum + (c.count || 0),
+    0
+  );
+  statisticsData.value = {
+    文章总数: postCount,
+    分类数: Object.keys(cates).length,
+    标签数: Object.keys(tags).length,
+    建站天数: daysFromNow(theme.value.since),
+  };
 };
 
 onMounted(() => {
