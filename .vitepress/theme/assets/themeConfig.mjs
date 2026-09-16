@@ -127,10 +127,8 @@ export const themeConfig = {
       ],
       [
         "script",
-        {
-          children:
-            'LA.init({id:"LJuM8F1h3kXFwnCW",ck:"LJuM8F1h3kXFwnCW"})',
-        },
+        {},
+        'LA.init({id:"LJuM8F1h3kXFwnCW",ck:"LJuM8F1h3kXFwnCW"})',
       ],
     ],
   },
