@@ -230,8 +230,22 @@ onBeforeUnmount(() => {
     }
     @media (max-width: 768px) {
       font-size: 14px;
+      // 手机端保留 RSS 入口（隐藏 Powered by 与 CC 协议图标），右侧不再空白
       .meta {
-        display: none;
+        display: flex;
+        .power,
+        .cc {
+          display: none;
+        }
+      }
+      // 手机端 logo 视觉垂直居中微调（中文文字视觉重心偏上，logo 需上移补偿）
+      .copyright {
+        .author {
+          .author-logo {
+            position: relative;
+            top: -2px;
+          }
+        }
       }
     }
     @media (max-width: 420px) {
