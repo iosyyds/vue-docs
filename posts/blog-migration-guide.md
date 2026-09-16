@@ -8,13 +8,10 @@ tags:
   - Hugo
   - 博客
   - GitHub Pages
-cover: /images/covers/cover_github-actions.jpg
 articleGPT: "这篇文章记录博主把个人博客从 Hugo + Solitude 主题迁移到 VitePress + vitepress-theme-curve 主题的全过程：为什么换、主题怎么选、目录结构怎么搭、文章 frontmatter 怎么写，以及如何用 GitHub Actions 自动部署到 GitHub Pages 并绑定自定义域名。"
 ---
 
 # 我的博客迁移实录：从 Hugo 到 VitePress + Curve 主题
-
-![封面](/images/covers/cover_github-actions.jpg)
 
 折腾了半个月，终于把博客从 Hugo 整个搬到了 VitePress。这篇记录迁移过程和踩过的坑，给想换博客框架的朋友一个参考。
 
@@ -90,7 +87,6 @@ categories:
 tags:
   - 标签1
   - 标签2
-cover: /images/covers/封面图.jpg
 ---
 
 # 文章标题

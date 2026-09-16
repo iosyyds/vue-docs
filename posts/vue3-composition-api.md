@@ -7,13 +7,10 @@ tags:
   - Vue
   - 前端
   - JavaScript
-cover: /images/covers/cover_vue3.jpg
 articleGPT: "这篇文章介绍 Vue 3 组合式 API 的核心用法：setup 语法糖、ref 与 reactive 的区别、computed 与 watch 的使用，以及如何用自定义 Hook 把组件逻辑拆分成可复用的模块，适合从 Options API 迁移或刚入门 Vue 3 的开发者。"
 ---
 
 # Vue 3 组合式 API 实战入门
-
-![封面](/images/covers/cover_vue3.jpg)
 
 Vue 3 最核心的变化就是组合式 API（Composition API）。相比 Vue 2 的选项式 API，它让相关逻辑可以聚在一起，组件大了之后更好维护。这篇文章用一个真实的计数器 + 请求示例，带你过一遍最常用的几个 API。
 

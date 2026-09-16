@@ -7,13 +7,10 @@ tags:
   - Git
   - 协作
   - 版本控制
-cover: /images/covers/cover_git.jpg
 articleGPT: "这篇文章讲 Git 分支管理与团队协作的最佳实践：分支模型怎么设计、功能分支工作流的完整流程、rebase 与 merge 的区别、冲突怎么解决，以及代码评审与发布流程的配合。"
 ---
 
 # Git 分支管理与团队协作工作流
-
-![封面](/images/covers/cover_git.jpg)
 
 一个人开发 Git 随便用，但**团队协作时没有规则就是灾难**。这篇文章给出一套经过实践检验的分支工作流，覆盖日常 90% 的场景。
 

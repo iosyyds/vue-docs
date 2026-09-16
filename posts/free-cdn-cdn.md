@@ -6,13 +6,10 @@ categories:
 tags:
   - CDN
   - 加速
-cover: /images/covers/cover_free-cdn.jpg
 articleGPT: "什么是CDN？ CDN（内容分发网络）把你的静态资源缓存到全球各地的节点，用户访问时从最近的节点读取，速度提升明显。 推荐列表 1. Cloudflare CDN 费用 ：完全免费 节点 ：全球300+城市 优势 ：自带WAF、DDoS防护、免费SSL 缺点 ：免费版国内速度一般 2. jsDeli……"
 ---
 
 # 免费CDN加速服务推荐：让你的网站快一倍
-
-![封面](/images/covers/cover_free-cdn.jpg)
 
 ## 什么是CDN？
 

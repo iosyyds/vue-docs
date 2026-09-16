@@ -7,13 +7,10 @@ tags:
   - MySQL
   - 数据库
   - 教程
-cover: /images/covers/cover_mysql.jpg
 articleGPT: "这篇文章是 MySQL 的入门到进阶：安装与连接、建库建表、增删改查、索引原理与优化、常用 SQL 技巧，以及 EXPLAIN 怎么看执行计划，适合从零开始学数据库的开发者。"
 ---
 
 # MySQL 入门实战
-
-![封面](/images/covers/cover_mysql.jpg)
 
 数据库是后端开发的必修课，MySQL 又是最主流的选择。这篇文章从"怎么连上"开始，一路讲到查询优化，都是实际开发中高频用到的。
 

@@ -11,13 +11,10 @@ tags:
   - sitemap
   - robots
   - 踩坑
-cover: /images/covers/cover_seo.jpg
 articleGPT: "这篇文章完整记录博客被百度收录的实操流程：robots.txt 与 sitemap.xml 的配置检查、百度搜索资源平台添加站点、验证文件部署上线、sitemap 提交，以及 API 主动推送遇到的 over quota（新站配额为 0）问题及应对方案，最后给出没备案域名也能慢慢被收录的务实建议。"
 ---
 
 # 博客被百度收录全流程：验证、sitemap、主动推送与 over quota 踩坑
-
-![封面](/images/covers/cover_seo.jpg)
 
 博客搭好了、文章也写了不少，但百度搜不到？很多新手都会问"RSS 订阅地址能不能被收录"——先说结论：**RSS 是给读者订阅用的，不是搜索引擎收录的入口**。百度收录靠的是「站点验证 + sitemap 提交 + 主动推送」。这篇把我踩过的坑全写出来。
 

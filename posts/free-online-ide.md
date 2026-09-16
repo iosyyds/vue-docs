@@ -6,13 +6,10 @@ categories:
 tags:
   - 编程
   - 在线工具
-cover: /images/covers/cover_free-online-ide.jpg
 articleGPT: "什么时候用在线IDE？ 出门在外用别人的电脑、想快速写段代码测试、不想本地装一堆环境，在线IDE就派上用场了。 推荐列表 1. CodePen 语言 ：HTML/CSS/JS 优势 ：前端开发神器，实时预览 适合 ：写前端demo、分享代码片段 2. JSFiddle 语言 ：HTML/CSS/JS……"
 ---
 
 # 免费在线编程环境推荐
-
-![封面](/images/covers/cover_free-online-ide.jpg)
 
 ## 什么时候用在线IDE？
 

@@ -10,13 +10,10 @@ tags:
   - 网易云
   - VitePress
   - 踩坑
-cover: /images/covers/cover_music.jpg
 articleGPT: "这篇文章记录博客音乐播放器的接入与踩坑：用 VitePress 主题自带播放器 + 网易云歌单，却遇到'获取播放列表失败'——原因是歌单被创建者设置为隐私，网易云接口返回 401。分享排查过程（官方 API 带 Referer 测试、第三方 meting API 测试），以及最终解决方案：换成公开歌单，或把原歌单设为公开。"
 ---
 
 # 博客音乐播放器接入了，但歌单是隐私的怎么办？
-
-![封面](/images/covers/cover_music.jpg)
 
 博客一直想加个背景音乐播放器，让访客进来不至于太安静。VitePress + Curve 主题自带音乐播放器组件，接入方式很简单：填一个网易云歌单 ID 就行。但真正跑起来，才发现坑全在后面。
 

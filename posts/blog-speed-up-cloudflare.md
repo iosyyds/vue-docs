@@ -11,13 +11,10 @@ tags:
   - GitHub Pages
   - 域名
   - 踩坑
-cover: /images/covers/cover_free-cdn.jpg
 articleGPT: "博客部署在 GitHub Pages、域名挂在 Cloudflare，结果国内不挂梯子基本打不开。这篇文章记录排查过程：发现罪魁祸首是 Cloudflare 免费版代理节点（国内直连超时），以及最终解决方案——关掉代理（仅 DNS）直连 GitHub Pages，访问从 10 秒超时降到 2-3 秒稳定打开，顺带讲清楚哪两条'僵尸 A 记录'必须删。"
 ---
 
 # 国内访问 GitHub Pages 博客提速：Cloudflare 关代理直连实测
-
-![封面](/images/covers/cover_free-cdn.jpg)
 
 博客部署在 GitHub Pages，域名在 Cloudflare 托管。前几天有朋友反馈：**不挂梯子国内基本访问不进去**。排查下来，问题出在一个很多人都会踩的配置上。
 

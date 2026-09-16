@@ -7,13 +7,10 @@ tags:
   - Docker
   - 部署
   - 运维
-cover: /images/covers/cover_docker.jpg
 articleGPT: "这篇文章带零基础读者入门 Docker：镜像与容器的关系、Dockerfile 的编写规则、构建推送镜像、docker-compose 编排多服务，以及如何把博客或 Node 项目一键容器化部署。"
 ---
 
 # Docker 容器化部署入门
-
-![封面](/images/covers/cover_docker.jpg)
 
 "Docker 装环境"是现在部署服务的基本功。它把应用和依赖一起打包成镜像，在任何装了 Docker 的机器上都能跑，彻底告别"在我电脑上好好的"。
 

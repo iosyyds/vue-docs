@@ -6,13 +6,10 @@ categories:
 tags:
   - 协作
   - 效率
-cover: /images/covers/cover_free-collab.jpg
 articleGPT: "前言 不管是和朋友一起做项目，还是团队写文档，在线协作工具都能提升效率。整理几个免费好用的。 文档协作 1. 飞书文档 费用 ：个人版完全免费 优势 ：支持实时协作、思维导图、多维表格 适合 ：中文团队 2. Notion 费用 ：个人免费版 优势 ：all in one，数据库、文档、看板 缺点 ……"
 ---
 
 # 免费在线协作工具推荐
-
-![封面](/images/covers/cover_free-collab.jpg)
 
 ## 前言
 

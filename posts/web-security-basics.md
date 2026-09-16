@@ -7,13 +7,10 @@ tags:
   - 安全
   - HTTPS
   - 网络
-cover: /images/covers/cover_security.jpg
 articleGPT: "这篇文章讲网站安全的基础知识：HTTPS 加密通信的原理、XSS 和 SQL 注入的攻击方式与防御、CORS 与 CSRF 的区别，以及个人站长必备的安全检查清单。"
 ---
 
 # 网络安全基础：从 HTTPS 原理到常见攻击防范
-
-![封面](/images/covers/cover_security.jpg)
 
 自己做网站，安全是最容易被忽略、出事最麻烦的一环。这篇文章不讲深奥理论，只讲每个站长、开发者都该知道的安全底线。
 

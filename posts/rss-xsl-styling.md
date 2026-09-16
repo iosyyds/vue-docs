@@ -9,13 +9,10 @@ tags:
   - 排版
   - 订阅
   - 前端
-cover: /images/covers/cover_css-layout.jpg
 articleGPT: "RSS 订阅文件本质是 XML，电脑浏览器打开还能看个大概，手机上打开就是一大坨乱码源码。这篇文章介绍如何用 XSL（XML 样式表）给 rss.xml 加排版：写一个 rss.xsl 把订阅源渲染成漂亮的响应式页面，再在 rss.xml 里加一行 xml-stylesheet 处理指令，手机电脑打开都清爽。附完整 XSL 关键代码。"
 ---
 
 # 给 RSS 订阅加上排版：手机打开 rss.xml 不再是乱码
-
-![封面](/images/covers/cover_css-layout.jpg)
 
 博客的 RSS 订阅地址 `https://xkbk.cn/rss.xml` 一直存在两个问题：电脑上打开底部有乱码，手机上打开就是一整屏的 XML 源码，完全没法看。订阅者要是不懂技术，看到这堆代码直接劝退。
 

@@ -7,13 +7,10 @@ tags:
   - 性能
   - 优化
   - 前端
-cover: /images/covers/cover_performance.jpg
 articleGPT: "这篇文章整理网站性能优化的完整清单：图片压缩与格式选择、静态资源缓存、代码体积控制、首屏优化手段，以及用 Lighthouse 定位瓶颈的方法，按优先级从易到难排列，照着做就能见效。"
 ---
 
 # 网站性能优化实战
-
-![封面](/images/covers/cover_performance.jpg)
 
 用户等 3 秒没打开就走了。性能优化不是炫技，是实打实影响留存的事。这篇文章按"投入产出比"从高到低，给你一份能直接执行的优化清单。
 

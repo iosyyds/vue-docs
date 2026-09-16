@@ -6,13 +6,10 @@ categories:
 tags:
   - SSL
   - HTTPS
-cover: /images/covers/cover_ssl-cert.jpg
 articleGPT: "为什么需要SSL证书？ 没有HTTPS的网站会被浏览器标记为\"不安全\"，不仅影响用户体验，还会影响SEO排名。好消息是，你完全可以免费获得受信任的SSL证书。 Let's Encrypt Let's Encrypt https://letsencrypt.org 是目前最流行的免费CA机构，由互联网……"
 ---
 
 # 免费SSL证书申请完整指南：Let's Encrypt
-
-![封面](/images/covers/cover_ssl-cert.jpg)
 
 ## 为什么需要SSL证书？
 

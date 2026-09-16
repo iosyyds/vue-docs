@@ -6,13 +6,10 @@ categories:
 tags:
   - 邮箱
   - 域名
-cover: /images/covers/cover_free-email.jpg
 articleGPT: "为什么需要自定义邮箱？ 用 yourname@qq.com 注册服务看起来不专业。用 hi@yourdomain.com 显得正规多了，而且免费。 推荐列表 1. Cloudflare Email Routing 费用 ：完全免费 功能 ：接收和发送邮件 优势 ：无限别名，和Cloudflare D……"
 ---
 
 # 免费自定义邮箱推荐
-
-![封面](/images/covers/cover_free-email.jpg)
 
 ## 为什么需要自定义邮箱？
 

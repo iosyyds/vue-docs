@@ -7,13 +7,10 @@ tags:
   - Nginx
   - 服务器
   - 反向代理
-cover: /images/covers/cover_nginx.jpg
 articleGPT: "这篇文章讲 Nginx 反向代理的核心用法：正向代理与反向代理的区别、server 和 location 的匹配规则、常用配置模板（静态站点、Node 服务代理、负载均衡），以及配置 HTTPS 证书的完整步骤。"
 ---
 
 # Nginx 反向代理配置实战：从入门到 HTTPS
-
-![封面](/images/covers/cover_nginx.jpg)
 
 Nginx 是现在最流行的 Web 服务器之一，以高性能、低资源占用著称。很多小项目（Node、Java、静态站）都会用 Nginx 统一对外提供服务。这篇文章从零带你把 Nginx 配明白。
 

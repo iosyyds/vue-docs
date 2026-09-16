@@ -8,13 +8,10 @@ tags:
   - 搜索
   - 性能优化
   - Vue
-cover: /images/covers/cover_performance.jpg
 articleGPT: "这篇文章讲 VitePress 博客接入 Algolia 全局搜索的完整过程：注册应用拿到 App ID 和 API Key、配置索引名、脚本推送文章数据，以及解决'首次点搜索卡顿'的三个关键优化——修正 preconnect 域名、页面加载预热连接、搜索弹窗常驻渲染。"
 ---
 
 # 博客全局搜索接入 Algolia：从配置到首次打开卡顿修复
-
-![封面](/images/covers/cover_performance.jpg)
 
 Curve 主题自带全局搜索（Algolia InstantSearch），配置好之后站内搜索又快又准。但上线后遇到一个烦人的问题：**每次进站第一次点搜索会卡一下，弹窗只有标题、输入框半天才出来**。这篇把接入过程和排查修复全记录下来。
 

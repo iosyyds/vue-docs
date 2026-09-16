@@ -8,13 +8,10 @@ tags:
   - 51la
   - 留言板
   - 博客优化
-cover: /images/covers/cover_free-monitor.jpg
 articleGPT: "这篇文章分享博客上线后的三个实用优化：给 rss.xml 加 XSL 样式表让手机打开也有排版、接入 51la 免费流量统计并在关于页展示数据、新增'畅所欲言'留言板页面复用 Twikoo 评论。每一步都有代码和配置说明。"
 ---
 
 # 博客上线后必做的三个优化：RSS 排版、51la 统计、畅所欲言留言板
-
-![封面](/images/covers/cover_free-monitor.jpg)
 
 博客主体上线后，还有几个影响体验的细节值得折腾：RSS 订阅页排版、访问统计、留言板。这篇把三个优化一次讲清楚。
 

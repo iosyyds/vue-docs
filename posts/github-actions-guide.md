@@ -6,13 +6,10 @@ categories:
 tags:
   - GitHub
   - CI/CD
-cover: /images/covers/cover_github-actions.jpg
 articleGPT: "什么是 GitHub Actions？ GitHub Actions 是 GitHub 提供的 CI/CD 服务，免费额度对于个人项目完全够用：公开仓库无限免费，私有仓库每月2000分钟。 基本概念 Workflow ：一个自动化流程文件 Job ：一个任务，里面包含多个步骤 Step ：具体执行的……"
 ---
 
 # GitHub Actions 自动化部署实战入门
-
-![封面](/images/covers/cover_github-actions.jpg)
 
 ## 什么是 GitHub Actions？
 

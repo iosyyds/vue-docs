@@ -9,13 +9,10 @@ tags:
   - Vercel
   - MongoDB
   - 免费
-cover: /images/covers/cover_free-database.jpg
 articleGPT: "这篇文章完整记录 Twikoo 评论系统的免费部署方案：为什么放弃宝塔 Docker 改走 Vercel + MongoDB Atlas，每一步怎么操作，以及遇到的两个大坑（bad auth 认证失败、连接串 host 字母与数字混淆）如何排查修复，最后绑定自定义域名让国内访问更快。"
 ---
 
 # Twikoo 评论系统免费部署全流程：Vercel + MongoDB Atlas 实战踩坑记
-
-![封面](/images/covers/cover_free-database.jpg)
 
 博客迁移到 VitePress 后，评论区用了 Twikoo——免费、开源、数据自己掌握、界面简洁，跟 Curve 主题无缝集成。部署过程踩了不少坑，这篇把完整流程和坑位都写出来。
 

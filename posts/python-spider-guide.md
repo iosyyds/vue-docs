@@ -7,13 +7,10 @@ tags:
   - Python
   - 爬虫
   - 教程
-cover: /images/covers/cover_python.jpg
 articleGPT: "这篇文章从零教 Python 爬虫：requests 发起请求、BeautifulSoup 解析 HTML、处理翻页与反爬、把数据保存成 CSV 的完整流程，附带一个抓取博客文章列表的实战例子。"
 ---
 
 # Python 爬虫入门实战
-
-![封面](/images/covers/cover_python.jpg)
 
 爬虫本质就是"用程序代替浏览器去访问网页并提取数据"。Python 因为语法简单、库生态好，是写爬虫最主流的语言。这篇带你跑通第一个完整的爬虫。
 

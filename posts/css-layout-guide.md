@@ -7,13 +7,10 @@ tags:
   - CSS
   - 布局
   - 前端
-cover: /images/covers/cover_css-layout.jpg
 articleGPT: "这篇文章系统对比 CSS 两大布局方案 Flexbox 与 Grid：什么时候用 flex 什么时候用 grid，主轴交叉轴怎么记，常用属性速查，以及圣杯布局、九宫格等实战案例，看完可以直接照着写。"
 ---
 
 # CSS 布局完全指南：Flexbox 与 Grid 一次讲透
-
-![封面](/images/covers/cover_css-layout.jpg)
 
 做前端绕不开布局。Flexbox 管"一维排列"，Grid 管"二维网格"，两者配合基本能覆盖所有常见布局需求。这篇文章把常用知识点一次讲清楚。
 
