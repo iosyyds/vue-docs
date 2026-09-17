@@ -3,7 +3,6 @@ title: 博客被百度收录全流程：验证、sitemap、主动推送与 over 
 date: '2026-09-16'
 categories:
   - 博客
-  - 技术教程
 tags:
   - SEO
   - 百度

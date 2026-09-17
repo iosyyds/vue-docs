@@ -3,7 +3,6 @@ title: 国内访问 GitHub Pages 博客提速：Cloudflare 关代理直连实测
 date: '2026-09-16'
 categories:
   - 性能优化
-  - 运维部署
 tags:
   - Cloudflare
   - CDN
