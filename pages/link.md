@@ -26,14 +26,14 @@ import Link from "@/views/Link.vue";
 - 名称：`小坤哥哥`
 - 描述：`记录技术分享、生活点滴和日常折腾。`
 - 地址：`https://xkbk.cn`
-- 图标：`/logo.svg`
+- 图标：`https://xkbk.cn/logo.svg`
 - 站点图片：
 
 ```yml
 name: 小坤哥哥博客
 desc: 记录技术分享、生活点滴和日常折腾。
 url: https://xkbk.cn
-avatar: /logo.svg
+avatar: https://xkbk.cn/logo.svg
 screenshot:
 ```
 
