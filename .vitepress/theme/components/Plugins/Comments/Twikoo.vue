@@ -78,13 +78,20 @@ const applyAvatarFallback = () => {
     const box = item.querySelector(".tk-avatar");
     if (!box || box.dataset.fbApplied) return;
     box.dataset.fbApplied = "1";
-    const img =
-      box.querySelector(".tk-avatar-img") || box.querySelector("img");
-    if (!img || (img.complete && img.naturalWidth === 0)) {
+    // 优先：评论人填了网址 → 直接用其网站图标（favicon）
+    const host = getHost(item);
+    if (host) {
       tryFallback(box, item);
       return;
     }
-    img.addEventListener("error", () => tryFallback(box, item));
+    // 未填网址：保留邮箱头像（QQ/gravatar），加载失败再用首字母
+    const img =
+      box.querySelector(".tk-avatar-img") || box.querySelector("img");
+    if (!img || (img.complete && img.naturalWidth === 0)) {
+      showLetterAvatar(box, getNick(item));
+      return;
+    }
+    img.addEventListener("error", () => showLetterAvatar(box, getNick(item)));
   });
 };
 
