@@ -11,6 +11,7 @@
       <span class="name">
         <i class="iconfont icon-chat"></i>
         评论
+        <span v-if="commentCount > 0" class="count-badge">{{ commentCount }}</span>
       </span>
       <span class="title-right">
         <span class="anon" :class="{ __on: anonOn }" @click="toggleAnon">匿名评论</span>
@@ -19,7 +20,7 @@
     </div>
     <!-- 区分评论系统 -->
     <Artalk v-if="theme.comment.type === 'artalk'" :fill="fill" />
-    <Twikoo v-else-if="theme.comment.type === 'twikoo'" :fill="fill" />
+    <Twikoo v-else-if="theme.comment.type === 'twikoo'" :fill="fill" @count="setCount" />
     <Giscus v-else-if="theme.comment.type === 'giscus'" :fill="fill" />
     <Valine v-else-if="theme.comment.type === 'valine'" :fill="fill" />
 
@@ -53,6 +54,11 @@ const props = defineProps({
 const mainCommentRef = ref(null);
 const anonOn = ref(false);
 const showAnonConfirm = ref(false);
+const commentCount = ref(0);
+
+const setCount = (n) => {
+  commentCount.value = n;
+};
 
 // 随机昵称词库
 const ANON_NICKS = [
@@ -148,6 +154,21 @@ defineExpose({ scrollToComments });
         font-size: 26px;
         font-weight: normal;
         margin-right: 8px;
+      }
+      .count-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 24px;
+        height: 24px;
+        padding: 0 8px;
+        margin-left: 10px;
+        border-radius: 12px;
+        background: var(--main-color, #2eaadc);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1;
       }
     }
     .title-right {

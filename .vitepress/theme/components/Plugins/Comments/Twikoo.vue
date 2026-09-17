@@ -13,6 +13,7 @@ const props = defineProps({
     default: false,
   },
 });
+const emit = defineEmits(["count"]);
 
 const { theme } = useData();
 const { comment } = theme.value;
@@ -95,6 +96,20 @@ const applyAvatarFallback = () => {
   });
 };
 
+// 获取评论总数，emit 给标题栏显示角标
+const fetchCommentCount = async () => {
+  try {
+    const t = window.twikoo;
+    if (!t || typeof t.getCommentsCount !== "function") return;
+    const path = window.location.pathname;
+    const res = await t.getCommentsCount({ envId: comment.twikoo.envId, urls: [path] });
+    const c = res && res[path];
+    if (c && typeof c.count === "number") emit("count", c.count);
+  } catch (err) {
+    console.warn("评论数量获取失败", err);
+  }
+};
+
 // 初始化 Twikoo
 const initTwikoo = async () => {
   try {
@@ -107,6 +122,7 @@ const initTwikoo = async () => {
       onCommentLoaded: () => {
         console.log("评论已加载完毕");
         applyAvatarFallback();
+        fetchCommentCount();
         // 动态监听：翻页、回复等新渲染的头像也兜底
         const target = document.querySelector("#comment-dom");
         if (target) {
