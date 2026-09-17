@@ -8,7 +8,7 @@
       image="/images/covers/cover_github-actions.jpg"
     >
       <template #footer-slot>
-        <a class="to-github" href="https://github.com/iosyyds/vue-docs" target="_blank">
+        <a class="to-github" href="https://github.com/iosyyds" target="_blank">
           <i class="iconfont icon-github"></i>
           <span>前往 Github</span>
         </a>

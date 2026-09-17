@@ -17,7 +17,7 @@ export const themeConfig = {
       name: "小坤哥哥",
       cover: "/logo.svg",
       email: "admin@xkbk.cn",
-      link: "https://github.com/iosyyds/vue-docs",
+      link: "https://github.com/iosyyds",
     },
   },
   // 备案信息（留空则不显示）
@@ -209,7 +209,7 @@ export const themeConfig = {
         {
           icon: "/images/icons/github.svg",
           name: "GitHub",
-          url: "https://github.com/iosyyds/vue-docs",
+          url: "https://github.com/iosyyds",
         },
       ],
     },
@@ -245,7 +245,7 @@ export const themeConfig = {
     social: [
       {
         icon: "github",
-        link: "https://github.com/iosyyds/vue-docs",
+        link: "https://github.com/iosyyds",
       },
       {
         icon: "email",
