@@ -89,13 +89,15 @@ export const themeConfig = {
       ],
       // Embed code
       ["link", { rel: "preconnect", href: "https://use.sevencdn.com" }],
-      ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }],
       [
         "link",
         {
           crossorigin: "anonymous",
           href: "https://use.sevencdn.com/css2?family=Fira+Code:wght@300..700&display=swap",
           rel: "stylesheet",
+          // 异步加载：字体失败/慢不阻塞首屏渲染
+          media: "print",
+          onload: "this.media='all'",
         },
       ],
       // 预载 Algolia（全局搜索）
