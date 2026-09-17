@@ -76,12 +76,14 @@ const props = defineProps({
       .name {
         border-bottom: none;
         margin-bottom: 4px;
+        font-size: 20px;
         .name-count {
           color: var(--main-font-second-color);
         }
       }
       .tip {
         color: var(--main-font-second-color);
+        font-size: 13px;
       }
     }
     .all-link {
@@ -140,7 +142,7 @@ const props = defineProps({
           align-items: flex-start;
           .name {
             font-weight: bold;
-            font-size: 18px;
+            font-size: 15px;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -150,7 +152,7 @@ const props = defineProps({
             white-space: nowrap;
           }
           .desc {
-            font-size: 15px;
+            font-size: 13px;
             margin-top: 4px;
             line-height: 1.2;
             color: var(--main-font-second-color);
