@@ -124,7 +124,7 @@ const hashCode = (str) => {
 };
 const heatValue = computed(() => {
   const seed = hashCode(page.value.relativePath || "home");
-  return (seed % 9200) + 800; // 800 ~ 9999
+  return (seed % 9001) + 1000; // 1000 ~ 10000
 });
 
 onMounted(() => {
