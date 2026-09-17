@@ -24,18 +24,37 @@ const initComments = async (themeConfig) => {
           });
         });
       case "twikoo":
-        // 引入资源
-        return await new Promise((resolve, reject) => {
-          loadScript(option[commentType].js, {
-            callback: () => {
-              if (typeof twikoo === "object") {
-                resolve(twikoo);
-              } else {
-                reject(new Error("Twikoo 初始化失败"));
-              }
-            },
-          });
-        });
+        // 多 CDN 源依次尝试，避免单一源失效导致评论区空白
+        {
+          const cdnList = [
+            option[commentType].js || "",
+            "https://cdn.staticfile.org/twikoo/1.6.39/twikoo.all.min.js",
+            "https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.all.min.js",
+            "https://unpkg.com/twikoo@1.6.39/dist/twikoo.all.min.js",
+            "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/twikoo/1.6.39/twikoo.all.min.js",
+          ].filter(Boolean);
+          let lastErr = null;
+          for (const src of cdnList) {
+            try {
+              await new Promise((resolve, reject) => {
+                loadScript(src, {
+                  callback: () => {
+                    if (typeof window.twikoo === "object") {
+                      resolve(window.twikoo);
+                    } else {
+                      reject(new Error("Twikoo 加载失败"));
+                    }
+                  },
+                });
+              });
+              return window.twikoo;
+            } catch (err) {
+              lastErr = err;
+              console.warn(`[twikoo] CDN 加载失败，切换备用源: ${src}`, err);
+            }
+          }
+          throw new Error(`Twikoo CDN 全部加载失败: ${lastErr}`);
+        }
       case "valine":
         // 引入资源
         return await new Promise((resolve, reject) => {
