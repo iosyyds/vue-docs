@@ -8,7 +8,7 @@ const linkData = [
     typeList: [
       {
         name: "小坤哥哥",
-        avatar: "/logo.svg",
+        avatar: "https://xkbk.cn/logo.svg",
         desc: "记录技术分享、生活点滴和日常折腾。",
         url: "https://xkbk.cn",
       },
@@ -22,7 +22,7 @@ const linkData = [
     typeList: [
       {
         name: "小坤哥哥",
-        avatar: "/logo.svg",
+        avatar: "https://xkbk.cn/logo.svg",
         desc: "记录技术分享、生活点滴和日常折腾。",
         url: "https://xkbk.cn",
       },
