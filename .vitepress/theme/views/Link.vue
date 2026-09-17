@@ -72,6 +72,9 @@ const randomJump = () => {
   .banner-page {
     // min-height: 440px;
     min-height: auto;
+    :deep(.top .title .title-big) {
+      font-size: 1.5rem;
+    }
     .menu {
       display: flex;
       flex-direction: row;

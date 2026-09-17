@@ -255,3 +255,18 @@ a {
     color: inherit;
   }
 }
+
+// ===== 友链申请说明文档：缩小标题与正文，避免与友链卡片抢视觉 =====
+.markdown-main-style .link-doc {
+  h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+  }
+  h3 {
+    font-size: 1.05rem !important;
+  }
+  p,
+  li {
+    font-size: 0.875rem;
+  }
+}
