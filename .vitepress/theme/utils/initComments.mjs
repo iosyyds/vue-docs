@@ -27,11 +27,12 @@ const initComments = async (themeConfig) => {
         // 多 CDN 源依次尝试，避免单一源失效导致评论区空白
         {
           const cdnList = [
+            // 首选同源本地文件：只要能打开本站，评论脚本就一定能加载（绕开 CDN 慢/失败）
+            "/js/twikoo.min.js",
             option[commentType].js || "",
             "https://cdn.staticfile.org/twikoo/1.7.24/twikoo.all.min.js",
             "https://cdn.jsdelivr.net/npm/twikoo@1.7.24/dist/twikoo.all.min.js",
             "https://unpkg.com/twikoo@1.7.24/dist/twikoo.all.min.js",
-            "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/twikoo/1.7.24/twikoo.all.min.js",
           ].filter(Boolean);
           let lastErr = null;
           for (const src of cdnList) {

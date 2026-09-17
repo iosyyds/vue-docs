@@ -104,17 +104,18 @@
     </div>
   </div>
 
-  <!-- Twikoo 前端脚本（多 CDN 兜底） -->
-  <script src="https://cdn.staticfile.org/twikoo/1.7.24/twikoo.all.min.js"></script>
+  <!-- Twikoo 前端脚本（同源本地优先，CDN 兜底）+ 暗号校验 + 初始化 -->
   <script>
-    window.addEventListener("load", function () {
+    (function () {
       var CRYPT = "xkbk666";
       var params = new URLSearchParams(window.location.search);
       var pass = params.get("twikoo") === CRYPT;
 
       if (!pass) {
-        document.querySelector(".container").innerHTML =
-          '<div class="error-box">该页面需要携带暗号参数才能打开<br>正确地址：<code>https://xkbk.cn/admin.html?twikoo=xkbk666</code><br><br>（暗号错误或缺失时自动隐藏）</div>';
+        document.addEventListener("DOMContentLoaded", function () {
+          document.querySelector(".container").innerHTML =
+            '<div class="error-box">该页面需要携带暗号参数才能打开<br>正确地址：<code>https://xkbk.cn/admin.html?twikoo=xkbk666</code><br><br>（暗号错误或缺失时自动隐藏）</div>';
+        });
         return;
       }
 
@@ -125,7 +126,6 @@
       try {
         localStorage.setItem(KEY, JSON.stringify({ nick: CRYPT, mail: "", link: "" }));
       } catch (e) {}
-
       // 离开页面时恢复原昵称，不影响日常评论
       window.addEventListener("beforeunload", function () {
         try {
@@ -134,36 +134,32 @@
         } catch (e) {}
       });
 
-      // 初始化评论组件（暗号昵称会自动显示管理入口）
-      if (window.twikoo && typeof window.twikoo.init === "function") {
-        window.twikoo.init({
-          el: "#twikoo-comment",
-          envId: "https://bk.puaaa.cn/",
-          lang: "zh-CN"
-        });
-      } else {
-        // 首选 CDN 加载失败时切换备用源
-        var alt = [
-          "https://cdn.jsdelivr.net/npm/twikoo@1.7.24/dist/twikoo.all.min.js",
-          "https://unpkg.com/twikoo@1.7.24/dist/twikoo.all.min.js",
-          "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/twikoo/1.7.24/twikoo.all.min.js"
-        ];
-        var i = 0;
-        function tryAlt() {
-          if (i >= alt.length) return;
-          var s = document.createElement("script");
-          s.src = alt[i++];
-          s.onload = function () {
-            if (window.twikoo && typeof window.twikoo.init === "function") {
-              window.twikoo.init({ el: "#twikoo-comment", envId: "https://bk.puaaa.cn/", lang: "zh-CN" });
-            } else { tryAlt(); }
-          };
-          s.onerror = tryAlt;
-          document.head.appendChild(s);
+      // 加载 Twikoo 脚本（同源优先），加载成功且未初始化时 init 一次
+      var sources = [
+        "/js/twikoo.min.js",
+        "https://cdn.staticfile.org/twikoo/1.7.24/twikoo.all.min.js",
+        "https://cdn.jsdelivr.net/npm/twikoo@1.7.24/dist/twikoo.all.min.js",
+        "https://unpkg.com/twikoo@1.7.24/dist/twikoo.all.min.js"
+      ];
+      var i = 0;
+      var inited = false;
+      function initPanel() {
+        if (inited) return;
+        if (window.twikoo && typeof window.twikoo.init === "function") {
+          inited = true;
+          window.twikoo.init({ el: "#twikoo-comment", envId: "https://bk.puaaa.cn/", lang: "zh-CN" });
         }
-        tryAlt();
       }
-    });
+      function loadNext() {
+        if (i >= sources.length) return;
+        var s = document.createElement("script");
+        s.src = sources[i++];
+        s.onload = initPanel;
+        s.onerror = loadNext;
+        document.head.appendChild(s);
+      }
+      loadNext();
+    })();
   </script>
 </body>
 </html>
