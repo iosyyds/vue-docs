@@ -38,6 +38,30 @@ const linkData = [
         desc: "收录开源，好用的互联网项目",
         url: "https://blog.zrf.me/",
       },
+      {
+        name: "又见苍岚",
+        avatar: "https://www.zywvvd.com/image/avatar.png",
+        desc: "蓝天依旧，明眸如初",
+        url: "https://www.zywvvd.com",
+      },
+      {
+        name: "Yuzifu's Blog",
+        avatar: "https://blog.yuzifu.top/favicon.ico",
+        desc: "Eclipse First, the Rest Nowhere.",
+        url: "https://blog.yuzifu.top",
+      },
+      {
+        name: "心流",
+        avatar: "https://berial123.oss-cn-beijing.aliyuncs.com/img/860dd94f08a30cf4a8b7fd9685aed42.webp",
+        desc: "Carpe diem.",
+        url: "https://natro92.fun",
+      },
+      {
+        name: "Kloudy Shape",
+        avatar: "https://cravatar.cn/avatar/2267b3aa6d17151f59a91b636fa5a52a",
+        desc: "Stay Hungry, Stay Foolish",
+        url: "https://shape.kloudy.cn/",
+      },
     ],
   },
 ];
