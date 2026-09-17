@@ -195,6 +195,25 @@ const props = defineProps({
       }
       @media (max-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        .link-card {
+          height: 72px;
+          padding: 8px 10px;
+          .cover {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            margin-right: 12px;
+          }
+          .data {
+            .name {
+              font-size: 14px;
+            }
+            .desc {
+              font-size: 12px;
+            }
+          }
+        }
       }
       @media (max-width: 576px) {
         grid-template-columns: 1fr;
