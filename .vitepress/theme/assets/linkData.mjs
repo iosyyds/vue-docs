@@ -29,7 +29,7 @@ const linkData = [
       {
         name: "墨泽",
         avatar: "https://imzy.ink/blog/logo.jpg",
-        desc: "",
+        desc: "生命不息 折腾不止",
         url: "https://blog.imzy.ink",
       },
     ],
