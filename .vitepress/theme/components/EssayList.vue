@@ -78,15 +78,30 @@ const loadTwikooEssays = async () => {
   }
 };
 
+// 等待 Twikoo 评论区（隐藏存储）渲染出输入框，最多等 15 秒
+const waitForTextarea = (timeout = 15000) =>
+  new Promise((resolve) => {
+    const t0 = Date.now();
+    const timer = setInterval(() => {
+      const ta = document.querySelector(
+        "#comment-dom .tk-input.el-textarea textarea, #comment-dom textarea"
+      );
+      if (ta || Date.now() - t0 > timeout) {
+        clearInterval(timer);
+        resolve(ta);
+      }
+    }, 300);
+  });
+
 // 发送短文：内容填入隐藏的 Twikoo 评论区并自动提交
-const sendEssay = () => {
+const sendEssay = async () => {
   const text = essayInput.value.trim();
   if (!text) return;
-  const ta = document.querySelector(
-    "#comment-dom .tk-input.el-textarea textarea, #comment-dom textarea"
-  );
+  $message.info("正在发布，请稍候…");
+  // 评论区可能还在加载（首次访问需拉 CDN + 后端），自动等待而不是直接报错
+  const ta = await waitForTextarea();
   if (!ta) {
-    $message.warning("评论组件还没加载好，请稍等 1~2 秒再试");
+    $message.warning("评论组件加载失败，请刷新页面后再试");
     return;
   }
   // 昵称必填：自动填博主昵称（已有则不覆盖）
@@ -100,15 +115,13 @@ const sendEssay = () => {
   ta.dispatchEvent(new Event("input", { bubbles: true }));
   essayInput.value = "";
   $message.success("短文已提交，马上刷新");
-  // 等表单更新后点提交
+  // 等表单更新后点提交（Twikoo 发送按钮是 .tk-submit）
   setTimeout(() => {
-    const btn = document.querySelector(
-      "#comment-dom .tk-submit button, #comment-dom .tk-submit"
-    );
+    const btn = document.querySelector("#comment-dom .tk-submit");
     if (btn) btn.click();
     // 提交后刷新列表
     setTimeout(() => loadTwikooEssays(), 2500);
-  }, 150);
+  }, 200);
 };
 
 onMounted(() => {
