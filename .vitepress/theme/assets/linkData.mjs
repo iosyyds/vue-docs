@@ -86,6 +86,31 @@ const linkData = [
         desc: "人有悲欢离合 月有阴晴圆缺",
         url: "https://blog.yaria.top",
       },
+      {
+        name: "九仞之行",
+        avatar: "https://styunlen.cn/hello.png",
+        desc: "",
+        url: "https://styunlen.cn",
+        rss: "https://styunlen.cn/feed",
+      },
+      {
+        name: "人家故里",
+        avatar: "https://fx7.top/images/logo.png",
+        desc: "不积跬步无以至千里，不积小流无以成江海",
+        url: "https://fx7.top",
+      },
+      {
+        name: "freejishu的美丽世界",
+        avatar: "https://cdn-p.freejishu.com/img/2022/01/19/gNxI.jpg",
+        desc: "A New World",
+        url: "http://www.freejishu.com",
+      },
+      {
+        name: "ooliver 的博客",
+        avatar: "https://ooliver.cn/images/avatar.jpg",
+        desc: "The Show Must Go On!",
+        url: "https://blog.ooliver.cn",
+      },
     ],
   },
 ];
