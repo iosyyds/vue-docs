@@ -148,6 +148,9 @@ onMounted(() => {
       flex-direction: row;
       align-items: center;
       .categories {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
         margin-right: 12px;
         .cat-item {
           display: flex;
@@ -175,6 +178,7 @@ onMounted(() => {
         display: flex;
         flex-direction: row;
         align-items: center;
+        gap: 8px;
         .tag-item {
           display: flex;
           flex-direction: row;

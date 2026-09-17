@@ -153,6 +153,7 @@ const toPost = (path) => {
           display: flex;
           flex-direction: row;
           align-items: center;
+          margin-right: 8px;
           .iconfont {
             opacity: 0.8;
             margin-right: 6px;
