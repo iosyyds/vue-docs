@@ -111,6 +111,30 @@ const linkData = [
         desc: "The Show Must Go On!",
         url: "https://blog.ooliver.cn",
       },
+      {
+        name: "Aesrium",
+        avatar: "https://azusemisa.top/img/avatar.webp",
+        desc: "一只咸鱼肥宅，兼职学生党",
+        url: "https://www.azusemisa.top",
+      },
+      {
+        name: "伞菌の博客",
+        avatar: "https://umb.ink/static/img/ch.ico",
+        desc: "闲鱼的生活记录",
+        url: "https://umb.ink",
+      },
+      {
+        name: "OnlyTL",
+        avatar: "https://onlytl.oss-cn-chengdu.aliyuncs.com/avatar.png",
+        desc: "弱小和无知不是障碍，Bug才是",
+        url: "https://onlytl.com",
+      },
+      {
+        name: "Fantasy`Ke Blog",
+        avatar: "https://picx.fantasyke.cn/commonlyUsed/avatar.png",
+        desc: "不断追寻梦想的努力者，在幻想的世界里探索未知。",
+        url: "https://blog.fantasyke.cn/",
+      },
     ],
   },
 ];
