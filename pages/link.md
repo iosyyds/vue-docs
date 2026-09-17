@@ -1,7 +1,7 @@
 ---
 title: 友情链接
 aside: false
-comment: false
+comment: true
 ---
 
 <script setup>
