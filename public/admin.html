@@ -40,7 +40,7 @@
     }
     .header .back:hover { background: rgba(255,255,255,.32); }
     .container {
-      max-width: 860px;
+      max-width: 1400px;
       margin: 24px auto;
       padding: 0 16px;
     }
@@ -70,6 +70,18 @@
     /* 管理面板容器占满剩余视口高度，配合全屏样式让管理面板铺满浏览器 */
     #twikoo-comment {
       min-height: calc(100vh - 150px);
+    }
+    /* 关键：Twikoo 管理面板覆盖层强制全屏铺满浏览器窗口（admin.html 为独立页，必须自带此样式） */
+    .tk-admin {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 9999 !important;
+    }
+    .tk-admin.__show {
+      left: 0 !important;
     }
     .error-box {
       text-align: center;
