@@ -62,6 +62,30 @@ const linkData = [
         desc: "Stay Hungry, Stay Foolish",
         url: "https://shape.kloudy.cn/",
       },
+      {
+        name: "熊猫不是猫",
+        avatar: "https://panda995.top:500/img/2025/05/%E5%A4%B4%E5%83%8F2681cdef283e86.jpg",
+        desc: "平平无奇小熊猫",
+        url: "https://panda995.xyz/",
+      },
+      {
+        name: "Barney's Blog",
+        avatar: "https://hugo.bnblogs.cc/images/img/20220215001349.png",
+        desc: "All the truth is simple",
+        url: "https://bnblogs.cc/",
+      },
+      {
+        name: "一蓑烟雨的博客",
+        avatar: "https://bu.dusays.com/2023/12/24/6587c7764111a.webp",
+        desc: "竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。",
+        url: "https://easyf12.top/",
+      },
+      {
+        name: "Ariasakaの小窝",
+        avatar: "https://img.0v0.my/2024/12/05/67517bcf104da.png",
+        desc: "人有悲欢离合 月有阴晴圆缺",
+        url: "https://blog.yaria.top",
+      },
     ],
   },
 ];
