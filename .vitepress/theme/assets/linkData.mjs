@@ -32,6 +32,12 @@ const linkData = [
         desc: "生命不息 折腾不止",
         url: "https://blog.imzy.ink",
       },
+      {
+        name: "周润发",
+        avatar: "https://blog.zrf.me/img/logo.webp",
+        desc: "收录开源，好用的互联网项目",
+        url: "https://blog.zrf.me/",
+      },
     ],
   },
 ];
