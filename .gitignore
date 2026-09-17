@@ -34,3 +34,4 @@ themeConfig.mjs
 *.sw?
 
 .vercel
+twikoo.all.min.js

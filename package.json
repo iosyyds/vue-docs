@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "vitepress dev --host",
-    "build": "vitepress build",
+    "build": "vitepress build && node -e \"require('fs').copyFileSync('node_modules/twikoo/dist/twikoo.all.min.js', '.vitepress/dist/twikoo.all.min.js')\"",
     "preview": "vitepress preview"
   },
   "devDependencies": {
