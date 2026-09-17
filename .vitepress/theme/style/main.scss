@@ -284,3 +284,6 @@ a {
 // ===== Twikoo：去掉评论区搜索栏与版权脚注 =====
 .tk-comments-search { display: none !important; }
 .tk-footer { display: none !important; }
+
+// ===== Twikoo：隐藏评论区标题栏的搜索/刷新/设置图标（管理统一走 admin.html）=====
+.tk-comments-actions .tk-icon.__comments { display: none !important; }
