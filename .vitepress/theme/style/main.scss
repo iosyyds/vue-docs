@@ -270,3 +270,13 @@ a {
     font-size: 0.875rem;
   }
 }
+
+// ===== Twikoo 管理面板：全屏铺满浏览器窗口 =====
+.tk-admin {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+}
