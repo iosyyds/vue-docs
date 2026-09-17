@@ -29,6 +29,7 @@ const initTwikoo = async () => {
     twikoo.value = Twikoo.init({
       el: commentRef.value || "#comment-dom",
       envId: comment.twikoo.envId,
+      placeholder: "欢迎留言～填 QQ 邮箱自动显示头像，其他邮箱需在 weavatar.com 设置头像",
       onCommentLoaded: () => {
         console.log("评论已加载完毕");
         if (props.fill) fillComments(props.fill);
