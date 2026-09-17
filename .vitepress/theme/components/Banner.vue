@@ -134,7 +134,7 @@ onBeforeUnmount(() => {
 
 <style lang="scss" scoped>
 .banner {
-  height: 300px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,7 +186,7 @@ onBeforeUnmount(() => {
   }
   @media (max-width: 768px) {
     align-items: center;
-    height: 240px;
+    height: 190px;
     .title {
       flex-direction: column;
       gap: 6px;
