@@ -57,7 +57,8 @@ const initComments = async (themeConfig) => {
         return false;
     }
   } catch (error) {
-    console.error(`${commentType} 初始化失败`, error);
+    // 修复：commentType 是 try 块内 const，catch 无法访问，打印通用错误信息
+    console.error("评论组件初始化失败:", error && error.stack);
     throw error;
   }
 };
