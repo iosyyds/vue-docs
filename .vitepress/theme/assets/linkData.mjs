@@ -26,6 +26,12 @@ const linkData = [
         desc: "记录技术分享、生活点滴和日常折腾。",
         url: "https://xkbk.cn",
       },
+      {
+        name: "墨泽",
+        avatar: "https://imzy.ink/blog/logo.jpg",
+        desc: "",
+        url: "https://blog.imzy.ink",
+      },
     ],
   },
 ];
