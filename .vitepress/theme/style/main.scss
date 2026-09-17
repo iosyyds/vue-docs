@@ -287,3 +287,30 @@ a {
 
 // ===== Twikoo：隐藏评论区标题栏的搜索/刷新/设置图标（管理统一走 admin.html）=====
 .tk-comments-actions .tk-icon.__comments { display: none !important; }
+
+// ===== Twikoo 评论区排版：向 Waline 参考样式靠拢 =====
+// 隐藏 Twikoo 自带标题栏（主题标题栏已含"评论/匿名评论/隐私政策"），避免重复
+.tk-comments-title { display: none !important; }
+// 隐藏提交区左侧头像，输入框占满整行
+.tk-submit .tk-avatar { display: none !important; }
+.tk-submit > .tk-row:first-child { align-items: flex-start; }
+.tk-submit .tk-row .tk-input { margin-left: 0 !important; }
+// 输入框更大
+.tk-submit .tk-input textarea {
+  min-height: 100px !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+}
+// 操作行（表情/图片图标）去掉头像占位缩进
+.tk-submit .tk-row.actions { margin-left: 0 !important; margin-top: 0.8rem; margin-bottom: 0.8rem; }
+// 元信息（昵称/邮箱/网址）一行横排
+.tk-meta-input { display: flex !important; flex-direction: row !important; gap: 10px; }
+.tk-meta-input .el-input { flex: 1; }
+// 发送按钮：灰色圆角
+.tk-submit .tk-submit {
+  background: #f2f3f5 !important;
+  border: 1px solid #e5e6eb !important;
+  color: #6b7785 !important;
+  border-radius: 8px !important;
+  padding: 8px 22px !important;
+}

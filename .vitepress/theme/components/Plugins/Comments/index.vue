@@ -12,7 +12,10 @@
         <i class="iconfont icon-chat"></i>
         评论
       </span>
-      <span class="tool" @click="router.go('/pages/privacy')"> 隐私政策 </span>
+      <span class="title-right">
+        <span class="anon" :class="{ __on: anonOn }" @click="toggleAnon">匿名评论</span>
+        <span class="tool" @click="router.go('/pages/privacy')"> 隐私政策 </span>
+      </span>
     </div>
     <!-- 区分评论系统 -->
     <Artalk v-if="theme.comment.type === 'artalk'" :fill="fill" />
@@ -33,6 +36,21 @@ const props = defineProps({
   },
 });
 const mainCommentRef = ref(null);
+const anonOn = ref(false);
+
+// 匿名评论开关：开启时自动把昵称填为"匿名"
+const toggleAnon = () => {
+  anonOn.value = !anonOn.value;
+  // Twikoo 渲染后昵称输入框在 .tk-meta-input 内
+  const nick = document.querySelector(
+    ".tk-meta-input input[placeholder*='昵称'], .tk-meta-input .el-input input"
+  );
+  if (!nick) return;
+  nick.value = anonOn.value ? "匿名" : "";
+  nick.dispatchEvent(new Event("input", { bubbles: true }));
+  nick.dispatchEvent(new Event("change", { bubbles: true }));
+  if (anonOn.value) nick.focus();
+};
 
 // 滚动至评论
 const scrollToComments = () => {
@@ -65,6 +83,28 @@ defineExpose({ scrollToComments });
         font-size: 26px;
         font-weight: normal;
         margin-right: 8px;
+      }
+    }
+    .title-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .anon {
+      opacity: 0.6;
+      font-size: 14px;
+      cursor: pointer;
+      transition:
+        opacity 0.3s,
+        color 0.3s;
+      &:hover {
+        opacity: 1;
+        color: var(--main-color);
+      }
+      &.__on {
+        opacity: 1;
+        color: var(--main-color);
+        font-weight: 600;
       }
     }
     .tool {
