@@ -314,3 +314,6 @@ a {
   border-radius: 8px !important;
   padding: 8px 22px !important;
 }
+
+// ===== Twikoo：隐藏评论"预览"按钮 =====
+.tk-submit .tk-preview { display: none !important; }
