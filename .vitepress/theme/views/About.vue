@@ -54,62 +54,6 @@
 <!--        />-->
       </div>
     </div>
-    <div class="about-content" style="grid-template-columns: 3fr 2fr">
-      <!-- 性格 -->
-      <div class="about-item character about-anim" style="--color: #4298b4; --anim-delay: 0s">
-        <span class="tip">性格</span>
-        <span class="title2">乐观积极</span>
-        <span class="title2" style="color: var(--color)">乐于分享</span>
-        <span class="more">
-          相信分享与交流能带来
-          <a href="https://github.com/iosyyds/vue-docs" target="_blank">更多的可能性</a>
-        </span>
-      </div>
-      <!-- 座右铭 -->
-      <div class="about-item motto about-anim" style="--anim-delay: 0.15s">
-        <span class="tip">座右铭</span>
-        <span class="title1" style="margin-top: 20px">热爱生活，</span>
-        <span class="title2">保持好奇。</span>
-      </div>
-    </div>
-    <div class="about-content" style="grid-template-columns: 1fr 1fr">
-      <div
-        class="about-item like image about-anim"
-        style="
-          --color: #0c0e20;
-          --anim-delay: 0.05s;
-          background-image: url(/images/covers/cover_free-monitor.jpg);
-        "
-      >
-        <div class="image-content">
-          <span class="tip">关注偏好</span>
-          <span class="title2">数码科技</span>
-          <div class="image-desc">
-            <span class="left">手机、电脑及软硬件</span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="about-item like image about-anim"
-        style="
-          --color: #7b3c25;
-          --anim-delay: 0.2s;
-          background-image: url(/images/covers/cover_free-cdn.jpg);
-        "
-      >
-        <div class="image-content">
-          <span class="tip">音乐偏好</span>
-          <span class="title2">欧美、华语流行、纯音乐、ACG</span>
-          <div class="image-desc">
-            <span class="left">
-              <a href="https://music.163.com/#/playlist?id=381756640" target="_blank">
-                一起欣赏更多音乐
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="about-content" style="grid-template-columns: 2fr 3fr">
       <!-- 数据 -->
       <div
