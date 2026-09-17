@@ -28,10 +28,10 @@ const initComments = async (themeConfig) => {
         {
           const cdnList = [
             option[commentType].js || "",
-            "https://cdn.staticfile.org/twikoo/1.6.39/twikoo.all.min.js",
-            "https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.all.min.js",
-            "https://unpkg.com/twikoo@1.6.39/dist/twikoo.all.min.js",
-            "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/twikoo/1.6.39/twikoo.all.min.js",
+            "https://cdn.staticfile.org/twikoo/1.7.24/twikoo.all.min.js",
+            "https://cdn.jsdelivr.net/npm/twikoo@1.7.24/dist/twikoo.all.min.js",
+            "https://unpkg.com/twikoo@1.7.24/dist/twikoo.all.min.js",
+            "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/twikoo/1.7.24/twikoo.all.min.js",
           ].filter(Boolean);
           let lastErr = null;
           for (const src of cdnList) {
