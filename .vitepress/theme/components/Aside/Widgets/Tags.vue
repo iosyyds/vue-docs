@@ -78,8 +78,10 @@ const tagColors = ["#5b8ff9", "#61ddaa", "#f6bd16", "#e8684a", "#6dc8ec", "#9270
         transform: translateY(-3px);
         background-color: var(--tag-color);
         box-shadow: 0 6px 12px -4px var(--tag-color);
+        color: #fff;
         .num {
           opacity: 0.9;
+          color: rgba(255, 255, 255, 0.85);
         }
       }
     }
