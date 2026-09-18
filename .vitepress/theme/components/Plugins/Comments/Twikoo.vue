@@ -102,9 +102,20 @@ const fetchCommentCount = async () => {
     const t = window.twikoo;
     if (!t || typeof t.getCommentsCount !== "function") return;
     const path = window.location.pathname;
-    const res = await t.getCommentsCount({ envId: comment.twikoo.envId, urls: [path] });
-    const c = res && res[path];
-    if (c && typeof c.count === "number") emit("count", c.count);
+    // Twikoo 存储的 url 可能与页面 pathname 存在 .html 后缀差异，多候选匹配
+    const candidates = [path];
+    if (path.endsWith(".html")) candidates.push(path.slice(0, -5));
+    else candidates.push(path + ".html");
+    const res = await t.getCommentsCount({
+      envId: comment.twikoo.envId,
+      urls: candidates,
+    });
+    // 返回结构为数组 [{ url, count }]，优先取有评论数的命中项
+    const list = Array.isArray(res) ? res : [];
+    const hit =
+      list.find((i) => candidates.includes(i.url) && i.count > 0) ||
+      list.find((i) => candidates.includes(i.url));
+    if (hit && typeof hit.count === "number") emit("count", hit.count);
   } catch (err) {
     console.warn("评论数量获取失败", err);
   }
