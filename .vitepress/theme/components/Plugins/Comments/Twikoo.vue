@@ -121,20 +121,14 @@ const fetchCommentCount = async () => {
   }
 };
 
-// 提交区细节对齐：发送按钮移到昵称/邮箱/网址同行右侧 + 字数上限 10000（前端视觉）
+// 提交区细节对齐：发送按钮保持在输入框下方图标行右侧（参考样式图2），灰色圆角
 const polishSubmitArea = () => {
   try {
-    // 发送按钮移到 meta 行后面（参考 Waline：发送与表单同行）
+    // 确保发送按钮回到图标行（.tk-row.actions）内
     const send = document.querySelector(".tk-submit .tk-send");
-    const meta = document.querySelector(".tk-submit .tk-meta-input");
-    if (send && meta && meta.nextElementSibling !== send) {
-      meta.after(send);
-    }
-    // 字数上限 10000（与主题参考样式一致；后端未配置时前端强制显示 0/10000）
-    const ta = document.querySelector(".tk-submit .tk-input textarea");
-    if (ta && !ta.hasAttribute("data-maxlen-set")) {
-      ta.setAttribute("maxlength", "10000");
-      ta.setAttribute("data-maxlen-set", "1");
+    const actions = document.querySelector(".tk-submit .tk-row.actions");
+    if (send && actions && !actions.contains(send)) {
+      actions.appendChild(send);
     }
   } catch (e) {
     /* 忽略 */

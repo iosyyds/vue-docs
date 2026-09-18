@@ -311,23 +311,32 @@ a {
 // 元信息（昵称/邮箱/网址）一行横排
 .tk-meta-input { display: flex !important; flex-direction: row !important; gap: 10px; }
 .tk-meta-input .el-input { flex: 1; }
-// 发送按钮：跟随 meta 行同排（polishSubmitArea 已把 tk-send 移到 meta 之后），灰色圆角
+// 图标行：图标在左、发送按钮在右（Twikoo 默认结构，参考样式图2）
+.tk-submit .tk-row.actions {
+  display: flex !important;
+  align-items: center !important;
+  .tk-row-actions-start {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+// 发送按钮：灰色圆角，位于图标行右侧
 .tk-submit .tk-send {
   background: #f2f3f5 !important;
   border: 1px solid #e5e6eb !important;
   color: #6b7785 !important;
   border-radius: 8px !important;
   padding: 8px 22px !important;
-  margin-left: 10px;
+  margin-left: auto;
   flex: none;
-  height: 40px;
+  height: 36px;
   &:hover {
     background: #e8eaed !important;
     color: #4e5969 !important;
   }
 }
-// 图标行：发送按钮移走后右端可能留空，仅保留图标
-.tk-submit .tk-row.actions .tk-row-actions-start { flex: 1; }
 
 // ===== Twikoo：隐藏评论"预览"按钮 =====
 .tk-submit .tk-preview { display: none !important; }
@@ -340,11 +349,11 @@ a {
   }
   .tk-meta-input .el-input { width: 100% !important; flex: none !important; }
   .tk-submit .tk-input textarea { min-height: 90px !important; }
-  // 发送按钮：手机端占满整行
+  // 发送按钮：手机端保持图标行右侧
   .tk-submit .tk-send {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-top: 8px;
+    width: auto !important;
+    margin-left: auto !important;
+    margin-top: 0 !important;
   }
 }
 
