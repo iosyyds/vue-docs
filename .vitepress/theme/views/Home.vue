@@ -177,16 +177,21 @@ watch(
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background: #000;
+      background: var(--main-color);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.2s ease;
+      transition: transform 0.25s ease, background 0.25s ease;
     }
     &:hover {
-      box-shadow: 0 6px 18px -10px var(--main-border-shadow);
-      .essay-banner-arrow { transform: translateX(2px); }
+      border-color: var(--main-color);
+      box-shadow: 0 8px 22px -10px var(--main-border-shadow);
+      transform: translateY(-1px);
+      .essay-banner-arrow {
+        background: #000;
+        transform: translateX(3px);
+      }
     }
   }
   .home-content {
