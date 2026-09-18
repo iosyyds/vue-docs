@@ -30,7 +30,9 @@
         <div class="anon-modal">
           <span class="anon-close" @click="showAnonConfirm = false">×</span>
           <h3 class="anon-title">开启匿名评论</h3>
-          <p class="anon-desc">开启后将使用随机昵称与匿名邮箱进行评论，是否继续？</p>
+          <p class="anon-desc">
+            开启后将使用随机昵称与匿名邮箱进行评论，<br />是否继续？
+          </p>
           <div class="anon-btns">
             <button class="anon-cancel" @click="showAnonConfirm = false">取消</button>
             <button class="anon-ok" @click="confirmAnon">确认开启</button>
