@@ -22,9 +22,9 @@
               <i :class="`iconfont icon-${store.themeType}`"></i>
               <span class="label">显示模式</span>
             </div>
-            <!-- 右键菜单开关 -->
+            <!-- 右键菜单开关（仅电脑端） -->
             <div
-              :class="['menu-item', { open: store.useRightMenu }]"
+              :class="['menu-item pc-only', { open: store.useRightMenu }]"
               title="自定义右键菜单开关"
               @click.stop="rightMenuSwitch"
             >
@@ -270,6 +270,9 @@ onMounted(() => {
         gap: 10px;
         padding: 16px;
         border-radius: 16px;
+        .pc-only {
+          display: none; // 右键菜单仅电脑端
+        }
         .menu-item {
           width: 62px;
           height: 66px;
