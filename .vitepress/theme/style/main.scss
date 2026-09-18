@@ -327,3 +327,73 @@ a {
   .tk-meta-input .el-input { width: 100% !important; flex: none !important; }
   .tk-submit .tk-input textarea { min-height: 90px !important; }
 }
+
+// ===== 匿名评论确认弹窗（全局样式：Teleport 到 body，不能用组件 scoped）=====
+.anon-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.anon-modal {
+  position: relative;
+  width: min(400px, 86vw);
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 26px 22px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+.anon-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  &:hover {
+    color: #333;
+  }
+}
+.anon-title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2329;
+}
+.anon-desc {
+  margin: 0 0 22px;
+  font-size: 14px;
+  color: #646a73;
+  line-height: 1.6;
+}
+.anon-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  button {
+    padding: 8px 26px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+  }
+}
+.anon-cancel {
+  background: #f2f3f5;
+  color: #646a73;
+  &:hover {
+    background: #e5e6eb;
+  }
+}
+.anon-ok {
+  background: var(--main-color, #2eaadc);
+  color: #fff;
+  &:hover {
+    opacity: 0.9;
+  }
+}
