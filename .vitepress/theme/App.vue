@@ -145,6 +145,17 @@ onMounted(() => {
   window.addEventListener("copy", copyTip);
   // 监听系统颜色
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", changeSiteThemeType);
+
+  // 首屏加载动画：资源加载完成后自动关闭（3 秒兜底，避免一直转圈盖住页面）
+  const closeLoading = () => {
+    store.loadingStatus = false;
+  };
+  if (document.readyState === "complete") {
+    closeLoading();
+  } else {
+    window.addEventListener("load", closeLoading, { once: true });
+  }
+  setTimeout(closeLoading, 3000);
 });
 
 onBeforeUnmount(() => {
