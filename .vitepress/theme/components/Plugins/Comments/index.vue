@@ -180,7 +180,9 @@ defineExpose({ scrollToComments });
         color: #fff;
         font-size: 13px;
         font-weight: 600;
-        line-height: 1;
+        line-height: 22px;
+        // 数字字形视觉中心偏上，微压一下让"2"在矩形内真正垂直居中
+        padding-top: 2px;
       }
     }
     .title-right {
