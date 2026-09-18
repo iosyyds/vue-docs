@@ -94,7 +94,7 @@ const rand = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const toggleAnon = () => {
   if (anonOn.value) {
     anonOn.value = false;
-    waitAndSetMeta("", "", 0, false);
+    waitAndSetMeta("", "", 0);
   } else {
     showAnonConfirm.value = true;
   }
@@ -106,7 +106,7 @@ const confirmAnon = () => {
   const nick = rand(ANON_NICKS) + Math.floor(Math.random() * 90 + 10);
   const mail = "anon" + Date.now().toString().slice(-7) + "@proton.me";
   // Twikoo 评论区是异步渲染的，输入框可能还没出现：轮询等待就绪后再填入
-  waitAndSetMeta(nick, mail, 0, true);
+  waitAndSetMeta(nick, mail, 0);
 };
 
 // 填入昵称/邮箱（Twikoo 元信息输入框顺序：昵称、邮箱、网址）
@@ -124,24 +124,15 @@ const setMeta = (nick, mail) => {
 };
 
 // 轮询等待输入框就绪（最长约 15 秒），兼容评论慢加载
-const waitAndSetMeta = (nick, mail, attempt, doFocus) => {
+const waitAndSetMeta = (nick, mail, attempt) => {
   const inputs = document.querySelectorAll(".tk-meta-input input");
   if (inputs.length >= 2) {
     setInput(inputs[0], nick);
     setInput(inputs[1], mail);
-    if (doFocus && nick) {
-      // 输入框聚焦提示用户已填好
-      try {
-        inputs[0].focus();
-        inputs[0].scrollIntoView({ block: "center", behavior: "smooth" });
-      } catch (e) {
-        /* 忽略 */
-      }
-    }
     return;
   }
   if (attempt >= 50) return; // 50 × 300ms ≈ 15s
-  setTimeout(() => waitAndSetMeta(nick, mail, attempt + 1, doFocus), 300);
+  setTimeout(() => waitAndSetMeta(nick, mail, attempt + 1), 300);
 };
 
 // 滚动至评论
