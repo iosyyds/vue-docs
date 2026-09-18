@@ -168,6 +168,22 @@ const run = async () => {
 
 await run();
 
+// 应用手动确认覆盖（用于检测环境抓取失败但已人工确认的场景）
+let overrides = {};
+try {
+  overrides = JSON.parse(
+    await fs.readFile(path.join(ROOT, "public/links-override.json"), "utf8"),
+  );
+} catch (e) {
+  /* 无覆盖文件 */
+}
+for (const [u, s] of Object.entries(overrides)) {
+  if (s === "friend" && results[u] === "pending") {
+    results[u] = "friend";
+    details[u] = { validIn: "手动确认", inComment: false, note: "站长人工确认已回链" };
+  }
+}
+
 const out = {
   checkedAt: new Date().toISOString(),
   mySite: MY_SITE,
