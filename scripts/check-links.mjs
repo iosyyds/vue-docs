@@ -25,16 +25,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // 强命中：页面里出现指向本站的链接（href/src）
 const linkRe = /(?:href|src)\s*=\s*["'](?:\/\/|https?:\/\/)?(?:www\.)?xkbk\.cn["'\/]/i;
-// 名称 + 专属图标同时出现（友链卡片特征）
-const nameRe = new RegExp(MY_NAME);
-const logoRe = new RegExp(MY_LOGO.replace(/\./g, "\\."));
 
+// 只认真实链接：留言板/评论区里的纯文字提及（含名称、logo 地址）不算
 const isFriend = (html) => {
-  const t = html || "";
-  if (linkRe.test(t)) return true;
-  // 图标 + 名称 同时出现 → 友链卡片（防止页面里仅闲聊提及名称）
-  if (nameRe.test(t) && logoRe.test(t)) return true;
-  return false;
+  return linkRe.test(html || "");
 };
 
 const fetchPage = async (url) => {
