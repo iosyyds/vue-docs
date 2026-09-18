@@ -317,3 +317,13 @@ a {
 
 // ===== Twikoo：隐藏评论"预览"按钮 =====
 .tk-submit .tk-preview { display: none !important; }
+
+// ===== Twikoo 手机端适配：元信息输入框竖排全宽（防挤成一列点不了）=====
+@media (max-width: 768px) {
+  .tk-meta-input {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .tk-meta-input .el-input { width: 100% !important; flex: none !important; }
+  .tk-submit .tk-input textarea { min-height: 90px !important; }
+}
