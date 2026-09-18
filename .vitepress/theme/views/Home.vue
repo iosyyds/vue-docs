@@ -4,6 +4,14 @@
     <Banner v-if="showHeader" :height="store.bannerType" />
     <div class="home-content">
       <div class="posts-content">
+        <!-- 最新短文公告条（参考 blog.zrf.me：图标 + 短文 + 右箭头，点击进短文页） -->
+        <a class="essay-banner" href="/pages/essay.html">
+          <i class="iconfont icon-article" />
+          <span class="essay-banner-text">{{ latestEssay }}</span>
+          <span class="essay-banner-arrow">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </span>
+        </a>
         <!-- 分类总览 -->
         <TypeBar :type="showTags ? 'tags' : 'categories'" />
         <!-- 文章列表 -->
@@ -31,9 +39,13 @@
 
 <script setup>
 import { mainStore } from "@/store";
+import essaysData from "@/data/essays.json";
 
 const { theme } = useData();
 const store = mainStore();
+
+// 最新一条短文（公告条展示）
+const latestEssay = essaysData[0]?.content || "";
 const props = defineProps({
   // 显示首页头部
   showHeader: {
@@ -130,6 +142,52 @@ watch(
 
 <style lang="scss" scoped>
 .home {
+  // 最新短文公告条（参考 blog.zrf.me）
+  .essay-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background: var(--main-card-background);
+    border: 1px solid var(--main-card-border);
+    text-decoration: none;
+    color: var(--main-font-color);
+    transition: box-shadow 0.25s ease;
+    .iconfont {
+      flex-shrink: 0;
+      font-size: 18px;
+      color: var(--main-color);
+    }
+    .essay-banner-text {
+      flex: 1;
+      min-width: 0;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      opacity: 0.82;
+    }
+    .essay-banner-arrow {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+    &:hover {
+      box-shadow: 0 6px 18px -10px var(--main-border-shadow);
+      .essay-banner-arrow { transform: translateX(2px); }
+    }
+  }
   .home-content {
     width: 100%;
     display: flex;
