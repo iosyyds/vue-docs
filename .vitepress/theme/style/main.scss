@@ -370,6 +370,15 @@ html.dark .tk-comments {
     margin-left: auto !important;
     margin-top: 0 !important;
   }
+  // 评论区背景块：手机端加大与上方文章卡片的间距 + 用浅一档底色区分，避免视觉粘连
+  .tk-comments {
+    margin-top: 1.4rem !important;
+    background: var(--main-card-second-background) !important;
+  }
+  html.dark .tk-comments {
+    background: #26262b !important;
+    border-color: #3a3a3f !important;
+  }
 }
 
 // ===== 匿名评论确认弹窗（全局样式：Teleport 到 body，不能用组件 scoped）=====
