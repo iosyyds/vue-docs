@@ -50,6 +50,11 @@ html.dark {
   --main-mask-Inverse-background: rgba(255, 255, 255, 0.08);
   --main-mask-second-background: rgba(0, 0, 0, 0.45);
   --main-color-opacity: rgba(0, 0, 0, 0.15);
+  // 评论数角标（暗色模式提亮一点）
+  .comment .title .name .count-badge {
+    background: #4a4a4f;
+  }
+
 }
 
 // 字体
