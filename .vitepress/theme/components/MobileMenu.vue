@@ -29,6 +29,17 @@
               </div>
             </div>
             <hr />
+            <!-- 快捷操作 -->
+            <div class="menu-item">
+              <span class="link-title"> 快捷操作</span>
+              <div class="link-child">
+                <div class="link-child-btn" @click="openControl">
+                  <i class="iconfont icon-dashboard" />
+                  <span class="name">中控台</span>
+                </div>
+              </div>
+            </div>
+            <hr />
             <!-- 标签 -->
             <div class="tags-list menu-item">
               <span class="link-title"> 标签</span>
@@ -66,6 +77,12 @@ const pageJump = (url) => {
   if (!url) return false;
   store.changeShowStatus("mobileMenuShow");
   router.go(url);
+};
+
+// 打开中控台
+const openControl = () => {
+  store.changeShowStatus("mobileMenuShow");
+  store.changeShowStatus("controlShow");
 };
 </script>
 
