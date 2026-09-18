@@ -94,7 +94,7 @@ const rand = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const toggleAnon = () => {
   if (anonOn.value) {
     anonOn.value = false;
-    setMeta("", "");
+    waitAndSetMeta("", "", 0, false);
   } else {
     showAnonConfirm.value = true;
   }
@@ -105,22 +105,43 @@ const confirmAnon = () => {
   anonOn.value = true;
   const nick = rand(ANON_NICKS) + Math.floor(Math.random() * 90 + 10);
   const mail = "anon" + Date.now().toString().slice(-7) + "@proton.me";
-  setMeta(nick, mail);
+  // Twikoo 评论区是异步渲染的，输入框可能还没出现：轮询等待就绪后再填入
+  waitAndSetMeta(nick, mail, 0, true);
 };
 
 // 填入昵称/邮箱（Twikoo 元信息输入框顺序：昵称、邮箱、网址）
+const setInput = (el, value) => {
+  if (!el) return;
+  el.value = value;
+  el.dispatchEvent(new Event("input", { bubbles: true }));
+  el.dispatchEvent(new Event("change", { bubbles: true }));
+};
+
 const setMeta = (nick, mail) => {
   const inputs = document.querySelectorAll(".tk-meta-input input");
-  if (inputs[0]) {
-    inputs[0].value = nick;
-    inputs[0].dispatchEvent(new Event("input", { bubbles: true }));
-    inputs[0].dispatchEvent(new Event("change", { bubbles: true }));
+  if (inputs[0]) setInput(inputs[0], nick);
+  if (inputs[1]) setInput(inputs[1], mail);
+};
+
+// 轮询等待输入框就绪（最长约 15 秒），兼容评论慢加载
+const waitAndSetMeta = (nick, mail, attempt, doFocus) => {
+  const inputs = document.querySelectorAll(".tk-meta-input input");
+  if (inputs.length >= 2) {
+    setInput(inputs[0], nick);
+    setInput(inputs[1], mail);
+    if (doFocus && nick) {
+      // 输入框聚焦提示用户已填好
+      try {
+        inputs[0].focus();
+        inputs[0].scrollIntoView({ block: "center", behavior: "smooth" });
+      } catch (e) {
+        /* 忽略 */
+      }
+    }
+    return;
   }
-  if (inputs[1]) {
-    inputs[1].value = mail;
-    inputs[1].dispatchEvent(new Event("input", { bubbles: true }));
-    inputs[1].dispatchEvent(new Event("change", { bubbles: true }));
-  }
+  if (attempt >= 50) return; // 50 × 300ms ≈ 15s
+  setTimeout(() => waitAndSetMeta(nick, mail, attempt + 1, doFocus), 300);
 };
 
 // 滚动至评论
