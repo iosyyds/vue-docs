@@ -121,6 +121,26 @@ const fetchCommentCount = async () => {
   }
 };
 
+// 提交区细节对齐：发送按钮移到昵称/邮箱/网址同行右侧 + 字数上限 10000（前端视觉）
+const polishSubmitArea = () => {
+  try {
+    // 发送按钮移到 meta 行后面（参考 Waline：发送与表单同行）
+    const send = document.querySelector(".tk-submit .tk-send");
+    const meta = document.querySelector(".tk-submit .tk-meta-input");
+    if (send && meta && meta.nextElementSibling !== send) {
+      meta.after(send);
+    }
+    // 字数上限 10000（与主题参考样式一致；后端未配置时前端强制显示 0/10000）
+    const ta = document.querySelector(".tk-submit .tk-input textarea");
+    if (ta && !ta.hasAttribute("data-maxlen-set")) {
+      ta.setAttribute("maxlength", "10000");
+      ta.setAttribute("data-maxlen-set", "1");
+    }
+  } catch (e) {
+    /* 忽略 */
+  }
+};
+
 // 初始化 Twikoo
 const initTwikoo = async () => {
   try {
@@ -129,11 +149,12 @@ const initTwikoo = async () => {
     twikoo.value = Twikoo.init({
       el: commentRef.value || "#comment-dom",
       envId: comment.twikoo.envId,
-      placeholder: "欢迎留言～填 QQ 邮箱自动显示头像，其他邮箱需在 weavatar.com 设置头像",
+      placeholder: "欢迎留下宝贵的建议啦~",
       onCommentLoaded: () => {
         console.log("评论已加载完毕");
         applyAvatarFallback();
         fetchCommentCount();
+        polishSubmitArea();
         // 动态监听：翻页、回复等新渲染的头像也兜底
         const target = document.querySelector("#comment-dom");
         if (target) {
