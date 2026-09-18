@@ -52,6 +52,8 @@ export const mainStore = defineStore("main", {
       // 站点背景
       backgroundType: "patterns",
       backgroundUrl: "https://tuapi.eees.cc/api.php?category={dongman,fengjing}&type=302",
+      // 纪念日全站置灰（中控台可控）
+      memorialGray: false,
       // 当前文章真实评论数（Giscus 元数据）
       commentCount: 0,
     };
@@ -131,6 +133,7 @@ export const mainStore = defineStore("main", {
         "fontSize",
         "infoPosition",
         "backgroundUrl",
+        "memorialGray",
       ],
     },
   ],
