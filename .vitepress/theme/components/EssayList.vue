@@ -1,29 +1,6 @@
 <!-- 即刻短文：全部短文时间线 -->
 <template>
   <div class="essay-list">
-    <!-- 发短文输入框（参照 zrf 风格：即刻 + 提示 + 黑色圆形发送） -->
-    <div class="essay-editor s-card">
-      <span class="editor-tag">即刻</span>
-      <input
-        v-model="essayInput"
-        class="editor-input"
-        type="text"
-        placeholder="快写一首情歌，雅俗共赏~"
-        maxlength="200"
-        @keyup.enter="sendEssay"
-      />
-      <button class="editor-send" title="发布短文" @click="sendEssay">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13" />
-          <polygon points="22 2 15 22 11 13 2 9 22 2" />
-        </svg>
-      </button>
-    </div>
-    <div class="essay-list-header s-card">
-      <i class="iconfont icon-article" />
-      <span>即刻短文</span>
-      <small>记录零碎的日常与折腾</small>
-    </div>
     <div class="essay-timeline">
       <div v-for="(item, i) in allEssays" :key="i" class="essay-item s-card">
         <div class="essay-meta">
