@@ -21,12 +21,6 @@ const linkData = [
     typeDesc: "我们在一起，共同进步",
     typeList: [
       {
-        name: "小坤哥哥",
-        avatar: "https://xkbk.cn/logo.svg",
-        desc: "记录技术分享、生活点滴和日常折腾。",
-        url: "https://xkbk.cn",
-      },
-      {
         name: "墨泽",
         avatar: "https://imzy.ink/blog/logo.jpg",
         desc: "生命不息 折腾不止",

@@ -1,7 +1,7 @@
 <template>
   <Transition name="fade" mode="out-in">
     <div v-if="listData?.length" class="link-list">
-      <div v-for="(type, index) in listData" :key="index" class="link-type-list">
+      <div v-for="(type, index) in groupedList" :key="index" class="link-type-list">
         <div class="title">
           <h2 class="name">
             <span class="name-text">{{ type?.typeName || "未知分组" }}</span>
@@ -9,8 +9,8 @@
           </h2>
           <span class="tip">{{ type?.typeDesc || "分组暂无简介" }}</span>
         </div>
-        <!-- 友链状态角标说明 -->
-        <div v-if="useFriendsLink" class="badge-legend">
+        <!-- 友链状态角标说明（推荐分组不显示） -->
+        <div v-if="useFriendsLink && type?.type !== 'rec'" class="badge-legend">
           <span class="legend-item">
             <i class="dot owner"></i>博主（本站）
           </span>
@@ -33,10 +33,11 @@
               {
                 loss: type?.type === 'loss',
                 'cf-friends-link': type?.type !== 'loss' && useFriendsLink,
+                'link-disabled': useFriendsLink && isDisabled(link.url),
               },
             ]"
             :key="index"
-            :href="type?.type !== 'loss' ? link.url : null"
+            :href="type?.type !== 'loss' && !isDisabled(link.url) ? link.url : null"
             target="_blank"
           >
             <div class="cover">
@@ -68,7 +69,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 
 const props = defineProps({
   // 列表数据
@@ -111,6 +112,12 @@ const badgeText = (url) => {
   return "";
 };
 
+// 待回 / 未知 状态不可点击
+const isDisabled = (url) => {
+  const s = statusMap.value[url];
+  return s === "pending" || s === "unknown";
+};
+
 // 好友优先排序：博主 > 好友 > 待回/未知（其余保持原顺序）
 const rankOf = (url) => {
   if (url === MY_SITE_URL || url === "https://xkbk.cn/") return 0;
@@ -123,6 +130,28 @@ const sortedLinks = (list) => {
   if (!props.useFriendsLink || !Array.isArray(list)) return list || [];
   return [...list].sort((a, b) => rankOf(a.url) - rankOf(b.url));
 };
+
+// 分组整理：好友（检测为 friend）归入"推荐"分组；"小伙伴们"保留剩余（待回/未知）
+const groupedList = computed(() => {
+  if (!props.useFriendsLink || !Array.isArray(props.listData)) return props.listData || [];
+  const friendSource = props.listData.find((t) => t.type === "friends");
+  const friendList = Array.isArray(friendSource?.typeList) ? friendSource.typeList : [];
+  return props.listData.map((type) => {
+    const list = Array.isArray(type.typeList) ? type.typeList : [];
+    if (type.type === "rec") {
+      // 推荐 = 原有推荐（本站）+ 所有好友
+      const friendsItems = friendList.filter(
+        (l) =>
+          (l.url !== MY_SITE_URL && l.url !== "https://xkbk.cn/") &&
+          statusMap.value[l.url] === "friend",
+      );
+      return { ...type, typeList: [...list, ...friendsItems] };
+    }
+    // 其他分组：排除好友（好友已进推荐）
+    const rest = list.filter((l) => statusMap.value[l.url] !== "friend");
+    return { ...type, typeList: rest };
+  });
+});
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -231,6 +260,13 @@ onMounted(async () => {
         padding: 12px;
         &.loss {
           pointer-events: none;
+        }
+        // 待回/未知：不可点击（置灰 + 禁用光标）
+        &.link-disabled {
+          pointer-events: none;
+          cursor: not-allowed;
+          opacity: 0.55;
+          filter: grayscale(0.35);
         }
         // 好友/待回 徽标（卡片矩形右上角）
         .link-badge {
