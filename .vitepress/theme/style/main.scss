@@ -290,59 +290,6 @@ a {
 .tk-comments-search { display: none !important; }
 .tk-footer { display: none !important; }
 
-// ===== Twikoo 评论区：有内容的地方都有背景色（不透明卡片）=====
-.tk-comments {
-  background: var(--main-card-background);
-  border: 1px solid var(--main-card-border);
-  border-radius: 14px;
-  padding: 18px 18px 6px;
-  margin-top: 0.4rem;
-  box-shadow: 0 8px 20px -8px var(--main-border-shadow);
-  // 提交区卡片
-  .tk-submit {
-    background: var(--main-card-second-background);
-    border: 1px solid var(--main-card-border);
-    border-radius: 12px;
-    padding: 14px 14px 6px;
-    margin-bottom: 1rem;
-    .tk-input textarea {
-      background: transparent;
-    }
-  }
-  // 每条评论卡片
-  > .tk-comment,
-  .tk-comment {
-    background: var(--main-card-background);
-    border: 1px solid var(--main-card-border);
-    border-radius: 12px;
-    padding: 12px 14px;
-    margin-bottom: 12px;
-    transition: border-color 0.3s;
-    &:hover {
-      border-color: var(--main-color);
-    }
-    // 嵌套回复用更浅底色区分
-    .tk-comment {
-      background: var(--main-card-second-background);
-      border-color: transparent;
-    }
-    .tk-avatar {
-      background: transparent;
-    }
-  }
-  // 评论操作行（点赞/回复）图标
-  .tk-comment-action {
-    background: transparent;
-  }
-  // 加载更多按钮卡片化
-  .tk-comments-more,
-  .tk-action {
-    background: var(--main-card-second-background);
-    border: 1px solid var(--main-card-border);
-    border-radius: 10px;
-  }
-}
-
 // ===== Twikoo：隐藏评论区标题栏的搜索/刷新/设置图标（管理统一走 admin.html）=====
 .tk-comments-actions .tk-icon.__comments { display: none !important; }
 
