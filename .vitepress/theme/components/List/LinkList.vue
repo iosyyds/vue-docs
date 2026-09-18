@@ -9,9 +9,24 @@
           </h2>
           <span class="tip">{{ type?.typeDesc || "分组暂无简介" }}</span>
         </div>
+        <!-- 友链状态角标说明 -->
+        <div v-if="useFriendsLink" class="badge-legend">
+          <span class="legend-item">
+            <i class="dot owner"></i>博主（本站）
+          </span>
+          <span class="legend-item">
+            <i class="dot friend"></i>好友（已互加）
+          </span>
+          <span class="legend-item">
+            <i class="dot pending"></i>待回（对方未回加）
+          </span>
+          <span class="legend-item">
+            <i class="dot unknown"></i>未知（无法检测）
+          </span>
+        </div>
         <div class="all-link" v-if="type?.typeList">
           <a
-            v-for="(link, index) in type.typeList"
+            v-for="(link, index) in sortedLinks(type.typeList)"
             :class="[
               'link-card',
               's-card',
@@ -96,6 +111,19 @@ const badgeText = (url) => {
   return "";
 };
 
+// 好友优先排序：博主 > 好友 > 待回/未知（其余保持原顺序）
+const rankOf = (url) => {
+  if (url === MY_SITE_URL || url === "https://xkbk.cn/") return 0;
+  const s = statusMap.value[url];
+  if (s === "friend") return 1;
+  return 2;
+};
+
+const sortedLinks = (list) => {
+  if (!props.useFriendsLink || !Array.isArray(list)) return list || [];
+  return [...list].sort((a, b) => rankOf(a.url) - rankOf(b.url));
+};
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 onMounted(async () => {
@@ -149,6 +177,44 @@ onMounted(async () => {
       .tip {
         color: var(--main-font-second-color);
         font-size: 13px;
+      }
+    }
+    // 友链状态角标说明
+    .badge-legend {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 18px;
+      margin: -0.6rem 0 1.2rem 6px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background-color: var(--main-card-background);
+      border: 1px solid var(--main-card-border);
+      box-shadow: 0 6px 16px -6px var(--main-border-shadow);
+      .legend-item {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: var(--main-font-second-color);
+        .dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          margin-right: 6px;
+          &.owner {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+          }
+          &.friend {
+            background: linear-gradient(135deg, #42b883, #2ea07a);
+          }
+          &.pending {
+            background: linear-gradient(135deg, #f0a24b, #e08a2e);
+          }
+          &.unknown {
+            background: linear-gradient(135deg, #7d93b2, #5e7391);
+          }
+        }
       }
     }
     .all-link {
