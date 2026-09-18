@@ -146,35 +146,36 @@ watch(
   .essay-banner {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
     box-sizing: border-box;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
+    padding: 0.9rem 1.3rem;
+    margin-bottom: 1.2rem;
+    border-radius: 18px;
     background: var(--main-card-background);
     border: 1px solid var(--main-card-border);
+    box-shadow: 0 2px 10px -6px var(--main-border-shadow);
     text-decoration: none;
     color: var(--main-font-color);
     transition: box-shadow 0.25s ease;
     .iconfont {
       flex-shrink: 0;
-      font-size: 18px;
+      font-size: 20px;
       color: var(--main-color);
     }
     .essay-banner-text {
       flex: 1;
       min-width: 0;
-      font-size: 14px;
+      font-size: 14.5px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      opacity: 0.82;
+      opacity: 0.9;
     }
     .essay-banner-arrow {
       flex-shrink: 0;
-      width: 26px;
-      height: 26px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: #000;
       color: #fff;
