@@ -33,13 +33,13 @@
                   @load="(e) => e.target.classList.add('loaded')"
                 />
               </LazyLoader>
-              <span
-                v-if="useFriendsLink && badgeOf(link.url)"
-                :class="['link-badge', statusMap[link.url]]"
-              >
-                {{ badgeText(link.url) }}
-              </span>
             </div>
+            <span
+              v-if="useFriendsLink && badgeOf(link.url)"
+              :class="['link-badge', statusMap[link.url]]"
+            >
+              {{ badgeText(link.url) }}
+            </span>
             <div class="data">
               <span :class="['name', { 'cf-friends-name': useFriendsLink }]">{{ link.name }}</span>
               <span class="desc">{{ link.desc }}</span>
@@ -152,6 +152,7 @@ onMounted(async () => {
       gap: 20px;
       grid-template-columns: repeat(5, 1fr);
       .link-card {
+        position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -160,6 +161,30 @@ onMounted(async () => {
         padding: 12px;
         &.loss {
           pointer-events: none;
+        }
+        // 好友/待回 徽标（卡片矩形右上角）
+        .link-badge {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          z-index: 3;
+          padding: 2px 8px;
+          border-radius: 10px;
+          font-size: 11px;
+          font-weight: 600;
+          line-height: 1.4;
+          color: #fff;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+          white-space: nowrap;
+          &.friend {
+            background: linear-gradient(135deg, #42b883, #2ea07a);
+          }
+          &.pending {
+            background: linear-gradient(135deg, #f0a24b, #e08a2e);
+          }
+          &.unknown {
+            background: linear-gradient(135deg, #7d93b2, #5e7391);
+          }
         }
         .cover {
           position: relative;
@@ -193,30 +218,6 @@ onMounted(async () => {
             &.loaded {
               opacity: 1;
               filter: blur(0);
-            }
-          }
-          // 好友/待回 徽标
-          .link-badge {
-            position: absolute;
-            top: -6px;
-            right: -6px;
-            z-index: 3;
-            padding: 2px 7px;
-            border-radius: 10px;
-            font-size: 11px;
-            font-weight: 600;
-            line-height: 1.4;
-            color: #fff;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
-            white-space: nowrap;
-            &.friend {
-              background: linear-gradient(135deg, #42b883, #2ea07a);
-            }
-            &.pending {
-              background: linear-gradient(135deg, #f0a24b, #e08a2e);
-            }
-            &.unknown {
-              background: linear-gradient(135deg, #7d93b2, #5e7391);
             }
           }
         }
