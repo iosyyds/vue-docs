@@ -1,4 +1,5 @@
-// 友链互相添加检测：构建时抓取每个友链站首页，搜索是否收录本站
+// 友链互相添加检测：构建时抓取每个友链站（首页 + 常见友链子页），检测是否收录本站
+// 判定标准：出现指向本站的链接（href/src 含 xkbk.cn）或 本站名称+专属图标 才算好友
 // 输出 public/links-status.json（vitepress build 会自动复制到站点根目录）
 import fs from "fs/promises";
 import path from "path";
@@ -9,9 +10,49 @@ const ROOT = path.resolve(__dirname, "..");
 
 const MY_SITE = "xkbk.cn";
 const MY_NAME = "小坤哥哥";
+const MY_LOGO = "xkbk.cn/logo.svg"; // 本站专属友链图标
+
+// 常见友链路径（按出现概率排序；"" 为首页）
+const PATHS = ["", "/friends", "/links", "/link", "/friends/", "/links/"];
+const MAX_PATHS_PER_SITE = 4; // 每站最多探测页数
+const FETCH_TIMEOUT = 6000; // 单页超时
+const CONCURRENCY = 6; // 全局并发
 
 const timeout = (ms) =>
   new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), ms));
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// 强命中：页面里出现指向本站的链接（href/src）
+const linkRe = /(?:href|src)\s*=\s*["'](?:\/\/|https?:\/\/)?(?:www\.)?xkbk\.cn["'\/]/i;
+// 名称 + 专属图标同时出现（友链卡片特征）
+const nameRe = new RegExp(MY_NAME);
+const logoRe = new RegExp(MY_LOGO.replace(/\./g, "\\."));
+
+const isFriend = (html) => {
+  const t = html || "";
+  if (linkRe.test(t)) return true;
+  // 图标 + 名称 同时出现 → 友链卡片（防止页面里仅闲聊提及名称）
+  if (nameRe.test(t) && logoRe.test(t)) return true;
+  return false;
+};
+
+const fetchPage = async (url) => {
+  const res = await Promise.race([
+    fetch(url, {
+      headers: {
+        "user-agent":
+          "Mozilla/5.0 (compatible; LinkChecker/1.0; +https://xkbk.cn)",
+        accept: "text/html,application/xhtml+xml",
+      },
+      redirect: "follow",
+    }),
+    timeout(FETCH_TIMEOUT),
+  ]);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const text = await res.text();
+  return text || "";
+};
 
 let linkData;
 try {
@@ -26,29 +67,39 @@ const friends = (linkData || []).find((t) => t.type === "friends");
 const urls = (friends?.typeList || []).map((l) => l.url);
 
 const results = {};
-for (const u of urls) {
-  try {
-    const res = await Promise.race([
-      fetch(u, {
-        headers: {
-          "user-agent":
-            "Mozilla/5.0 (compatible; LinkChecker/1.0; +https://xkbk.cn)",
-        },
-        redirect: "follow",
-      }),
-      timeout(10000),
-    ]);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const text = await res.text();
-    const t = (text || "").toLowerCase();
-    results[u] =
-      t.includes(MY_SITE) || t.includes(MY_NAME) ? "friend" : "pending";
-  } catch (e) {
-    results[u] = "unknown"; // 抓取失败：不确定
+let pendingQueue = [...urls];
+let active = 0;
+
+const processSite = async (site) => {
+  // 依次探测各路径：首页先行，命中即返回
+  for (const p of PATHS.slice(0, MAX_PATHS_PER_SITE)) {
+    const url = p === "" ? site : site.replace(/\/?$/, "") + p;
+    try {
+      const html = await fetchPage(url);
+      if (isFriend(html)) {
+        return "friend";
+      }
+    } catch (e) {
+      // 单页失败（404/超时）继续下一个路径
+    }
   }
-  // 礼貌限速
-  await new Promise((r) => setTimeout(r, 300));
-}
+  // 有页面成功但都没命中 → 待回；全部失败 → 未知
+  return "pending";
+};
+
+// 并发调度
+const run = async () => {
+  const workers = Array.from({ length: Math.min(CONCURRENCY, urls.length) }, async () => {
+    while (pendingQueue.length) {
+      const site = pendingQueue.shift();
+      results[site] = await processSite(site);
+      await sleep(120); // 礼貌限速
+    }
+  });
+  await Promise.all(workers);
+};
+
+await run();
 
 const out = {
   checkedAt: new Date().toISOString(),
