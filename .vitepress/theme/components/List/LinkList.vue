@@ -9,8 +9,8 @@
           </h2>
           <span class="tip">{{ type?.typeDesc || "分组暂无简介" }}</span>
         </div>
-        <!-- 友链状态角标说明（推荐分组不显示） -->
-        <div v-if="useFriendsLink && type?.type !== 'rec'" class="badge-legend">
+        <!-- 友链状态角标说明（显示在推荐分组下方） -->
+        <div v-if="useFriendsLink && type?.type === 'rec'" class="badge-legend">
           <span class="legend-item">
             <i class="dot owner"></i>博主（本站）
           </span>
