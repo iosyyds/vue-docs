@@ -450,3 +450,48 @@ html.dark .tk-comments {
     opacity: 0.9;
   }
 }
+
+// ===== 即刻短文页横幅（参考 blog.zrf.me：深色横幅 + 大标题 + 副标题）=====
+.essay-hero {
+  position: relative;
+  margin-bottom: 1.2rem;
+  border-radius: 14px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(20, 22, 34, 0.82) 0%, rgba(45, 52, 88, 0.78) 55%, rgba(90, 60, 120, 0.72) 100%),
+    radial-gradient(circle at 75% 25%, rgba(120, 140, 255, 0.35), transparent 60%);
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  padding: 2.2rem 2rem;
+  box-shadow: 0 10px 26px -12px rgba(0, 0, 0, 0.45);
+}
+.essay-hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #fff;
+}
+.essay-hero-sub {
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.75;
+}
+.essay-hero-title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+.essay-hero-desc {
+  font-size: 13px;
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .essay-hero {
+    min-height: 150px;
+    padding: 1.6rem 1.3rem;
+  }
+  .essay-hero-title { font-size: 26px; }
+}
