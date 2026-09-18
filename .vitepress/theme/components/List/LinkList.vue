@@ -36,7 +36,7 @@
             </div>
             <span
               v-if="useFriendsLink && badgeOf(link.url)"
-              :class="['link-badge', statusMap[link.url]]"
+              :class="['link-badge', badgeOf(link.url)]"
             >
               {{ badgeText(link.url) }}
             </span>
@@ -75,16 +75,20 @@ const props = defineProps({
 
 // ===== 友链互相添加检测：读取构建时生成的静态 JSON（GitHub Actions 检测）=====
 const STATUS_URL = "/links-status.json";
+const MY_SITE_URL = "https://xkbk.cn";
 
 const statusMap = ref({});
 
 const badgeOf = (url) => {
+  // 本站显示"博主"
+  if (url === MY_SITE_URL || url === "https://xkbk.cn/") return "owner";
   const s = statusMap.value[url];
   if (s === "friend" || s === "pending" || s === "unknown") return s;
   return "";
 };
 
 const badgeText = (url) => {
+  if (url === MY_SITE_URL || url === "https://xkbk.cn/") return "博主";
   const s = statusMap.value[url];
   if (s === "friend") return "好友";
   if (s === "pending") return "待回";
@@ -178,6 +182,9 @@ onMounted(async () => {
           white-space: nowrap;
           &.friend {
             background: linear-gradient(135deg, #42b883, #2ea07a);
+          }
+          &.owner {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
           }
           &.pending {
             background: linear-gradient(135deg, #f0a24b, #e08a2e);
