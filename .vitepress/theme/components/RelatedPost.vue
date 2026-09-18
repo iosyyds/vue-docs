@@ -55,13 +55,19 @@ onMounted(() => {
 <style lang="scss" scoped>
 .related-post {
   margin-top: 1rem;
+  // 相关推荐独立卡片矩形：与评论区矩形分开，手机端同样生效
+  background-color: var(--main-card-background);
+  border: 1px solid var(--main-card-border);
+  border-radius: 14px;
+  padding: 14px 18px 10px;
+  box-shadow: 0 8px 20px -8px var(--main-border-shadow);
   .title {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin: 3rem 0 1rem 0;
+    margin: 0.2rem 0 1rem 0;
     padding: 0 6px;
     .name {
       display: flex;
