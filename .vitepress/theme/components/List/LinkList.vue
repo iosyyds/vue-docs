@@ -33,6 +33,12 @@
                   @load="(e) => e.target.classList.add('loaded')"
                 />
               </LazyLoader>
+              <span
+                v-if="useFriendsLink && badgeOf(link.url)"
+                :class="['link-badge', statusMap[link.url]]"
+              >
+                {{ statusMap[link.url] === "friend" ? "好友" : "待回" }}
+              </span>
             </div>
             <div class="data">
               <span :class="['name', { 'cf-friends-name': useFriendsLink }]">{{ link.name }}</span>
@@ -47,6 +53,8 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
+
 const props = defineProps({
   // 列表数据
   listData: {
@@ -63,6 +71,94 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+});
+
+// ===== 友链互相添加检测：对方站点是否收录了本站 =====
+const MY_SITE = "xkbk.cn";
+const MY_NAME = "小坤哥哥";
+const CACHE_KEY = "xkbk-link-check-v1";
+const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 小时缓存
+
+const statusMap = ref({});
+
+// CORS 代理池（依次尝试）
+const PROXIES = [
+  (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+  (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+  (u) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
+];
+
+const fetchViaProxy = async (url) => {
+  for (const build of PROXIES) {
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 8000);
+      const res = await fetch(build(url), { signal: ctrl.signal });
+      clearTimeout(timer);
+      if (res.ok) {
+        const text = await res.text();
+        if (text && text.length > 200) return text;
+      }
+    } catch (e) {
+      /* 换下一个代理 */
+    }
+  }
+  return "";
+};
+
+const checkOne = async (url) => {
+  const html = await fetchViaProxy(url);
+  const text = (html || "").toLowerCase();
+  if (!text) return "unknown";
+  if (text.includes(MY_SITE) || text.includes(MY_NAME)) return "friend";
+  return "pending";
+};
+
+const badgeOf = (url) => {
+  const s = statusMap.value[url];
+  return s === "friend" || s === "pending" ? s : "";
+};
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+onMounted(async () => {
+  if (!props.useFriendsLink) return;
+  const friends = (Array.isArray(props.listData) ? props.listData : []).find(
+    (t) => t.type === "friends",
+  );
+  if (!friends || !friends.typeList?.length) return;
+
+  // 读缓存（24 小时内不重复请求）
+  try {
+    const cache = JSON.parse(localStorage.getItem(CACHE_KEY) || "{}");
+    if (cache.ts && Date.now() - cache.ts < CACHE_TTL) {
+      statusMap.value = cache.map || {};
+      return;
+    }
+  } catch (e) {
+    /* 忽略缓存错误 */
+  }
+
+  const urls = friends.typeList.map((l) => l.url);
+  // 并发 3 个，避免一次打爆对方站点和代理
+  let idx = 0;
+  const worker = async () => {
+    while (idx < urls.length) {
+      const u = urls[idx++];
+      if (statusMap.value[u]) continue;
+      statusMap.value[u] = await checkOne(u);
+      try {
+        localStorage.setItem(
+          CACHE_KEY,
+          JSON.stringify({ ts: Date.now(), map: statusMap.value }),
+        );
+      } catch (e) {
+        /* 忽略 */
+      }
+      await sleep(400);
+    }
+  };
+  await Promise.all([worker(), worker(), worker()]);
 });
 </script>
 
@@ -101,6 +197,7 @@ const props = defineProps({
           pointer-events: none;
         }
         .cover {
+          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -131,6 +228,27 @@ const props = defineProps({
             &.loaded {
               opacity: 1;
               filter: blur(0);
+            }
+          }
+          // 好友/待回 徽标
+          .link-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            z-index: 3;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+            white-space: nowrap;
+            &.friend {
+              background: linear-gradient(135deg, #42b883, #2ea07a);
+            }
+            &.pending {
+              background: linear-gradient(135deg, #f0a24b, #e08a2e);
             }
           }
         }
