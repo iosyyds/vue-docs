@@ -290,6 +290,21 @@ a {
 .tk-comments-search { display: none !important; }
 .tk-footer { display: none !important; }
 
+// ===== Twikoo 评论区：整体背景块（标题+输入框+评论列表一块浅色区域，内部元素直接排布不套卡片）=====
+.tk-comments {
+  background: var(--main-card-background);
+  border: 1px solid var(--main-card-border);
+  border-radius: 14px;
+  padding: 18px 20px 12px;
+  margin-top: 0.4rem;
+  box-shadow: 0 8px 20px -8px var(--main-border-shadow);
+}
+// 暗色模式：提亮整体背景，避免与页面融为一体
+html.dark .tk-comments {
+  background: var(--main-card-second-background);
+  border-color: #3a3a3f;
+}
+
 // ===== Twikoo：隐藏评论区标题栏的搜索/刷新/设置图标（管理统一走 admin.html）=====
 .tk-comments-actions .tk-icon.__comments { display: none !important; }
 
