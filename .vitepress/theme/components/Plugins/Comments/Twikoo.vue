@@ -144,6 +144,8 @@ const initTwikoo = async () => {
       el: commentRef.value || "#comment-dom",
       envId: comment.twikoo.envId,
       placeholder: "欢迎留下宝贵的建议啦~",
+      // 表情包本地化（Bilibili 表情原 CDN 国内直连不稳定，已搬到站内）
+      emoji: "/emoji/owo.json",
       onCommentLoaded: () => {
         console.log("评论已加载完毕");
         applyAvatarFallback();
