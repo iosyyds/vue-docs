@@ -1,33 +1,27 @@
 {
-  "checkedAt": "2026-09-18T02:20:19.669Z",
+  "checkedAt": "2026-09-19T03:17:32.547Z",
   "mySite": "xkbk.cn",
   "map": {
-    "https://xkbk.cn": "friend",
     "https://shape.kloudy.cn/": "pending",
     "https://blog.yuzifu.top": "pending",
     "https://blog.zrf.me/": "pending",
     "https://panda995.xyz/": "pending",
     "https://natro92.fun": "pending",
-    "https://easyf12.top/": "pending",
     "https://blog.yaria.top": "pending",
     "https://www.zywvvd.com": "pending",
     "https://styunlen.cn": "pending",
-    "https://blog.ooliver.cn": "pending",
-    "https://fx7.top": "pending",
-    "https://umb.ink": "pending",
-    "http://www.freejishu.com": "pending",
+    "https://easyf12.top/": "pending",
     "https://blog.imzy.ink": "friend",
+    "https://umb.ink": "pending",
+    "https://fx7.top": "pending",
+    "https://blog.ooliver.cn": "pending",
     "https://onlytl.com": "pending",
+    "http://www.freejishu.com": "pending",
     "https://www.azusemisa.top": "pending",
     "https://blog.fantasyke.cn/": "pending",
     "https://bnblogs.cc/": "pending"
   },
   "details": {
-    "https://xkbk.cn": {
-      "validIn": "本站",
-      "inComment": false,
-      "note": "本站"
-    },
     "https://shape.kloudy.cn/": {
       "validIn": null,
       "inComment": false,
@@ -53,11 +47,6 @@
       "inComment": false,
       "note": "无有效回链"
     },
-    "https://easyf12.top/": {
-      "validIn": null,
-      "inComment": false,
-      "note": "无有效回链"
-    },
     "https://blog.yaria.top": {
       "validIn": null,
       "inComment": false,
@@ -73,22 +62,7 @@
       "inComment": false,
       "note": "无有效回链"
     },
-    "https://blog.ooliver.cn": {
-      "validIn": null,
-      "inComment": false,
-      "note": "无有效回链"
-    },
-    "https://fx7.top": {
-      "validIn": null,
-      "inComment": false,
-      "note": "无有效回链"
-    },
-    "https://umb.ink": {
-      "validIn": null,
-      "inComment": false,
-      "note": "无有效回链"
-    },
-    "http://www.freejishu.com": {
+    "https://easyf12.top/": {
       "validIn": null,
       "inComment": false,
       "note": "无有效回链"
@@ -98,7 +72,27 @@
       "inComment": false,
       "note": "发现有效回链"
     },
+    "https://umb.ink": {
+      "validIn": null,
+      "inComment": false,
+      "note": "无有效回链"
+    },
+    "https://fx7.top": {
+      "validIn": null,
+      "inComment": false,
+      "note": "无有效回链"
+    },
+    "https://blog.ooliver.cn": {
+      "validIn": null,
+      "inComment": false,
+      "note": "无有效回链"
+    },
     "https://onlytl.com": {
+      "validIn": null,
+      "inComment": false,
+      "note": "无有效回链"
+    },
+    "http://www.freejishu.com": {
       "validIn": null,
       "inComment": false,
       "note": "无有效回链"

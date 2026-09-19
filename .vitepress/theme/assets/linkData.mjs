@@ -33,6 +33,12 @@ const linkData = [
         url: "https://blog.zrf.me/",
       },
       {
+        name: "雨后初晴社",
+        avatar: "https://www.rainafter.cn/favicon/favicon-light-128.png",
+        desc: "宇文Teacher的个人博客",
+        url: "https://www.rainafter.cn",
+      },
+      {
         name: "又见苍岚",
         avatar: "https://www.zywvvd.com/image/avatar.png",
         desc: "蓝天依旧，明眸如初",
