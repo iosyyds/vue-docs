@@ -34,8 +34,8 @@ const linkData = [
       },
       {
         name: "雨后初晴社",
-        avatar: "https://www.rainafter.cn/favicon/favicon-light-128.png",
-        desc: "宇文Teacher的个人博客",
+        avatar: "https://image.rainafter.cn/i/2025/03/08/67cbf3ae27bed.jpg",
+        desc: "雨中，听雨声轻灵。雨后，赏水木清华。聆听这广阔天地，感受那动人瞬间。",
         url: "https://www.rainafter.cn",
       },
       {
