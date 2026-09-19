@@ -3,6 +3,9 @@ name: Deploy VitePress site to Pages
 on:
   push:
     branches: [main]
+  # 每天北京时间凌晨 4 点（UTC 20:00）自动检测友链并重新部署
+  schedule:
+    - cron: '0 20 * * *'
   workflow_dispatch:
 
 permissions:
