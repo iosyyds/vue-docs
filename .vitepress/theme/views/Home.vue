@@ -4,10 +4,14 @@
     <Banner v-if="showHeader" :height="store.bannerType" />
     <div class="home-content">
       <div class="posts-content">
-        <!-- 最新短文公告条（参考 blog.zrf.me：图标 + 短文 + 右箭头，点击进短文页） -->
+        <!-- 最新短文公告条（自动轮播前5条） -->
         <a class="essay-banner" href="/pages/essay.html">
           <i class="iconfont icon-article" />
-          <span class="essay-banner-text">{{ latestEssay }}</span>
+          <span class="essay-banner-text">
+            <Transition name="banner-fade" mode="out-in">
+              <span :key="essayIndex" class="banner-text-inner">{{ bannerEssays[essayIndex].content }}</span>
+            </Transition>
+          </span>
           <span class="essay-banner-arrow">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
           </span>
@@ -38,14 +42,27 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { mainStore } from "@/store";
 import essaysData from "@/data/essays.json";
 
 const { theme } = useData();
 const store = mainStore();
 
-// 最新一条短文（公告条展示）
-const latestEssay = essaysData[0]?.content || "";
+// 最新短文公告条：自动轮播全部短文
+const bannerEssays = essaysData.slice();
+const essayIndex = ref(0);
+let essayTimer = null;
+onMounted(() => {
+  if (bannerEssays.length > 1) {
+    essayTimer = setInterval(() => {
+      essayIndex.value = (essayIndex.value + 1) % bannerEssays.length;
+    }, 4000);
+  }
+});
+onBeforeUnmount(() => {
+  if (essayTimer) clearInterval(essayTimer);
+});
 const props = defineProps({
   // 显示首页头部
   showHeader: {
@@ -215,5 +232,19 @@ watch(
       }
     }
   }
+}
+
+// 公告条短文轮播切换动画
+.banner-fade-enter-active,
+.banner-fade-leave-active {
+  transition: all 0.4s ease;
+}
+.banner-fade-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.banner-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
 }
 </style>
