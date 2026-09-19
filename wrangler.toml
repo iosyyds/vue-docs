@@ -1,0 +1,6 @@
+name = "vue-docs"
+compatibility_date = "2025-09-19"
+pages_build_output_dir = ".vitepress/dist"
+
+[build]
+command = "npm run build"
