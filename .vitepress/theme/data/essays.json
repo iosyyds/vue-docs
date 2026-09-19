@@ -1,5 +1,53 @@
 [
   {
+    "date": "2026-09-19",
+    "content": "今天一口气写了 10 篇博客文章，主题覆盖 VitePress SEO、Cloudflare 加速、PicGo 图床、百度主动推送、静态博客性能优化、RSS 订阅、GitHub Actions 部署、评论系统选型、域名备案、备份策略。每篇都是基于公开资料整理，不是 AI 瞎编。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "VitePress 的 sitemap 配置真的就一行：sitemap: { hostname: 'https://xxx.com' }。之前一直以为要装插件，看了官方文档才知道内置。配完去百度站长平台提交，收录快了不少。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "GitHub Pages 国内访问慢的根本原因不是带宽，是运营商对 185.199.108.153 这几个 IP 的 QoS。把 Cloudflare DNS 记录从灰云切橙云，国内访问立刻稳定，不用备案不用换服务器。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "PicGo + 腾讯云 COS 这套图床组合真的香：截图后 Cmd+V 自动上传，自动复制 Markdown 链接。新用户 50GB 免费 180 天，之后一个月几块钱。比那些随时跑路的免费图床稳多了。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "百度主动推送 API 接进 GitHub Actions 后，新文章 push 完自动推 URL 给百度，当天就能来爬。比纯靠 sitemap 等蜘蛛快 5-10 倍。token 存 GitHub Secrets，别写进代码。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "静态博客性能优化最大的坑是中文字体。一个全量中文字体 5-10MB，首屏直接慢 3 秒。要么字体子集化，要么直接用系统字体兜底（-apple-system, PingFang SC），别死磕 Web 字体。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "RSS 没死，反而在复兴。太多人受不了算法推荐，想用 RSS 阅读器按时间线追博客。VitePress 配个 rss 插件，feed.xml 自动生成，页脚放个订阅入口就行。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "GitHub Actions 部署博客的 workflow 基本是模板：checkout → setup-node → npm install → npm run build → upload artifact → deploy。加个 actions/cache 缓存 node_modules，构建从 2 分钟压到 30 秒。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "评论系统三选一：Giscus 用 GitHub Discussions（技术博客读者都是开发者合适）、Waline 功能全、Twikoo 国内博主用得多。三家都免费，按读者画像选。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "域名这事别纠结太久：.com 优先，挂国外服务不用备案，想国内快再考虑备案 + 国内 CDN。Namesilo/Porkbun 便宜，阿里云备案方便。内容才是核心。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "博客备份记住 3-2-1 原则：3 份副本、2 种介质、1 份异地。GitHub 主仓库 + 本地定时 pull + Gitee 镜像，评论数据从 MongoDB 每月导一次，图床开版本控制。"
+  },
+  {
+    "date": "2026-09-19",
+    "content": "考虑把博客从 GitHub Pages 迁到 Cloudflare Pages：CF 自带 CDN，国内访问更稳，每个 PR 自动给预览 URL，无限带宽。迁移 10 分钟搞定，就是要把 GitHub Actions 的 Secrets 搬到 CF 环境变量。"
+  },
+  {
     "date": "2026-09-18",
     "content": "评论区整体对齐了参考站（安和鱼）：发送按钮归位到输入框下方图标行右侧、字数统计显示 0/10000、评论数角标深色圆角矩形且数字垂直居中、整块浅色背景包住输入框和评论列表，干净多了。"
   },
