@@ -203,7 +203,6 @@ watch(
     }
     &:hover {
       border-color: var(--main-color);
-      background: var(--main-color-op, rgba(0, 0, 0, 0.03));
       box-shadow: 0 8px 22px -10px var(--main-border-shadow);
       .essay-banner-arrow {
         background: #000;
