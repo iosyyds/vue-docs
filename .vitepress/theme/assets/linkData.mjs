@@ -12,6 +12,12 @@ const linkData = [
         desc: "记录技术分享、生活点滴和日常折腾。",
         url: "https://xkbk.cn",
       },
+      {
+        name: "雨后初晴社",
+        avatar: "https://image.rainafter.cn/i/2025/03/08/67cbf3ae27bed.jpg",
+        desc: "雨中，听雨声轻灵。雨后，赏水木清华。聆听这广阔天地，感受那动人瞬间。",
+        url: "https://www.rainafter.cn",
+      },
     ],
   },
   // 小伙伴们
@@ -31,12 +37,6 @@ const linkData = [
         avatar: "https://blog.zrf.me/img/logo.webp",
         desc: "收录开源，好用的互联网项目",
         url: "https://blog.zrf.me/",
-      },
-      {
-        name: "雨后初晴社",
-        avatar: "https://image.rainafter.cn/i/2025/03/08/67cbf3ae27bed.jpg",
-        desc: "雨中，听雨声轻灵。雨后，赏水木清华。聆听这广阔天地，感受那动人瞬间。",
-        url: "https://www.rainafter.cn",
       },
       {
         name: "又见苍岚",

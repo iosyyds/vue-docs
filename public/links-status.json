@@ -19,7 +19,8 @@
     "http://www.freejishu.com": "pending",
     "https://www.azusemisa.top": "pending",
     "https://blog.fantasyke.cn/": "pending",
-    "https://bnblogs.cc/": "pending"
+    "https://bnblogs.cc/": "pending",
+    "https://www.rainafter.cn": "friend"
   },
   "details": {
     "https://shape.kloudy.cn/": {
@@ -111,6 +112,11 @@
       "validIn": null,
       "inComment": false,
       "note": "无有效回链"
+    },
+    "https://www.rainafter.cn": {
+      "validIn": "/friends/",
+      "inComment": false,
+      "note": "友链页 /friends/ 有回链"
     }
   }
 }
