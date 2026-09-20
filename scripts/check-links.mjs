@@ -235,7 +235,7 @@ try {
   /* 无覆盖文件 */
 }
 for (const [u, s] of Object.entries(overrides)) {
-  if (s === "friend" && results[u] === "pending") {
+  if (s === "friend") {
     results[u] = "friend";
     details[u] = { validIn: "手动确认", inComment: false, note: "站长人工确认已回链" };
   }
