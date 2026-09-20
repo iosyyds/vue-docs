@@ -110,13 +110,19 @@ export const themeConfig = {
         },
       ],
       // Google AdSense
+      // Google AdSense：页面空闲后再异步加载，不阻塞首屏
       [
         "script",
-        {
-          async: "",
-          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7156604582462189",
-          crossorigin: "anonymous",
-        },
+        {},
+        `(function(){
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7156604582462189';
+          s.crossOrigin = 'anonymous';
+          var load = function(){ (window.requestIdleCallback || function(cb){ setTimeout(cb, 2000); })(function(){ document.head.appendChild(s); }); };
+          if (document.readyState === 'complete') load();
+          else window.addEventListener('load', load);
+        })();`,
       ],
       // 51la 站点统计
       [
