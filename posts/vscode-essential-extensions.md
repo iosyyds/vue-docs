@@ -12,7 +12,6 @@ articleGPT: "VS Code 装什么插件？这篇整理前端开发必备的 10 个�
 
 # VS Code 必备插件推荐：装完这 10 个效率翻倍
 
-![VS Code 界面](https://code.visualstudio.com/assets/home/home-screenshot-linux.png)
 
 VS Code 裸装就是个文本编辑器，装对插件才是 IDE。这篇整理前端开发真正用得上的 10 个。
 

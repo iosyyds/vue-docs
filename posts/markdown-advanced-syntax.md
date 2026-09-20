@@ -12,7 +12,6 @@ articleGPT: "Markdown 不只是标题和列表。这篇整理表格对齐、脚�
 
 # Markdown 进阶语法：表格、脚注、任务列表你都会用吗
 
-![Markdown 语法](https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=800&h=400&fit=crop)
 
 大多数人用 Markdown 只会标题、列表、加粗。其实它还有很多进阶语法，写文档和博客更专业。
 
@@ -93,7 +92,6 @@ VitePress 装了 KaTeX 插件就能渲染。
 ## 插入图片并控制大小
 
 ```markdown
-![描述](图片链接 =400x300)
 ```
 
 等号后面指定宽高，解决图片太大撑爆页面。

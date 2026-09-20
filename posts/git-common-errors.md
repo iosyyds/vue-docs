@@ -12,7 +12,6 @@ articleGPT: "Git 报错别慌。这篇整理新手最常遇到的 6 个 Git 错�
 
 # Git 常见报错解决：merge conflict、detached HEAD、push rejected
 
-![Git 工作流](https://git-scm.com/images/branching-illustration@2x.png)
 
 用 Git 总会遇到报错，别慌。这篇整理新手最常碰到的 6 个，每个都给解决方案。
 
