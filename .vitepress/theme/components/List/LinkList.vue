@@ -363,6 +363,10 @@ onMounted(async () => {
               opacity 0.3s;
           }
         }
+        &:focus,
+        &:focus-visible {
+          outline: none;
+        }
         &:hover {
           color: var(--main-card-background);
           background-color: var(--main-color);
