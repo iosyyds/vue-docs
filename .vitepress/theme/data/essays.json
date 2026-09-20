@@ -1,5 +1,37 @@
 [
   {
+    "date": "2026-09-20",
+    "content": "友链检测脚本升级了：现在会从首页导航自动找友链页，不再只认 /links 和 /friends 两个固定路径。雨后初晴社的友链页在 /friends/ 居然没扫到，手动确认后加进了推荐组。"
+  },
+  {
+    "date": "2026-09-20",
+    "content": "今天写了 5 篇新文章：Linux 常用命令、VS Code 必备插件、Markdown 进阶语法、Git 常见报错解决、Docker Compose 入门。都是平时折腾博客踩坑的总结，不是 AI 水文。"
+  },
+  {
+    "date": "2026-09-20",
+    "content": "VS Code 插件装太多反而拖慢启动速度。现在只留 10 个真正常用的：Prettier、ESLint、GitLens、Error Lens、Volar、Tailwind 提示、Better Comments 这些。三个月没用过的插件直接卸。"
+  },
+  {
+    "date": "2026-09-20",
+    "content": "Markdown 脚注真的好用。写技术文章引用来源时，正文不被打断，读者想看注释点一下就行。之前一直用括号写在正文里，排版乱糟糟的。"
+  },
+  {
+    "date": "2026-09-20",
+    "content": "Git 报 detached HEAD 不用慌，git checkout -b 新分支名 就完事了。新手第一次碰到都会以为代码丢了，其实就是 HEAD 没指向分支而已。"
+  },
+  {
+    "date": "2026-09-20",
+    "content": "Docker Compose 真香。以前装个环境要装 Nginx MySQL Redis 配半天，现在一个 yml 文件搞定，换服务器 docker compose up -d 就上线。数据挂 volume，容器随便删。"
+  },
+  {
+    "date": "2026-09-20",
+    "content": "Linux 命令不用背，常用的就那几个：ls cd pwd grep tail ps top df。用多了自然记住，忘了就查。真正要记的是 Ctrl+C 终止、Ctrl+R 搜历史、tab 补全这三个快捷键。"
+  },
+  {
+    "date": "2026-09-20",
+    "content": "今天把友链检测脚本的路径从 6 个扩到 17 个，还加了自动从导航发现友链页的逻辑。以后新互加的友链会自动归到推荐组，不用手动改代码了。"
+  },
+  {
     "date": "2026-09-19",
     "content": "今天一口气写了 10 篇博客文章，主题覆盖 VitePress SEO、Cloudflare 加速、PicGo 图床、百度主动推送、静态博客性能优化、RSS 订阅、GitHub Actions 部署、评论系统选型、域名备案、备份策略。每篇都是基于公开资料整理，不是 AI 瞎编。"
   },
