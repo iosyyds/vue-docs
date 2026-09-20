@@ -174,7 +174,7 @@ watch(
     box-shadow: 0 2px 10px -6px var(--main-border-shadow);
     text-decoration: none;
     color: var(--main-font-color);
-    transition: box-shadow 0.25s ease;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     .iconfont {
       flex-shrink: 0;
       font-size: 20px;
@@ -203,6 +203,7 @@ watch(
     }
     &:hover {
       border-color: var(--main-color);
+      background: var(--main-color-op, rgba(0, 0, 0, 0.03));
       box-shadow: 0 8px 22px -10px var(--main-border-shadow);
       .essay-banner-arrow {
         background: #000;
