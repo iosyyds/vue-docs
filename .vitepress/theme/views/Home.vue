@@ -204,7 +204,6 @@ watch(
     &:hover {
       border-color: var(--main-color);
       box-shadow: 0 8px 22px -10px var(--main-border-shadow);
-      transform: translateY(-1px);
       .essay-banner-arrow {
         background: #000;
         transform: translateX(3px);
