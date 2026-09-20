@@ -2,7 +2,7 @@
 title: Markdown 进阶语法：表格、脚注、任务列表你都会用吗
 date: '2026-09-20'
 categories:
-  - 写作
+  - 工具资源
 tags:
   - Markdown
   - 写作技巧

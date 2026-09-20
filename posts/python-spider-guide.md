@@ -2,7 +2,7 @@
 title: Python 爬虫入门实战：requests + BeautifulSoup 抓取网页
 date: '2026-09-15'
 categories:
-  - 编程语言
+  - 工具资源
 tags:
   - Python
   - 爬虫

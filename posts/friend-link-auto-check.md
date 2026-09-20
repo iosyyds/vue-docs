@@ -2,7 +2,7 @@
 title: 友链互相添加自动检测：GitHub Actions 构建时抓回链，好友待回一目了然
 date: '2026-09-18'
 categories:
-  - 运维部署
+  - 博客搭建
 tags:
   - GitHub Actions
   - 友链

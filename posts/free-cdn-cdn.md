@@ -2,7 +2,7 @@
 title: 免费CDN加速服务推荐：让你的网站快一倍
 date: '2026-09-14'
 categories:
-  - 资源推荐
+  - 工具资源
 tags:
   - CDN
   - 加速

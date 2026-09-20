@@ -2,7 +2,7 @@
 title: 个人博客评论系统怎么选：Twikoo / Waline / Giscus 对比
 date: '2026-09-19'
 categories:
-  - 博客
+  - 博客搭建
 tags:
   - 评论系统
   - Twikoo

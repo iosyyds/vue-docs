@@ -2,7 +2,7 @@
 title: 百度主动推送 API 接入：新文章发布当天就能被收录
 date: '2026-09-19'
 categories:
-  - 运维部署
+  - 博客搭建
 tags:
   - 百度
   - SEO

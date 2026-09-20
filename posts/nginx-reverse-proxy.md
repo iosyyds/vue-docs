@@ -2,7 +2,7 @@
 title: Nginx 反向代理配置实战：从入门到 HTTPS
 date: '2026-09-15'
 categories:
-  - 服务器
+  - 服务器运维
 tags:
   - Nginx
   - 服务器

@@ -2,7 +2,7 @@
 title: Docker 容器化部署入门：用 Dockerfile 把应用打包成镜像
 date: '2026-09-15'
 categories:
-  - 运维部署
+  - 博客搭建
 tags:
   - Docker
   - 部署

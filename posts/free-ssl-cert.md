@@ -2,7 +2,7 @@
 title: 免费SSL证书申请完整指南：Let's Encrypt
 date: '2026-09-14'
 categories:
-  - 技术教程
+  - 博客搭建
 tags:
   - SSL
   - HTTPS

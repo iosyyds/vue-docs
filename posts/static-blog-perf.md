@@ -2,7 +2,7 @@
 title: 静态博客性能优化清单：首屏 2 秒内加载完
 date: '2026-09-19'
 categories:
-  - 前端
+  - 前端开发
 tags:
   - 性能优化
   - VitePress

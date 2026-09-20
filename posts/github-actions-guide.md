@@ -2,7 +2,7 @@
 title: GitHub Actions 自动化部署实战入门
 date: '2026-09-14'
 categories:
-  - 技术教程
+  - 博客搭建
 tags:
   - GitHub
   - CI/CD

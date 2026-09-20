@@ -2,7 +2,7 @@
 title: Docker Compose 入门：一条命令启动整个环境
 date: '2026-09-20'
 categories:
-  - 服务器
+  - 服务器运维
 tags:
   - Docker
   - 部署

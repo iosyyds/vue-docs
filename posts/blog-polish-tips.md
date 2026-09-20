@@ -2,7 +2,7 @@
 title: 博客上线后必做的三个优化：RSS 排版、51la 统计、畅所欲言留言板
 date: '2026-09-15'
 categories:
-  - 技术教程
+  - 博客搭建
 tags:
   - RSS
   - 51la

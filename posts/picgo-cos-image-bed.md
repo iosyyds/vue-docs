@@ -2,7 +2,7 @@
 title: PicGo + 腾讯云 COS 搭图床：Mac/Windows 一键粘贴上传
 date: '2026-09-19'
 categories:
-  - 运维部署
+  - 博客搭建
 tags:
   - 图床
   - PicGo

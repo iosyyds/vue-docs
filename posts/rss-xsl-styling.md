@@ -2,7 +2,7 @@
 title: 给 RSS 订阅加上排版：手机打开 rss.xml 不再是乱码
 date: '2026-09-16'
 categories:
-  - 博客
+  - 博客搭建
 tags:
   - RSS
   - XSL

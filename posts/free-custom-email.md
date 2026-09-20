@@ -2,7 +2,7 @@
 title: 免费自定义邮箱推荐：不用@qq.com了
 date: '2026-09-14'
 categories:
-  - 工具推荐
+  - 工具资源
 tags:
   - 邮箱
   - 域名

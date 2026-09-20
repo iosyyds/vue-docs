@@ -2,7 +2,7 @@
 title: 网络安全基础：从 HTTPS 原理到常见攻击防范
 date: '2026-09-15'
 categories:
-  - 安全
+  - 服务器运维
 tags:
   - 安全
   - HTTPS

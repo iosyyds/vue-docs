@@ -2,7 +2,7 @@
 title: VitePress 博客 SEO 实战：sitemap、TDK、主动推送三步让百度快速收录
 date: '2026-09-19'
 categories:
-  - 运维部署
+  - 博客搭建
 tags:
   - VitePress
   - SEO

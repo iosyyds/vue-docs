@@ -2,7 +2,7 @@
 title: GitHub Pages 国内访问慢？Cloudflare 橙云加速实测
 date: '2026-09-19'
 categories:
-  - 运维部署
+  - 博客搭建
 tags:
   - GitHub Pages
   - Cloudflare

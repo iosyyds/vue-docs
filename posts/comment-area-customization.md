@@ -2,7 +2,7 @@
 title: Twikoo 评论区深度定制实录：从默认布局到和参考站一模一样
 date: '2026-09-18'
 categories:
-  - 博客
+  - 博客搭建
 tags:
   - Twikoo
   - 评论系统

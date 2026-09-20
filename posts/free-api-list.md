@@ -2,7 +2,7 @@
 title: 免费公共API接口推荐：做项目直接用
 date: '2026-09-14'
 categories:
-  - 资源推荐
+  - 工具资源
 tags:
   - API
   - 开发

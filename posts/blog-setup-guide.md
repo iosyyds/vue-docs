@@ -2,7 +2,7 @@
 title: 个人博客搭建完整指南：从域名到上线
 date: '2026-09-14'
 categories:
-  - 技术教程
+  - 博客搭建
 tags:
   - 博客
   - VitePress

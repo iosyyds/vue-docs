@@ -2,7 +2,7 @@
 title: Twikoo 评论系统免费部署全流程：Vercel + MongoDB Atlas 实战踩坑记
 date: '2026-09-15'
 categories:
-  - 运维部署
+  - 博客搭建
 tags:
   - Twikoo
   - 评论系统

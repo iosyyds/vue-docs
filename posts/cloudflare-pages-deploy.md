@@ -2,7 +2,7 @@
 title: Cloudflare Pages 免费部署静态网站完整指南
 date: '2026-09-13'
 categories:
-  - 技术教程
+  - 博客搭建
 tags:
   - Cloudflare
   - 网站部署

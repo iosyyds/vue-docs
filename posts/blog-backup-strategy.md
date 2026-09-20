@@ -2,7 +2,7 @@
 title: 博客数据备份策略：别等 GitHub 仓库丢了才后悔
 date: '2026-09-19'
 categories:
-  - 博客
+  - 博客搭建
 tags:
   - 备份
   - Git

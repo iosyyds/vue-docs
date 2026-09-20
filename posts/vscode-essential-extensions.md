@@ -2,7 +2,7 @@
 title: VS Code 必备插件推荐：装完这 10 个效率翻倍
 date: '2026-09-20'
 categories:
-  - 前端
+  - 前端开发
 tags:
   - VS Code
   - 开发工具

@@ -2,7 +2,7 @@
 title: 从 GitHub Pages 迁到 Cloudflare Pages：国内访问更稳的选择
 date: '2026-09-19'
 categories:
-  - 运维部署
+  - 博客搭建
 tags:
   - Cloudflare Pages
   - GitHub Pages

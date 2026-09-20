@@ -2,7 +2,7 @@
 title: 我的博客迁移实录：从 Hugo 到 VitePress + Curve 主题
 date: '2026-09-15'
 categories:
-  - 博客
+  - 博客搭建
 tags:
   - VitePress
   - Hugo

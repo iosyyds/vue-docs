@@ -2,7 +2,7 @@
 title: 博客 RSS 订阅正确姿势：让读者能在 RSS 阅读器里追更
 date: '2026-09-19'
 categories:
-  - 博客
+  - 博客搭建
 tags:
   - RSS
   - 订阅

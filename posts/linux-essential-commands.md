@@ -2,7 +2,7 @@
 title: Linux 新手必备 20 个命令：从 cd 到 grep 一篇够用
 date: '2026-09-20'
 categories:
-  - 服务器
+  - 服务器运维
 tags:
   - Linux
   - 命令行

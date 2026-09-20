@@ -2,7 +2,7 @@
 title: MySQL 入门实战：从建库建表到查询优化
 date: '2026-09-15'
 categories:
-  - 数据库
+  - 服务器运维
 tags:
   - MySQL
   - 数据库

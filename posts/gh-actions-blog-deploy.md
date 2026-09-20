@@ -2,7 +2,7 @@
 title: GitHub Actions 博客自动部署拆解：push 代码到上线只要 2 分钟
 date: '2026-09-19'
 categories:
-  - 运维部署
+  - 博客搭建
 tags:
   - GitHub Actions
   - CI/CD

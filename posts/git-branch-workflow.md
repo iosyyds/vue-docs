@@ -2,7 +2,7 @@
 title: Git 分支管理与团队协作：一套靠谱的工作流
 date: '2026-09-15'
 categories:
-  - 开发工具
+  - 工具资源
 tags:
   - Git
   - 协作

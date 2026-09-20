@@ -2,7 +2,7 @@
 title: Git 常见报错解决：merge conflict、detached HEAD、push rejected
 date: '2026-09-20'
 categories:
-  - 工具
+  - 工具资源
 tags:
   - Git
   - 版本控制
