@@ -12,7 +12,7 @@ articleGPT: "Docker Compose 让你一条命令启动 MySQL+Redis+Nginx 整套环
 
 # Docker Compose 入门：一条命令启动整个环境
 
-![Docker Compose](https://picsum.photos/seed/docker-compose/800/400)
+![Docker 架构](https://www.docker.com/wp-content/uploads/2022/03/Docker-Logo.png)
 
 以前装个网站要装 Nginx、MySQL、Redis，每个都配置半天。Docker Compose 一个文件全搞定。
 
