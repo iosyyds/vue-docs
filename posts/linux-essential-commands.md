@@ -12,6 +12,8 @@ articleGPT: "刚接触 Linux 不知道敲什么命令？这篇整理新手最常
 
 # Linux 新手必备 20 个命令：从 cd 到 grep 一篇够用
 
+![Linux 命令行](https://picsum.photos/seed/linux-cmd/800/400)
+
 刚买 VPS 登录上去，黑屏光标一闪一闪，不知道敲什么。这篇整理日常用得最多的 20 个命令，每个都带例子。
 
 ## 文件和目录

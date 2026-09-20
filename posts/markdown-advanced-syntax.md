@@ -12,6 +12,8 @@ articleGPT: "Markdown 不只是标题和列表。这篇整理表格对齐、脚�
 
 # Markdown 进阶语法：表格、脚注、任务列表你都会用吗
 
+![Markdown 写作](https://picsum.photos/seed/markdown/800/400)
+
 大多数人用 Markdown 只会标题、列表、加粗。其实它还有很多进阶语法，写文档和博客更专业。
 
 ## 表格对齐
