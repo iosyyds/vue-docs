@@ -1,39 +1,28 @@
 {
-  "checkedAt": "2026-09-19T03:17:32.547Z",
+  "checkedAt": "2026-09-20T12:44:19.605Z",
   "mySite": "xkbk.cn",
   "map": {
     "https://shape.kloudy.cn/": "pending",
-    "https://blog.yuzifu.top": "pending",
-    "https://blog.zrf.me/": "pending",
     "https://panda995.xyz/": "pending",
+    "https://blog.yuzifu.top": "pending",
     "https://natro92.fun": "pending",
+    "https://blog.imzy.ink": "friend",
     "https://blog.yaria.top": "pending",
-    "https://www.zywvvd.com": "pending",
     "https://styunlen.cn": "pending",
     "https://easyf12.top/": "pending",
-    "https://blog.imzy.ink": "friend",
-    "https://umb.ink": "pending",
-    "https://fx7.top": "pending",
+    "https://blog.zrf.me/": "pending",
     "https://blog.ooliver.cn": "pending",
+    "https://umb.ink": "pending",
+    "https://fx7.top": "friend",
+    "https://www.zywvvd.com": "pending",
     "https://onlytl.com": "pending",
     "http://www.freejishu.com": "pending",
     "https://www.azusemisa.top": "pending",
     "https://blog.fantasyke.cn/": "pending",
-    "https://bnblogs.cc/": "pending",
-    "https://www.rainafter.cn": "friend"
+    "https://bnblogs.cc/": "pending"
   },
   "details": {
     "https://shape.kloudy.cn/": {
-      "validIn": null,
-      "inComment": false,
-      "note": "无有效回链"
-    },
-    "https://blog.yuzifu.top": {
-      "validIn": null,
-      "inComment": false,
-      "note": "无有效回链"
-    },
-    "https://blog.zrf.me/": {
       "validIn": null,
       "inComment": false,
       "note": "无有效回链"
@@ -43,17 +32,22 @@
       "inComment": false,
       "note": "无有效回链"
     },
+    "https://blog.yuzifu.top": {
+      "validIn": null,
+      "inComment": false,
+      "note": "无有效回链"
+    },
     "https://natro92.fun": {
       "validIn": null,
       "inComment": false,
       "note": "无有效回链"
     },
-    "https://blog.yaria.top": {
-      "validIn": null,
+    "https://blog.imzy.ink": {
+      "validIn": "/links",
       "inComment": false,
-      "note": "无有效回链"
+      "note": "发现有效回链"
     },
-    "https://www.zywvvd.com": {
+    "https://blog.yaria.top": {
       "validIn": null,
       "inComment": false,
       "note": "无有效回链"
@@ -68,10 +62,15 @@
       "inComment": false,
       "note": "无有效回链"
     },
-    "https://blog.imzy.ink": {
-      "validIn": "/links",
+    "https://blog.zrf.me/": {
+      "validIn": null,
       "inComment": false,
-      "note": "发现有效回链"
+      "note": "无有效回链"
+    },
+    "https://blog.ooliver.cn": {
+      "validIn": null,
+      "inComment": false,
+      "note": "无有效回链"
     },
     "https://umb.ink": {
       "validIn": null,
@@ -79,11 +78,11 @@
       "note": "无有效回链"
     },
     "https://fx7.top": {
-      "validIn": null,
+      "validIn": "/index.php/links.html",
       "inComment": false,
-      "note": "无有效回链"
+      "note": "发现有效回链"
     },
-    "https://blog.ooliver.cn": {
+    "https://www.zywvvd.com": {
       "validIn": null,
       "inComment": false,
       "note": "无有效回链"
@@ -112,11 +111,6 @@
       "validIn": null,
       "inComment": false,
       "note": "无有效回链"
-    },
-    "https://www.rainafter.cn": {
-      "validIn": "/friends/",
-      "inComment": false,
-      "note": "友链页 /friends/ 有回链"
     }
   }
 }

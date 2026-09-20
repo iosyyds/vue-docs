@@ -17,8 +17,19 @@ const ROOT = path.resolve(__dirname, "..");
 const MY_SITE = "xkbk.cn";
 
 // 常见友链路径（按概率排序；"" 为首页）
-const PATHS = ["", "/friends", "/links", "/link", "/friends/", "/links/"];
-const MAX_PATHS_PER_SITE = 4;
+const PATHS = [
+  "",
+  "/friends", "/friends/",
+  "/links", "/links/",
+  "/link", "/link/",
+  "/blogroll", "/blogroll/",
+  "/buddy", "/buddy/",
+  "/site/friends", "/pages/friend", "/pages/link",
+  "/friends.html", "/links.html",
+  "/roll", "/roll/",
+  "/友情链接", "/友链",
+];
+const MAX_PATHS_PER_SITE = 8;
 const FETCH_TIMEOUT = 6000;
 const CONCURRENCY = 6;
 
@@ -133,14 +144,60 @@ const processSite = async (site) => {
     return "friend";
   }
   let sawCommentLink = false;
+  // 构建待抓路径列表：固定 PATHS + 从首页导航自动发现的友链页
+  const base = site.replace(/\/?$/, "");
+  const pathsToTry = [];
+  // 先加固定路径
   for (const p of PATHS.slice(0, MAX_PATHS_PER_SITE)) {
-    const url = p === "" ? site : site.replace(/\/?$/, "") + p;
+    pathsToTry.push(p);
+  }
+  // 抓首页时顺便提取导航里的友链链接
+  let discoveredFromNav = null;
+  try {
+    const homeHtml = await fetchPage(site);
+    const { valid, inComment } = analyzeHtml(homeHtml);
+    if (inComment) sawCommentLink = true;
+    if (valid) {
+      details[site] = { validIn: "首页", inComment: sawCommentLink, note: "发现有效回链" };
+      return "friend";
+    }
+    // 从首页 HTML 提取所有 <a href>，筛选友链相关
+    const hrefRe = /<a[^>]+href=["']([^"']+)["'][^>]*>([^<]{0,20})<\/a>/gi;
+    let hm;
+    const navLinks = new Set();
+    while ((hm = hrefRe.exec(homeHtml)) !== null) {
+      const href = hm[1];
+      const text = (hm[2] || "").trim();
+      // 匹配友链关键词
+      if (/(friend|link|blogroll|buddy|友链|友情链接|链接交换)/i.test(text + " " + href)) {
+        // 只取站内绝对路径
+        if (href.startsWith("/") && !href.startsWith("//")) {
+          navLinks.add(href);
+        } else if (href.startsWith(base)) {
+          navLinks.add(href.replace(base, ""));
+        }
+      }
+    }
+    discoveredFromNav = [...navLinks];
+    // 把自动发现的路径加到待抓列表
+    for (const np of discoveredFromNav) {
+      if (!pathsToTry.includes(np) && !pathsToTry.includes(np + "/")) {
+        pathsToTry.push(np);
+      }
+    }
+  } catch (e) {
+    // 首页抓取失败，继续试固定路径
+  }
+  // 继续抓其他路径（跳过首页""，因为已经抓过）
+  for (const p of pathsToTry.slice(1, MAX_PATHS_PER_SITE + 3)) {
+    if (!p) continue;
+    const url = base + p;
     try {
       const html = await fetchPage(url);
       const { valid, inComment } = analyzeHtml(html);
       if (inComment) sawCommentLink = true;
       if (valid) {
-        details[site] = { validIn: p === "" ? "首页" : p, inComment: sawCommentLink, note: "发现有效回链" };
+        details[site] = { validIn: p, inComment: sawCommentLink, note: "发现有效回链" };
         return "friend";
       }
     } catch (e) {
