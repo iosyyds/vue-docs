@@ -2,8 +2,8 @@
 export const themeConfig = {
   // 站点信息
   siteMeta: {
-    // 站点标题
-    title: "小坤哥哥博客 - 技术分享 | 前端开发 | 运维部署 | 生活记录",
+    // 站点标题（导航栏和首页显示）
+    title: "小坤哥哥博客",
     // 站点描述
     description: "小坤哥哥的个人博客，专注前端开发、运维部署、VitePress 博客搭建、Git/Docker/Linux 教程，分享技术干货与生活点滴。",
     // 站点关键词
