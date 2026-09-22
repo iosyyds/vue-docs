@@ -47,7 +47,7 @@ const tagColors = ["#5b8ff9", "#61ddaa", "#f6bd16", "#e8684a", "#6dc8ec", "#9270
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-height: 500px;
+    max-height: 600px;
     overflow: hidden;
     .tags {
       display: inline-flex;
@@ -84,17 +84,6 @@ const tagColors = ["#5b8ff9", "#61ddaa", "#f6bd16", "#e8684a", "#6dc8ec", "#9270
           color: rgba(255, 255, 255, 0.85);
         }
       }
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 48%;
-      max-height: 150px;
-      background-image: linear-gradient(to top, var(--main-card-background), transparent);
-      pointer-events: none;
     }
   }
   .more-tags {
