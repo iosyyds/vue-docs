@@ -57,7 +57,7 @@ onMounted(() => {
   if (bannerEssays.length > 1) {
     essayTimer = setInterval(() => {
       essayIndex.value = (essayIndex.value + 1) % bannerEssays.length;
-    }, 4000);
+    }, 5000);
   }
 });
 onBeforeUnmount(() => {
@@ -188,6 +188,9 @@ watch(
       overflow: hidden;
       text-overflow: ellipsis;
       opacity: 0.9;
+      height: 22px;
+      display: flex;
+      align-items: center;
     }
     .essay-banner-arrow {
       flex-shrink: 0;
@@ -232,17 +235,18 @@ watch(
   }
 }
 
-// 公告条短文轮播切换动画
+// 公告条短文轮播切换动画（垂直滚动效果）
 .banner-fade-enter-active,
 .banner-fade-leave-active {
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 .banner-fade-enter-from {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(100%);
 }
 .banner-fade-leave-to {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-100%);
 }
 </style>
