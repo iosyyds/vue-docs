@@ -44,17 +44,18 @@ const tagColors = ["#5b8ff9", "#61ddaa", "#f6bd16", "#e8684a", "#6dc8ec", "#9270
   }
   .all-tags {
     position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
     max-height: 600px;
     overflow: hidden;
     .tags {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 2px;
-      margin: 3px;
-      padding: 5px 12px;
+      margin: 0;
+      padding: 5px 8px;
       border-radius: 40px;
       border: 1px solid var(--tag-color);
       background-color: color-mix(in srgb, var(--tag-color) 8%, transparent);
