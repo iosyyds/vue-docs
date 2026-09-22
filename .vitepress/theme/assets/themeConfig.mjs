@@ -3,9 +3,11 @@ export const themeConfig = {
   // 站点信息
   siteMeta: {
     // 站点标题
-    title: "小坤哥哥博客",
+    title: "小坤哥哥博客 - 技术分享 | 前端开发 | 运维部署 | 生活记录",
     // 站点描述
-    description: "小坤哥哥的个人博客，记录技术分享与生活点滴",
+    description: "小坤哥哥的个人博客，专注前端开发、运维部署、VitePress 博客搭建、Git/Docker/Linux 教程，分享技术干货与生活点滴。",
+    // 站点关键词
+    keywords: "小坤哥哥博客,前端开发,VitePress,运维部署,Linux,Docker,Git,技术博客,编程教程,个人博客",
     // 站点logo
     logo: "/logo.svg",
     // 站点地址
@@ -34,6 +36,10 @@ export const themeConfig = {
     header: [
       // favicon
       ["link", { rel: "icon", href: "/favicon.ico" }],
+      // SEO keywords
+      ["meta", { name: "keywords", content: "小坤哥哥博客,前端开发,VitePress,运维部署,Linux,Docker,Git,技术博客,编程教程,个人博客" }],
+      // SEO author
+      ["meta", { name: "author", content: "小坤哥哥" }],
       // RSS
       [
         "link",
