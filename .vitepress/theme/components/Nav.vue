@@ -658,17 +658,7 @@ const { site, theme, frontmatter, page } = useData();
         }
       }
       .nav-center {
-        // display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: var(--main-card-background);
-        border-bottom: 1px solid var(--main-card-border);
-        z-index: 100;
-        .site-title {
-          font-size: 15px;
-          height: auto;
-        }
+        display: none;
       }
     }
   }
