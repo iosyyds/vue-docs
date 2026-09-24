@@ -139,6 +139,10 @@
     flex-direction: column;
     align-items: center;
     color: var(--main-font-color);
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
     .post-img {
       width: auto;
       max-height: 450px;
@@ -699,33 +703,3 @@
 
 /* 去掉图片点击放大时的蓝色边框 */
 .vp-doc img,
-.post-content img,
-article img {
-  outline: none !important;
-  -webkit-tap-highlight-color: transparent;
-}
-.medium-zoom-overlay + .medium-zoom-image--opened,
-.medium-zoom-image--opened {
-  border: none !important;
-  outline: none !important;
-}
-
-/* 去掉图片点击关闭后残留的蓝色边框 */
-.vp-doc figure,
-.vp-doc p img,
-.post-content figure,
-.post-content p img,
-article figure,
-article p img {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-.vp-doc a:has(> img),
-.post-content a:has(> img),
-article a:has(> img) {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  -webkit-tap-highlight-color: transparent;
-}
