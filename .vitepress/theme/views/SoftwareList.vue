@@ -57,20 +57,20 @@ const activeTab = ref("pc");
 // 软件数据
 const softwareData = {
   pc: [
-    { name: "Visual Studio Code", desc: "代码编辑器，写博客、写代码全靠它", tag: "开发", color: "#3b82f6", initial: "V", icon: "https://icon.horse/icon/code.visualstudio.com", link: "https://code.visualstudio.com/" },
-    { name: "Chrome", desc: "主力浏览器，调试页面离不开", tag: "浏览", color: "#34a853", initial: "C", icon: "https://icon.horse/icon/google.com", link: "https://www.google.com/chrome/" },
-    { name: "微信", desc: "日常沟通，工作生活都在上面", tag: "社交", color: "#07c160", initial: "微", icon: "https://icon.horse/icon/weixin.qq.com", link: "https://weixin.qq.com/" },
-    { name: "Git", desc: "版本管理，博客源码都交给它", tag: "开发", color: "#f05033", initial: "G", icon: "https://icon.horse/icon/git-scm.com", link: "https://git-scm.com/" },
-    { name: "剪映", desc: "视频剪辑，记录折腾过程", tag: "创作", color: "#4a5cf7", initial: "剪", icon: "https://icon.horse/icon/capcut.cn", link: "https://www.capcut.cn/" },
-    { name: "Postman", desc: "接口调试，对接 API 必备", tag: "开发", color: "#ff6c37", initial: "P", icon: "https://icon.horse/icon/postman.com", link: "https://www.postman.com/" },
+    { name: "Visual Studio Code", desc: "代码编辑器，写博客、写代码全靠它", tag: "开发", color: "#3b82f6", initial: "V", icon: "https://favicon.im/code.visualstudio.com?larger=true", link: "https://code.visualstudio.com/" },
+    { name: "Chrome", desc: "主力浏览器，调试页面离不开", tag: "浏览", color: "#34a853", initial: "C", icon: "https://favicon.im/google.com?larger=true", link: "https://www.google.com/chrome/" },
+    { name: "微信", desc: "日常沟通，工作生活都在上面", tag: "社交", color: "#07c160", initial: "微", icon: "https://favicon.im/weixin.qq.com?larger=true", link: "https://weixin.qq.com/" },
+    { name: "Git", desc: "版本管理，博客源码都交给它", tag: "开发", color: "#f05033", initial: "G", icon: "https://favicon.im/git-scm.com?larger=true", link: "https://git-scm.com/" },
+    { name: "剪映", desc: "视频剪辑，记录折腾过程", tag: "创作", color: "#4a5cf7", initial: "剪", icon: "https://favicon.im/capcut.cn?larger=true", link: "https://www.capcut.cn/" },
+    { name: "Postman", desc: "接口调试，对接 API 必备", tag: "开发", color: "#ff6c37", initial: "P", icon: "https://favicon.im/postman.com?larger=true", link: "https://www.postman.com/" },
   ],
   mobile: [
-    { name: "微信", desc: "每天打开次数最多的 App", tag: "社交", color: "#07c160", initial: "微", icon: "https://icon.horse/icon/weixin.qq.com", link: "https://weixin.qq.com/" },
-    { name: "抖音", desc: "刷视频摸鱼找灵感", tag: "娱乐", color: "#161823", initial: "抖", icon: "https://icon.horse/icon/douyin.com", link: "https://www.douyin.com/" },
-    { name: "小红书", desc: "生活分享与搜攻略", tag: "生活", color: "#ff2442", initial: "红", icon: "https://icon.horse/icon/xiaohongshu.com", link: "https://www.xiaohongshu.com/" },
-    { name: "高德地图", desc: "出门导航、找店必备", tag: "出行", color: "#00a7ee", initial: "高", icon: "https://icon.horse/icon/amap.com", link: "https://www.amap.com/" },
-    { name: "支付宝", desc: "移动支付与生活缴费", tag: "工具", color: "#1677ff", initial: "支", icon: "https://icon.horse/icon/alipay.com", link: "https://www.alipay.com/" },
-    { name: "网易云音乐", desc: "写代码时的背景音乐", tag: "娱乐", color: "#c20c0c", initial: "云", icon: "https://icon.horse/icon/music.163.com", link: "https://music.163.com/" },
+    { name: "微信", desc: "每天打开次数最多的 App", tag: "社交", color: "#07c160", initial: "微", icon: "https://favicon.im/weixin.qq.com?larger=true", link: "https://weixin.qq.com/" },
+    { name: "抖音", desc: "刷视频摸鱼找灵感", tag: "娱乐", color: "#161823", initial: "抖", icon: "https://favicon.im/douyin.com?larger=true", link: "https://www.douyin.com/" },
+    { name: "小红书", desc: "生活分享与搜攻略", tag: "生活", color: "#ff2442", initial: "红", icon: "https://favicon.im/xiaohongshu.com?larger=true", link: "https://www.xiaohongshu.com/" },
+    { name: "高德地图", desc: "出门导航、找店必备", tag: "出行", color: "#00a7ee", initial: "高", icon: "https://favicon.im/amap.com?larger=true", link: "https://www.amap.com/" },
+    { name: "支付宝", desc: "移动支付与生活缴费", tag: "工具", color: "#1677ff", initial: "支", icon: "https://favicon.im/alipay.com?larger=true", link: "https://www.alipay.com/" },
+    { name: "网易云音乐", desc: "写代码时的背景音乐", tag: "娱乐", color: "#c20c0c", initial: "云", icon: "https://favicon.im/music.163.com?larger=true", link: "https://music.163.com/" },
   ],
 };
 
