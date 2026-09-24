@@ -169,13 +169,12 @@ const currentList = computed(() => softwareData[activeTab.value]);
         font-size: 20px;
         font-weight: bold;
         color: #fff;
-        background: linear-gradient(135deg, var(--soft-color), color-mix(in srgb, var(--soft-color) 60%, #000));
         transition: transform 0.3s;
         img {
-          width: 28px;
-          height: 28px;
+          width: 42px;
+          height: 42px;
           object-fit: contain;
-          border-radius: 6px;
+          border-radius: 10px;
         }
       }
       .soft-info {
