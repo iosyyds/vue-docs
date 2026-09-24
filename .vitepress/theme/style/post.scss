@@ -696,3 +696,16 @@
     }
   }
 }
+
+/* 去掉图片点击放大时的蓝色边框 */
+.vp-doc img,
+.post-content img,
+article img {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+.medium-zoom-overlay + .medium-zoom-image--opened,
+.medium-zoom-image--opened {
+  border: none !important;
+  outline: none !important;
+}
