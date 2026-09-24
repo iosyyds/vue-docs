@@ -49,7 +49,7 @@
           </div>
           <span class="site-title" @click="smoothScrolling">
             <span class="site-name">
-              {{ frontmatter.home ? theme.siteMeta.title : page.title }}
+              {{ frontmatter.home ? "小坤哥哥博客" : page.title }}
             </span>
           </span>
         </div>
