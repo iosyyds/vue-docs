@@ -49,7 +49,7 @@
           </div>
           <span class="site-title" @click="smoothScrolling">
             <span class="site-name">
-              {{ (frontmatter.home ? site.description : page.title) || site.description }}
+              {{ frontmatter.home ? theme.siteMeta.title : page.title }}
             </span>
           </span>
         </div>
