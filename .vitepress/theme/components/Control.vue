@@ -102,14 +102,18 @@ const rightMenuSwitch = () => {
 
 // 纪念日全站置灰开关
 const memorialGraySwitch = () => {
+  const todayGray = getTodayMemorial();
+  if (!todayGray && !store.memorialGray) {
+    $message.info("今天不是纪念日，暂不可开启置灰");
+    return;
+  }
   store.memorialGray = !store.memorialGray;
   applyMemorialGray(store.memorialGray);
-  const todayGray = getTodayMemorial();
   $message.info(
     store.memorialGray
       ? todayGray
         ? `已开启纪念日置灰（今天是${todayGray}）`
-        : "已开启纪念日置灰"
+        : "已关闭纪念日置灰"
       : "已关闭纪念日置灰",
   );
 };
