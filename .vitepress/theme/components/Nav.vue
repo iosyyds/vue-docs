@@ -49,7 +49,7 @@
           </div>
           <span class="site-title" @click="smoothScrolling">
             <span class="site-name">
-              {{ frontmatter.home ? "小坤哥哥博客" : page.title }}
+              {{ frontmatter.home ? "小坤哥哥博客 - 专注前端开发与运维" : page.title }}
             </span>
           </span>
         </div>
