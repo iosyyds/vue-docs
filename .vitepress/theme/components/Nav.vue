@@ -26,7 +26,7 @@
           </div>
           <div class="site-name" @click="router.go('/')">
             <img class="site-logo" :src="theme.siteMeta.logo" alt="logo" />
-            {{ site.title }}
+            小坤哥哥博客
           </div>
         </div>
         <!-- 导航栏菜单 -->
