@@ -48,7 +48,7 @@
             </div>
           </div>
           <span class="site-title" @click="smoothScrolling">
-            <span class="site-name">小坤哥哥博客 - 专注前端开发与运维</span>
+            <span class="site-name">{{ page.title || "小坤哥哥博客" }}</span>
           </span>
         </div>
         <div class="right-nav">
@@ -195,8 +195,8 @@ const { site, theme, frontmatter, page } = useData();
           opacity: 1;
         }
         .site-title {
-          transform: translateY(0);
-          opacity: 1;
+          transform: translateY(50px);
+          opacity: 0;
         }
       }
       @media (max-width: 768px) {
@@ -485,11 +485,10 @@ const { site, theme, frontmatter, page } = useData();
         align-items: center;
         justify-content: center;
         gap: 4px;
-        width: 100%;
-        min-width: 280px;
+        max-width: 500px;
         height: 35px;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
         padding: 4px 8px;
         text-align: center;
         text-overflow: ellipsis;
