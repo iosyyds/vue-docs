@@ -197,8 +197,8 @@ const { site, theme, frontmatter, page } = useData();
           opacity: 1;
         }
         .site-title {
-          transform: translateY(50px);
-          opacity: 0;
+          transform: translateY(0);
+          opacity: 1;
         }
       }
       @media (max-width: 768px) {
