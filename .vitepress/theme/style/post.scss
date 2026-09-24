@@ -709,3 +709,23 @@ article img {
   border: none !important;
   outline: none !important;
 }
+
+/* 去掉图片点击关闭后残留的蓝色边框 */
+.vp-doc figure,
+.vp-doc p img,
+.post-content figure,
+.post-content p img,
+article figure,
+article p img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.vp-doc a:has(> img),
+.post-content a:has(> img),
+article a:has(> img) {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
