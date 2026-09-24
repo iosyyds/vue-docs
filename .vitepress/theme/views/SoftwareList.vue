@@ -34,7 +34,10 @@
           :target="item.link ? '_blank' : undefined"
           :style="{ '--soft-color': item.color, '--i': index }"
         >
-          <div class="soft-icon">{{ item.initial }}</div>
+          <div class="soft-icon">
+            <img v-if="item.icon" :src="item.icon" :alt="item.name" />
+            <template v-else>{{ item.initial }}</template>
+          </div>
           <div class="soft-info">
             <span class="soft-name">{{ item.name }}</span>
             <span class="soft-desc">{{ item.desc }}</span>
@@ -54,20 +57,20 @@ const activeTab = ref("pc");
 // 软件数据
 const softwareData = {
   pc: [
-    { name: "Visual Studio Code", desc: "代码编辑器，写博客、写代码全靠它", tag: "开发", color: "#3b82f6", initial: "V", link: "https://code.visualstudio.com/" },
-    { name: "Chrome", desc: "主力浏览器，调试页面离不开", tag: "浏览", color: "#34a853", initial: "C", link: "https://www.google.com/chrome/" },
-    { name: "微信", desc: "日常沟通，工作生活都在上面", tag: "社交", color: "#07c160", initial: "微", link: "https://weixin.qq.com/" },
-    { name: "Git", desc: "版本管理，博客源码都交给它", tag: "开发", color: "#f05033", initial: "G", link: "https://git-scm.com/" },
-    { name: "剪映", desc: "视频剪辑，记录折腾过程", tag: "创作", color: "#4a5cf7", initial: "剪", link: "https://www.capcut.cn/" },
-    { name: "Postman", desc: "接口调试，对接 API 必备", tag: "开发", color: "#ff6c37", initial: "P", link: "https://www.postman.com/" },
+    { name: "Visual Studio Code", desc: "代码编辑器，写博客、写代码全靠它", tag: "开发", color: "#3b82f6", initial: "V", icon: "https://cdn.simpleicons.org/visualstudiocode", link: "https://code.visualstudio.com/" },
+    { name: "Chrome", desc: "主力浏览器，调试页面离不开", tag: "浏览", color: "#34a853", initial: "C", icon: "https://cdn.simpleicons.org/googlechrome", link: "https://www.google.com/chrome/" },
+    { name: "微信", desc: "日常沟通，工作生活都在上面", tag: "社交", color: "#07c160", initial: "微", icon: "https://cdn.simpleicons.org/wechat", link: "https://weixin.qq.com/" },
+    { name: "Git", desc: "版本管理，博客源码都交给它", tag: "开发", color: "#f05033", initial: "G", icon: "https://cdn.simpleicons.org/git", link: "https://git-scm.com/" },
+    { name: "剪映", desc: "视频剪辑，记录折腾过程", tag: "创作", color: "#4a5cf7", initial: "剪", icon: "https://cdn.simpleicons.org/capcut", link: "https://www.capcut.cn/" },
+    { name: "Postman", desc: "接口调试，对接 API 必备", tag: "开发", color: "#ff6c37", initial: "P", icon: "https://cdn.simpleicons.org/postman", link: "https://www.postman.com/" },
   ],
   mobile: [
-    { name: "微信", desc: "每天打开次数最多的 App", tag: "社交", color: "#07c160", initial: "微", link: "https://weixin.qq.com/" },
-    { name: "抖音", desc: "刷视频摸鱼找灵感", tag: "娱乐", color: "#161823", initial: "抖", link: "https://www.douyin.com/" },
-    { name: "小红书", desc: "生活分享与搜攻略", tag: "生活", color: "#ff2442", initial: "红", link: "https://www.xiaohongshu.com/" },
-    { name: "高德地图", desc: "出门导航、找店必备", tag: "出行", color: "#00a7ee", initial: "高", link: "https://www.amap.com/" },
-    { name: "支付宝", desc: "移动支付与生活缴费", tag: "工具", color: "#1677ff", initial: "支", link: "https://www.alipay.com/" },
-    { name: "网易云音乐", desc: "写代码时的背景音乐", tag: "娱乐", color: "#c20c0c", initial: "云", link: "https://music.163.com/" },
+    { name: "微信", desc: "每天打开次数最多的 App", tag: "社交", color: "#07c160", initial: "微", icon: "https://cdn.simpleicons.org/wechat", link: "https://weixin.qq.com/" },
+    { name: "抖音", desc: "刷视频摸鱼找灵感", tag: "娱乐", color: "#161823", initial: "抖", icon: "https://cdn.simpleicons.org/tiktok", link: "https://www.douyin.com/" },
+    { name: "小红书", desc: "生活分享与搜攻略", tag: "生活", color: "#ff2442", initial: "红", icon: "https://cdn.simpleicons.org/xiaohongshu", link: "https://www.xiaohongshu.com/" },
+    { name: "高德地图", desc: "出门导航、找店必备", tag: "出行", color: "#00a7ee", initial: "高", icon: "https://www.amap.com/favicon.ico", link: "https://www.amap.com/" },
+    { name: "支付宝", desc: "移动支付与生活缴费", tag: "工具", color: "#1677ff", initial: "支", icon: "https://cdn.simpleicons.org/alipay", link: "https://www.alipay.com/" },
+    { name: "网易云音乐", desc: "写代码时的背景音乐", tag: "娱乐", color: "#c20c0c", initial: "云", icon: "https://cdn.simpleicons.org/neteasecloudmusic", link: "https://music.163.com/" },
   ],
 };
 
@@ -168,6 +171,12 @@ const currentList = computed(() => softwareData[activeTab.value]);
         color: #fff;
         background: linear-gradient(135deg, var(--soft-color), color-mix(in srgb, var(--soft-color) 60%, #000));
         transition: transform 0.3s;
+        img {
+          width: 28px;
+          height: 28px;
+          object-fit: contain;
+          border-radius: 6px;
+        }
       }
       .soft-info {
         flex: 1;
