@@ -135,6 +135,12 @@ const linkData = [
         desc: "不断追寻梦想的努力者，在幻想的世界里探索未知。",
         url: "https://blog.fantasyke.cn/",
       },
+      {
+        name: "新锐博客",
+        avatar: "https://blog.xrbk.cn/favicon.png",
+        desc: "记录学习与分享资源",
+        url: "https://blog.xrbk.cn/",
+      },
     ],
   },
 ];
