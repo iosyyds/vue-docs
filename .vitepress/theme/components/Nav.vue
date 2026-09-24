@@ -48,7 +48,7 @@
             </div>
           </div>
           <span class="site-title" @click="smoothScrolling">
-            <span class="site-name">{{ page.title || "小坤哥哥博客" }}</span>
+            <span class="site-name">{{ page.title || "小坤哥哥 - 分享技术，记录生活" }}</span>
           </span>
         </div>
         <div class="right-nav">
