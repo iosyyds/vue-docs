@@ -637,10 +637,25 @@ const { site, theme, frontmatter, page } = useData();
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 1.5rem;
+      padding: 0 1rem;
+      .nav-all {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+      }
       .left-nav,
       .right-nav {
         min-width: auto;
+      }
+      .left-nav .site-name {
+        font-size: 16px;
+        height: auto;
+        .site-logo {
+          width: 22px;
+          height: 22px;
+        }
       }
       .nav-center {
         // display: none;
