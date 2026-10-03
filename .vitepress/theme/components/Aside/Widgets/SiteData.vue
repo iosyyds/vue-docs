@@ -15,9 +15,13 @@
         <div class="icon-wrap">
           <i :class="`iconfont ${item.icon}`"></i>
         </div>
-        <span class="num" v-html="item.value"></span>
+        <span class="num">{{ item.value }}</span>
         <span class="name">{{ item.name }}</span>
       </div>
+    </div>
+    <!-- 51统计面板 -->
+    <div class="la-widget">
+      <div id="la-data-widget"></div>
     </div>
   </div>
 </template>
@@ -35,20 +39,10 @@ const dataColors = ["#5b8ff9", "#61ddaa", "#f6bd16", "#e8684a"];
 const dataList = computed(() => [
   { name: "文章总数", icon: "icon-article", value: `${theme.value.postData?.length || 0} 篇` },
   { name: "建站天数", icon: "icon-date", value: `${daysFromNow(theme.value.since)} 天` },
-  {
-    name: "总访问量",
-    icon: "icon-visibility",
-    value: '<span id="la_site_pv">--</span> 次',
-  },
-  {
-    name: "总访客数",
-    icon: "icon-account",
-    value: '<span id="la_site_uv">--</span> 人',
-  },
 ]);
 
 onMounted(() => {
-  // 加载51统计widget获取PV/UV
+  // 加载51统计widget
   loadScript("https://v6-widget.51.la/v6/LJuM8F1h3kXFwnCW/quote.js?theme=0&f=12", {
     async: true,
     reload: true,
@@ -118,6 +112,13 @@ onMounted(() => {
         }
       }
     }
+  }
+  .la-widget {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--main-card-border);
+    text-align: center;
+    opacity: 0.7;
   }
   @media (prefers-reduced-motion: reduce) {
     .data-item {
