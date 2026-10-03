@@ -38,17 +38,18 @@ const dataList = computed(() => [
   {
     name: "总访问量",
     icon: "icon-visibility",
-    value: '<span id="busuanzi_value_site_pv">0</span> 次',
+    value: '<span id="la_site_pv">--</span> 次',
   },
   {
     name: "总访客数",
     icon: "icon-account",
-    value: '<span id="busuanzi_value_site_uv">0</span> 人',
+    value: '<span id="la_site_uv">--</span> 人',
   },
 ]);
 
 onMounted(() => {
-  loadScript("https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", {
+  // 加载51统计widget获取PV/UV
+  loadScript("https://v6-widget.51.la/v6/LJuM8F1h3kXFwnCW/quote.js?theme=0&f=12", {
     async: true,
     reload: true,
   });
