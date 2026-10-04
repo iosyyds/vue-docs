@@ -27,7 +27,6 @@
 </template>
 
 <script setup>
-import { loadScript } from "@/utils/commonTools";
 import { daysFromNow } from "@/utils/helper";
 
 const { theme } = useData();
@@ -42,11 +41,16 @@ const dataList = computed(() => [
 ]);
 
 onMounted(() => {
-  // 加载51统计widget
-  loadScript("https://v6-widget.51.la/v6/LJuM8F1h3kXFwnCW/quote.js?theme=0&f=12", {
-    async: true,
-    reload: true,
-  });
+  // 51la 访问统计挂件：quote.js 会寻找 id="LA-DATA-WIDGET" 的 script 标签，
+  // 并把「今日/历史访问量」插入到它后面。必须按这个 id 创建 script 标签。
+  const laContainer = document.querySelector(".site-data .la-widget");
+  if (laContainer && !document.getElementById("LA-DATA-WIDGET")) {
+    const s = document.createElement("script");
+    s.id = "LA-DATA-WIDGET";
+    s.charset = "UTF-8";
+    s.src = "https://v6-widget.51.la/v6/LJuM8F1h3kXFwnCW/quote.js?theme=0&f=12";
+    laContainer.appendChild(s);
+  }
 });
 </script>
 
