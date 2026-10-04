@@ -42,15 +42,53 @@ const dataList = computed(() => [
 
 onMounted(() => {
   // 51la 访问统计挂件：quote.js 会寻找 id="LA-DATA-WIDGET" 的 script 标签，
-  // 并把「今日/历史访问量」插入到它后面。必须按这个 id 创建 script 标签。
+  // 并把统计文本插入到它后面。它自带的样式是内联硬编码、丑且不随主题，
+  // 所以等它渲染后把数字解析出来，用主题卡片样式重绘。
   const laContainer = document.querySelector(".site-data .la-widget");
-  if (laContainer && !document.getElementById("LA-DATA-WIDGET")) {
-    const s = document.createElement("script");
-    s.id = "LA-DATA-WIDGET";
-    s.charset = "UTF-8";
-    s.src = "https://v6-widget.51.la/v6/LJuM8F1h3kXFwnCW/quote.js?theme=0&f=12";
-    laContainer.appendChild(s);
-  }
+  if (!laContainer || document.getElementById("LA-DATA-WIDGET")) return;
+
+  const s = document.createElement("script");
+  s.id = "LA-DATA-WIDGET";
+  s.charset = "UTF-8";
+  s.src = "https://v6-widget.51.la/v6/LJuM8F1h3kXFwnCW/quote.js?theme=0&f=12";
+  laContainer.appendChild(s);
+
+  let tries = 0;
+  const timer = setInterval(() => {
+    tries++;
+    const w = laContainer.querySelector(".la-data-widget__container");
+    if (!w) {
+      if (tries > 40) clearInterval(timer); // 20s 超时则保持空白
+      return;
+    }
+    clearInterval(timer);
+
+    const text = w.innerText || "";
+    const pick = (label) => {
+      const m = text.match(new RegExp(label + "\\s*([\\d,]+)"));
+      return m ? m[1] : "--";
+    };
+    const stats = [
+      { name: "今日访问量", icon: "icon-line", value: pick("今日访问量") },
+      { name: "昨日访问量", icon: "icon-time", value: pick("昨日访问量") },
+      { name: "本月访问量", icon: "icon-chart", value: pick("本月访问量") },
+      { name: "总访问量", icon: "icon-fire", value: pick("总访问量") },
+    ];
+
+    laContainer.innerHTML = `
+      <div class="la-stats">
+        ${stats
+          .map(
+            (item, i) => `
+          <div class="la-stat" style="--data-color:${dataColors[(i + 2) % dataColors.length]}">
+            <div class="icon-wrap"><i class="iconfont ${item.icon}"></i></div>
+            <span class="num">${item.value}</span>
+            <span class="name">${item.name}</span>
+          </div>`
+          )
+          .join("")}
+      </div>`;
+  }, 500);
 });
 </script>
 
@@ -119,10 +157,51 @@ onMounted(() => {
   }
   .la-widget {
     margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid var(--main-card-border);
-    text-align: center;
-    opacity: 0.7;
+    .la-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      .la-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 12px 6px 10px;
+        border-radius: 12px;
+        background-color: var(--main-card-second-background);
+        border: 1px solid var(--main-card-border);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s,
+          border-color 0.3s;
+        .icon-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 10px;
+          background-color: color-mix(in srgb, var(--data-color) 12%, transparent);
+          color: var(--data-color);
+        }
+        .num {
+          font-size: 16px;
+          font-weight: bold;
+          color: var(--main-font-color);
+          line-height: 1.5;
+        }
+        .name {
+          font-size: 12px;
+          opacity: 0.6;
+        }
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 16px -8px color-mix(in srgb, var(--data-color) 45%, transparent);
+          border-color: color-mix(in srgb, var(--data-color) 35%, transparent);
+        }
+      }
+    }
   }
   @media (prefers-reduced-motion: reduce) {
     .data-item {
