@@ -157,7 +157,8 @@ onMounted(() => {
   }
   .la-widget {
     margin-top: 12px;
-    .la-stats {
+    // .la-stats 是运行时 JS 注入的 DOM，没有 scoped data-v 属性，必须用 :deep 穿透
+    :deep(.la-stats) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
