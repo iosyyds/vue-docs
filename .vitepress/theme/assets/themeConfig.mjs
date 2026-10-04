@@ -144,6 +144,15 @@ export const themeConfig = {
         {},
         'LA.init({id:"LJuM8F1h3kXFwnCW",ck:"LJuM8F1h3kXFwnCW"})',
       ],
+      // Umami 自建统计（自托管于 umami.xkbk.cn，部署后替换 data-website-id）
+      [
+        "script",
+        {
+          defer: true,
+          src: "https://umami.xkbk.cn/script.js",
+          "data-website-id": "REPLACE_AFTER_UMAMI_DEPLOY",
+        },
+      ],
     ],
   },
   // 导航栏菜单
