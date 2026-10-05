@@ -15,7 +15,7 @@ cover: /images/casual/national-day-2026.jpg
 
 等到傍晚，灯一盏盏亮起来，天边忽然烧起一片晚霞——
 
-<video src="/videos/national-day-2026.mp4" controls playsinline loop muted></video>
+<video src="/videos/national-day-2026.mp4" controls playsinline loop muted style="display:block;width:100%;max-width:100%;border-radius:12px;margin:12px 0;"></video>
 
 红旗，金瓦，被夕阳染成橘红色的城墙，
 还有攒动的、抬头看天的人群。

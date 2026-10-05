@@ -82,8 +82,8 @@ const gridStyle = computed(() =>
   } : {}
 )
 
-// 判断是否显示封面
-const showCover = () => themeConfig.value?.cover?.showCover?.enable
+// 判断是否显示封面：全局开关打开的前提下，只给显式设置了 cover 的文章显示封面
+const showCover = (item) => themeConfig.value?.cover?.showCover?.enable && !!item?.cover
 
 // 获取封面图片 按优先级获取：cover > defaultCover > false
 const getCover = ({ cover: itemCover }) => {
