@@ -41,54 +41,63 @@ const dataList = computed(() => [
 ]);
 
 onMounted(() => {
-  // 51la 访问统计挂件：quote.js 会寻找 id="LA-DATA-WIDGET" 的 script 标签，
-  // 并把统计文本插入到它后面。它自带的样式是内联硬编码、丑且不随主题，
-  // 所以等它渲染后把数字解析出来，用主题卡片样式重绘。
+  // 51la 访问统计：quote.js 会寻找 id="LA-DATA-WIDGET" 的 script 标签输出文本。
+  // 它的样式内联硬编码，所以用隐藏探针拉取后解析数字，重绘成主题卡片，
+  // 并每 60s 轮询刷新一次（接近实时）。
   const laContainer = document.querySelector(".site-data .la-widget");
-  if (!laContainer || document.getElementById("LA-DATA-WIDGET")) return;
+  if (!laContainer) return;
 
-  const s = document.createElement("script");
-  s.id = "LA-DATA-WIDGET";
-  s.charset = "UTF-8";
-  s.src = "https://v6-widget.51.la/v6/LJuM8F1h3kXFwnCW/quote.js?theme=0&f=12";
-  laContainer.appendChild(s);
+  const STATS = [
+    { name: "今日访问量", icon: "icon-line" },
+    { name: "总访问量", icon: "icon-fire" },
+  ];
 
-  let tries = 0;
-  const timer = setInterval(() => {
-    tries++;
-    const w = laContainer.querySelector(".la-data-widget__container");
-    if (!w) {
-      if (tries > 40) clearInterval(timer); // 20s 超时则保持空白
-      return;
-    }
-    clearInterval(timer);
+  // 先渲染空卡片骨架
+  laContainer.innerHTML = `
+    <div class="la-stats">
+      ${STATS.map(
+        (item, i) => `
+        <div class="la-stat" style="--data-color:${dataColors[(i + 2) % dataColors.length]}">
+          <div class="icon-wrap"><i class="iconfont ${item.icon}"></i></div>
+          <span class="num" data-name="${item.name}">…</span>
+          <span class="name">${item.name}</span>
+        </div>`
+      ).join("")}
+    </div>`;
 
-    const text = w.innerText || "";
-    const pick = (label) => {
-      const m = text.match(new RegExp(label + "\\s*([\\d,]+)"));
-      return m ? m[1] : "--";
-    };
-    const stats = [
-      { name: "今日访问量", icon: "icon-line", value: pick("今日访问量") },
-      { name: "昨日访问量", icon: "icon-time", value: pick("昨日访问量") },
-      { name: "本月访问量", icon: "icon-chart", value: pick("本月访问量") },
-      { name: "总访问量", icon: "icon-fire", value: pick("总访问量") },
-    ];
+  const refresh = () => {
+    const probe = document.createElement("div");
+    probe.style.display = "none";
+    document.body.appendChild(probe);
+    const s = document.createElement("script");
+    s.id = "LA-DATA-WIDGET";
+    s.charset = "UTF-8";
+    s.src = `https://v6-widget.51.la/v6/LJuM8F1h3kXFwnCW/quote.js?theme=0&f=12&_=${Date.now()}`;
+    probe.appendChild(s);
 
-    laContainer.innerHTML = `
-      <div class="la-stats">
-        ${stats
-          .map(
-            (item, i) => `
-          <div class="la-stat" style="--data-color:${dataColors[(i + 2) % dataColors.length]}">
-            <div class="icon-wrap"><i class="iconfont ${item.icon}"></i></div>
-            <span class="num">${item.value}</span>
-            <span class="name">${item.name}</span>
-          </div>`
-          )
-          .join("")}
-      </div>`;
-  }, 500);
+    let tries = 0;
+    const t = setInterval(() => {
+      tries++;
+      const w = probe.querySelector(".la-data-widget__container");
+      if (!w) {
+        if (tries > 25) { clearInterval(t); probe.remove(); }
+        return;
+      }
+      clearInterval(t);
+      const text = w.innerText || "";
+      STATS.forEach(({ name }) => {
+        const m = text.match(new RegExp(name + "\\s*([\\d,]+)"));
+        if (m) {
+          const el = laContainer.querySelector(`.num[data-name="${name}"]`);
+          if (el && el.textContent !== m[1]) el.textContent = m[1];
+        }
+      });
+      probe.remove();
+    }, 400);
+  };
+
+  refresh();
+  setInterval(refresh, 60000); // 每分钟刷新
 });
 </script>
 
