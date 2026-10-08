@@ -1,10 +1,9 @@
 // 链接数据（友链页展示，按需修改）
 const linkData = [
-  // 推荐数据
   {
-    type: "rec",
-    typeName: "推荐",
-    typeDesc: "都是大佬，推荐关注",
+    type: "links",
+    typeName: "友情链接",
+    typeDesc: "与各位博主无限进步",
     typeList: [
       {
         name: "小坤哥哥",
@@ -18,58 +17,12 @@ const linkData = [
         desc: "雨中，听雨声轻灵。雨后，赏水木清华。聆听这广阔天地，感受那动人瞬间。",
         url: "https://www.rainafter.cn",
       },
-    ],
-  },
-  // 已互链（对方站点已回链本站）
-  {
-    type: "mutual",
-    typeName: "已互链",
-    typeDesc: "互相回踩，礼尚往来",
-    typeList: [
       {
         name: "墨泽",
         avatar: "https://imzy.ink/blog/logo.jpg",
         desc: "生命不息 折腾不止",
         url: "https://blog.imzy.ink",
       },
-      {
-        name: "熊猫不是猫",
-        avatar: "https://panda995.top:500/img/2025/05/%E5%A4%B4%E5%83%8F2681cdef283e86.jpg",
-        desc: "平平无奇小熊猫",
-        url: "https://panda995.xyz/",
-      },
-      {
-        name: "OnlyTL",
-        avatar: "https://onlytl.oss-cn-chengdu.aliyuncs.com/avatar.png",
-        desc: "弱小和无知不是障碍，Bug才是",
-        url: "https://onlytl.com",
-      },
-      {
-        name: "新锐博客",
-        avatar: "https://blog.xrbk.cn/favicon.png",
-        desc: "记录学习与分享资源",
-        url: "https://blog.xrbk.cn/",
-      },
-      {
-        name: "不止代码",
-        avatar: "https://xinghai0.top/upload/8bbdd74b8f8dd94e30edefd90dd7e232.jpg",
-        desc: "一个 root 用户的日常笔记",
-        url: "https://xinghai0.top/",
-      },
-      {
-        name: "ooliver 的博客",
-        avatar: "https://ooliver.cn/images/avatar.jpg",
-        desc: "The Show Must Go On!",
-        url: "https://blog.ooliver.cn",
-      },
-    ],
-  },
-  // 小伙伴们
-  {
-    type: "friends",
-    typeName: "小伙伴们",
-    typeDesc: "我们在一起，共同进步",
-    typeList: [
       {
         name: "周润发",
         avatar: "https://blog.zrf.me/img/logo.webp",
@@ -99,6 +52,12 @@ const linkData = [
         avatar: "https://cravatar.cn/avatar/2267b3aa6d17151f59a91b636fa5a52a",
         desc: "Stay Hungry, Stay Foolish",
         url: "https://shape.kloudy.cn/",
+      },
+      {
+        name: "熊猫不是猫",
+        avatar: "https://panda995.top:500/img/2025/05/%E5%A4%B4%E5%83%8F2681cdef283e86.jpg",
+        desc: "平平无奇小熊猫",
+        url: "https://panda995.xyz/",
       },
       {
         name: "Barney's Blog",
@@ -138,6 +97,12 @@ const linkData = [
         url: "http://www.freejishu.com",
       },
       {
+        name: "ooliver 的博客",
+        avatar: "https://ooliver.cn/images/avatar.jpg",
+        desc: "The Show Must Go On!",
+        url: "https://blog.ooliver.cn",
+      },
+      {
         name: "Aesrium",
         avatar: "https://azusemisa.top/img/avatar.webp",
         desc: "一只咸鱼肥宅，兼职学生党",
@@ -150,10 +115,28 @@ const linkData = [
         url: "https://umb.ink",
       },
       {
+        name: "OnlyTL",
+        avatar: "https://onlytl.oss-cn-chengdu.aliyuncs.com/avatar.png",
+        desc: "弱小和无知不是障碍，Bug才是",
+        url: "https://onlytl.com",
+      },
+      {
         name: "Fantasy`Ke Blog",
         avatar: "https://picx.fantasyke.cn/commonlyUsed/avatar.png",
         desc: "不断追寻梦想的努力者，在幻想的世界里探索未知。",
         url: "https://blog.fantasyke.cn/",
+      },
+      {
+        name: "新锐博客",
+        avatar: "https://blog.xrbk.cn/favicon.png",
+        desc: "记录学习与分享资源",
+        url: "https://blog.xrbk.cn/",
+      },
+      {
+        name: "不止代码",
+        avatar: "https://xinghai0.top/upload/8bbdd74b8f8dd94e30edefd90dd7e232.jpg",
+        desc: "一个 root 用户的日常笔记",
+        url: "https://xinghai0.top/",
       },
     ],
   },

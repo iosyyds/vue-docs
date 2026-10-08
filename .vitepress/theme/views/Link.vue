@@ -31,7 +31,7 @@
       </div> -->
     </Banner>
     <!-- 友链数据 -->
-    <LinkList :listData="linkData" :useFriendsLink="true" />
+    <LinkList :listData="linkData" :useFriendsLink="false" />
   </div>
 </template>
 
