@@ -141,6 +141,12 @@ const linkData = [
         desc: "记录学习与分享资源",
         url: "https://blog.xrbk.cn/",
       },
+      {
+        name: "不止代码",
+        avatar: "https://xinghai0.top/upload/8bbdd74b8f8dd94e30edefd90dd7e232.jpg",
+        desc: "一个 root 用户的日常笔记",
+        url: "https://xinghai0.top/",
+      },
     ],
   },
 ];
