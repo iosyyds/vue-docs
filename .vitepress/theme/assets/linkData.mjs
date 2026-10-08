@@ -20,11 +20,11 @@ const linkData = [
       },
     ],
   },
-  // 小伙伴们
+  // 已互链（对方站点已回链本站）
   {
-    type: "friends",
-    typeName: "小伙伴们",
-    typeDesc: "我们在一起，共同进步",
+    type: "mutual",
+    typeName: "已互链",
+    typeDesc: "互相回踩，礼尚往来",
     typeList: [
       {
         name: "墨泽",
@@ -32,6 +32,38 @@ const linkData = [
         desc: "生命不息 折腾不止",
         url: "https://blog.imzy.ink",
       },
+      {
+        name: "熊猫不是猫",
+        avatar: "https://panda995.top:500/img/2025/05/%E5%A4%B4%E5%83%8F2681cdef283e86.jpg",
+        desc: "平平无奇小熊猫",
+        url: "https://panda995.xyz/",
+      },
+      {
+        name: "OnlyTL",
+        avatar: "https://onlytl.oss-cn-chengdu.aliyuncs.com/avatar.png",
+        desc: "弱小和无知不是障碍，Bug才是",
+        url: "https://onlytl.com",
+      },
+      {
+        name: "新锐博客",
+        avatar: "https://blog.xrbk.cn/favicon.png",
+        desc: "记录学习与分享资源",
+        url: "https://blog.xrbk.cn/",
+      },
+      {
+        name: "不止代码",
+        avatar: "https://xinghai0.top/upload/8bbdd74b8f8dd94e30edefd90dd7e232.jpg",
+        desc: "一个 root 用户的日常笔记",
+        url: "https://xinghai0.top/",
+      },
+    ],
+  },
+  // 小伙伴们
+  {
+    type: "friends",
+    typeName: "小伙伴们",
+    typeDesc: "我们在一起，共同进步",
+    typeList: [
       {
         name: "周润发",
         avatar: "https://blog.zrf.me/img/logo.webp",
@@ -61,12 +93,6 @@ const linkData = [
         avatar: "https://cravatar.cn/avatar/2267b3aa6d17151f59a91b636fa5a52a",
         desc: "Stay Hungry, Stay Foolish",
         url: "https://shape.kloudy.cn/",
-      },
-      {
-        name: "熊猫不是猫",
-        avatar: "https://panda995.top:500/img/2025/05/%E5%A4%B4%E5%83%8F2681cdef283e86.jpg",
-        desc: "平平无奇小熊猫",
-        url: "https://panda995.xyz/",
       },
       {
         name: "Barney's Blog",
@@ -124,28 +150,10 @@ const linkData = [
         url: "https://umb.ink",
       },
       {
-        name: "OnlyTL",
-        avatar: "https://onlytl.oss-cn-chengdu.aliyuncs.com/avatar.png",
-        desc: "弱小和无知不是障碍，Bug才是",
-        url: "https://onlytl.com",
-      },
-      {
         name: "Fantasy`Ke Blog",
         avatar: "https://picx.fantasyke.cn/commonlyUsed/avatar.png",
         desc: "不断追寻梦想的努力者，在幻想的世界里探索未知。",
         url: "https://blog.fantasyke.cn/",
-      },
-      {
-        name: "新锐博客",
-        avatar: "https://blog.xrbk.cn/favicon.png",
-        desc: "记录学习与分享资源",
-        url: "https://blog.xrbk.cn/",
-      },
-      {
-        name: "不止代码",
-        avatar: "https://xinghai0.top/upload/8bbdd74b8f8dd94e30edefd90dd7e232.jpg",
-        desc: "一个 root 用户的日常笔记",
-        url: "https://xinghai0.top/",
       },
     ],
   },
