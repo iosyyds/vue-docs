@@ -56,6 +56,12 @@ const linkData = [
         desc: "一个 root 用户的日常笔记",
         url: "https://xinghai0.top/",
       },
+      {
+        name: "ooliver 的博客",
+        avatar: "https://ooliver.cn/images/avatar.jpg",
+        desc: "The Show Must Go On!",
+        url: "https://blog.ooliver.cn",
+      },
     ],
   },
   // 小伙伴们
@@ -130,12 +136,6 @@ const linkData = [
         avatar: "https://cdn-p.freejishu.com/img/2022/01/19/gNxI.jpg",
         desc: "A New World",
         url: "http://www.freejishu.com",
-      },
-      {
-        name: "ooliver 的博客",
-        avatar: "https://ooliver.cn/images/avatar.jpg",
-        desc: "The Show Must Go On!",
-        url: "https://blog.ooliver.cn",
       },
       {
         name: "Aesrium",
