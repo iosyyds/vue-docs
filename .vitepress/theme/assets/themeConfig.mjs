@@ -178,6 +178,7 @@ export const themeConfig = {
       items: [
         { text: "即刻短文", link: "/pages/essay", icon: "article" },
         { text: "常用软件", link: "/pages/software", icon: "window" },
+        { text: "三角洲枪码", link: "/pages/guncode", icon: "window" },
         { text: "畅所欲言", link: "/pages/message", icon: "chat" },
         { text: "关于本站", link: "/pages/about", icon: "account" },
         { text: "隐私政策", link: "/pages/privacy", icon: "privacy" },
@@ -298,6 +299,7 @@ export const themeConfig = {
       {
         text: "页面",
         items: [
+          { text: "三角洲枪码", link: "/pages/guncode" },
           { text: "畅所欲言", link: "/pages/message" },
           { text: "关于本站", link: "/pages/about" },
           { text: "隐私政策", link: "/pages/privacy" },
