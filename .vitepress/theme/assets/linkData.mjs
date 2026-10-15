@@ -138,6 +138,12 @@ const linkData = [
         desc: "一个 root 用户的日常笔记",
         url: "https://xinghai0.top/",
       },
+      {
+        name: "蛋蛋总",
+        avatar: "https://papers.buged.cn/files/images/blog-logo/login.webp",
+        desc: "试错成本并不高，错过成本才高",
+        url: "https://buged.cn/",
+      },
     ],
   },
 ];
