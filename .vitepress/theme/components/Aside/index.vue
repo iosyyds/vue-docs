@@ -6,6 +6,8 @@
       <Countdown class="weidgets" />
       <Tags v-if="theme.aside.tags.enable" class="weidgets" />
       <SiteData v-if="theme.aside.siteData.enable" class="weidgets" />
+      <!-- 侧边栏信息流广告 -->
+      <AdUnit slot="6411588039" format="fluid" wrapper-class="sidebar-ad" />
     </div>
   </aside>
 </template>

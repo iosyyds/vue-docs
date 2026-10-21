@@ -6,6 +6,7 @@ import LazyLoader from "@/components/LazyLoader.vue";
 import EssayCarousel from "@/components/EssayCarousel.vue";
 import EssayList from "@/components/EssayList.vue";
 import SoftwareList from "@/views/SoftwareList.vue";
+import AdUnit from "@/components/AdUnit/AdUnit.vue";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 // 根组件
@@ -34,6 +35,7 @@ const Theme = {
     app.component("EssayCarousel", EssayCarousel);
     app.component("EssayList", EssayList);
     app.component("SoftwareList", SoftwareList);
+    app.component("AdUnit", AdUnit);
     // 插件
     enhanceAppWithTabs(app);
     // 全局图片兜底：加载失败/挂起 → 换默认头像，避免一直转圈

@@ -60,6 +60,8 @@
         <ArticleGPT />
         <!-- 文章内容 -->
         <Content id="page-content" class="markdown-main-style" />
+        <!-- 文章内嵌广告 -->
+        <AdUnit slot="1385835876" format="fluid" layout="in-article" wrapper-class="article-ad" />
         <!-- 参考资料 -->
         <References />
         <!-- 版权 -->

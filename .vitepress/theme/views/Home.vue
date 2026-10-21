@@ -20,6 +20,8 @@
         <TypeBar :type="showTags ? 'tags' : 'categories'" />
         <!-- 文章列表 -->
         <PostList :listData="postData" />
+        <!-- 首页横向展示广告 -->
+        <AdUnit slot="7941690929" format="auto" wrapper-class="home-ad" />
         <!-- 分页 -->
         <Pagination
           :total="allListTotal"
