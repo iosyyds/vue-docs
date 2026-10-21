@@ -28,7 +28,8 @@ const props = defineProps({
 
 const insRef = ref(null);
 const ready = ref(false);
-const visible = ref(true);
+const visible = ref(false);
+let ro = null;
 
 onMounted(() => {
   // 仅客户端推送；SSR 阶段不触碰 window
@@ -39,12 +40,23 @@ onMounted(() => {
     } catch (err) {
       // adsbygoogle.js 尚未加载完成时静默入队，不影响页面
     }
-    // 6 秒后仍未填充（高度 ≈0）则自动收起，避免留下空广告框
-    setTimeout(() => {
-      const ins = insRef.value;
-      if (ins && ins.offsetHeight < 8) visible.value = false;
-    }, 6000);
+    const ins = insRef.value;
+    if (!ins) return;
+    // 监听广告真实高度：填充出内容才显示；始终为空则完全隐藏，不留残框
+    const sync = () => {
+      visible.value = ins.offsetHeight > 8;
+    };
+    if (typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(sync);
+      ro.observe(ins);
+    } else {
+      setTimeout(sync, 2000);
+    }
   });
+});
+
+onBeforeUnmount(() => {
+  ro?.disconnect();
 });
 </script>
 
