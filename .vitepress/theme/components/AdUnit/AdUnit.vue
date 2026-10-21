@@ -1,6 +1,6 @@
 <!-- Google AdSense 广告位（自动挂载到对应页面，由主题 head 中的 adsbygoogle.js 加载） -->
 <template>
-  <div v-if="ready" class="ad-unit" :class="wrapperClass">
+  <div v-if="ready && visible" class="ad-unit" :class="wrapperClass">
     <span class="ad-unit-label">广告</span>
     <ins
       ref="insRef"
@@ -28,6 +28,7 @@ const props = defineProps({
 
 const insRef = ref(null);
 const ready = ref(false);
+const visible = ref(true);
 
 onMounted(() => {
   // 仅客户端推送；SSR 阶段不触碰 window
@@ -38,6 +39,11 @@ onMounted(() => {
     } catch (err) {
       // adsbygoogle.js 尚未加载完成时静默入队，不影响页面
     }
+    // 6 秒后仍未填充（高度 ≈0）则自动收起，避免留下空广告框
+    setTimeout(() => {
+      const ins = insRef.value;
+      if (ins && ins.offsetHeight < 8) visible.value = false;
+    }, 6000);
   });
 });
 </script>
