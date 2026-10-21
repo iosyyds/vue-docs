@@ -8,6 +8,8 @@
       <SiteData v-if="theme.aside.siteData.enable" class="weidgets" />
       <!-- 侧边栏信息流广告 -->
       <AdUnit slot="6411588039" format="fluid" wrapper-class="sidebar-ad" />
+      <!-- 侧边栏纵向展示广告 -->
+      <AdUnit slot="6533742505" format="auto" wrapper-class="sidebar-ad" />
     </div>
   </aside>
 </template>

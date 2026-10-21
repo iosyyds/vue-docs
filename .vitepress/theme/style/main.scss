@@ -495,3 +495,10 @@ html.dark .tk-comments {
   }
   .essay-hero-title { font-size: 26px; }
 }
+
+// Google AdSense 自动广告：约束宽度、居中，避免贴边撑满
+.google-auto-placed {
+  max-width: 960px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

@@ -92,6 +92,8 @@
         <NextPost />
         <!-- 相关文章 -->
         <RelatedPost />
+        <!-- 文章底部横向展示广告 -->
+        <AdUnit slot="7361752135" format="auto" wrapper-class="article-ad" />
         <!-- 评论 -->
         <Comments ref="commentRef" />
       </article>
