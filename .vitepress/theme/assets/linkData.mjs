@@ -97,10 +97,10 @@ const linkData = [
         url: "http://www.freejishu.com",
       },
       {
-        name: "ooliver 的博客",
-        avatar: "https://ooliver.cn/images/avatar.jpg",
+        name: "ooliver",
+        avatar: "https://www.ooliver.cn/images/avatar.jpg",
         desc: "The Show Must Go On!",
-        url: "https://blog.ooliver.cn",
+        url: "https://www.ooliver.cn/",
       },
       {
         name: "Aesrium",
