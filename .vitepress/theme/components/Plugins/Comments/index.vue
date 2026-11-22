@@ -14,7 +14,7 @@
         <span v-if="commentCount > 0" class="count-badge">{{ commentCount }}</span>
       </span>
       <span class="title-right">
-        <span class="anon" :class="{ __on: anonOn }" @click="toggleAnon">匿名评论</span>
+        <span v-if="theme.comment.type !== 'giscus'" class="anon" :class="{ __on: anonOn }" @click="toggleAnon">匿名评论</span>
         <span class="tool" @click="router.go('/pages/privacy')"> 隐私政策 </span>
       </span>
     </div>
