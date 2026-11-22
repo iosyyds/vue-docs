@@ -95,7 +95,7 @@ on:
 
 1. **Node 版本不对**：本地 22，Actions 用 20 可能构建失败，在 `setup-node` 写死版本
 2. **依赖缓存**：加 `actions/cache@v4` 缓存 node_modules，构建从 2 分钟压到 30 秒
-3. **Secrets 存敏感信息**：token 别写死在 yml，用 `${{ secrets.XXX }}`
+3. **Secrets 存敏感信息**：token 别写死在 yml，用 GitHub 表达式引用仓库 Secrets（写法是 `secrets.XXX` 外面包一层双花括号）
 4. **定时任务延迟**：GitHub Actions 免费版 schedule 触发可能延迟几小时，不是 bug
 5. **push 不触发**：用 `GITHUB_TOKEN` 自动 commit 不会触发 workflow（安全限制），用 PAT 才行
 

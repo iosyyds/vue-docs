@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <circle cx="1080" cy="60" r="180" fill="#6366f1" opacity="0.05"/>
+  <circle cx="100" cy="640" r="140" fill="#0ea5e9" opacity="0.05"/>
+
+  <text x="64" y="92" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC','Helvetica Neue',sans-serif" font-size="40" font-weight="700" fill="#0f172a">运营商与线路匹配</text>
+  <text x="64" y="136" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC','Helvetica Neue',sans-serif" font-size="22" fill="#64748b">你的宽带决定了哪条线路有价值</text>
+  <line x1="64" y1="168" x2="1136" y2="168" stroke="#e2e8f0" stroke-width="1.5"/>
+
+
+  <rect x="64" y="240" width="508" height="220" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="64" y="240" width="508" height="10" rx="5" fill="#6366f1"/>
+  <text x="92" y="310" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC','Helvetica Neue',sans-serif" font-size="24" font-weight="600" fill="#0f172a">电信宽带 → CN2 / CN2 GIA</text>
+  <rect x="612" y="240" width="508" height="220" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="612" y="240" width="508" height="10" rx="5" fill="#0ea5e9"/>
+  <text x="640" y="310" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC','Helvetica Neue',sans-serif" font-size="24" font-weight="600" fill="#0f172a">联通 → 9929；移动 → CMI</text>
+  <text x="516" y="358.0" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC','Helvetica Neue',sans-serif" font-size="20" font-weight="700" fill="#64748b" text-anchor="middle">VS</text>
+
+
+  <text x="1136" y="634" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC','Helvetica Neue',sans-serif" font-size="16" fill="#94a3b8" text-anchor="end">xkbk.cn · 小坤哥哥博客</text>
+
+</svg>
