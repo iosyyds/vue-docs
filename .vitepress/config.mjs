@@ -49,7 +49,13 @@ export default withPwa(
           if (key !== "/") dateMap.set(key, p.date);
         }
         return items
-          .filter((item) => !/^(?:\/)page(?:\/\d+)?$/.test(norm(item.url)))
+          // 过滤：分页页、单个标签页（内容稀薄，保留页面但不进 sitemap）
+          .filter((item) => {
+            const p = norm(item.url);
+            if (/^\/page(?:\/\d+)?\/?$/.test(p)) return false;
+            if (p.startsWith("/pages/tags/") || p === "/pages/tags") return false;
+            return true;
+          })
           .map((item) => {
             const d = dateMap.get(norm(item.url));
             return d ? { ...item, lastmod: new Date(d).toISOString() } : item;
