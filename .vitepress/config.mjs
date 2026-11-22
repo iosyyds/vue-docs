@@ -39,6 +39,22 @@ export default withPwa(
     // sitemap
     sitemap: {
       hostname: themeConfig.siteMeta.site,
+      transformItems(items) {
+        // 文章用 frontmatter 发布日期作 lastmod；过滤掉分页 URL
+        const norm = (u) =>
+          "/" + String(u || "").replace(/^\/+/, "").replace(/\.html$/, "");
+        const dateMap = new Map();
+        for (const p of postData) {
+          const key = norm(p.regularPath);
+          if (key !== "/") dateMap.set(key, p.date);
+        }
+        return items
+          .filter((item) => !/^(?:\/)page(?:\/\d+)?$/.test(norm(item.url)))
+          .map((item) => {
+            const d = dateMap.get(norm(item.url));
+            return d ? { ...item, lastmod: new Date(d).toISOString() } : item;
+          });
+      },
     },
     // 主题配置
     themeConfig: {
@@ -61,14 +77,140 @@ export default withPwa(
     },
     // 构建排除
     srcExclude: ["**/README.md", "**/TODO.md"],
-    // transformHead
+    // transformPageData：页面级 TDK、OG、结构化数据
     transformPageData: async (pageData) => {
-      // canonical URL
-      const canonicalUrl = `${themeConfig.siteMeta.site}/${pageData.relativePath}`
+      const site = themeConfig.siteMeta.site.replace(/\/$/, "");
+      const siteName = themeConfig.siteMeta.title;
+      const siteDesc = themeConfig.siteMeta.description;
+      const rawPath = pageData.relativePath || "index.md";
+      const fm = pageData.frontmatter || {};
+      const isPost = rawPath.startsWith("posts/");
+      const canonicalUrl = `${site}/${rawPath}`
         .replace(/index\.md$/, "")
         .replace(/\.md$/, "");
+
       pageData.frontmatter.head ??= [];
+
+      // 描述：frontmatter.description → articleGPT → 站点默认，控制在 150 字以内
+      let desc = "";
+      if (isPost) {
+        desc = String(fm.description || fm.articleGPT || "")
+          .replace(/[\r\n]+/g, " ")
+          .replace(/\s{2,}/g, " ")
+          .trim();
+        if (desc.length > 150) {
+          desc = desc.slice(0, 150).replace(/[，。；、,.;：]$/, "") + "…";
+        }
+        if (!desc) desc = `${pageData.title} - ${siteName}`;
+      } else {
+        desc = String(fm.description || siteDesc);
+      }
+      pageData.description = desc;
+
+      // 关键词：标签 + 分类
+      const tags = Array.isArray(fm.tags) ? fm.tags : fm.tags ? [fm.tags] : [];
+      const cats = Array.isArray(fm.categories)
+        ? fm.categories
+        : fm.categories
+          ? [fm.categories]
+          : [];
+      const keywords = [...new Set([...tags, ...cats, siteName])].filter(Boolean).join(",");
+
+      if (isPost) {
+        pageData.frontmatter.head.push(["meta", { name: "keywords", content: keywords }]);
+        pageData.frontmatter.head.push([
+          "meta",
+          { name: "robots", content: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" },
+        ]);
+      }
+
+      // 分享图：文章封面优先
+      const cover = fm.cover
+        ? fm.cover.startsWith("http")
+          ? fm.cover
+          : `${site}${fm.cover}`
+        : `${site}/images/og-default.jpg`;
+
       pageData.frontmatter.head.push(["link", { rel: "canonical", href: canonicalUrl }]);
+
+      pageData.frontmatter.head.push(
+        ["meta", { property: "og:type", content: isPost ? "article" : "website" }],
+        ["meta", { property: "og:site_name", content: siteName }],
+        ["meta", { property: "og:title", content: pageData.title }],
+        ["meta", { property: "og:description", content: desc }],
+        ["meta", { property: "og:url", content: canonicalUrl }],
+        ["meta", { property: "og:image", content: cover }],
+        ["meta", { property: "og:locale", content: "zh_CN" }],
+        ["meta", { name: "twitter:card", content: "summary_large_image" }],
+        ["meta", { name: "twitter:title", content: pageData.title }],
+        ["meta", { name: "twitter:description", content: desc }],
+        ["meta", { name: "twitter:image", content: cover }],
+      );
+
+      if (isPost && fm.date) {
+        const iso = new Date(fm.date).toISOString();
+        pageData.frontmatter.head.push(
+          ["meta", { property: "article:published_time", content: iso }],
+          ["meta", { property: "article:modified_time", content: iso }],
+        );
+        tags.slice(0, 6).forEach((t) => {
+          pageData.frontmatter.head.push(["meta", { property: "article:tag", content: t }]);
+        });
+      }
+
+      // 结构化数据：文章用 BlogPosting，首页用 WebSite
+      if (isPost) {
+        const ld = {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: pageData.title,
+          description: desc,
+          image: [cover],
+          url: canonicalUrl,
+          mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+          author: {
+            "@type": "Person",
+            name: themeConfig.siteMeta.author?.name || siteName,
+            url: themeConfig.siteMeta.author?.link || site,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: siteName,
+            logo: { "@type": "ImageObject", url: `${site}/logo.svg` },
+          },
+          keywords,
+          articleSection: cats.join(","),
+          inLanguage: "zh-CN",
+        };
+        if (fm.date) {
+          ld.datePublished = new Date(fm.date).toISOString();
+          ld.dateModified = new Date(fm.date).toISOString();
+        }
+        pageData.frontmatter.head.push([
+          "script",
+          { type: "application/ld+json" },
+          JSON.stringify(ld),
+        ]);
+      } else if (rawPath === "index.md") {
+        const ld = {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteName,
+          url: site,
+          description: siteDesc,
+          inLanguage: "zh-CN",
+          author: {
+            "@type": "Person",
+            name: themeConfig.siteMeta.author?.name || siteName,
+            url: themeConfig.siteMeta.author?.link || site,
+          },
+        };
+        pageData.frontmatter.head.push([
+          "script",
+          { type: "application/ld+json" },
+          JSON.stringify(ld),
+        ]);
+      }
     },
     // transformHtml
     transformHtml: (html) => {

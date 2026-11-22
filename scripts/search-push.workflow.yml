@@ -1,0 +1,35 @@
+name: Push URLs to Search Engines
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "posts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  push-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Push changed URLs to IndexNow (Bing/Yandex)
+        continue-on-error: true
+        run: node scripts/indexnow.mjs --changed
+
+      - name: Push changed URLs to Baidu
+        continue-on-error: true
+        env:
+          BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
+        run: node scripts/baidu-push.mjs --changed
