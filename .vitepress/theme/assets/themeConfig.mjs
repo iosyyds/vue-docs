@@ -319,7 +319,7 @@ export const themeConfig = {
     enable: true,
     // 评论系统选择
     // artalk / twikoo / giscus / valine
-    type: "artalk",
+    type: "giscus",
     // artalk
     // https://artalk.js.org/
     artalk: {
