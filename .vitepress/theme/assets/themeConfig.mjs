@@ -36,6 +36,8 @@ export const themeConfig = {
     header: [
       // favicon
       ["link", { rel: "icon", href: "/favicon.ico" }],
+      // 百度站点验证（HTML 标签方式，作为验证文件的兜底）
+      ["meta", { name: "baidu-site-verification", content: "codeva-qliJsnDvK5" }],
       // SEO keywords
       ["meta", { name: "keywords", content: "小坤哥哥博客,前端开发,VitePress,运维部署,Linux,Docker,Git,技术博客,编程教程,个人博客" }],
       // SEO author
