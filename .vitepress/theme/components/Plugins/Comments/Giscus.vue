@@ -40,13 +40,25 @@ const loadGiscus = () => {
   // giscus 的 iframe 初始高度为 0，若开启懒加载，浏览器会认为它从未进入视口，
   // 导致 widget 永不加载，评论区一直空白。
   giscusRef.value.appendChild(script);
+  // 脚本执行完会插入 iframe，稍后再同步一次主题，
+  // 避免首屏暗色/浅色判断与 iframe 渲染时序错位导致颜色不匹配
+  script.addEventListener("load", () => {
+    setTimeout(() => changeGiscusTheme(), 400);
+    setTimeout(() => changeGiscusTheme(), 1200);
+  });
 };
 
 // 接收 Giscus 元数据（真实评论数）
+const themeSynced = ref(false);
 const onGiscusMessage = (event) => {
   if (event.origin !== "https://giscus.app") return;
   const giscus = event.data?.giscus;
   if (!giscus) return;
+  // 首次通信说明 iframe 已渲染，立刻同步一次当前页面主题
+  if (!themeSynced.value) {
+    themeSynced.value = true;
+    changeGiscusTheme();
+  }
   // discussion 存在时返回该讨论的评论总数，无评论时为 0
   const count = giscus.discussion ? giscus.discussion.totalCommentCount || 0 : 0;
   store.setCommentCount(count);
